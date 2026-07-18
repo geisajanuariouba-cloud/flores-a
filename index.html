@@ -1199,7 +1199,7 @@ footer a { color: rgba(255,255,255,.3); }
       EU QUERO OS CADERNOS AGORA
       <span class="sub">5 Cadernos de Cura Emocional + 11 Bônus · Acesso na hora</span>
     </a>
-    <a href="LINK_BASICO" class="btn-outline">EU quero começar com o Plano Básico</a>
+    <a href="LINK_BASICO" class="btn-outline basico-trigger">EU quero começar com o Plano Básico</a>
     <div class="trust-row">
       <span><span class="ck">✓</span> Liberação imediata</span>
       <span><span class="ck">✓</span> Pagamento 100% seguro</span>
@@ -1376,7 +1376,7 @@ footer a { color: rgba(255,255,255,.3); }
         <li class="pf"><span class="cx">✗</span> <span class="crossed">Kit de Primeiros Socorros Emocionais</span></li>
         <li class="pf"><span class="cx">✗</span> <span class="crossed">Guia Anti-Autossabotagem</span></li>
       </ul>
-      <a href="LINK_BASICO" class="plan-cta outline">EU QUERO O BÁSICO</a>
+      <a href="LINK_BASICO" class="plan-cta outline basico-trigger">EU QUERO O BÁSICO</a>
     </div>
     <div class="plan-card best">
       <div class="plan-popular">MAIS POPULAR</div>
@@ -1464,7 +1464,7 @@ footer a { color: rgba(255,255,255,.3); }
     EU QUERO COMEÇAR AGORA
     <span class="sub">5 Cadernos + 11 Bônus · Acesso imediato · Garantia 7 dias</span>
   </a>
-  <a href="LINK_BASICO" class="btn-outline">EU quero o Plano Básico por R$10</a>
+  <a href="LINK_BASICO" class="btn-outline basico-trigger">EU quero o Plano Básico por R$10</a>
   <div class="trust-row" style="margin-top:16px;">
     <span><span class="ck">✓</span> Liberação imediata</span>
     <span><span class="ck">✓</span> 100% seguro</span>
@@ -1495,6 +1495,32 @@ footer a { color: rgba(255,255,255,.3); }
     </ul>
     <a href="LINK_COMPLETO" class="exit-cta">SIM, QUERO O COMPLETO POR R$17,90</a>
     <a href="LINK_BASICO" class="exit-decline">Não, quero só o Básico por R$10</a>
+  </div>
+</div>
+
+<!-- ===================== POPUP CLIQUE NO BÁSICO ===================== -->
+<div class="exit-overlay" id="basicoOverlay">
+  <div class="exit-modal">
+    <button class="exit-close" id="basicoClose" aria-label="Fechar">&times;</button>
+    <span class="exit-eyebrow">⚡ ANTES DE CONTINUAR</span>
+    <h3 class="exit-title">Leve o Completo por muito menos</h3>
+    <p class="exit-sub">Você tá escolhendo o Básico e deixando 4 cadernos e os 11 bônus pra trás. Leve tudo por R$17,90 só agora.</p>
+    <div class="exit-price">
+      <span class="exit-from">de R$27,90</span>
+      <span class="exit-now"><sup>R$</sup>17<span>,90</span></span>
+    </div>
+    <ul class="exit-list">
+      <li><span class="ck">✓</span> <strong>Os 5 Cadernos de Cura Emocional completos</strong></li>
+      <li><span class="ck">✓</span> Amor Próprio, Criança Interior, Ansiedade, Gratidão e Nova Fase</li>
+      <li><span class="ck">✓</span> <strong>+ 11 bônus exclusivos (R$247 em valor)</strong></li>
+      <li><span class="ck">✓</span> Ritual da Manhã Poderosa</li>
+      <li><span class="ck">✓</span> Kit de Primeiros Socorros Emocionais</li>
+      <li><span class="ck">✓</span> Reset Emocional em 7 Dias</li>
+      <li><span class="ck">✓</span> Acesso imediato em PDF</li>
+      <li><span class="ck">✓</span> Garantia de 7 dias</li>
+    </ul>
+    <a href="LINK_COMPLETO" class="exit-cta">SIM, QUERO O COMPLETO POR R$17,90</a>
+    <a href="LINK_BASICO" class="exit-decline" id="basicoContinue">Não, quero só o Básico por R$10</a>
   </div>
 </div>
 
@@ -1584,6 +1610,33 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
   overlay.addEventListener('click', function(e) {
     if (e.target === overlay) closeExit();
   });
+})();
+
+(function() {
+  var overlay = document.getElementById('basicoOverlay');
+  var closeBtn = document.getElementById('basicoClose');
+  var continueLink = document.getElementById('basicoContinue');
+  if (!overlay || !closeBtn) return;
+
+  function open() { overlay.classList.add('show'); }
+  function close() { overlay.classList.remove('show'); }
+
+  document.querySelectorAll('.basico-trigger').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      open();
+    });
+  });
+
+  closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) close();
+  });
+  if (continueLink) {
+    continueLink.addEventListener('click', function() {
+      close();
+    });
+  }
 })();
 </script>
 </body>
