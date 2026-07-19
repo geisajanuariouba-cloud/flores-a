@@ -1385,7 +1385,7 @@ footer a { color: rgba(255,255,255,.3); }
         <li class="pf"><span class="cx">✗</span> <span class="crossed">Kit de Primeiros Socorros Emocionais</span></li>
         <li class="pf"><span class="cx">✗</span> <span class="crossed">Guia Anti-Autossabotagem</span></li>
       </ul>
-      <a href="https://pay.wiapy.com/6ud42-Ajij0D" class="plan-cta outline">EU QUERO O BÁSICO</a>
+      <a href="https://pay.wiapy.com/6ud42-Ajij0D" class="plan-cta outline basico-trigger">EU QUERO O BÁSICO</a>
     </div>
     <div class="plan-card best">
       <div class="plan-popular">MAIS POPULAR</div>
@@ -1579,6 +1579,9 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
     shown = true;
     sessionStorage.setItem('floresca_exit_shown', '1');
   }
+  function openForced() {
+    overlay.classList.add('show');
+  }
   function closeExit() { overlay.classList.remove('show'); }
 
   document.addEventListener('mouseleave', function(e) {
@@ -1588,6 +1591,13 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
   var mobileTimer = setTimeout(function() {
     if (scrolledEnough) openExit();
   }, 25000);
+
+  document.querySelectorAll('.basico-trigger').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      openForced();
+    });
+  });
 
   closeBtn.addEventListener('click', closeExit);
   overlay.addEventListener('click', function(e) {
