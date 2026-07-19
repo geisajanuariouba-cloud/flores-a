@@ -1520,9 +1520,7 @@ footer a { color: rgba(255,255,255,.3); }
 <script>
 (function() {
   var TOTAL = 14 * 60 + 59;
-  var stored = sessionStorage.getItem('floresca_end');
-  var end = stored ? parseInt(stored, 10) : Date.now() + TOTAL * 1000;
-  if (!stored) sessionStorage.setItem('floresca_end', end);
+  var end = Date.now() + TOTAL * 1000;
   function fmt(n) { return n < 10 ? '0' + n : '' + n; }
   function tick() {
     var left = Math.max(0, Math.ceil((end - Date.now()) / 1000));
@@ -1566,7 +1564,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
   var overlay = document.getElementById('exitOverlay');
   var closeBtn = document.getElementById('exitClose');
   if (!overlay || !closeBtn) return;
-  var shown = sessionStorage.getItem('floresca_exit_shown');
+  var shown = false;
   var scrolledEnough = false;
 
   window.addEventListener('scroll', function() {
@@ -1577,7 +1575,6 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
     if (shown || !scrolledEnough) return;
     overlay.classList.add('show');
     shown = true;
-    sessionStorage.setItem('floresca_exit_shown', '1');
   }
   function openForced() {
     overlay.classList.add('show');
