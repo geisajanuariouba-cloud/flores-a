@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <meta name="theme-color" content="#FAF6F1">
-<meta name="description" content="Floresça — Complete sua jornada. Acesso imediato.">
-<title>Floresça — Complete Sua Jornada</title>
+<meta name="description" content="Floresça Guiado por Áudio. Acesso imediato.">
+<title>Floresça — Guiado por Áudio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Dancing+Script:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Dancing+Script:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"></noscript>
 
 <!-- Meta Pixel Code -->
 <script>
@@ -44,7 +44,7 @@ html { scroll-behavior: smooth; }
 body {
   background: #fff;
   color: #3D2B27;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -67,7 +67,6 @@ img { max-width: 100%; display: block; }
 
 .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
 
-/* ---- topo ---- */
 .top-bar {
   background: var(--terr);
   color: #fff;
@@ -78,7 +77,6 @@ img { max-width: 100%; display: block; }
   letter-spacing: .3px;
 }
 
-/* ---- hero ---- */
 .hero {
   background: linear-gradient(180deg, var(--cream) 0%, #fff 100%);
   padding: 56px 0 40px;
@@ -108,15 +106,7 @@ img { max-width: 100%; display: block; }
   margin: 0 auto 30px;
   line-height: 1.75;
 }
-.hero-img {
-  max-width: 340px;
-  margin: 0 auto 30px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 20px 50px rgba(168,92,82,.18);
-}
 
-/* ---- botao CTA ---- */
 .cta-btn {
   display: inline-block;
   background: var(--terr);
@@ -137,8 +127,7 @@ img { max-width: 100%; display: block; }
   margin-top: 12px;
 }
 
-/* ---- secoes ---- */
-section { padding: 48px 0; }
+section { padding: 44px 0; }
 .section-eyebrow {
   font-size: 12px;
   font-weight: 800;
@@ -151,7 +140,7 @@ section { padding: 48px 0; }
 .section-h {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 29px;
   line-height: 1.25;
   color: var(--marrom);
   text-align: center;
@@ -167,15 +156,6 @@ section { padding: 48px 0; }
   line-height: 1.8;
 }
 
-.divider {
-  width: 40px;
-  height: 2px;
-  background: var(--terr);
-  margin: 0 auto 40px;
-  border-radius: 2px;
-}
-
-/* ---- dor / agitacao ---- */
 .pain-list {
   display: flex;
   flex-direction: column;
@@ -195,7 +175,37 @@ section { padding: 48px 0; }
 .pain-icon { font-size: 18px; flex-shrink: 0; }
 .pain-text { font-size: 14.5px; color: var(--marrom); line-height: 1.6; }
 
-/* ---- beneficios ---- */
+.how-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 540px;
+  margin: 32px auto 0;
+}
+.how-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: var(--cream);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+.how-num {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 50%;
+  background: var(--terr);
+  color: #fff;
+  font-weight: 800;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.how-title { font-weight: 700; font-size: 14.5px; color: var(--marrom); margin-bottom: 4px; }
+.how-desc { font-size: 13.5px; color: var(--taupe); line-height: 1.55; }
+
 .benefit-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -222,7 +232,6 @@ section { padding: 48px 0; }
   line-height: 1.5;
 }
 
-/* ---- depoimento ---- */
 .testi-card {
   background: var(--cream);
   border-radius: 16px;
@@ -241,7 +250,6 @@ section { padding: 48px 0; }
 }
 .testi-name { font-size: 13px; font-weight: 700; color: var(--terr); }
 
-/* ---- preco ---- */
 .price-box {
   background: linear-gradient(180deg, var(--cream), #fff);
   border: 1.5px solid var(--pale);
@@ -271,7 +279,6 @@ section { padding: 48px 0; }
   margin-bottom: 22px;
 }
 
-/* ---- garantia ---- */
 .guarantee-box {
   display: flex;
   gap: 16px;
@@ -286,7 +293,6 @@ section { padding: 48px 0; }
 .guarantee-title { font-weight: 800; font-size: 14.5px; color: var(--marrom); margin-bottom: 4px; }
 .guarantee-text { font-size: 13px; color: var(--taupe); line-height: 1.55; }
 
-/* ---- faq ---- */
 .faq-item {
   border-bottom: 1px solid var(--linha);
   padding: 18px 0;
@@ -320,7 +326,7 @@ footer {
 
 @media (max-width: 480px) {
   .hero h1 { font-size: 30px; }
-  .section-h { font-size: 24px; }
+  .section-h { font-size: 23px; }
   .benefit-grid { grid-template-columns: 1fr; }
   .price-now { font-size: 42px; }
 }
@@ -328,38 +334,38 @@ footer {
 </head>
 <body>
 
-<div class="top-bar">🌸 OFERTA DISPONÍVEL SÓ NESTA PÁGINA — NÃO APARECE DE NOVO</div>
+<div class="top-bar">🌸 OFERTA DISPONÍVEL SÓ NESTA PÁGINA. NÃO APARECE DE NOVO</div>
 
 <div class="hero">
   <div class="wrap">
     <div class="hero-eyebrow">Antes de você sair</div>
-    <h1>Você já deu o primeiro passo.<br><em>Falta completar o caminho.</em></h1>
-    <p class="hero-sub">Existe uma versão inteira da sua jornada Floresça que você ainda não abriu — e ela foi desenhada pra continuar exatamente de onde você parou.</p>
+    <h1>Escrever sozinha é bom.<br><em>Ser guiada é o que vira hábito.</em></h1>
+    <p class="hero-sub">A maioria das mulheres compra um caderno de autoconhecimento, usa duas ou três vezes e para. Não é falta de vontade. É porque ninguém te acompanha enquanto você escreve.</p>
     <div class="cta-wrap">
-      <a href="https://checkout.wiven.com.br/checkout/cmskg733b028101ocbaa0b3un?offer=M1Q441V" class="cta-btn">SIM, QUERO COMPLETAR MINHA JORNADA</a>
-      <div class="cta-note">Acesso imediato · Pagamento único · Garantia de 7 dias</div>
+      <a href="#oferta" class="cta-btn">QUERO SER GUIADA</a>
+      <div class="cta-note">Acesso imediato. Pagamento único. Garantia de 7 dias.</div>
     </div>
   </div>
 </div>
 
 <section>
   <div class="wrap">
-    <div class="section-eyebrow">A verdade que ninguém te conta</div>
-    <div class="section-h">O que você tem agora <em>é o começo.</em><br>Não é o método inteiro.</div>
-    <p class="section-p">O que você adquiriu foi desenhado pra abrir a porta — pra te mostrar que escrever, de verdade, muda alguma coisa. Mas o método Floresça foi construído pra ir muito além de uma única porta.</p>
+    <div class="section-eyebrow">O motivo real de tanta gente desistir</div>
+    <div class="section-h">Não é o caderno que falha.<br><em>É a solidão de escrever sem direção.</em></div>
+    <p class="section-p">Você abre a página, lê a pergunta, e fica se perguntando se está fazendo certo. Sem ninguém pra te dizer "respira, continua, tá tudo bem sentir isso", o hábito perde força rápido.</p>
 
     <div class="pain-list">
       <div class="pain-item">
-        <span class="pain-icon">😮‍💨</span>
-        <span class="pain-text">Você sente que só arranhou a superfície de tudo que ainda precisa entender sobre si mesma.</span>
+        <span class="pain-icon">📓</span>
+        <span class="pain-text">Você compra com toda vontade, usa alguns dias, e o caderno vira só mais um objeto parado.</span>
       </div>
       <div class="pain-item">
-        <span class="pain-icon">🌫️</span>
-        <span class="pain-text">Tem partes da sua história — infância, ansiedade, os padrões que se repetem — que esse primeiro passo nem chegou perto de tocar.</span>
+        <span class="pain-icon">😕</span>
+        <span class="pain-text">Sem companhia, fica difícil saber se você está indo fundo o suficiente ou só preenchendo linhas.</span>
       </div>
       <div class="pain-item">
-        <span class="pain-icon">⏳</span>
-        <span class="pain-text">Se você fechar essa página agora, é bem provável que essa condição especial não volte a aparecer.</span>
+        <span class="pain-icon">💭</span>
+        <span class="pain-text">Nos dias mais difíceis, exatamente quando você mais precisaria de apoio, é quando você menos consegue começar sozinha.</span>
       </div>
     </div>
   </div>
@@ -367,30 +373,31 @@ footer {
 
 <section style="background:var(--cream);">
   <div class="wrap">
-    <div class="section-eyebrow">O que você está prestes a destravar</div>
-    <div class="section-h">O sistema completo <em>Floresça.</em></div>
-    <p class="section-p">Não é "mais conteúdo". É a estrutura inteira, pensada em camadas — cada parte preparando você pra próxima, até você reconhecer versões suas que estavam esperando serem escritas.</p>
+    <div class="section-eyebrow">O que é o Floresça Guiado por Áudio</div>
+    <div class="section-h">Eu narro cada pergunta<br><em>pra você não escrever sozinha.</em></div>
+    <p class="section-p">São áudios narrados por mim, um pra cada caderno da sua jornada. Enquanto você escreve, eu vou junto: te dando o tempo certo pra pensar, pedindo pra você respirar quando precisa, explicando por que aquela pergunta importa antes de você responder.</p>
 
-    <div class="benefit-grid">
-      <div class="benefit-card">
-        <div class="benefit-icon">🌱</div>
-        <div class="benefit-title">Vai além do começo</div>
-        <div class="benefit-desc">Continua exatamente de onde você parou, sem repetir o que você já viu.</div>
+    <div class="how-list">
+      <div class="how-item">
+        <div class="how-num">1</div>
+        <div>
+          <div class="how-title">Você escolhe o caderno do dia</div>
+          <div class="how-desc">E toca o áudio correspondente direto no celular, sem precisar de internet depois de baixado.</div>
+        </div>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">🧭</div>
-        <div class="benefit-title">Cobre o que faltou</div>
-        <div class="benefit-desc">As camadas mais profundas — as que o primeiro passo só preparou o terreno pra tocar.</div>
+      <div class="how-item">
+        <div class="how-num">2</div>
+        <div>
+          <div class="how-title">Eu conduzo pergunta por pergunta</div>
+          <div class="how-desc">Com pausas no tempo certo pra você escrever, sem pressa e sem ficar perdida no que responder.</div>
+        </div>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">🎁</div>
-        <div class="benefit-title">Vem com extras exclusivos</div>
-        <div class="benefit-desc">Materiais bônus criados só pra quem decide ir até o fim da jornada.</div>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">💛</div>
-        <div class="benefit-title">Acesso pra sempre</div>
-        <div class="benefit-desc">Sem mensalidade, sem prazo de validade. É seu, no seu tempo.</div>
+      <div class="how-item">
+        <div class="how-num">3</div>
+        <div>
+          <div class="how-title">Você fecha o caderno acompanhada</div>
+          <div class="how-desc">Não sozinha com uma dúvida no ar. Com a sensação de ter sido ouvida em cada etapa.</div>
+        </div>
       </div>
     </div>
   </div>
@@ -398,31 +405,61 @@ footer {
 
 <section>
   <div class="wrap">
-    <div class="section-eyebrow">Quem já completou</div>
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <div class="testi-text">"Achei que já tinha entendido tudo com a primeira parte. Quando completei, percebi que só tinha visto a ponta. As camadas que vieram depois foram as que realmente mudaram alguma coisa em mim."</div>
-      <div class="testi-name">— Camila, 29 anos</div>
+    <div class="section-eyebrow">Por que isso muda o resultado</div>
+    <div class="section-h">O que a orientação por voz <em>faz de diferente.</em></div>
+
+    <div class="benefit-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">🎧</div>
+        <div class="benefit-title">Menos fricção</div>
+        <div class="benefit-desc">Você não precisa decidir sozinha o ritmo. Só apertar o play e seguir.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🫶</div>
+        <div class="benefit-title">Sensação de companhia</div>
+        <div class="benefit-desc">Uma voz calma, guiando, em vez do silêncio de uma página em branco.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🔁</div>
+        <div class="benefit-title">Mais consistência</div>
+        <div class="benefit-desc">É muito mais fácil manter um hábito quando alguém te espera todo dia.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📲</div>
+        <div class="benefit-title">Uso imediato</div>
+        <div class="benefit-desc">Arquivos de áudio prontos pra baixar e ouvir quando e onde você quiser.</div>
+      </div>
     </div>
   </div>
 </section>
 
 <section style="background:var(--cream);">
   <div class="wrap">
+    <div class="section-eyebrow">Quem já usa</div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"Eu sempre parava no terceiro dia. Com o áudio, é diferente. Parece que tem alguém ali comigo, e isso mudou completamente minha vontade de continuar."</div>
+      <div class="testi-name">Camila, 29 anos</div>
+    </div>
+  </div>
+</section>
+
+<section id="oferta">
+  <div class="wrap">
     <div class="section-eyebrow">Condição exclusiva desta página</div>
-    <div class="section-h">Complete sua jornada <em>agora.</em></div>
+    <div class="section-h">Comece a ser guiada <em>agora mesmo.</em></div>
     <div class="price-box">
-      <div class="price-from">De R$97,00</div>
-      <div class="price-now"><sup>R$</sup>24<span style="font-size:26px;">,90</span></div>
-      <div class="price-note">Pagamento único · Sem mensalidade</div>
-      <a href="https://checkout.wiven.com.br/checkout/cmskg733b028101ocbaa0b3un?offer=M1Q441V" class="cta-btn" style="width:100%;">SIM, QUERO COMPLETAR MINHA JORNADA</a>
+      <div class="price-from">De R$67,00</div>
+      <div class="price-now"><sup>R$</sup>37<span style="font-size:26px;">,90</span></div>
+      <div class="price-note">Pagamento único. Sem mensalidade.</div>
+      <a href="https://checkout.wiven.com.br/checkout/cmskg733b028101ocbaa0b3un?offer=M1Q441V" class="cta-btn" style="width:100%;">QUERO SER GUIADA AGORA</a>
     </div>
 
     <div class="guarantee-box">
       <div class="guarantee-icon">🛡️</div>
       <div>
         <div class="guarantee-title">Garantia incondicional de 7 dias</div>
-        <div class="guarantee-text">Se por qualquer motivo não fizer sentido pra você, é só pedir reembolso — sem perguntas, sem burocracia.</div>
+        <div class="guarantee-text">Se não fizer sentido pra você, é só pedir reembolso. Sem perguntas, sem burocracia.</div>
       </div>
     </div>
   </div>
@@ -434,26 +471,26 @@ footer {
     <div class="section-h">Perguntas <em>frequentes</em></div>
 
     <div class="faq-item">
-      <div class="faq-q">Isso substitui o que eu já comprei?</div>
-      <div class="faq-a">Não — complementa. Tudo que você já tem continua seu. Isso aqui adiciona as camadas que faltam pra fechar o sistema inteiro.</div>
+      <div class="faq-q">Preciso ter internet pra usar os áudios?</div>
+      <div class="faq-a">Só na hora de baixar. Depois disso, ficam salvos no seu celular e funcionam mesmo offline.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Quanto tempo dura cada áudio?</div>
+      <div class="faq-a">Entre 3 e 5 minutos, o suficiente pra te guiar sem tomar seu dia inteiro.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Como eu recebo o acesso?</div>
-      <div class="faq-a">Assim que o pagamento é confirmado, o acesso libera automaticamente na sua área de membros — sem espera.</div>
+      <div class="faq-a">Assim que o pagamento é confirmado, os áudios liberam automaticamente na sua área de membros.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">E se eu não gostar?</div>
       <div class="faq-a">Você tem 7 dias de garantia total. Se não for pra você, devolvemos 100% do valor, sem burocracia.</div>
     </div>
-    <div class="faq-item">
-      <div class="faq-q">Essa condição vai continuar disponível depois?</div>
-      <div class="faq-a">Não garantimos isso. Esse valor é específico desta página, no momento em que você já demonstrou interesse real na jornada.</div>
-    </div>
   </div>
 </section>
 
 <div class="cta-wrap" style="padding:20px 20px 0;">
-  <a href="https://checkout.wiven.com.br/checkout/cmskg733b028101ocbaa0b3un?offer=M1Q441V" class="cta-btn">SIM, QUERO COMPLETAR MINHA JORNADA</a>
+  <a href="https://checkout.wiven.com.br/checkout/cmskg733b028101ocbaa0b3un?offer=M1Q441V" class="cta-btn">QUERO SER GUIADA AGORA</a>
 </div>
 
 <footer>
