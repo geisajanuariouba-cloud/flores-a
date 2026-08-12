@@ -649,6 +649,62 @@ img { max-width: 100%; display: block; }
 }
 .guarantee-icon { font-size: 26px; flex-shrink: 0; }
 
+/* Quebra de objeções */
+.objection-section { padding: 48px 20px; background: #fff; }
+.objection-grid {
+  max-width: 720px;
+  margin: 36px auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.objection-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--cream);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+.objection-check {
+  color: var(--green);
+  font-size: 20px;
+  font-weight: 900;
+  flex-shrink: 0;
+  line-height: 1.3;
+}
+.objection-title { font-size: 14.5px; font-weight: 800; color: var(--marrom); margin-bottom: 4px; }
+.objection-desc { font-size: 13px; color: var(--taupe); line-height: 1.6; }
+@media (max-width: 700px) {
+  .objection-grid { grid-template-columns: 1fr; }
+}
+
+/* Autoridade / Expert */
+.authority-section { padding: 56px 20px; background: var(--cream); text-align: center; }
+.authority-card {
+  max-width: 640px;
+  margin: 36px auto 0;
+  background: #fff;
+  border: 1.5px solid var(--linha);
+  border-radius: 20px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.authority-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--pale);
+}
+.authority-name { font-size: 20px; font-weight: 900; color: var(--marrom); }
+.authority-role { font-size: 12.5px; letter-spacing: 1px; text-transform: uppercase; color: var(--terr); font-weight: 700; margin-top: -10px; }
+.authority-text { font-size: 14.5px; color: var(--taupe); line-height: 1.8; max-width: 520px; }
+.authority-text strong { color: var(--marrom); }
+
 /* Guarantee box */
 .guarantee-section { padding: 48px 20px; text-align: center; background: var(--cream); }
 .guarantee-box {
@@ -1293,6 +1349,56 @@ footer a { color: rgba(255,255,255,.3); }
   </div>
 </section>
 
+<!-- ===================== QUEBRA DE OBJEÇÕES ===================== -->
+<section class="objection-section section-center">
+  <span class="eyebrow">antes de você continuar</span>
+  <h2 class="section-h">O que você <span class="accent">precisa saber</span></h2>
+  <div class="objection-grid">
+    <div class="objection-item">
+      <span class="objection-check">✓</span>
+      <div>
+        <div class="objection-title">É 100% digital, em PDF</div>
+        <div class="objection-desc">Você recebe o acesso na hora, direto no seu e-mail — sem esperar frete, sem endereço.</div>
+      </div>
+    </div>
+    <div class="objection-item">
+      <span class="objection-check">✓</span>
+      <div>
+        <div class="objection-title">Quer ele físico?</div>
+        <div class="objection-desc">Manda imprimir e encadernar numa gráfica ou papelaria da sua cidade. Sai por cerca de R$20 a R$25 e chega muito mais rápido do que esperar um frete.</div>
+      </div>
+    </div>
+    <div class="objection-item">
+      <span class="objection-check">✓</span>
+      <div>
+        <div class="objection-title">Não é um caderno em branco</div>
+        <div class="objection-desc">Diferente de planner ou agenda comum, cada página do Floresça já vem com a pergunta certa — você só responde. Não precisa saber o que escrever sozinha.</div>
+      </div>
+    </div>
+    <div class="objection-item">
+      <span class="objection-check">✓</span>
+      <div>
+        <div class="objection-title">Um método único</div>
+        <div class="objection-desc">O Floresça foi criado do zero para isso. Não existe outro produto igual no mercado — é um método guiado, não uma cópia de caderno genérico.</div>
+      </div>
+    </div>
+    <div class="objection-item">
+      <span class="objection-check">✓</span>
+      <div>
+        <div class="objection-title">Sem mensalidade</div>
+        <div class="objection-desc">Pagamento único. O acesso é seu para sempre, sem cobrança recorrente escondida.</div>
+      </div>
+    </div>
+    <div class="objection-item">
+      <span class="objection-check">✓</span>
+      <div>
+        <div class="objection-title">Compra 100% segura</div>
+        <div class="objection-desc">Pagamento protegido, nota fiscal, e garantia de 7 dias — se não fizer sentido pra você, devolvemos tudo, sem burocracia.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <hr class="divider">
 
 <!-- ===================== COMO FUNCIONA ===================== -->
@@ -1436,6 +1542,21 @@ footer a { color: rgba(255,255,255,.3); }
   <div class="guarantee-row">
     <div class="guarantee-icon">🔒</div>
     <p>Compra 100% segura · Acesso imediato após pagamento · Garantia de 7 dias</p>
+  </div>
+</section>
+
+<!-- ===================== AUTORIDADE / EXPERT ===================== -->
+<section class="authority-section">
+  <span class="eyebrow">quem criou o floresça</span>
+  <h2 class="section-h">A pessoa por trás <span class="accent">do método</span></h2>
+  <div class="authority-card">
+    <img src="isa-medeiros.jpg" alt="Isa Medeiros, fundadora do Floresça" class="authority-photo">
+    <div class="authority-name">Isa Medeiros</div>
+    <div class="authority-role">Fundadora do Floresça</div>
+    <div class="authority-text">
+      Criei o Floresça depois de perceber, na prática, que muita gente queria se conhecer melhor mas não sabia por onde começar — e não tinha R$200 pra gastar toda semana com terapia.<br><br>
+      Cada pergunta dos cadernos foi pensada com cuidado, pra te guiar sem te sobrecarregar. <strong>Não é teoria: é um método que eu testei, refinei e uso até hoje.</strong>
+    </div>
   </div>
 </section>
 
