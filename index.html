@@ -579,7 +579,27 @@ img { max-width: 100%; display: block; }
   text-align: left;
   position: relative;
 }
-.plan-card.best { border-color: var(--terr); box-shadow: 0 0 0 1px var(--terr), 0 8px 32px rgba(168,92,82,.15); }
+.plan-card.best { border-color: var(--terr); box-shadow: 0 0 0 1px var(--terr), 0 8px 32px rgba(168,92,82,.15); animation: plan-glow 2.6s ease-in-out infinite; }
+.plan-card.muted { opacity: .72; }
+.plan-card.muted:hover { opacity: 1; }
+@keyframes plan-glow {
+  0%, 100% { box-shadow: 0 0 0 1px var(--terr), 0 8px 32px rgba(168,92,82,.15); }
+  50% { box-shadow: 0 0 0 1px var(--terr), 0 8px 40px rgba(168,92,82,.32); }
+}
+.value-strip {
+  max-width: 560px;
+  margin: 0 auto 30px;
+  background: var(--pale);
+  border: 1px solid var(--linha);
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-size: 14px;
+  color: var(--marrom);
+  text-align: center;
+}
+@media (prefers-reduced-motion: reduce) {
+  .plan-card.best { animation: none; }
+}
 .plan-popular {
   position: absolute;
   top: -14px; left: 50%;
@@ -1577,32 +1597,11 @@ footer a { color: rgba(255,255,255,.3); }
   <div class="timer-mini">
     ⚡ VAGAS DE LANÇAMENTO ENCERRAM EM <span class="td" id="countdown2">14:59</span>
   </div>
-  <p class="section-p" style="margin-bottom:36px;">Depois que as vagas de lançamento acabarem, o preço volta para o valor original.</p>
+  <p class="section-p" style="margin-bottom:14px;">Depois que as vagas de lançamento acabarem, o preço volta para o valor original.</p>
+  <div class="value-strip">💡 R$24,90 ÷ 5 cadernos = <strong>menos de R$5 por caderno</strong> — e ainda leva a Área de Membros e 11 bônus de graça</div>
   <div class="plans-grid">
-    <div class="plan-card">
-      <div class="plan-name">Plano</div>
-      <div class="plan-title">Básico</div>
-      <div class="plan-from">De R$47,00</div>
-      <div class="plan-price"><sup>R$</sup>10<span>,00</span></div>
-      <div class="plan-note">Pagamento único · Sem mensalidade</div>
-      <ul class="plan-features">
-        <li class="pf"><span class="ck">✓</span> Caderno 01 · 30 Dias de Amor Próprio</li>
-        <li class="pf"><span class="cx">✗</span> <span class="crossed">Caderno 02 · Criança Interior</span></li>
-        <li class="pf"><span class="cx">✗</span> <span class="crossed">Caderno 03 · Libertação da Ansiedade</span></li>
-        <li class="pf"><span class="cx">✗</span> <span class="crossed">Caderno 04 · 30 Dias de Gratidão</span></li>
-        <li class="pf"><span class="cx">✗</span> <span class="crossed">Caderno 05 · Eu em Nova Fase</span></li>
-        <li class="pf"><span class="cx">✗</span> <span class="crossed">11 Bônus exclusivos (R$247 em valor)</span></li>
-        <li class="pf"><span class="ck">✓</span> Acesso imediato em PDF</li>
-        <li class="pf"><span class="ck">✓</span> Para imprimir ou usar no celular</li>
-        <li class="pf"><span class="cx">✗</span> <span class="crossed">Área de Membros</span></li>
-        <li class="pf"><span class="cx">✗</span> <span class="crossed">Ritual da Manhã Poderosa</span></li>
-        <li class="pf"><span class="cx">✗</span> <span class="crossed">Kit de Primeiros Socorros Emocionais</span></li>
-        <li class="pf"><span class="cx">✗</span> <span class="crossed">Guia Anti-Autossabotagem</span></li>
-      </ul>
-      <a href="https://checkout.wiven.com.br/checkout/cmsjg9r3701dl01omo1zzk8tb?offer=1QPQ3U5" class="plan-cta outline basico-trigger">EU QUERO O BÁSICO</a>
-    </div>
     <div class="plan-card best">
-      <div class="plan-popular">MAIS POPULAR</div>
+      <div class="plan-popular">🔥 MAIS ESCOLHIDO</div>
       <div class="plan-name">Plano</div>
       <div class="plan-title"><span class="accent">Completo</span></div>
       <div class="plan-from">De R$297,00</div>
@@ -1627,6 +1626,28 @@ footer a { color: rgba(255,255,255,.3); }
         <li class="pf"><span class="ck">✓</span> Acesso imediato em PDF</li>
       </ul>
       <a href="https://checkout.wiven.com.br/checkout/cmskg733b028101ocbaa0b3un?offer=M1Q441V" class="plan-cta">EU QUERO O PLANO COMPLETO</a>
+    </div>
+    <div class="plan-card muted">
+      <div class="plan-name">Plano</div>
+      <div class="plan-title">Básico</div>
+      <div class="plan-from">De R$47,00</div>
+      <div class="plan-price"><sup>R$</sup>10<span>,00</span></div>
+      <div class="plan-note">Pagamento único · Sem mensalidade</div>
+      <ul class="plan-features">
+        <li class="pf"><span class="ck">✓</span> Caderno 01 · 30 Dias de Amor Próprio</li>
+        <li class="pf"><span class="cx">✗</span> <span class="crossed">Caderno 02 · Criança Interior</span></li>
+        <li class="pf"><span class="cx">✗</span> <span class="crossed">Caderno 03 · Libertação da Ansiedade</span></li>
+        <li class="pf"><span class="cx">✗</span> <span class="crossed">Caderno 04 · 30 Dias de Gratidão</span></li>
+        <li class="pf"><span class="cx">✗</span> <span class="crossed">Caderno 05 · Eu em Nova Fase</span></li>
+        <li class="pf"><span class="cx">✗</span> <span class="crossed">11 Bônus exclusivos (R$247 em valor)</span></li>
+        <li class="pf"><span class="ck">✓</span> Acesso imediato em PDF</li>
+        <li class="pf"><span class="ck">✓</span> Para imprimir ou usar no celular</li>
+        <li class="pf"><span class="cx">✗</span> <span class="crossed">Área de Membros</span></li>
+        <li class="pf"><span class="cx">✗</span> <span class="crossed">Ritual da Manhã Poderosa</span></li>
+        <li class="pf"><span class="cx">✗</span> <span class="crossed">Kit de Primeiros Socorros Emocionais</span></li>
+        <li class="pf"><span class="cx">✗</span> <span class="crossed">Guia Anti-Autossabotagem</span></li>
+      </ul>
+      <a href="https://checkout.wiven.com.br/checkout/cmsjg9r3701dl01omo1zzk8tb?offer=1QPQ3U5" class="plan-cta outline basico-trigger">EU QUERO O BÁSICO</a>
     </div>
   </div>
   <div class="guarantee-row">
