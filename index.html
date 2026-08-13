@@ -1944,6 +1944,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
   var shown = false;
   var scrolledEnough = false;
   var spun = false;
+  var pendingHref = null;
 
   window.addEventListener('scroll', function() {
     if (window.scrollY > 400) scrolledEnough = true;
@@ -1972,15 +1973,24 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
 
   function openExit() {
     if (shown || !scrolledEnough) return;
+    pendingHref = null;
     resetWheel();
     overlay.classList.add('show');
     shown = true;
   }
-  function openForced() {
+  function openForced(href) {
+    pendingHref = href || null;
     resetWheel();
     overlay.classList.add('show');
   }
-  function closeExit() { overlay.classList.remove('show'); }
+  function closeExit() {
+    overlay.classList.remove('show');
+    if (pendingHref) {
+      var href = pendingHref;
+      pendingHref = null;
+      window.location.href = href;
+    }
+  }
 
   if (spinBtn) spinBtn.addEventListener('click', spinWheel);
 
@@ -1995,7 +2005,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
   document.querySelectorAll('.basico-trigger').forEach(function(link) {
     link.addEventListener('click', function(e) {
       e.preventDefault();
-      openForced();
+      openForced(link.href);
     });
   });
 
@@ -2004,6 +2014,9 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
   if (declineBtn) declineBtn.addEventListener('click', closeExit);
   overlay.addEventListener('click', function(e) {
     if (e.target === overlay) closeExit();
+  });
+  document.querySelectorAll('.exit-cta').forEach(function(cta) {
+    cta.addEventListener('click', function() { pendingHref = null; });
   });
 })();
 
