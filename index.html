@@ -971,9 +971,15 @@ footer a { color: rgba(255,255,255,.3); }
 .exit-cta:hover { transform: scale(1.02); }
 .exit-decline {
   display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  font-family: 'Inter', sans-serif;
   font-size: 12.5px;
   color: rgba(255,255,255,.45);
   text-decoration: underline;
+  cursor: pointer;
+  margin-top: 12px;
 }
 .exit-decline:hover { color: rgba(255,255,255,.7); }
 
@@ -1859,12 +1865,15 @@ footer a { color: rgba(255,255,255,.3); }
         <span class="exit-now"><sup>R$</sup>17<span>,90</span></span>
       </div>
       <ul class="exit-list">
-        <li><span class="ck">✓</span> <strong>Os 5 Cadernos de Cura Emocional completos</strong></li>
+        <li><span class="ck">✓</span> <strong>Os 5 Cadernos de Cura Emocional completos</strong> (o Básico vem só com 1)</li>
         <li><span class="ck">✓</span> <strong>+ 11 bônus exclusivos (R$247 em valor)</strong></li>
+        <li><span class="ck">✓</span> Acesso vitalício à Área de Membros</li>
+        <li><span class="ck">✓</span> Método completo, não só um pedaço dele</li>
         <li><span class="ck">✓</span> Acesso imediato em PDF · Garantia de 7 dias</li>
+        <li><span class="ck">✓</span> Menos de R$4 por caderno — o preço mais baixo que ele fica</li>
       </ul>
       <a href="https://checkout.wiven.com.br/checkout/cmskg733b028101ocbaa0b3un?offer=093AOU8" class="exit-cta">SIM, QUERO O COMPLETO POR R$17,90</a>
-      <a href="https://checkout.wiven.com.br/checkout/cmsjg9r3701dl01omo1zzk8tb?offer=1QPQ3U5" class="exit-decline">Não, quero só o Básico por R$10</a>
+      <button type="button" class="exit-decline" id="exitDecline">Não, obrigada</button>
     </div>
   </div>
 </div>
@@ -1991,6 +2000,8 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
   });
 
   closeBtn.addEventListener('click', closeExit);
+  var declineBtn = document.getElementById('exitDecline');
+  if (declineBtn) declineBtn.addEventListener('click', closeExit);
   overlay.addEventListener('click', function(e) {
     if (e.target === overlay) closeExit();
   });
