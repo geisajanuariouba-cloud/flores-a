@@ -988,6 +988,101 @@ footer a { color: rgba(255,255,255,.3); }
   .exit-cta { padding: 14px 20px; margin-bottom: 10px; }
 }
 
+/* --- exit wheel game --- */
+.exit-wheel-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,.65);
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+.exit-wheel-wrap {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  margin: 0 auto 24px;
+}
+.exit-wheel-pointer {
+  position: absolute;
+  top: -6px; left: 50%;
+  transform: translateX(-50%);
+  width: 0; height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 20px solid var(--gold);
+  z-index: 2;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,.4));
+}
+.exit-wheel {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid var(--gold);
+  box-shadow: 0 8px 30px rgba(0,0,0,.4), inset 0 0 0 2px rgba(255,255,255,.08);
+  background: conic-gradient(
+    var(--terr) 0deg 60deg,
+    var(--marrom) 60deg 120deg,
+    var(--terr) 120deg 180deg,
+    var(--marrom) 180deg 240deg,
+    var(--terr) 240deg 300deg,
+    var(--marrom) 300deg 360deg
+  );
+  position: relative;
+  transition: transform 3.6s cubic-bezier(.17,.86,.23,1);
+}
+.exit-wheel-hub {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 2px 8px rgba(0,0,0,.4);
+  z-index: 2;
+}
+.exit-wheel-label {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 110px;
+  text-align: center;
+  font-size: 12.5px;
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+  transform-origin: 0 0;
+}
+.exit-spin-btn {
+  display: block;
+  width: 100%;
+  background: linear-gradient(135deg, var(--gold), var(--terr));
+  color: var(--marrom);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+  box-shadow: 0 8px 28px rgba(201,169,110,.35);
+  cursor: pointer;
+  transition: transform .15s, opacity .15s;
+}
+.exit-spin-btn:hover { transform: scale(1.02); }
+.exit-spin-btn:disabled { opacity: .6; cursor: default; transform: none; }
+.exit-wheel-note {
+  display: block;
+  font-size: 11.5px;
+  color: rgba(255,255,255,.4);
+  margin-top: 12px;
+}
+.exit-result { display: none; }
+.exit-result.show { display: block; animation: exit-reveal .4s ease; }
+@keyframes exit-reveal { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 480px) {
+  .exit-wheel-wrap { width: 210px; height: 210px; }
+}
+
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 540px) {
   .hero { padding: 40px 16px 36px; }
@@ -1736,20 +1831,41 @@ footer a { color: rgba(255,255,255,.3); }
 <div class="exit-overlay" id="exitOverlay">
   <div class="exit-modal">
     <button class="exit-close" id="exitClose" aria-label="Fechar">&times;</button>
-    <span class="exit-eyebrow">⚡ OFERTA EXCLUSIVA · SÓ AGORA</span>
-    <h3 class="exit-title">Leve o Completo por muito menos</h3>
-    <p class="exit-sub">Você tá saindo deixando 4 cadernos e os 11 bônus pra trás. Leve tudo por R$17,90 só agora.</p>
-    <div class="exit-price">
-      <span class="exit-from">de R$24,90</span>
-      <span class="exit-now"><sup>R$</sup>17<span>,90</span></span>
+    <span class="exit-eyebrow">⚡ ESPERA — VOCÊ TEM 1 GIRO</span>
+    <h3 class="exit-title">Antes de ir, gire e destrave seu desconto</h3>
+
+    <div class="exit-wheel-stage" id="exitWheelStage">
+      <p class="exit-wheel-sub">Cada giro libera um desconto real no <strong>Caderno Completo</strong>. Leva 3 segundos e não aparece de novo.</p>
+      <div class="exit-wheel-wrap">
+        <div class="exit-wheel-pointer"></div>
+        <div class="exit-wheel" id="exitWheel">
+          <span class="exit-wheel-label" style="transform:translate(-50%,-50%) rotate(30deg) translateY(-72px);">R$17,90</span>
+          <span class="exit-wheel-label" style="transform:translate(-50%,-50%) rotate(90deg) translateY(-72px);">QUASE LÁ</span>
+          <span class="exit-wheel-label" style="transform:translate(-50%,-50%) rotate(150deg) translateY(-72px);">R$17,90</span>
+          <span class="exit-wheel-label" style="transform:translate(-50%,-50%) rotate(210deg) translateY(-72px);">SEGUE</span>
+          <span class="exit-wheel-label" style="transform:translate(-50%,-50%) rotate(270deg) translateY(-72px);">R$17,90</span>
+          <span class="exit-wheel-label" style="transform:translate(-50%,-50%) rotate(330deg) translateY(-72px);">QUASE LÁ</span>
+          <div class="exit-wheel-hub"></div>
+        </div>
+      </div>
+      <button class="exit-spin-btn" id="exitSpinBtn">GIRAR E VER MEU DESCONTO</button>
+      <span class="exit-wheel-note">Sem cadastro. Sem e-mail. Só girar.</span>
     </div>
-    <ul class="exit-list">
-      <li><span class="ck">✓</span> <strong>Os 5 Cadernos de Cura Emocional completos</strong></li>
-      <li><span class="ck">✓</span> <strong>+ 11 bônus exclusivos (R$247 em valor)</strong></li>
-      <li><span class="ck">✓</span> Acesso imediato em PDF · Garantia de 7 dias</li>
-    </ul>
-    <a href="https://checkout.wiven.com.br/checkout/cmskg733b028101ocbaa0b3un?offer=093AOU8" class="exit-cta">SIM, QUERO O COMPLETO POR R$17,90</a>
-    <a href="https://checkout.wiven.com.br/checkout/cmsjg9r3701dl01omo1zzk8tb?offer=1QPQ3U5" class="exit-decline">Não, quero só o Básico por R$10</a>
+
+    <div class="exit-result" id="exitResult">
+      <p class="exit-sub">Você caiu no maior desconto da roleta! Leve os 5 cadernos e os 11 bônus por R$17,90 só agora.</p>
+      <div class="exit-price">
+        <span class="exit-from">de R$24,90</span>
+        <span class="exit-now"><sup>R$</sup>17<span>,90</span></span>
+      </div>
+      <ul class="exit-list">
+        <li><span class="ck">✓</span> <strong>Os 5 Cadernos de Cura Emocional completos</strong></li>
+        <li><span class="ck">✓</span> <strong>+ 11 bônus exclusivos (R$247 em valor)</strong></li>
+        <li><span class="ck">✓</span> Acesso imediato em PDF · Garantia de 7 dias</li>
+      </ul>
+      <a href="https://checkout.wiven.com.br/checkout/cmskg733b028101ocbaa0b3un?offer=093AOU8" class="exit-cta">SIM, QUERO O COMPLETO POR R$17,90</a>
+      <a href="https://checkout.wiven.com.br/checkout/cmsjg9r3701dl01omo1zzk8tb?offer=1QPQ3U5" class="exit-decline">Não, quero só o Básico por R$10</a>
+    </div>
   </div>
 </div>
 
@@ -1811,23 +1927,53 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
 (function() {
   var overlay = document.getElementById('exitOverlay');
   var closeBtn = document.getElementById('exitClose');
+  var wheel = document.getElementById('exitWheel');
+  var wheelStage = document.getElementById('exitWheelStage');
+  var result = document.getElementById('exitResult');
+  var spinBtn = document.getElementById('exitSpinBtn');
   if (!overlay || !closeBtn) return;
   var shown = false;
   var scrolledEnough = false;
+  var spun = false;
 
   window.addEventListener('scroll', function() {
     if (window.scrollY > 400) scrolledEnough = true;
   }, { passive: true });
 
+  function resetWheel() {
+    spun = false;
+    if (wheel) wheel.style.transform = 'rotate(0deg)';
+    if (wheelStage) wheelStage.style.display = '';
+    if (result) result.classList.remove('show');
+    if (spinBtn) spinBtn.disabled = false;
+  }
+
+  function spinWheel() {
+    if (spun || !wheel) return;
+    spun = true;
+    spinBtn.disabled = true;
+    var landing = 30; // center of the R$17,90 segment (0-60deg)
+    var finalDeg = 360 * 6 + (360 - landing);
+    wheel.style.transform = 'rotate(' + finalDeg + 'deg)';
+    setTimeout(function() {
+      wheelStage.style.display = 'none';
+      result.classList.add('show');
+    }, 3700);
+  }
+
   function openExit() {
     if (shown || !scrolledEnough) return;
+    resetWheel();
     overlay.classList.add('show');
     shown = true;
   }
   function openForced() {
+    resetWheel();
     overlay.classList.add('show');
   }
   function closeExit() { overlay.classList.remove('show'); }
+
+  if (spinBtn) spinBtn.addEventListener('click', spinWheel);
 
   document.addEventListener('mouseleave', function(e) {
     if (e.clientY <= 0) openExit();
