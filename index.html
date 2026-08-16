@@ -842,6 +842,29 @@ img { max-width: 100%; display: block; }
   border-top: 1px solid var(--linha);
 }
 
+/* WhatsApp */
+.whatsapp-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: #fff;
+  border-top: 1px solid var(--linha);
+}
+.whatsapp-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  padding: 16px 32px;
+  border-radius: 50px;
+  box-shadow: 0 8px 24px rgba(37,211,102,.35);
+  transition: transform .15s;
+}
+.whatsapp-cta:hover { transform: scale(1.03); }
+
 /* Footer */
 footer {
   background: var(--marrom);
@@ -1826,6 +1849,16 @@ footer a { color: rgba(255,255,255,.3); }
     <span><span class="ck">✓</span> 100% seguro</span>
     <span><span class="ck">✓</span> Garantia 7 dias</span>
   </div>
+</section>
+
+<!-- ===================== WHATSAPP ===================== -->
+<section class="whatsapp-section section-center">
+  <h2 class="section-h" style="max-width:480px;margin:0 auto 12px;">Ficou com alguma <span class="accent">dúvida?</span></h2>
+  <p class="section-p" style="margin-bottom:28px;">Chama a gente no WhatsApp que a gente te responde rapidinho.</p>
+  <a href="https://wa.me/5532998425801?text=Oi!%20Fiquei%20com%20uma%20d%C3%BAvida%20sobre%20o%20Flores%C3%A7a" class="whatsapp-cta" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.11c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.81-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.56-1.17-2.98 0-1.42.74-2.11 1-2.4.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.61-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.64-.14.26.09 1.66.78 1.95.93.29.14.48.21.55.33.07.12.07.68-.17 1.36z"/></svg>
+    Chamar no WhatsApp
+  </a>
 </section>
 
 <!-- ===================== EXIT-INTENT POPUP ===================== -->
