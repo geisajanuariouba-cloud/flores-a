@@ -556,17 +556,13 @@ img { max-width: 100%; display: block; }
   margin-bottom: 20px;
   background: linear-gradient(135deg, rgba(201,169,110,.18), rgba(255,255,255,.03));
   border: 1px solid rgba(201,169,110,.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
+  overflow: hidden;
 }
-.kit-mockup span {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-style: italic;
-  font-size: 20px;
-  color: var(--gold);
+.kit-mockup img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .kit-eyebrow {
   display: block;
@@ -1824,8 +1820,7 @@ footer a { color: rgba(255,255,255,.3); }
 
   <!-- KIT 01 -->
   <div class="kit-block">
-    <!-- Substituir por mockup real: kit-comece-sem-travar.jpg (ver Prompt de Imagem 01) -->
-    <div class="kit-mockup"><span>Kit Comece Sem Travar™</span></div>
+    <div class="kit-mockup"><img src="kit-comece-sem-travar.jpg" alt="Kit Comece Sem Travar™ — Tradutor Emocional, Rota do Recomeço 7D e Método dos Primeiros 10 Minutos" loading="lazy"></div>
     <span class="kit-eyebrow">kit 01</span>
     <h3 class="kit-title">Kit Comece Sem Travar™</h3>
     <p class="kit-headline">Você não precisa descobrir sozinha por onde começar.</p>
@@ -1840,8 +1835,7 @@ footer a { color: rgba(255,255,255,.3); }
 
   <!-- KIT 02 -->
   <div class="kit-block">
-    <!-- Substituir por mockup real: kit-dia-dificil.jpg (ver Prompt de Imagem 02) -->
-    <div class="kit-mockup"><span>Kit Dia Difícil™</span></div>
+    <div class="kit-mockup"><img src="kit-dia-dificil.jpg" alt="Kit Dia Difícil™ — Pausa de Volta Pra Mim, Biblioteca da Voz Interior e recursos de apoio rápido" loading="lazy"></div>
     <span class="kit-eyebrow">kit 02</span>
     <h3 class="kit-title">Kit Dia Difícil™</h3>
     <p class="kit-headline">Seria fácil criar algo pensando apenas nos seus dias bons.<br><em>O Floresça também foi pensado para os outros.</em></p>
@@ -1857,8 +1851,7 @@ footer a { color: rgba(255,255,255,.3); }
 
   <!-- KIT 03 -->
   <div class="kit-block">
-    <!-- Substituir por mockup real: kit-continue-florescendo.jpg (ver Prompt de Imagem 03) -->
-    <div class="kit-mockup"><span>Kit Continue Florescendo™</span></div>
+    <div class="kit-mockup"><img src="kit-continue-florescendo.jpg" alt="Kit Continue Florescendo™ — Calendário 1% por Dia, Detector de Autossabotagem e Carta da Minha Nova Versão" loading="lazy"></div>
     <span class="kit-eyebrow">kit 03</span>
     <h3 class="kit-title">Kit Continue Florescendo™</h3>
     <p class="kit-headline">Começar é uma coisa. Continuar quando a empolgação passa é outra.</p>
