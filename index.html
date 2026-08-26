@@ -503,239 +503,40 @@ img { max-width: 100%; display: block; }
 .bonus-desc { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.5; }
 .bonus-val { font-size: 12px; color: var(--gold); font-weight: 700; margin-top: 5px; }
 
-/* Bonus intro / objections transition */
-.bonus-intro-p {
-  max-width: 560px;
-  margin: 18px auto 0;
-  font-size: 15px;
-  color: rgba(255,255,255,.7);
-  line-height: 1.8;
-  text-align: center;
+/* Testimonials */
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 14px;
+  max-width: 860px;
+  margin: 36px auto 0;
 }
-.bonus-objections {
-  max-width: 680px;
-  margin: 32px auto 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  padding: 0 20px;
-}
-.bonus-objection-chip {
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.14);
-  color: rgba(255,255,255,.75);
-  font-size: 13px;
-  font-style: italic;
-  padding: 8px 16px;
-  border-radius: 20px;
-}
-.bonus-objections-close {
-  text-align: center;
-  max-width: 480px;
-  margin: 24px auto 44px;
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-style: italic;
-  font-size: clamp(18px, 3vw, 22px);
-  color: var(--gold);
-  line-height: 1.4;
-}
-
-/* Kits */
-.kit-block {
-  max-width: 620px;
-  margin: 0 auto 28px;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(201,169,110,.28);
-  border-radius: 20px;
-  padding: 28px 24px 30px;
-}
-.kit-mockup {
-  aspect-ratio: 4 / 3;
-  border-radius: 14px;
-  margin-bottom: 20px;
-  background: linear-gradient(135deg, rgba(201,169,110,.18), rgba(255,255,255,.03));
-  border: 1px solid rgba(201,169,110,.3);
-  overflow: hidden;
-}
-.kit-mockup img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.kit-eyebrow {
-  display: block;
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-.kit-title {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-weight: 400;
-  font-style: italic;
-  font-size: clamp(22px, 4vw, 28px);
-  color: #fff;
-  margin-bottom: 10px;
-}
-.kit-headline {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--gold);
-  margin-bottom: 10px;
-  line-height: 1.4;
-}
-.kit-desc {
-  font-size: 13.5px;
-  color: rgba(255,255,255,.6);
-  line-height: 1.65;
-  margin-bottom: 20px;
-}
-.kit-items {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-.kit-item {
-  background: rgba(255,255,255,.05);
-  border-left: 2px solid var(--gold);
-  border-radius: 8px;
-  padding: 12px 14px;
-}
-.kit-item-name { display: block; font-size: 14px; font-weight: 800; color: #fff; margin-bottom: 3px; }
-.kit-item-desc { display: block; font-size: 12.5px; color: rgba(255,255,255,.5); line-height: 1.5; }
-.kit-close {
-  font-size: 13.5px;
-  font-style: italic;
-  color: rgba(255,255,255,.65);
-  border-top: 1px solid rgba(255,255,255,.1);
-  padding-top: 16px;
-}
-
-/* Pricing */
-.stack-section {
+.testi-card {
   background: var(--cream);
-  padding: 60px 20px 50px;
-}
-.stack-subheadline {
-  max-width: 460px;
-  margin: 0 auto;
-  font-size: 15px;
-  color: var(--taupe);
-  line-height: 1.6;
-}
-
-/* Hero visual da coleção */
-.stack-hero {
-  max-width: 420px;
-  margin: 40px auto 8px;
-}
-.stack-hero-kits {
-  position: relative;
-  height: 260px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.stack-hero-kit {
-  position: absolute;
-  width: 58%;
-  border-radius: 14px;
-  box-shadow: 0 16px 34px rgba(61,43,39,.28);
-  border: 3px solid #fff;
-}
-.stack-hero-kit.k1 { transform: rotate(-9deg) translateX(-38%); z-index: 1; }
-.stack-hero-kit.k2 { transform: rotate(0deg) translateY(-6px); z-index: 3; width: 62%; }
-.stack-hero-kit.k3 { transform: rotate(9deg) translateX(38%); z-index: 2; }
-.stack-hero-caption {
-  text-align: center;
-  font-size: 12.5px;
-  letter-spacing: .3px;
-  color: var(--taupe);
-  margin-top: 18px;
-}
-
-.stack-groups {
-  max-width: 620px;
-  margin: 32px auto 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  border: 1.5px solid var(--linha);
+  border-radius: 12px;
+  padding: 22px;
   text-align: left;
 }
-.stack-group {
-  background: #fff;
-  border: 1px solid var(--linha);
-  border-radius: 14px;
-  padding: 18px 20px;
-}
-.stack-group-main { border-color: var(--terr); border-width: 1.5px; }
-.stack-group-title {
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--terr);
-  margin-bottom: 10px;
-}
-.stack-group-micro {
-  font-size: 12.5px;
-  font-style: italic;
-  color: var(--taupe);
-  margin-bottom: 10px;
-  line-height: 1.5;
-}
-.stack-item {
-  font-size: 14px;
-  color: var(--marrom);
-  padding: 5px 0;
-  border-bottom: 1px solid var(--pale);
-}
-.stack-item:last-child { border-bottom: none; }
-.stack-extras { background: var(--pale); border-color: var(--linha); }
-.stack-extras .stack-item { border-bottom-color: rgba(168,92,82,.15); color: var(--marrom); font-weight: 600; }
-
-.price-reveal {
-  max-width: 480px;
-  margin: 44px auto 0;
+.testi-stars { color: #7A5C30; font-size: 14px; margin-bottom: 10px; }
+.testi-text { font-size: 14px; color: var(--taupe); font-style: italic; line-height: 1.65; margin-bottom: 14px; }
+.testi-author { display: flex; gap: 10px; align-items: center; }
+.testi-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--pale); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+.testi-name { font-size: 13px; font-weight: 800; color: var(--marrom); }
+.testi-handle { font-size: 12px; color: var(--taupe); }
+.testi-placeholder {
+  background: var(--cream);
+  border: 2px dashed var(--linha);
+  border-radius: 12px;
+  padding: 28px 22px;
   text-align: center;
-}
-.price-reveal p {
-  font-size: 15px;
   color: var(--taupe);
-  line-height: 1.7;
-  margin-bottom: 10px;
+  font-size: 14px;
+  grid-column: 1/-1;
 }
-.price-reveal-lead2 {
-  font-size: 17px !important;
-  font-weight: 800 !important;
-  color: var(--terr) !important;
-  margin-top: 18px !important;
-  margin-bottom: 6px !important;
-}
-.price-reveal-lead {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-style: italic;
-  font-size: 20px !important;
-  color: var(--marrom) !important;
-  margin-top: 6px !important;
-  margin-bottom: 14px !important;
-}
-.price-reveal-value {
-  font-size: 56px;
-  font-weight: 900;
-  color: var(--terr);
-  line-height: 1;
-  margin-bottom: 10px;
-}
-.price-reveal-value sup { font-size: 24px; vertical-align: top; margin-top: 12px; display: inline-block; }
-.price-reveal-value span { font-size: 26px; }
-.price-reveal-note { font-size: 13px !important; color: var(--taupe) !important; margin-bottom: 0 !important; }
+.testi-placeholder strong { display: block; color: var(--marrom); margin-bottom: 6px; font-size: 15px; }
 
+/* Pricing */
 .pricing-section {
   background: var(--bege);
   padding: 60px 20px;
@@ -870,20 +671,52 @@ img { max-width: 100%; display: block; }
 
 /* Carrossel de depoimentos (prints reais) */
 .proof-section { padding: 48px 0 40px; background: #fff; text-align: center; }
-.proof-stack {
-  max-width: 460px;
-  margin: 30px auto 0;
-  padding: 0 20px;
+.proof-carousel-wrap { position: relative; max-width: 420px; margin: 30px auto 0; }
+.proof-carousel {
   display: flex;
-  flex-direction: column;
-  gap: 28px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 0;
+  border-radius: 18px;
+  scrollbar-width: none;
 }
-.proof-stack img {
+.proof-carousel::-webkit-scrollbar { display: none; }
+.proof-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  display: flex;
+  justify-content: center;
+}
+.proof-slide img {
   width: 100%;
   border-radius: 18px;
   box-shadow: 0 12px 30px rgba(61,43,39,.15);
-  display: block;
 }
+.proof-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1.5px solid var(--linha);
+  color: var(--terr);
+  font-size: 18px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(61,43,39,.15);
+  z-index: 2;
+  user-select: none;
+}
+.proof-nav.prev { left: -14px; }
+.proof-nav.next { right: -14px; }
+.proof-dots { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+.proof-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--linha); }
+.proof-dot.active { background: var(--terr); }
 
 /* Quebra de objeções */
 .objection-section { padding: 48px 20px; background: #fff; }
@@ -1281,8 +1114,6 @@ footer a { color: rgba(255,255,255,.3); }
 
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 540px) {
-  .timer-bar { font-size: 10.5px; padding: 8px 10px; gap: 6px; }
-  .timer-digits { font-size: 11px; padding: 2px 6px; }
   .hero { padding: 40px 16px 36px; }
   .section { padding: 48px 16px; }
   .plan-card { padding: 26px 18px; }
@@ -1668,24 +1499,24 @@ footer a { color: rgba(255,255,255,.3); }
       <div class="product-num">1</div>
       <div>
         <div class="product-title">30 Dias de Amor Próprio</div>
-        <div class="product-desc">30 dias, uma pergunta por dia + reflexões da semana + frases pra reler quando precisar. Para construir uma relação mais gentil consigo mesma, dia a dia.</div>
-        <div class="product-pills"><span class="product-pill">30 perguntas guiadas</span><span class="product-pill">Reflexão da semana</span><span class="product-pill">Frases pra reler</span><span class="product-pill">Carta pra você mesma</span></div>
+        <div class="product-desc">30 prompts diários + reflexões semanais + afirmações. Para construir uma relação mais gentil consigo mesma, dia a dia.</div>
+        <div class="product-pills"><span class="product-pill">30 prompts</span><span class="product-pill">Reflexão semanal</span><span class="product-pill">Afirmações</span><span class="product-pill">Carta ao corpo</span></div>
       </div>
     </div>
     <div class="product-item">
       <div class="product-num">2</div>
       <div>
         <div class="product-title">Criança Interior</div>
-        <div class="product-desc">Exercícios pra você se reconectar com quem você era antes, entender o que ficou guardado, e se perdoar. Cura as feridas que você nem sabia que ainda carregava.</div>
-        <div class="product-pills"><span class="product-pill">Reconexão com você</span><span class="product-pill">Carta de perdão</span><span class="product-pill">Conversa com você mesma</span></div>
+        <div class="product-desc">Exercícios de reconexão, reparentagem e perdão para curar as feridas que você nem sabia que ainda carregava.</div>
+        <div class="product-pills"><span class="product-pill">Reparentagem</span><span class="product-pill">Carta de perdão</span><span class="product-pill">Diálogo interior</span></div>
       </div>
     </div>
     <div class="product-item">
       <div class="product-num">3</div>
       <div>
         <div class="product-title">Libertação da Ansiedade</div>
-        <div class="product-desc">Técnicas de respiração simples, exercícios pra acalmar a mente na hora, e 15 perguntas pra entender de onde vem sua ansiedade.</div>
-        <div class="product-pills"><span class="product-pill">Técnicas de respiração</span><span class="product-pill">Pra usar na hora</span><span class="product-pill">15 perguntas guiadas</span></div>
+        <div class="product-desc">Técnicas reais (4-7-8, grounding 5-4-3-2-1, âncoras de paz) + plano de crise + 15 prompts para entender sua ansiedade.</div>
+        <div class="product-pills"><span class="product-pill">Técnicas validadas</span><span class="product-pill">Plano de crise</span><span class="product-pill">15 prompts</span></div>
       </div>
     </div>
     <div class="product-item">
@@ -1693,20 +1524,19 @@ footer a { color: rgba(255,255,255,.3); }
       <div>
         <div class="product-title">30 Dias de Gratidão</div>
         <div class="product-desc">Manhã e noite por 30 dias. Gratidão não é ignorar a dor, é treinar o olhar para ver o que também é bom.</div>
-        <div class="product-pills"><span class="product-pill">Manhã e noite</span><span class="product-pill">30 dias</span><span class="product-pill">Reflexão da semana</span></div>
+        <div class="product-pills"><span class="product-pill">Manhã e noite</span><span class="product-pill">30 dias</span><span class="product-pill">Reflexão semanal</span></div>
       </div>
     </div>
     <div class="product-item">
       <div class="product-num">5</div>
       <div>
         <div class="product-title">Eu em Nova Fase</div>
-        <div class="product-desc">Um jeito simples de olhar pra sua vida hoje, imaginar onde você quer chegar, e dar o primeiro passo. Para quem sente que é hora de virar a página.</div>
-        <div class="product-pills"><span class="product-pill">Como você tá hoje</span><span class="product-pill">Seu plano de ação</span><span class="product-pill">Carta pro seu futuro</span></div>
+        <div class="product-desc">Roda da vida, visão de futuro, pilares, plano de ação e carta ao seu eu do futuro. Para quem está pronta para o próximo passo.</div>
+        <div class="product-pills"><span class="product-pill">Roda da vida</span><span class="product-pill">Plano de ação</span><span class="product-pill">Carta ao futuro</span></div>
       </div>
     </div>
   </div>
 </section>
-
 
 <!-- ===================== QUEBRA DE OBJEÇÕES ===================== -->
 <section class="objection-section section-center">
@@ -1767,102 +1597,75 @@ footer a { color: rgba(255,255,255,.3); }
   <div class="steps-row">
     <div class="step-card">
       <div class="step-n">1</div>
-      <div class="step-title">Escolha sua experiência Floresça</div>
-      <div class="step-desc">Você pode começar de forma mais simples ou ter acesso à Jornada Floresça completa.</div>
+      <div class="step-title">Escolha seu plano</div>
+      <div class="step-desc">Básico (R$10) ou Completo (R$37,90). Você decide o que faz sentido pra você agora.</div>
     </div>
     <div class="step-card">
       <div class="step-n">2</div>
-      <div class="step-title">Receba seu acesso</div>
-      <div class="step-desc">Assim que o pagamento for confirmado, seus materiais ficam disponíveis para você.</div>
+      <div class="step-title">Acesso na hora</div>
+      <div class="step-desc">Após o pagamento você recebe o link dos PDFs imediatamente. Sem esperar, sem burocracia.</div>
     </div>
     <div class="step-card">
       <div class="step-n">3</div>
-      <div class="step-title">Comece do seu jeito</div>
-      <div class="step-desc">Use pelo celular, tablet ou computador — e imprima as páginas que quiser.</div>
+      <div class="step-title">Imprime ou preenche</div>
+      <div class="step-desc">No celular, tablet ou impresso. Qualquer app de PDF funciona. Se você usa WhatsApp, você consegue usar.</div>
     </div>
   </div>
 </section>
 
-
 <!-- ===================== BONUSES ===================== -->
 <section class="bonus-section" id="bonus">
   <div class="section-center">
-    <span class="eyebrow" style="color:var(--gold);">sua jornada completa</span>
-    <h2 class="section-h" style="color:#fff;">Os 5 cadernos mostram o caminho. Mas nós também pensamos no que poderia fazer <span style="color:var(--gold);">você parar no meio.</span></h2>
-    <p class="bonus-intro-p">
-      Na prática, nem sempre o problema é saber o que fazer.<br>
-      Às vezes falta tempo.<br>
-      Às vezes você não sabe nem explicar o que está sentindo.<br>
-      Às vezes começa animada e para depois de alguns dias.<br>
-      E às vezes simplesmente chega aquele dia em que você não tem energia para nada.<br><br>
-      Por isso, sua Jornada Floresça não termina nos 5 cadernos.
-    </p>
+    <span class="eyebrow" style="color:var(--gold);">exclusivo plano completo</span>
+    <h2 class="section-h" style="color:#fff;">11 Bônus que <span style="color:var(--gold);">aceleram</span> sua cura</h2>
+    <div class="bonus-total">Valor total dos bônus: R$247,00 incluídos de graça hoje</div>
   </div>
-
-  <div class="bonus-objections">
-    <span class="bonus-objection-chip">"Não sei por onde começar."</span>
-    <span class="bonus-objection-chip">"Eu começo e abandono."</span>
-    <span class="bonus-objection-chip">"Tem dias que eu não tenho energia nem para escrever."</span>
-    <span class="bonus-objection-chip">"Às vezes eu nem sei o que estou sentindo."</span>
-    <span class="bonus-objection-chip">"Eu não tenho tempo para isso."</span>
+  <div class="bonus-list">
+    <div class="bonus-item"><div class="bonus-num">1</div><div><div class="bonus-name">Ritual da Manhã Poderosa</div><div class="bonus-desc">Guia passo a passo para começar cada dia com intenção e leveza em 10 minutos ou menos.</div><div class="bonus-val">R$27,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">2</div><div><div class="bonus-name">Mapa das Emoções</div><div class="bonus-desc">Aprenda a identificar e nomear exatamente o que você sente. Consciência emocional é a base de tudo.</div><div class="bonus-val">R$19,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">3</div><div><div class="bonus-name">Reset Emocional em 7 Dias</div><div class="bonus-desc">Plano diário de 7 dias para quando você precisa começar do zero. Para os momentos de crise ou virada.</div><div class="bonus-val">R$37,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">4</div><div><div class="bonus-name">Meditação Guiada: Reencontro com Você</div><div class="bonus-desc">Script de meditação guiada para reconexão profunda com seu eu interior. Para ler ou praticar sozinha.</div><div class="bonus-val">R$27,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">5</div><div><div class="bonus-name">100 Afirmações que Reprogramam a Mente</div><div class="bonus-desc">Afirmações por tema: autoestima, relacionamentos, prosperidade, paz interior e propósito.</div><div class="bonus-val">R$17,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">6</div><div><div class="bonus-name">Kit de Primeiros Socorros Emocionais</div><div class="bonus-desc">O que fazer quando você está no fundo: técnicas rápidas para os seus momentos mais difíceis.</div><div class="bonus-val">R$22,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">7</div><div><div class="bonus-name">Diário de Sonhos e Intenções</div><div class="bonus-desc">Caderno extra para registrar seus sonhos e desejos. Porque sonhar faz parte de curar.</div><div class="bonus-val">R$17,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">8</div><div><div class="bonus-name">Desafio de 30 Dias: Ação Emocional</div><div class="bonus-desc">Calendário visual com uma micro-ação por dia para construir hábitos emocionais com consistência.</div><div class="bonus-val">R$22,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">9</div><div><div class="bonus-name">Guia Anti-Autossabotagem</div><div class="bonus-desc">Identifique seus padrões de autossabotagem e aprenda como interrompê-los antes que destruam seus avanços.</div><div class="bonus-val">R$27,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">10</div><div><div class="bonus-name">Perguntas que Mudam Perspectivas</div><div class="bonus-desc">50 perguntas poderosas para quando você está presa em uma situação ou em uma versão de si que não te serve.</div><div class="bonus-val">R$17,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">11</div><div><div class="bonus-name">Manifesto: Quem Eu Estou Me Tornando</div><div class="bonus-desc">Modelo de manifesto pessoal para escrever e reler sempre que precisar se lembrar de quem você escolheu ser.</div><div class="bonus-val">R$17,00 GRÁTIS</div></div></div>
   </div>
-  <p class="bonus-objections-close">Para cada uma dessas situações, existe algo dentro da sua Jornada Floresça.</p>
-
-
-  <!-- KIT 01 -->
-  <div class="kit-block">
-    <div class="kit-mockup"><img src="kit-comece-sem-travar.jpg" alt="Kit Comece Sem Travar™ — Tradutor Emocional, Rota do Recomeço 7D e Método dos Primeiros 10 Minutos" loading="lazy"></div>
-    <span class="kit-eyebrow">kit 01</span>
-    <h3 class="kit-title">Kit Comece Sem Travar™</h3>
-    <p class="kit-headline">Você não precisa descobrir sozinha por onde começar.</p>
-    <p class="kit-desc">Se falta tempo, clareza ou você simplesmente não sabe qual deveria ser o primeiro passo, esse conjunto existe justamente para tornar o início mais simples.</p>
-    <div class="kit-items">
-      <div class="kit-item"><span class="kit-item-name">Tradutor Emocional™</span><span class="kit-item-desc">Para aqueles momentos em que você sabe que alguma coisa está errada, mas nem consegue explicar o que está sentindo.</span></div>
-      <div class="kit-item"><span class="kit-item-name">Rota do Recomeço 7D™</span><span class="kit-item-desc">Um caminho guiado de 7 dias para sair da sensação de estar perdida e voltar a ter direção.</span></div>
-      <div class="kit-item"><span class="kit-item-name">Método dos Primeiros 10 Minutos™</span><span class="kit-item-desc">Um jeito simples de encaixar seu momento de cuidado dentro da rotina, mesmo nos dias mais corridos.</span></div>
-    </div>
-    <p class="kit-close">Pouco tempo? Não sabe o que está sentindo? Não sabe por onde começar? Nós já pensamos nisso.</p>
-  </div>
-
-
-  <!-- KIT 02 -->
-  <div class="kit-block">
-    <div class="kit-mockup"><img src="kit-dia-dificil.jpg" alt="Kit Dia Difícil™ — Pausa de Volta Pra Mim, Biblioteca da Voz Interior e recursos de apoio rápido" loading="lazy"></div>
-    <span class="kit-eyebrow">kit 02</span>
-    <h3 class="kit-title">Kit Dia Difícil™</h3>
-    <p class="kit-headline">Seria fácil criar algo pensando apenas nos seus dias bons.<br><em>O Floresça também foi pensado para os outros.</em></p>
-    <p class="kit-desc">Existem dias em que a mente está cheia, a disposição desaparece ou tudo parece mais pesado. Esse conjunto existe para que você ainda tenha algo simples ao qual recorrer.</p>
-    <div class="kit-items">
-      <div class="kit-item"><span class="kit-item-name">Kit Dia Difícil™</span><span class="kit-item-desc">Um conjunto de recursos rápidos para recorrer justamente quando você estiver sem disposição para seguir sua rotina normalmente.</span></div>
-      <div class="kit-item"><span class="kit-item-name">Pausa de Volta Pra Mim™</span><span class="kit-item-desc">Um momento guiado para desacelerar e voltar sua atenção para você mesma.</span></div>
-      <div class="kit-item"><span class="kit-item-name">Biblioteca da Voz Interior™</span><span class="kit-item-desc">100 afirmações para consultar quando você precisar substituir a autocrítica por uma conversa mais gentil consigo mesma.</span></div>
-      <div class="kit-item"><span class="kit-item-name">50 Viradas de Chave™</span><span class="kit-item-desc">50 perguntas para abrir novas perspectivas quando sua própria cabeça parece estar andando em círculos.</span></div>
-    </div>
-    <p class="kit-close">Você não precisa estar no seu melhor dia para continuar cuidando de você.</p>
-  </div>
-
-  <!-- KIT 03 -->
-  <div class="kit-block">
-    <div class="kit-mockup"><img src="kit-continue-florescendo.jpg" alt="Kit Continue Florescendo™ — Calendário 1% por Dia, Detector de Autossabotagem e Carta da Minha Nova Versão" loading="lazy"></div>
-    <span class="kit-eyebrow">kit 03</span>
-    <h3 class="kit-title">Kit Continue Florescendo™</h3>
-    <p class="kit-headline">Começar é uma coisa. Continuar quando a empolgação passa é outra.</p>
-    <p class="kit-desc">Esse conjunto foi organizado para a fase em que a novidade passa e a vida real volta a acontecer. Ele existe para ajudar a manter movimento, reconhecer padrões e continuar construindo sua nova fase.</p>
-    <div class="kit-items">
-      <div class="kit-item"><span class="kit-item-name">Calendário 1% por Dia™</span><span class="kit-item-desc">Uma microação por dia para transformar intenção em continuidade sem precisar depender de motivação constante.</span></div>
-      <div class="kit-item"><span class="kit-item-name">Detector de Autossabotagem™</span><span class="kit-item-desc">Ajuda a identificar comportamentos que normalmente aparecem justamente quando você começa a avançar.</span></div>
-      <div class="kit-item"><span class="kit-item-name">Bússola da Minha Nova Fase™</span><span class="kit-item-desc">Um espaço para transformar desejos soltos em uma visão mais clara daquilo que você quer construir.</span></div>
-      <div class="kit-item"><span class="kit-item-name">Carta da Minha Nova Versão™</span><span class="kit-item-desc">Um exercício para registrar sua nova fase e ter algo concreto para reler quando sentir que está voltando aos padrões antigos.</span></div>
-    </div>
-    <p class="kit-close">A ideia não é depender de motivação. É sempre ter um próximo passo à sua frente.</p>
-  </div>
-
-
   <div style="text-align:center;margin-top:36px;">
     <a href="#pricing" class="btn-cta" style="max-width:480px;margin:0 auto;background:var(--gold);color:var(--marrom);">
       EU QUERO TUDO ISSO AGORA
-      <span class="sub" style="color:rgba(61,43,39,.65);">5 Cadernos + 3 Kits completos · Acesso na hora</span>
+      <span class="sub" style="color:rgba(61,43,39,.65);">5 Cadernos + 11 Bônus (R$247 de valor) · Acesso na hora</span>
     </a>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="section section-center" style="background:#fff;" id="depoimentos">
+  <span class="eyebrow">depoimentos reais</span>
+  <h2 class="section-h">Quem usou <span class="accent">não volta atrás</span></h2>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Eu nunca fui de escrever, mas o Floresça me surpreendeu. No terceiro dia já estava chorando de alívio, não de tristeza. Parece que alguém finalmente me entendia."</p>
+      <div class="testi-author"><div class="testi-avatar">🌸</div><div><div class="testi-name">Ana Clara M.</div><div class="testi-handle">Compradora verificada</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Paguei R$37,90 achando que era barato demais pra valer. Errei. O conteúdo é de uma terapeuta de verdade, só que faço quando quero, no meu sofá."</p>
+      <div class="testi-author"><div class="testi-avatar">🌼</div><div><div class="testi-name">Jéssica R.</div><div class="testi-handle">Compradora verificada</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"O caderno da Criança Interior me fez entender por que eu me relacionava do jeito que me relacionava. Isso não tem preço. Por R$37 é um absurdo."</p>
+      <div class="testi-author"><div class="testi-avatar">💜</div><div><div class="testi-name">Mariana F.</div><div class="testi-handle">Compradora verificada</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Comprei para mim e presenteei minha irmã. Ela me mandou mensagem chorando de gratidão. Essa foi minha prova de que funciona de verdade."</p>
+      <div class="testi-author"><div class="testi-avatar">🌷</div><div><div class="testi-name">Beatriz S.</div><div class="testi-handle">Compradora verificada</div></div></div>
+    </div>
   </div>
 </section>
 
@@ -1870,87 +1673,42 @@ footer a { color: rgba(255,255,255,.3); }
 <section class="proof-section">
   <span class="eyebrow">quem já comprou</span>
   <h2 class="section-h">Conversas <span class="accent">reais</span></h2>
-  <div class="proof-stack">
-    <img src="depoimento-1.jpg" alt="Depoimento real de cliente Floresça" loading="lazy">
-    <img src="depoimento-2.jpg" alt="Depoimento real de cliente Floresça" loading="lazy">
-    <img src="depoimento-3.jpg" alt="Depoimento real de cliente Floresça" loading="lazy">
-    <img src="depoimento-4.jpg" alt="Depoimento real de cliente Floresça" loading="lazy">
-    <img src="depoimento-5.jpg" alt="Depoimento real de cliente Floresça" loading="lazy">
-    <img src="depoimento-6.jpg" alt="Depoimento real de cliente Floresça" loading="lazy">
+  <div class="proof-carousel-wrap">
+    <div class="proof-nav prev" onclick="proofMove(-1)">‹</div>
+    <div class="proof-carousel" id="proofCarousel">
+      <div class="proof-slide"><img src="depoimento-3.jpg" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
+      <div class="proof-slide"><img src="depoimento-2.jpg" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
+      <div class="proof-slide"><img src="depoimento-1.jpg" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
+    </div>
+    <div class="proof-nav next" onclick="proofMove(1)">›</div>
+  </div>
+  <div class="proof-dots" id="proofDots">
+    <div class="proof-dot active"></div>
+    <div class="proof-dot"></div>
+    <div class="proof-dot"></div>
   </div>
 </section>
+<script>
+(function() {
+  var track = document.getElementById('proofCarousel');
+  var dots = document.querySelectorAll('#proofDots .proof-dot');
+  var total = track.children.length;
+  var current = 0;
 
-<!-- ===================== VALUE STACK ===================== -->
-<section class="stack-section section-center">
-  <span class="eyebrow">tudo que é seu a partir de hoje</span>
-  <h2 class="section-h">Você não recebe apenas um caderno. <span class="accent">Recebe sua Jornada Floresça completa.</span></h2>
-  <p class="stack-subheadline">Um caminho para começar, recursos para os dias difíceis e ferramentas para continuar.</p>
+  window.proofMove = function(dir) {
+    current = Math.max(0, Math.min(total - 1, current + dir));
+    track.scrollTo({ left: track.clientWidth * current, behavior: 'smooth' });
+  };
 
-  <!-- Hero visual da coleção completa -->
-  <div class="stack-hero">
-    <div class="stack-hero-kits">
-      <img src="kit-comece-sem-travar.jpg" alt="Kit Comece Sem Travar™" class="stack-hero-kit k1">
-      <img src="kit-dia-dificil.jpg" alt="Kit Dia Difícil™" class="stack-hero-kit k2">
-      <img src="kit-continue-florescendo.jpg" alt="Kit Continue Florescendo™" class="stack-hero-kit k3">
-    </div>
-    <div class="stack-hero-caption">5 cadernos + 3 kits completos, reunidos numa jornada só</div>
-  </div>
-
-  <div class="stack-groups">
-    <div class="stack-group stack-group-main">
-      <div class="stack-group-title">Sua jornada principal</div>
-      <div class="stack-item">30 Dias de Amor Próprio</div>
-      <div class="stack-item">Criança Interior</div>
-      <div class="stack-item">Libertação da Ansiedade</div>
-      <div class="stack-item">30 Dias de Gratidão</div>
-      <div class="stack-item">Eu em Nova Fase</div>
-    </div>
-
-    <div class="stack-group">
-      <div class="stack-group-title">+ Kit Comece Sem Travar™</div>
-      <p class="stack-group-micro">Para quando falta clareza, tempo ou você simplesmente não sabe qual é o primeiro passo.</p>
-      <div class="stack-item">Tradutor Emocional™</div>
-      <div class="stack-item">Rota do Recomeço 7D™</div>
-      <div class="stack-item">Método dos Primeiros 10 Minutos™</div>
-    </div>
-
-    <div class="stack-group">
-      <div class="stack-group-title">+ Kit Dia Difícil™</div>
-      <p class="stack-group-micro">Para aqueles dias em que você não está no seu melhor, mas ainda quer ter algo simples ao qual recorrer.</p>
-      <div class="stack-item">Kit Dia Difícil™</div>
-      <div class="stack-item">Pausa de Volta Pra Mim™</div>
-      <div class="stack-item">Biblioteca da Voz Interior™</div>
-      <div class="stack-item">50 Viradas de Chave™</div>
-    </div>
-
-    <div class="stack-group">
-      <div class="stack-group-title">+ Kit Continue Florescendo™</div>
-      <p class="stack-group-micro">Para continuar avançando mesmo depois que a motivação inicial passa.</p>
-      <div class="stack-item">Calendário 1% por Dia™</div>
-      <div class="stack-item">Detector de Autossabotagem™</div>
-      <div class="stack-item">Bússola da Minha Nova Fase™</div>
-      <div class="stack-item">Carta da Minha Nova Versão™</div>
-    </div>
-
-    <div class="stack-group stack-extras">
-      <div class="stack-group-title">E ainda</div>
-      <div class="stack-item">✓ Acesso imediato</div>
-      <div class="stack-item">✓ Acesso vitalício</div>
-      <div class="stack-item">✓ Use no celular, tablet ou computador</div>
-      <div class="stack-item">✓ Imprima quando quiser</div>
-      <div class="stack-item">✓ Área de Membros organizada</div>
-    </div>
-  </div>
-
-  <div class="price-reveal">
-    <p>Se cada parte dessa jornada fosse adquirida separadamente, o valor seria muito maior — passaria de <strong>R$297,00</strong>.</p>
-    <p>Mas a ideia do Floresça nunca foi fazer você escolher entre uma parte e outra.</p>
-    <p class="price-reveal-lead2">Você leva a Jornada completa.</p>
-    <p class="price-reveal-lead">Tudo que você acabou de ver fica disponível hoje por um único pagamento de:</p>
-    <div class="price-reveal-value"><sup>R$</sup>37<span>,90</span></div>
-    <p class="price-reveal-note">Pagamento único · sem mensalidade · acesso imediato</p>
-  </div>
-</section>
+  track.addEventListener('scroll', function() {
+    var idx = Math.round(track.scrollLeft / track.clientWidth);
+    if (idx !== current) {
+      current = idx;
+      dots.forEach(function(d, i) { d.classList.toggle('active', i === idx); });
+    }
+  });
+})();
+</script>
 
 <!-- ===================== PRICING ===================== -->
 <section class="pricing-section" id="pricing">
@@ -1960,15 +1718,15 @@ footer a { color: rgba(255,255,255,.3); }
     ⚡ VAGAS DE LANÇAMENTO ENCERRAM EM <span class="td" id="countdown2">14:59</span>
   </div>
   <p class="section-p" style="margin-bottom:14px;">Depois que as vagas de lançamento acabarem, o preço volta para o valor original.</p>
-  <div class="value-strip">💡 Tudo que você acabou de ver, por um único pagamento de <strong>R$37,90</strong></div>
+  <div class="value-strip">💡 R$37,90 ÷ 5 cadernos = <strong>menos de R$8 por caderno</strong> — e ainda leva a Área de Membros e 11 bônus de graça</div>
   <div class="plans-grid">
     <div class="plan-card best">
-      <div class="plan-popular">🔥 A JORNADA COMPLETA</div>
+      <div class="plan-popular">🔥 MAIS ESCOLHIDO</div>
       <div class="plan-name">Plano</div>
       <div class="plan-title"><span class="accent">Completo</span></div>
       <div class="plan-from">De R$297,00</div>
       <div class="plan-price"><sup>R$</sup>37<span>,90</span></div>
-      <div class="plan-note">Pagamento único · Sem mensalidade</div>
+      <div class="plan-note">Pagamento único · Sem mensalidade · 91% OFF</div>
       <ul class="plan-features">
         <li class="pf"><span class="ck">✓</span> <strong>Área de Membros Completa</strong></li>
         <li class="pf"><span class="ck">✓</span> <strong>Todos os 5 Cadernos de Cura Emocional</strong></li>
@@ -1977,31 +1735,37 @@ footer a { color: rgba(255,255,255,.3); }
         <li class="pf"><span class="ck">✓</span> Caderno 03 · Libertação da Ansiedade</li>
         <li class="pf"><span class="ck">✓</span> Caderno 04 · 30 Dias de Gratidão</li>
         <li class="pf"><span class="ck">✓</span> Caderno 05 · Eu em Nova Fase</li>
-        <li class="pf"><span class="ck">✓</span> <strong>Os 3 Kits da Jornada Floresça</strong></li>
-        <li class="pf"><span class="ck">✓</span> Kit Comece Sem Travar™</li>
-        <li class="pf"><span class="ck">✓</span> Kit Dia Difícil™</li>
-        <li class="pf"><span class="ck">✓</span> Kit Continue Florescendo™</li>
+        <li class="pf"><span class="ck">✓</span> <strong>11 Bônus exclusivos (R$247 em valor)</strong></li>
+        <li class="pf"><span class="ck">✓</span> Ritual da Manhã Poderosa</li>
+        <li class="pf"><span class="ck">✓</span> Mapa das Emoções</li>
+        <li class="pf"><span class="ck">✓</span> Reset Emocional em 7 Dias</li>
+        <li class="pf"><span class="ck">✓</span> Kit de Primeiros Socorros Emocionais</li>
+        <li class="pf"><span class="ck">✓</span> 100 Afirmações que Reprogramam a Mente</li>
+        <li class="pf"><span class="ck">✓</span> Guia Anti-Autossabotagem</li>
+        <li class="pf"><span class="ck">✓</span> + 5 bônus adicionais</li>
         <li class="pf"><span class="ck">✓</span> Acesso imediato em PDF</li>
-        <li class="pf"><span class="ck">✓</span> Para imprimir ou usar no celular</li>
       </ul>
-      <a href="https://checkout.wiven.com.br/checkout/cmskg733b028101ocbaa0b3un?offer=M1Q441V" class="plan-cta">EU QUERO A JORNADA COMPLETA</a>
+      <a href="https://checkout.wiven.com.br/checkout/cmskg733b028101ocbaa0b3un?offer=M1Q441V" class="plan-cta">EU QUERO O PLANO COMPLETO</a>
     </div>
     <div class="plan-card muted">
       <div class="plan-name">Plano</div>
       <div class="plan-title">Básico</div>
       <div class="plan-from">De R$47,00</div>
       <div class="plan-price"><sup>R$</sup>10<span>,00</span></div>
-      <div class="plan-note">Uma entrada · Acesso limitado</div>
+      <div class="plan-note">Pagamento único · Sem mensalidade</div>
       <ul class="plan-features">
         <li class="pf"><span class="ck">✓</span> Caderno 01 · 30 Dias de Amor Próprio</li>
         <li class="pf"><span class="cx">✗</span> <span class="crossed">Caderno 02 · Criança Interior</span></li>
         <li class="pf"><span class="cx">✗</span> <span class="crossed">Caderno 03 · Libertação da Ansiedade</span></li>
         <li class="pf"><span class="cx">✗</span> <span class="crossed">Caderno 04 · 30 Dias de Gratidão</span></li>
         <li class="pf"><span class="cx">✗</span> <span class="crossed">Caderno 05 · Eu em Nova Fase</span></li>
-        <li class="pf"><span class="cx">✗</span> <span class="crossed">Os 3 Kits da Jornada Floresça</span></li>
+        <li class="pf"><span class="cx">✗</span> <span class="crossed">11 Bônus exclusivos (R$247 em valor)</span></li>
         <li class="pf"><span class="ck">✓</span> Acesso imediato em PDF</li>
         <li class="pf"><span class="ck">✓</span> Para imprimir ou usar no celular</li>
         <li class="pf"><span class="cx">✗</span> <span class="crossed">Área de Membros</span></li>
+        <li class="pf"><span class="cx">✗</span> <span class="crossed">Ritual da Manhã Poderosa</span></li>
+        <li class="pf"><span class="cx">✗</span> <span class="crossed">Kit de Primeiros Socorros Emocionais</span></li>
+        <li class="pf"><span class="cx">✗</span> <span class="crossed">Guia Anti-Autossabotagem</span></li>
       </ul>
       <a href="https://checkout.wiven.com.br/checkout/cmsjg9r3701dl01omo1zzk8tb?offer=1QPQ3U5" class="plan-cta outline basico-trigger">EU QUERO O BÁSICO</a>
     </div>
@@ -2078,7 +1842,7 @@ footer a { color: rgba(255,255,255,.3); }
   <p class="section-p" style="margin-bottom:36px;">Por menos do que um café, você começa hoje. Acesso na hora.</p>
   <a href="#pricing" class="btn-cta" style="max-width:480px;margin:0 auto;">
     EU QUERO COMEÇAR AGORA
-    <span class="sub">5 Cadernos + 3 Kits · Acesso imediato · Garantia 7 dias</span>
+    <span class="sub">5 Cadernos + 11 Bônus · Acesso imediato · Garantia 7 dias</span>
   </a>
   <a href="#pricing" class="btn-outline">EU quero o Plano Básico por R$10</a>
   <div class="trust-row" style="margin-top:16px;">
@@ -2124,14 +1888,14 @@ footer a { color: rgba(255,255,255,.3); }
     </div>
 
     <div class="exit-result" id="exitResult">
-      <p class="exit-sub">Você caiu no maior desconto da roleta! Leve os 5 cadernos e os 3 kits por R$24,90 só agora.</p>
+      <p class="exit-sub">Você caiu no maior desconto da roleta! Leve os 5 cadernos e os 11 bônus por R$24,90 só agora.</p>
       <div class="exit-price">
         <span class="exit-from">de R$37,90</span>
         <span class="exit-now"><sup>R$</sup>24<span>,90</span></span>
       </div>
       <ul class="exit-list">
         <li><span class="ck">✓</span> <strong>Os 5 Cadernos de Cura Emocional completos</strong> (o Básico vem só com 1)</li>
-        <li><span class="ck">✓</span> <strong>+ os 3 Kits da Jornada Floresça</strong></li>
+        <li><span class="ck">✓</span> <strong>+ 11 bônus exclusivos (R$247 em valor)</strong></li>
         <li><span class="ck">✓</span> Acesso vitalício à Área de Membros</li>
         <li><span class="ck">✓</span> Método completo, não só um pedaço dele</li>
         <li><span class="ck">✓</span> Acesso imediato em PDF · Garantia de 7 dias</li>
