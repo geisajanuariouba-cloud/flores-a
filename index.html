@@ -548,10 +548,10 @@ img { max-width: 100%; display: block; }
   display: flex;
   gap: 16px;
   width: max-content;
-  animation: proof2scroll 50s linear infinite;
+  animation: proof2scroll 70s linear infinite;
 }
 .proof2-track:hover { animation-play-state: paused; }
-.proof2-card { flex-shrink: 0; width: 220px; }
+.proof2-card { flex-shrink: 0; width: 320px; }
 .proof2-card img {
   width: 100%;
   border-radius: 14px;
@@ -1652,7 +1652,7 @@ footer a { color: rgba(255,255,255,.3); }
   if (!track) return;
   var cards = track.querySelectorAll('.proof2-card');
   var half = cards.length / 2;
-  var w = 220 + 16;
+  var w = 320 + 16;
   var style = document.createElement('style');
   style.innerHTML = '@keyframes proof2scroll{0%{transform:translateX(0)}100%{transform:translateX(-' + (half * w) + 'px)}}';
   document.head.appendChild(style);
