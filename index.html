@@ -385,58 +385,57 @@ img { max-width: 100%; display: block; }
 }
 .divider { border: none; border-top: 1px solid var(--linha); }
 
-/* Pain checklist */
-.pain-list {
-  max-width: 600px;
-  margin: 36px auto 0;
+/* Problema (X) + Respira */
+.problem-sub {
+  text-align: center;
+  font-size: 13px;
+  color: var(--taupe);
+  margin-top: -8px;
+  margin-bottom: 24px;
+}
+.problem-list {
+  max-width: 480px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.pain-item {
-  background: var(--cream);
-  border: 1px solid var(--linha);
-  border-radius: 12px;
-  padding: 16px 18px;
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  text-align: left;
-}
-.pain-emoji { font-size: 22px; flex-shrink: 0; line-height: 1; }
-.pain-text strong { display: block; font-size: 15px; font-weight: 800; color: var(--marrom); margin-bottom: 2px; }
-.pain-text span { color: var(--taupe); font-size: 13.5px; }
-.pain-close {
-  max-width: 600px;
-  margin: 20px auto 0;
+.problem-item {
   background: var(--pale);
-  border: 1px solid var(--rosa);
+  border: 1px solid rgba(168,92,82,.2);
   border-radius: 12px;
-  padding: 16px 20px;
-  font-size: 15px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  font-size: 14.5px;
   font-weight: 800;
-  text-align: center;
+  color: var(--marrom);
+}
+.problem-x {
   color: var(--terr);
+  font-weight: 900;
+  font-size: 15px;
+  flex-shrink: 0;
 }
-
-/* Quote strip */
-.quote-strip {
-  background: var(--terr);
-  color: #fff;
-  padding: 48px 20px;
+.respira-h {
   text-align: center;
-}
-.quote-text {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(22px, 4.5vw, 36px);
-  font-weight: 300;
-  font-style: italic;
-  line-height: 1.4;
-  max-width: 640px;
-  margin: 0 auto 12px;
+  font-weight: 700;
+  font-size: clamp(26px, 4vw, 34px);
+  color: var(--marrom);
+  margin: 40px 0 14px;
 }
-.quote-text em { font-style: normal; font-weight: 500; }
-.quote-author { font-size: 12px; opacity: .7; letter-spacing: 1px; text-transform: uppercase; }
+.respira-text {
+  max-width: 460px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--taupe);
+}
+.respira-text strong { color: var(--terr); }
 
 /* Product list */
 .product-list {
@@ -1461,66 +1460,19 @@ footer a { color: rgba(255,255,255,.3); }
 
 <!-- ===================== PAIN ===================== -->
 <section class="section section-center" style="background:#fff;">
-  <span class="eyebrow">isso é pra você se…</span>
   <h2 class="section-h">Tá numa dessas?</h2>
-  <div class="pain-list">
-    <div class="pain-item">
-      <div class="pain-emoji">😮‍💨</div>
-      <div class="pain-text">
-        <strong>A ansiedade não para</strong>
-        <span>Não é susto. É aquele fundo de poço constante. A sensação de que algo vai dar errado mesmo sem ter nada de errado.</span>
-      </div>
-    </div>
-    <div class="pain-item">
-      <div class="pain-emoji">💔</div>
-      <div class="pain-text">
-        <strong>Você se coloca em último lugar</strong>
-        <span>Cuida de todo mundo mas quando sobra um minuto pra você, não sabe nem o que quer sentir.</span>
-      </div>
-    </div>
-    <div class="pain-item">
-      <div class="pain-emoji">🪞</div>
-      <div class="pain-text">
-        <strong>Você se critica o tempo todo</strong>
-        <span>Faria por qualquer amiga o que nunca faz por si mesma: escutar sem julgamento, acolher sem cobranças.</span>
-      </div>
-    </div>
-    <div class="pain-item">
-      <div class="pain-emoji">🔄</div>
-      <div class="pain-text">
-        <strong>Vive nos mesmos padrões em loop</strong>
-        <span>Os mesmos relacionamentos, as mesmas situações, as mesmas dores. Você quer sair mas não sabe como.</span>
-      </div>
-    </div>
-    <div class="pain-item">
-      <div class="pain-emoji">🌫️</div>
-      <div class="pain-text">
-        <strong>Perdeu o contato consigo mesma</strong>
-        <span>Esqueceu quem você era antes de tantas responsabilidades. Ou talvez nunca tenha se conhecido de verdade.</span>
-      </div>
-    </div>
-    <div class="pain-item">
-      <div class="pain-emoji">💸</div>
-      <div class="pain-text">
-        <strong>Quer ajuda mas não tem como pagar terapeuta</strong>
-        <span>Consulta custa R$150, R$250, R$300. O Floresça você resolve por menos do que um lanche.</span>
-      </div>
-    </div>
+  <p class="problem-sub">Se você:</p>
+  <div class="problem-list">
+    <div class="problem-item"><span class="problem-x">✗</span> A ansiedade não para</div>
+    <div class="problem-item"><span class="problem-x">✗</span> Se coloca em último lugar</div>
+    <div class="problem-item"><span class="problem-x">✗</span> Se critica o tempo todo</div>
+    <div class="problem-item"><span class="problem-x">✗</span> Vive nos mesmos padrões em loop</div>
+    <div class="problem-item"><span class="problem-x">✗</span> Perdeu o contato consigo mesma</div>
+    <div class="problem-item"><span class="problem-x">✗</span> Quer ajuda mas não tem como pagar terapeuta</div>
   </div>
-  <div class="pain-close">Se marcou qualquer um desses, esse caderno é pra você. A gente resolve. 🌸</div>
-  <div style="margin-top:32px;">
-    <div class="trust-row">
-      <span><span class="ck">✓</span> Liberação imediata</span>
-      <span><span class="ck">✓</span> Pagamento 100% seguro</span>
-      <span><span class="ck">✓</span> Garantia 7 dias</span>
-    </div>
-  </div>
-</section>
 
-<!-- ===================== QUOTE ===================== -->
-<section class="quote-strip">
-  <p class="quote-text">"Você não precisa se consertar. Você precisa se <em>reconhecer.</em>"</p>
-  <p class="quote-author">Princípio do Método Floresça</p>
+  <h3 class="respira-h">Respira.</h3>
+  <p class="respira-text">Com <strong>5 cadernos guiados</strong> você organiza o que sente, <strong>no seu ritmo</strong>, sem página em branco e <strong>sem precisar pagar terapeuta</strong>.</p>
 </section>
 
 <!-- ===================== O QUE VOCÊ RECEBE ===================== -->
