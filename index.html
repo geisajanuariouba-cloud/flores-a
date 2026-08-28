@@ -473,35 +473,59 @@ img { max-width: 100%; display: block; }
   padding: 8px 20px;
   border-radius: 8px;
 }
-.bonus-list {
-  max-width: 620px;
+.bonus-grid {
+  max-width: 900px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+.bonus-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  text-align: left;
 }
-.bonus-item {
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: 12px;
-  padding: 16px 18px;
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-}
-.bonus-num {
-  width: 32px; height: 32px;
-  border-radius: 8px;
-  background: var(--gold);
+.bonus-card-band {
+  background: linear-gradient(135deg, var(--gold), var(--terr));
   color: var(--marrom);
-  font-size: 13px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.bonus-card-band .bonus-num {
+  width: 20px; height: 20px;
+  border-radius: 6px;
+  background: rgba(61,43,39,.2);
+  color: var(--marrom);
+  font-size: 11px;
   font-weight: 900;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
 }
-.bonus-name { font-size: 15px; font-weight: 800; margin-bottom: 3px; color: #fff; }
-.bonus-desc { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.5; }
-.bonus-val { font-size: 12px; color: var(--gold); font-weight: 700; margin-top: 5px; }
+.bonus-card-body { padding: 14px 14px 16px; display: flex; flex-direction: column; flex: 1; }
+.bonus-name { font-size: 14px; font-weight: 800; margin-bottom: 5px; color: #fff; line-height: 1.3; }
+.bonus-desc { font-size: 12.5px; color: rgba(255,255,255,.55); line-height: 1.5; flex: 1; margin-bottom: 12px; }
+.bonus-val-row { display: flex; align-items: center; gap: 8px; }
+.bonus-val-old { font-size: 12px; color: rgba(255,255,255,.4); text-decoration: line-through; }
+.bonus-val-free {
+  background: var(--gold);
+  color: var(--marrom);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
 
 /* Testimonials */
 .testi-grid {
@@ -1122,6 +1146,9 @@ footer a { color: rgba(255,255,255,.3); }
   .steps-row { grid-template-columns: 1fr; }
   .bonus-section { padding: 48px 16px; }
 }
+@media (max-width: 380px) {
+  .bonus-grid { grid-template-columns: 1fr; }
+}
 </style>
 <script src="https://sistemaoriginal.vercel.app/api/tracking/tracker.js" async></script>
 </head>
@@ -1620,18 +1647,18 @@ footer a { color: rgba(255,255,255,.3); }
     <h2 class="section-h" style="color:#fff;">11 Bônus que <span style="color:var(--gold);">aceleram</span> sua cura</h2>
     <div class="bonus-total">Valor total dos bônus: R$247,00 incluídos de graça hoje</div>
   </div>
-  <div class="bonus-list">
-    <div class="bonus-item"><div class="bonus-num">1</div><div><div class="bonus-name">Ritual da Manhã Poderosa</div><div class="bonus-desc">Guia passo a passo para começar cada dia com intenção e leveza em 10 minutos ou menos.</div><div class="bonus-val">R$27,00 GRÁTIS</div></div></div>
-    <div class="bonus-item"><div class="bonus-num">2</div><div><div class="bonus-name">Mapa das Emoções</div><div class="bonus-desc">Aprenda a identificar e nomear exatamente o que você sente. Consciência emocional é a base de tudo.</div><div class="bonus-val">R$19,00 GRÁTIS</div></div></div>
-    <div class="bonus-item"><div class="bonus-num">3</div><div><div class="bonus-name">Reset Emocional em 7 Dias</div><div class="bonus-desc">Plano diário de 7 dias para quando você precisa começar do zero. Para os momentos de crise ou virada.</div><div class="bonus-val">R$37,00 GRÁTIS</div></div></div>
-    <div class="bonus-item"><div class="bonus-num">4</div><div><div class="bonus-name">Meditação Guiada: Reencontro com Você</div><div class="bonus-desc">Script de meditação guiada para reconexão profunda com seu eu interior. Para ler ou praticar sozinha.</div><div class="bonus-val">R$27,00 GRÁTIS</div></div></div>
-    <div class="bonus-item"><div class="bonus-num">5</div><div><div class="bonus-name">100 Afirmações que Reprogramam a Mente</div><div class="bonus-desc">Afirmações por tema: autoestima, relacionamentos, prosperidade, paz interior e propósito.</div><div class="bonus-val">R$17,00 GRÁTIS</div></div></div>
-    <div class="bonus-item"><div class="bonus-num">6</div><div><div class="bonus-name">Kit de Primeiros Socorros Emocionais</div><div class="bonus-desc">O que fazer quando você está no fundo: técnicas rápidas para os seus momentos mais difíceis.</div><div class="bonus-val">R$22,00 GRÁTIS</div></div></div>
-    <div class="bonus-item"><div class="bonus-num">7</div><div><div class="bonus-name">Diário de Sonhos e Intenções</div><div class="bonus-desc">Caderno extra para registrar seus sonhos e desejos. Porque sonhar faz parte de curar.</div><div class="bonus-val">R$17,00 GRÁTIS</div></div></div>
-    <div class="bonus-item"><div class="bonus-num">8</div><div><div class="bonus-name">Desafio de 30 Dias: Ação Emocional</div><div class="bonus-desc">Calendário visual com uma micro-ação por dia para construir hábitos emocionais com consistência.</div><div class="bonus-val">R$22,00 GRÁTIS</div></div></div>
-    <div class="bonus-item"><div class="bonus-num">9</div><div><div class="bonus-name">Guia Anti-Autossabotagem</div><div class="bonus-desc">Identifique seus padrões de autossabotagem e aprenda como interrompê-los antes que destruam seus avanços.</div><div class="bonus-val">R$27,00 GRÁTIS</div></div></div>
-    <div class="bonus-item"><div class="bonus-num">10</div><div><div class="bonus-name">Perguntas que Mudam Perspectivas</div><div class="bonus-desc">50 perguntas poderosas para quando você está presa em uma situação ou em uma versão de si que não te serve.</div><div class="bonus-val">R$17,00 GRÁTIS</div></div></div>
-    <div class="bonus-item"><div class="bonus-num">11</div><div><div class="bonus-name">Manifesto: Quem Eu Estou Me Tornando</div><div class="bonus-desc">Modelo de manifesto pessoal para escrever e reler sempre que precisar se lembrar de quem você escolheu ser.</div><div class="bonus-val">R$17,00 GRÁTIS</div></div></div>
+  <div class="bonus-grid">
+    <div class="bonus-card"><div class="bonus-card-band"><span class="bonus-num">1</span> Bônus grátis</div><div class="bonus-card-body"><div class="bonus-name">Ritual da Manhã Poderosa</div><div class="bonus-desc">Guia passo a passo para começar cada dia com intenção e leveza em 10 minutos ou menos.</div><div class="bonus-val-row"><span class="bonus-val-old">R$27,00</span><span class="bonus-val-free">Grátis</span></div></div></div>
+    <div class="bonus-card"><div class="bonus-card-band"><span class="bonus-num">2</span> Bônus grátis</div><div class="bonus-card-body"><div class="bonus-name">Mapa das Emoções</div><div class="bonus-desc">Aprenda a identificar e nomear exatamente o que você sente. Consciência emocional é a base de tudo.</div><div class="bonus-val-row"><span class="bonus-val-old">R$19,00</span><span class="bonus-val-free">Grátis</span></div></div></div>
+    <div class="bonus-card"><div class="bonus-card-band"><span class="bonus-num">3</span> Bônus grátis</div><div class="bonus-card-body"><div class="bonus-name">Reset Emocional em 7 Dias</div><div class="bonus-desc">Plano diário de 7 dias para quando você precisa começar do zero. Para os momentos de crise ou virada.</div><div class="bonus-val-row"><span class="bonus-val-old">R$37,00</span><span class="bonus-val-free">Grátis</span></div></div></div>
+    <div class="bonus-card"><div class="bonus-card-band"><span class="bonus-num">4</span> Bônus grátis</div><div class="bonus-card-body"><div class="bonus-name">Meditação Guiada: Reencontro com Você</div><div class="bonus-desc">Script de meditação guiada para reconexão profunda com seu eu interior. Para ler ou praticar sozinha.</div><div class="bonus-val-row"><span class="bonus-val-old">R$27,00</span><span class="bonus-val-free">Grátis</span></div></div></div>
+    <div class="bonus-card"><div class="bonus-card-band"><span class="bonus-num">5</span> Bônus grátis</div><div class="bonus-card-body"><div class="bonus-name">100 Afirmações que Reprogramam a Mente</div><div class="bonus-desc">Afirmações por tema: autoestima, relacionamentos, prosperidade, paz interior e propósito.</div><div class="bonus-val-row"><span class="bonus-val-old">R$17,00</span><span class="bonus-val-free">Grátis</span></div></div></div>
+    <div class="bonus-card"><div class="bonus-card-band"><span class="bonus-num">6</span> Bônus grátis</div><div class="bonus-card-body"><div class="bonus-name">Kit de Primeiros Socorros Emocionais</div><div class="bonus-desc">O que fazer quando você está no fundo: técnicas rápidas para os seus momentos mais difíceis.</div><div class="bonus-val-row"><span class="bonus-val-old">R$22,00</span><span class="bonus-val-free">Grátis</span></div></div></div>
+    <div class="bonus-card"><div class="bonus-card-band"><span class="bonus-num">7</span> Bônus grátis</div><div class="bonus-card-body"><div class="bonus-name">Diário de Sonhos e Intenções</div><div class="bonus-desc">Caderno extra para registrar seus sonhos e desejos. Porque sonhar faz parte de curar.</div><div class="bonus-val-row"><span class="bonus-val-old">R$17,00</span><span class="bonus-val-free">Grátis</span></div></div></div>
+    <div class="bonus-card"><div class="bonus-card-band"><span class="bonus-num">8</span> Bônus grátis</div><div class="bonus-card-body"><div class="bonus-name">Desafio de 30 Dias: Ação Emocional</div><div class="bonus-desc">Calendário visual com uma micro-ação por dia para construir hábitos emocionais com consistência.</div><div class="bonus-val-row"><span class="bonus-val-old">R$22,00</span><span class="bonus-val-free">Grátis</span></div></div></div>
+    <div class="bonus-card"><div class="bonus-card-band"><span class="bonus-num">9</span> Bônus grátis</div><div class="bonus-card-body"><div class="bonus-name">Guia Anti-Autossabotagem</div><div class="bonus-desc">Identifique seus padrões de autossabotagem e aprenda como interrompê-los antes que destruam seus avanços.</div><div class="bonus-val-row"><span class="bonus-val-old">R$27,00</span><span class="bonus-val-free">Grátis</span></div></div></div>
+    <div class="bonus-card"><div class="bonus-card-band"><span class="bonus-num">10</span> Bônus grátis</div><div class="bonus-card-body"><div class="bonus-name">Perguntas que Mudam Perspectivas</div><div class="bonus-desc">50 perguntas poderosas para quando você está presa em uma situação ou em uma versão de si que não te serve.</div><div class="bonus-val-row"><span class="bonus-val-old">R$17,00</span><span class="bonus-val-free">Grátis</span></div></div></div>
+    <div class="bonus-card"><div class="bonus-card-band"><span class="bonus-num">11</span> Bônus grátis</div><div class="bonus-card-body"><div class="bonus-name">Manifesto: Quem Eu Estou Me Tornando</div><div class="bonus-desc">Modelo de manifesto pessoal para escrever e reler sempre que precisar se lembrar de quem você escolheu ser.</div><div class="bonus-val-row"><span class="bonus-val-old">R$17,00</span><span class="bonus-val-free">Grátis</span></div></div></div>
   </div>
   <div style="text-align:center;margin-top:36px;">
     <a href="#pricing" class="btn-cta" style="max-width:480px;margin:0 auto;background:var(--gold);color:var(--marrom);">
