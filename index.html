@@ -223,24 +223,49 @@ img { max-width: 100%; display: block; }
 }
 .trust-row span { display: flex; align-items: center; gap: 5px; }
 
-.quick-pills-wrap { background: var(--cream); padding: 20px 20px 32px; }
+.quick-pills-wrap { background: var(--cream); padding: 24px 20px 30px; }
 .quick-pills {
-  max-width: 760px;
+  max-width: 440px;
   margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
+  flex-direction: column;
+  gap: 12px;
 }
 .quick-pill {
-  background: #fff;
-  border: 1.5px solid var(--linha);
-  color: var(--marrom);
-  font-size: 13px;
+  background: var(--terr);
+  color: #fff;
+  font-size: 13.5px;
   font-weight: 700;
-  padding: 9px 16px;
+  padding: 12px 20px;
   border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(168,92,82,.2);
 }
+.quick-pill-check {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.25);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.quick-pills-sub {
+  max-width: 480px;
+  margin: 22px auto 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--taupe);
+  line-height: 1.7;
+}
+.quick-pills-sub strong { color: var(--terr); }
 .trust-row .ck { color: var(--green); font-size: 14px; }
 
 /* ===================== CAROUSEL ===================== */
@@ -1425,12 +1450,13 @@ footer a { color: rgba(255,255,255,.3); }
 <!-- ===================== TÓPICOS RÁPIDOS ===================== -->
 <div class="quick-pills-wrap">
   <div class="quick-pills">
-    <span class="quick-pill">✓ É 100% digital, em material pronto</span>
-    <span class="quick-pill">✓ Não é um caderno em branco</span>
-    <span class="quick-pill">✓ Um método único</span>
-    <span class="quick-pill">✓ Sem mensalidade</span>
-    <span class="quick-pill">✓ Compra 100% segura</span>
+    <span class="quick-pill"><span class="quick-pill-check">✓</span> Acesso na hora, direto no seu celular</span>
+    <span class="quick-pill"><span class="quick-pill-check">✓</span> Nunca é uma página em branco</span>
+    <span class="quick-pill"><span class="quick-pill-check">✓</span> Um método que não existe em nenhum outro lugar</span>
+    <span class="quick-pill"><span class="quick-pill-check">✓</span> Pagamento único, sem mensalidade</span>
+    <span class="quick-pill"><span class="quick-pill-check">✓</span> Compra 100% segura, garantia de 7 dias</span>
   </div>
+  <p class="quick-pills-sub">Transforme os momentos mais difíceis em <strong>páginas que te acolhem</strong> — sem precisar saber o que escrever, sem depender de motivação.</p>
 </div>
 
 <!-- ===================== PAIN ===================== -->
