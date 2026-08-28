@@ -1970,8 +1970,14 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
   var result = document.getElementById('exitResult');
   var spinBtn = document.getElementById('exitSpinBtn');
   if (!overlay || !closeBtn) return;
+  var shown = false;
+  var scrolledEnough = false;
   var spun = false;
   var pendingHref = null;
+
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) scrolledEnough = true;
+  }, { passive: true });
 
   function resetWheel() {
     spun = false;
@@ -1994,6 +2000,13 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
     }, 3700);
   }
 
+  function openExit() {
+    if (shown || !scrolledEnough) return;
+    pendingHref = null;
+    resetWheel();
+    overlay.classList.add('show');
+    shown = true;
+  }
   function openForced(href) {
     pendingHref = href || null;
     resetWheel();
@@ -2009,6 +2022,14 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
   }
 
   if (spinBtn) spinBtn.addEventListener('click', spinWheel);
+
+  document.addEventListener('mouseleave', function(e) {
+    if (e.clientY <= 0) openExit();
+  });
+
+  var mobileTimer = setTimeout(function() {
+    if (scrolledEnough) openExit();
+  }, 25000);
 
   document.querySelectorAll('.basico-trigger').forEach(function(link) {
     link.addEventListener('click', function(e) {
