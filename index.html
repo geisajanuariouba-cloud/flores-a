@@ -641,12 +641,23 @@ img { max-width: 100%; display: block; }
   text-align: left;
   position: relative;
 }
-.plan-card.best { border-color: var(--terr); box-shadow: 0 0 0 1px var(--terr), 0 8px 32px rgba(168,92,82,.15); animation: plan-glow 2.6s ease-in-out infinite; }
+.plan-card.best { border-color: var(--terr); box-shadow: 0 0 0 1px var(--terr), 0 8px 32px rgba(168,92,82,.15); }
+.plan-card.best::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  box-shadow: 0 8px 40px rgba(168,92,82,.32);
+  opacity: 0;
+  pointer-events: none;
+  animation: plan-glow 2.6s ease-in-out infinite;
+  will-change: opacity;
+}
 .plan-card.muted { opacity: .72; }
 .plan-card.muted:hover { opacity: 1; }
 @keyframes plan-glow {
-  0%, 100% { box-shadow: 0 0 0 1px var(--terr), 0 8px 32px rgba(168,92,82,.15); }
-  50% { box-shadow: 0 0 0 1px var(--terr), 0 8px 40px rgba(168,92,82,.32); }
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
 }
 .value-strip {
   max-width: 560px;
@@ -660,7 +671,7 @@ img { max-width: 100%; display: block; }
   text-align: center;
 }
 @media (prefers-reduced-motion: reduce) {
-  .plan-card.best { animation: none; }
+  .plan-card.best::after { animation: none; }
 }
 .plan-popular {
   position: absolute;
@@ -1526,35 +1537,35 @@ footer a { color: rgba(255,255,255,.3); }
   <p class="section-p">São 5 cadernos, um pra cada camada da cura emocional. Você pode seguir na ordem abaixo — começando pela que dói mais — ou pular direto pro que fizer mais sentido pra você agora.</p>
   <div class="product-list">
     <div class="product-item">
-      <img class="product-cover" src="caderno-1-amor-proprio.jpg" alt="Capa do caderno 30 Dias de Amor Próprio">
+      <img class="product-cover" src="caderno-1-amor-proprio.webp" width="300" height="400" loading="lazy" alt="Capa do caderno 30 Dias de Amor Próprio">
       <div>
         <div class="product-title">30 Dias de Amor Próprio</div>
         <div class="product-desc">Um mês de perguntas guiadas, dia após dia, pra você aprender a falar consigo mesma com mais gentileza — sem se cobrar, sem se comparar.</div>
       </div>
     </div>
     <div class="product-item">
-      <img class="product-cover" src="caderno-2-crianca-interior.jpg" alt="Capa do caderno Criança Interior">
+      <img class="product-cover" src="caderno-2-crianca-interior.webp" width="300" height="400" loading="lazy" alt="Capa do caderno Criança Interior">
       <div>
         <div class="product-title">Criança Interior</div>
         <div class="product-desc">Exercícios pra você entender de onde vêm certos padrões e se reconectar com a criança que você foi — com carinho, sem julgamento.</div>
       </div>
     </div>
     <div class="product-item">
-      <img class="product-cover" src="caderno-3-ansiedade.jpg" alt="Capa do caderno Libertação da Ansiedade">
+      <img class="product-cover" src="caderno-3-ansiedade.webp" width="300" height="400" loading="lazy" alt="Capa do caderno Libertação da Ansiedade">
       <div>
         <div class="product-title">Libertação da Ansiedade</div>
         <div class="product-desc">Técnicas simples de respiração e um passo a passo prático pra usar exatamente na hora que a ansiedade aparecer.</div>
       </div>
     </div>
     <div class="product-item">
-      <img class="product-cover" src="caderno-4-gratidao.jpg" alt="Capa do caderno 30 Dias de Gratidão">
+      <img class="product-cover" src="caderno-4-gratidao.webp" width="300" height="400" loading="lazy" alt="Capa do caderno 30 Dias de Gratidão">
       <div>
         <div class="product-title">30 Dias de Gratidão</div>
         <div class="product-desc">Um ritual de manhã e noite por 30 dias pra treinar o olhar pra enxergar o que também é bom, mesmo nos dias difíceis.</div>
       </div>
     </div>
     <div class="product-item">
-      <img class="product-cover" src="caderno-5-nova-fase.jpg" alt="Capa do caderno Eu em Nova Fase">
+      <img class="product-cover" src="caderno-5-nova-fase.webp" width="300" height="400" loading="lazy" alt="Capa do caderno Eu em Nova Fase">
       <div>
         <div class="product-title">Eu em Nova Fase</div>
         <div class="product-desc">Um espaço pra olhar pra sua vida hoje, imaginar onde você quer chegar, e dar os primeiros passos — pra quem já está pronta pra virar a página.</div>
@@ -1628,24 +1639,24 @@ footer a { color: rgba(255,255,255,.3); }
   <h2 class="section-h">O que dizem do <span class="accent">Floresça</span></h2>
   <div class="proof2-wrap">
     <div class="proof2-track" id="proof2Track">
-      <div class="proof2-card"><img src="depoimento-1.jpg" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-2.jpg" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-3.jpg" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-4.jpg" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-5.jpg" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-6.jpg" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-7.jpg" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-8.jpg" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-9.jpg" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-1.jpg" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-2.jpg" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-3.jpg" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-4.jpg" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-5.jpg" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-6.jpg" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-7.jpg" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-8.jpg" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-9.jpg" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
+      <div class="proof2-card"><img src="depoimento-1.jpg" width="900" height="706" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
+      <div class="proof2-card"><img src="depoimento-2.jpg" width="900" height="636" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
+      <div class="proof2-card"><img src="depoimento-3.jpg" width="900" height="587" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
+      <div class="proof2-card"><img src="depoimento-4.jpg" width="900" height="627" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
+      <div class="proof2-card"><img src="depoimento-5.jpg" width="900" height="406" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
+      <div class="proof2-card"><img src="depoimento-6.jpg" width="900" height="582" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
+      <div class="proof2-card"><img src="depoimento-7.jpg" width="900" height="474" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
+      <div class="proof2-card"><img src="depoimento-8.jpg" width="900" height="663" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
+      <div class="proof2-card"><img src="depoimento-9.jpg" width="900" height="745" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
+      <div class="proof2-card"><img src="depoimento-1.jpg" width="900" height="706" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
+      <div class="proof2-card"><img src="depoimento-2.jpg" width="900" height="636" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
+      <div class="proof2-card"><img src="depoimento-3.jpg" width="900" height="587" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
+      <div class="proof2-card"><img src="depoimento-4.jpg" width="900" height="627" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
+      <div class="proof2-card"><img src="depoimento-5.jpg" width="900" height="406" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
+      <div class="proof2-card"><img src="depoimento-6.jpg" width="900" height="582" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
+      <div class="proof2-card"><img src="depoimento-7.jpg" width="900" height="474" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
+      <div class="proof2-card"><img src="depoimento-8.jpg" width="900" height="663" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
+      <div class="proof2-card"><img src="depoimento-9.jpg" width="900" height="745" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
     </div>
   </div>
 </section>
