@@ -464,7 +464,7 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 6px 16px rgba(61,43,39,.15);
 }
 .product-title { font-size: 15px; font-weight: 800; color: var(--marrom); margin-bottom: 3px; }
-.product-desc { font-size: 13px; color: var(--taupe); line-height: 1.5; }
+.product-desc { font-size: clamp(15px, 2.8vw, 17px); color: var(--taupe); line-height: 1.5; }
 
 @media (max-width: 560px) {
   .product-item {
@@ -513,7 +513,7 @@ img { max-width: 100%; display: block; }
   margin: 0 auto 14px;
 }
 .step-title { font-size: 15px; font-weight: 800; color: var(--marrom); margin-bottom: 6px; }
-.step-desc { font-size: 13px; color: var(--taupe); line-height: 1.55; }
+.step-desc { font-size: clamp(15px, 2.8vw, 17px); color: var(--taupe); line-height: 1.5; }
 
 /* Bonuses */
 .bonus-section {
@@ -686,8 +686,9 @@ img { max-width: 100%; display: block; }
   background: var(--pale);
   border: 1px solid var(--linha);
   border-radius: 12px;
-  padding: 12px 20px;
-  font-size: 14px;
+  padding: 14px 20px;
+  font-size: clamp(16px, 3vw, 19px);
+  line-height: 1.5;
   color: var(--marrom);
   text-align: center;
 }
@@ -789,7 +790,7 @@ img { max-width: 100%; display: block; }
   line-height: 1.3;
 }
 .objection-title { font-size: 14.5px; font-weight: 800; color: var(--marrom); margin-bottom: 4px; }
-.objection-desc { font-size: 13px; color: var(--taupe); line-height: 1.6; }
+.objection-desc { font-size: clamp(15px, 2.8vw, 17px); color: var(--taupe); line-height: 1.5; }
 @media (max-width: 700px) {
   .objection-grid { grid-template-columns: 1fr; }
 }
@@ -872,12 +873,12 @@ img { max-width: 100%; display: block; }
   max-height: 0;
   overflow: hidden;
   transition: max-height .3s ease, padding .3s ease;
-  font-size: 14px;
+  font-size: clamp(16px, 3vw, 19px);
   color: var(--taupe);
-  line-height: 1.7;
+  line-height: 1.6;
   padding: 0 20px;
 }
-.faq-item.open .faq-body { max-height: 300px; padding: 0 20px 18px; }
+.faq-item.open .faq-body { max-height: 400px; padding: 0 20px 18px; }
 .faq-item.open .faq-arrow { transform: rotate(45deg); }
 
 /* Final CTA */
@@ -979,9 +980,9 @@ footer a { color: rgba(255,255,255,.3); }
   margin-bottom: 10px;
 }
 .exit-sub {
-  font-size: 14px;
+  font-size: clamp(15px, 3vw, 17px);
   color: rgba(255,255,255,.65);
-  line-height: 1.6;
+  line-height: 1.5;
   margin-bottom: 20px;
 }
 .exit-price { margin-bottom: 20px; }
@@ -1010,7 +1011,7 @@ footer a { color: rgba(255,255,255,.3); }
   padding-bottom: 4px;
 }
 .exit-list li {
-  font-size: 13.5px;
+  font-size: clamp(14px, 2.8vw, 16px);
   color: rgba(255,255,255,.85);
   display: flex;
   gap: 9px;
@@ -1710,7 +1711,7 @@ footer a { color: rgba(255,255,255,.3); }
   </div>
   <div style="max-width:520px;margin:32px auto 0;background:var(--cream);border:1.5px solid var(--linha);border-radius:14px;padding:20px 24px;text-align:center;">
     <div style="font-size:14.5px;font-weight:800;color:var(--marrom);margin-bottom:6px;">5 a 10 minutos por dia. Só isso.</div>
-    <div style="font-size:13px;color:var(--taupe);line-height:1.6;">Não precisa escrever bonito, não precisa ser todo santo dia. Se você pular um dia, o caderno continua exatamente de onde parou — sem culpa, sem precisar recomeçar do zero.</div>
+    <div style="font-size:clamp(15px, 2.8vw, 17px);color:var(--taupe);line-height:1.5;">Não precisa escrever bonito, não precisa ser todo santo dia. Se você pular um dia, o caderno continua exatamente de onde parou — sem culpa, sem precisar recomeçar do zero.</div>
   </div>
 </section>
 
@@ -1738,7 +1739,7 @@ footer a { color: rgba(255,255,255,.3); }
       <div class="step-desc">"O que eu diria pra uma amiga nessa mesma situação?" Cada dia constrói em cima do anterior — é progressão, não aleatoriedade.</div>
     </div>
   </div>
-  <p style="max-width:520px;margin:28px auto 0;text-align:center;font-size:13.5px;color:var(--taupe);line-height:1.7;">O processo de criação passa por <strong style="color:var(--marrom);">pesquisa, seleção, organização em sequência, testes com leitoras reais e revisão</strong> antes de qualquer caderno ser publicado.</p>
+  <p style="max-width:560px;margin:28px auto 0;text-align:center;font-size:clamp(17px, 3.2vw, 21px);color:var(--taupe);line-height:1.6;">O processo de criação passa por <strong style="color:var(--marrom);">pesquisa, seleção, organização em sequência, testes com leitoras reais e revisão</strong> antes de qualquer caderno ser publicado.</p>
 </section>
 
 <hr class="divider">
@@ -1769,7 +1770,7 @@ footer a { color: rgba(255,255,255,.3); }
     <div class="authority-text">
       Criei o Floresça depois de perceber, na prática, que muita gente queria se conhecer melhor mas não sabia por onde começar — e não tinha R$200 pra gastar toda semana com terapia.<br><br>
       Cada caderno passa por pesquisa, escrita, teste com leitoras reais e revisão antes de ir pro ar. <strong>Não é teoria solta: é um método que eu construí, testei e revisei — e que continuo ajustando com o que as próprias leitoras me contam.</strong><br><br>
-      <span style="font-size:12.5px;">O Floresça não substitui terapia nem tratamento médico — é uma ferramenta de organização emocional e autoconhecimento guiado.</span>
+      <span style="font-size:clamp(15px, 2.8vw, 17px);">O Floresça não substitui terapia nem tratamento médico — é uma ferramenta de organização emocional e autoconhecimento guiado.</span>
     </div>
   </div>
 </section>
