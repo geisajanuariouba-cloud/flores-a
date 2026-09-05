@@ -258,12 +258,12 @@ img { max-width: 100%; display: block; }
   flex-shrink: 0;
 }
 .quick-pills-sub {
-  max-width: 480px;
+  max-width: 520px;
   margin: 22px auto 0;
   text-align: center;
-  font-size: 14px;
+  font-size: clamp(17px, 3.2vw, 21px);
   color: var(--taupe);
-  line-height: 1.7;
+  line-height: 1.6;
 }
 .quick-pills-sub strong { color: var(--terr); }
 .trust-row .ck { color: var(--green); font-size: 14px; }
@@ -378,8 +378,8 @@ img { max-width: 100%; display: block; }
 .section-h .accent { color: var(--terr); }
 .section-p {
   color: var(--taupe);
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: clamp(17px, 3.2vw, 21px);
+  line-height: 1.6;
   max-width: 560px;
   margin: 0 auto;
 }
@@ -476,9 +476,11 @@ img { max-width: 100%; display: block; }
   }
   .product-cover {
     width: 100%;
-    height: 200px;
+    height: auto;
+    object-fit: contain;
     border-radius: 0;
     box-shadow: none;
+    background: var(--bege);
   }
   .product-item > div {
     padding: 14px 16px 18px;
@@ -547,11 +549,11 @@ img { max-width: 100%; display: block; }
 .bonus-row-name { font-size: 15.5px; font-weight: 700; color: #fff; }
 .bonus-row-price { font-size: 14px; color: rgba(255,255,255,.45); text-decoration: line-through; white-space: nowrap; }
 .bonus-final-note {
-  max-width: 480px;
+  max-width: 520px;
   margin: 30px auto 0;
   text-align: center;
-  font-size: 14.5px;
-  color: rgba(255,255,255,.75);
+  font-size: clamp(17px, 3.2vw, 21px);
+  color: rgba(255,255,255,.85);
   line-height: 1.6;
 }
 .bonus-total-final {
@@ -815,7 +817,7 @@ img { max-width: 100%; display: block; }
 }
 .authority-name { font-size: 20px; font-weight: 900; color: var(--marrom); }
 .authority-role { font-size: 12.5px; letter-spacing: 1px; text-transform: uppercase; color: var(--terr); font-weight: 700; margin-top: -10px; }
-.authority-text { font-size: 14.5px; color: var(--taupe); line-height: 1.8; max-width: 520px; }
+.authority-text { font-size: clamp(17px, 3.2vw, 21px); color: var(--taupe); line-height: 1.6; max-width: 520px; }
 .authority-text strong { color: var(--marrom); }
 
 /* Guarantee box */
@@ -830,7 +832,7 @@ img { max-width: 100%; display: block; }
 }
 .guarantee-badge { font-size: 44px; display: block; margin-bottom: 14px; }
 .guarantee-title { font-size: 22px; font-weight: 900; color: var(--marrom); margin-bottom: 10px; }
-.guarantee-text { font-size: 14px; color: var(--taupe); line-height: 1.7; }
+.guarantee-text { font-size: clamp(17px, 3.2vw, 21px); color: var(--taupe); line-height: 1.6; }
 .guarantee-text strong { color: var(--marrom); }
 
 /* FAQ */
