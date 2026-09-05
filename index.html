@@ -466,6 +466,25 @@ img { max-width: 100%; display: block; }
 .product-title { font-size: 15px; font-weight: 800; color: var(--marrom); margin-bottom: 3px; }
 .product-desc { font-size: 13px; color: var(--taupe); line-height: 1.5; }
 
+@media (max-width: 560px) {
+  .product-item {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+    overflow: hidden;
+    gap: 0;
+  }
+  .product-cover {
+    width: 100%;
+    height: 200px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .product-item > div {
+    padding: 14px 16px 18px;
+  }
+}
+
 /* Steps */
 .steps-row {
   display: grid;
