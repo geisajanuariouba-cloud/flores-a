@@ -18,9 +18,9 @@
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
+n.queue=[];f._fbLoad=function(){t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
+s.parentNode.insertBefore(t,s)}}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1848754096095471');
 fbq('track', 'PageView');
@@ -30,24 +30,44 @@ src="https://www.facebook.com/tr?id=1848754096095471&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 
-<!-- Utmify UTMs Script -->
-<script
-  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-  data-utmify-prevent-xcod-sck
-  data-utmify-prevent-subids
-  async
-  defer
-></script>
+<!-- Utmify UTMs Script (carregado após recursos críticos, sem perder eventos) -->
+<script>
+window._utmifyLoad = function () {
+  var s = document.createElement('script');
+  s.src = 'https://cdn.utmify.com.br/scripts/utms/latest.js';
+  s.setAttribute('data-utmify-prevent-xcod-sck', '');
+  s.setAttribute('data-utmify-prevent-subids', '');
+  s.async = true;
+  document.head.appendChild(s);
+};
+</script>
 
-<!-- Microsoft Clarity -->
+<!-- Microsoft Clarity (idem) -->
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        c._clarityLoad=function(){t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);}
     })(window, document, "clarity", "script", "xr17oxfo1z");
 </script>
 <!-- End Microsoft Clarity -->
+<script>
+// Adia o DOWNLOAD dos scripts de tracking (não o disparo de eventos, que já fica
+// enfileirado por fbq/clarity) até o thread principal ficar livre / LCP terminar,
+// liberando banda para a imagem do hero no carregamento inicial.
+(function () {
+  function loadAll() {
+    if (window._fbLoad) window._fbLoad();
+    if (window._clarityLoad) window._clarityLoad();
+    if (window._utmifyLoad) window._utmifyLoad();
+  }
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(loadAll, { timeout: 2500 });
+  } else {
+    setTimeout(loadAll, 1500);
+  }
+})();
+</script>
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
