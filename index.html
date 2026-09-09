@@ -805,8 +805,9 @@ img { max-width: 100%; display: block; }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
-  max-width: 720px;
+  max-width: 900px;
   margin: 0 auto;
+  align-items: start;
 }
 .plan-card {
   background: #fff;
@@ -903,6 +904,112 @@ img { max-width: 100%; display: block; }
   box-shadow: none;
 }
 .plan-cta.outline:hover { border-color: var(--rosa); color: var(--terr); box-shadow: none; }
+
+/* Cards de preço (v2, com mockup e bloco de preço estilo "de/por") */
+.plan-card2 {
+  background: #fff;
+  border: 1.5px solid var(--linha);
+  border-radius: 16px;
+  padding: 28px 22px 26px;
+  text-align: left;
+  position: relative;
+}
+.plan-card2.dark {
+  background: var(--marrom);
+  border-color: var(--marrom);
+}
+.plan2-badge {
+  position: absolute;
+  top: -14px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--green);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 18px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.plan2-name {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--marrom);
+  margin-bottom: 14px;
+}
+.plan2-name.light { color: #fff; }
+.plan2-mockup {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 14px;
+}
+.plan2-tag {
+  display: block;
+  text-align: center;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.25);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  padding: 7px 10px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+.plan2-includes {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--taupe);
+  margin-bottom: 10px;
+}
+.plan2-includes.light { color: rgba(255,255,255,.55); }
+.plan-features.light .pf { color: #fff; }
+.plan-features.light .pf .cx { opacity: .6; }
+.plan-features.light .crossed { opacity: .4; }
+.plan2-price-block { margin: 20px 0 18px; padding-top: 16px; border-top: 1px solid var(--linha); }
+.plan-card2.dark .plan2-price-block { border-top-color: rgba(255,255,255,.15); }
+.plan2-from-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+.plan2-from { font-size: 13px; color: var(--taupe); text-decoration: line-through; }
+.plan2-from.light { color: rgba(255,255,255,.6); }
+.plan2-off {
+  background: var(--red);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+.plan2-price { font-size: 34px; font-weight: 900; color: var(--green); line-height: 1.2; }
+.plan2-installment { font-size: 13px; color: var(--taupe); margin-top: 2px; }
+.plan2-installment.light { color: rgba(255,255,255,.6); }
+.plan2-save { font-size: 13px; font-weight: 800; color: var(--green); margin-top: 6px; }
+.plan2-save.light { color: #8fd6a8; }
+.plan2-hint {
+  text-align: center;
+  font-size: 13px;
+  color: var(--taupe);
+  margin-top: 22px;
+}
+.plan2-note-box {
+  max-width: 620px;
+  margin: 18px auto 0;
+  background: #fff;
+  border: 1.5px solid var(--linha);
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--marrom);
+  text-align: center;
+}
+.plan2-note-box .ck { color: var(--green); margin-right: 6px; }
 
 .guarantee-row {
   display: flex;
@@ -1844,21 +1951,53 @@ footer a { color: rgba(255,255,255,.3); }
 
 <!-- ===================== PRICING ===================== -->
 <section class="pricing-section" id="pricing">
-  <h2 class="section-h">Preço de lançamento por tempo limitado</h2>
+  <h2 class="showcase-h">Escolha a melhor<br>opção para você</h2>
+  <div class="showcase-underline"></div>
   <div class="timer-mini">
     ⚡ CONDIÇÃO DE LANÇAMENTO ENCERRA EM <span class="td" id="countdown2">14:59</span>
   </div>
   <p class="section-p" style="margin-bottom:14px;">Depois que a condição de lançamento acabar, o preço volta para o valor original.</p>
   <div class="value-strip">💡 R$47,00 ÷ 5 cadernos = <strong>menos de R$10 por caderno</strong> — e ainda leva a Área de Membros e 11 bônus de graça</div>
+
   <div class="plans-grid">
-    <div class="plan-card best">
-      <div class="plan-popular">🔥 MAIS ESCOLHIDO</div>
-      <div class="plan-name">Plano</div>
-      <div class="plan-title"><span class="accent">Completo</span></div>
-      <div class="plan-from">De R$297,00</div>
-      <div class="plan-price"><sup>R$</sup>47<span>,00</span></div>
-      <div class="plan-note">Pagamento único · Sem mensalidade · 84% OFF</div>
+
+    <div class="plan-card2">
+      <div class="plan2-name">Plano Básico</div>
+      <img class="plan2-mockup" src="plano-basico-mockup.png" width="600" height="600" loading="lazy" alt="Mockup do Plano Básico Floresça — 1 caderno guiado">
+      <div class="plan2-includes">VOCÊ RECEBE:</div>
       <ul class="plan-features">
+        <li class="pf"><span class="ck">✓</span> Caderno 01 · 30 Dias de Amor Próprio</li>
+        <li class="pf"><span class="cx">✗</span> <span class="crossed">Caderno 02 · Criança Interior</span></li>
+        <li class="pf"><span class="cx">✗</span> <span class="crossed">Caderno 03 · Libertação da Ansiedade</span></li>
+        <li class="pf"><span class="cx">✗</span> <span class="crossed">Caderno 04 · 30 Dias de Gratidão</span></li>
+        <li class="pf"><span class="cx">✗</span> <span class="crossed">Caderno 05 · Eu em Nova Fase</span></li>
+        <li class="pf"><span class="cx">✗</span> <span class="crossed">11 Bônus exclusivos (R$247 em valor)</span></li>
+        <li class="pf"><span class="ck">✓</span> Acesso imediato em PDF</li>
+        <li class="pf"><span class="ck">✓</span> Para imprimir ou usar no celular</li>
+        <li class="pf"><span class="cx">✗</span> <span class="crossed">Área de Membros</span></li>
+        <li class="pf"><span class="cx">✗</span> <span class="crossed">Ritual da Manhã Poderosa</span></li>
+        <li class="pf"><span class="cx">✗</span> <span class="crossed">Kit de Primeiros Socorros Emocionais</span></li>
+        <li class="pf"><span class="cx">✗</span> <span class="crossed">Guia Anti-Autossabotagem</span></li>
+      </ul>
+      <div class="plan2-price-block">
+        <div class="plan2-from-row">
+          <span class="plan2-from">de R$67,00 por</span>
+          <span class="plan2-off">70% OFF</span>
+        </div>
+        <div class="plan2-price">R$ 19,90</div>
+        <div class="plan2-installment">ou 2x de R$9,95 no cartão</div>
+        <div class="plan2-save">✓ Você economiza R$47,10</div>
+      </div>
+      <a href="https://checkout.wiven.com.br/checkout/cmsjg9r3701dl01omo1zzk8tb?offer=1QPQ3U5" class="plan-cta outline basico-trigger">EU QUERO O PLANO BÁSICO</a>
+    </div>
+
+    <div class="plan-card2 dark">
+      <div class="plan2-badge">🔥 MAIS VENDIDO</div>
+      <div class="plan2-name light">Plano Completo</div>
+      <img class="plan2-mockup" src="plano-completo-mockup.png" width="600" height="600" loading="lazy" alt="Mockup do Plano Completo Floresça — 5 cadernos + 11 bônus">
+      <div class="plan2-tag">TUDO DO BÁSICO + OS 11 BÔNUS</div>
+      <div class="plan2-includes light">VOCÊ RECEBE:</div>
+      <ul class="plan-features light">
         <li class="pf"><span class="ck">✓</span> <strong>Área de Membros Completa</strong></li>
         <li class="pf"><span class="ck">✓</span> <strong>Todos os 5 Cadernos de Cura Emocional</strong></li>
         <li class="pf"><span class="ck">✓</span> Caderno 01 · 30 Dias de Amor Próprio</li>
@@ -1876,31 +2015,26 @@ footer a { color: rgba(255,255,255,.3); }
         <li class="pf"><span class="ck">✓</span> + 5 bônus adicionais</li>
         <li class="pf"><span class="ck">✓</span> Acesso imediato em PDF</li>
       </ul>
+      <div class="plan2-price-block">
+        <div class="plan2-from-row">
+          <span class="plan2-from light">de R$297,00 por</span>
+          <span class="plan2-off">84% OFF</span>
+        </div>
+        <div class="plan2-price">R$ 47,00</div>
+        <div class="plan2-installment light">ou 10x de R$4,70 no cartão</div>
+        <div class="plan2-save light">✓ Você economiza R$250,00</div>
+      </div>
       <a href="https://checkout.wiven.com.br/checkout/cmskg733b028101ocbaa0b3un?offer=M1Q441V" class="plan-cta">EU QUERO O PLANO COMPLETO</a>
     </div>
-    <div class="plan-card muted">
-      <div class="plan-name">Plano</div>
-      <div class="plan-title">Básico</div>
-      <div class="plan-from">De R$67,00</div>
-      <div class="plan-price"><sup>R$</sup>19<span>,90</span></div>
-      <div class="plan-note">Pagamento único · Sem mensalidade</div>
-      <ul class="plan-features">
-        <li class="pf"><span class="ck">✓</span> Caderno 01 · 30 Dias de Amor Próprio</li>
-        <li class="pf"><span class="cx">✗</span> <span class="crossed">Caderno 02 · Criança Interior</span></li>
-        <li class="pf"><span class="cx">✗</span> <span class="crossed">Caderno 03 · Libertação da Ansiedade</span></li>
-        <li class="pf"><span class="cx">✗</span> <span class="crossed">Caderno 04 · 30 Dias de Gratidão</span></li>
-        <li class="pf"><span class="cx">✗</span> <span class="crossed">Caderno 05 · Eu em Nova Fase</span></li>
-        <li class="pf"><span class="cx">✗</span> <span class="crossed">11 Bônus exclusivos (R$247 em valor)</span></li>
-        <li class="pf"><span class="ck">✓</span> Acesso imediato em PDF</li>
-        <li class="pf"><span class="ck">✓</span> Para imprimir ou usar no celular</li>
-        <li class="pf"><span class="cx">✗</span> <span class="crossed">Área de Membros</span></li>
-        <li class="pf"><span class="cx">✗</span> <span class="crossed">Ritual da Manhã Poderosa</span></li>
-        <li class="pf"><span class="cx">✗</span> <span class="crossed">Kit de Primeiros Socorros Emocionais</span></li>
-        <li class="pf"><span class="cx">✗</span> <span class="crossed">Guia Anti-Autossabotagem</span></li>
-      </ul>
-      <a href="https://checkout.wiven.com.br/checkout/cmsjg9r3701dl01omo1zzk8tb?offer=1QPQ3U5" class="plan-cta outline basico-trigger">EU QUERO O BÁSICO</a>
-    </div>
+
   </div>
+
+  <p class="plan2-hint">👉 a maioria leva o Completo pelos 11 bônus</p>
+
+  <div class="plan2-note-box">
+    <span class="ck">✓</span> Um único momento de alívio emocional já faz o investimento valer a pena.
+  </div>
+
   <div class="guarantee-row">
     <div class="guarantee-icon">🔒</div>
     <p>Compra 100% segura · Acesso imediato após pagamento · Garantia de 7 dias</p>
