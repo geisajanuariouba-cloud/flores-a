@@ -1982,7 +1982,7 @@ if ('requestIdleCallback' in window) {
         <div class="plan2-installment">ou 2x de R$9,95 no cartão</div>
         <div class="plan2-save">✓ Você economiza R$47,10</div>
       </div>
-      <a href="https://pay.wiapy.com/6ud42-Ajij0D" class="plan-cta outline basico-trigger">EU QUERO O PLANO BÁSICO</a>
+      <a href="#pricing" data-checkout="https://pay.wiapy.com/6ud42-Ajij0D" class="plan-cta outline basico-trigger">EU QUERO O PLANO BÁSICO</a>
     </div>
 
     <div class="plan-card2 dark">
@@ -2327,7 +2327,7 @@ function _initNonCriticalScripts() {
     document.querySelectorAll('.basico-trigger').forEach(function(link) {
       link.addEventListener('click', function(e) {
         e.preventDefault();
-        openForced(link.href);
+        openForced(link.dataset.checkout);
       });
     });
 
