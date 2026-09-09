@@ -51,6 +51,19 @@ window._utmifyLoad = function () {
     })(window, document, "clarity", "script", "xr17oxfo1z");
 </script>
 <!-- End Microsoft Clarity -->
+
+<!-- Utmify Pixel (conversão) -->
+<script>
+window._utmifyPixelLoad = function () {
+  window.pixelId = "6aa1da9749d487e840f9c691";
+  var s = document.createElement('script');
+  s.src = 'https://cdn.utmify.com.br/scripts/pixel/pixel.js';
+  s.async = true;
+  s.defer = true;
+  document.head.appendChild(s);
+};
+</script>
+<!-- End Utmify Pixel -->
 <script>
 // Adia o DOWNLOAD dos scripts de tracking (não o disparo de eventos, que já fica
 // enfileirado por fbq/clarity) até o thread principal ficar livre / LCP terminar,
@@ -59,6 +72,7 @@ window._utmifyLoad = function () {
   function loadAll() {
     if (window._fbLoad) window._fbLoad();
     if (window._clarityLoad) window._clarityLoad();
+    if (window._utmifyPixelLoad) window._utmifyPixelLoad();
     if (window._utmifyLoad) window._utmifyLoad();
   }
   if ('requestIdleCallback' in window) {
