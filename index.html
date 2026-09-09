@@ -2170,7 +2170,7 @@ if ('requestIdleCallback' in window) {
         <li><span class="ck">✓</span> Menos de R$8 por caderno — o preço mais baixo que ele fica</li>
       </ul>
       <a href="https://pay.wiapy.com/r7ip9OM_8vo" class="exit-cta">SIM, QUERO O COMPLETO POR R$37,00</a>
-      <button type="button" class="exit-decline" id="exitDecline">Não, prefiro levar só 1 caderno por R$19,90</button>
+      <a href="https://pay.wiapy.com/6ud42-Ajij0D" class="exit-decline" id="exitDecline">Não, prefiro levar só 1 caderno por R$19,90</a>
     </div>
   </div>
 </div>
@@ -2333,7 +2333,13 @@ function _initNonCriticalScripts() {
 
     closeBtn.addEventListener('click', closeExit);
     var declineBtn = document.getElementById('exitDecline');
-    if (declineBtn) declineBtn.addEventListener('click', closeExit);
+    // "Não, prefiro..." agora é um <a href> de verdade (pro Utmify conseguir
+    // capturar o InitiateCheckout ao passar o mouse/clicar); só fecha o
+    // overlay visualmente, a navegação acontece pelo próprio link nativo.
+    if (declineBtn) declineBtn.addEventListener('click', function() {
+      pendingHref = null;
+      overlay.classList.remove('show');
+    });
     overlay.addEventListener('click', function(e) {
       if (e.target === overlay) closeExit();
     });
