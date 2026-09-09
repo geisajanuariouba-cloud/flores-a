@@ -1913,7 +1913,7 @@ footer a { color: rgba(255,255,255,.3); }
   </div>
 </section>
 <script>
-(function() {
+function _initProof2() {
   var track = document.getElementById('proof2Track');
   if (!track) return;
   var cards = track.querySelectorAll('.proof2-card');
@@ -1922,7 +1922,12 @@ footer a { color: rgba(255,255,255,.3); }
   var style = document.createElement('style');
   style.innerHTML = '@keyframes proof2scroll{0%{transform:translateX(0)}100%{transform:translateX(-' + (half * w) + 'px)}}';
   document.head.appendChild(style);
-})();
+}
+if ('requestIdleCallback' in window) {
+  requestIdleCallback(_initProof2, { timeout: 2000 });
+} else {
+  setTimeout(_initProof2, 300);
+}
 </script>
 
 <!-- ===================== PRICING ===================== -->
@@ -2193,117 +2198,130 @@ function toggleFaq(btn) {
   if (!open) item.classList.add('open');
 }
 
-/* Vitrine: slider que gira sozinho, mas dá pra arrastar (mouse e touch) */
-(function() {
-  var track = document.getElementById('showcaseTrack');
-  if (!track) return;
+/* Vitrine, scroll suave e popup de saída: não são críticos pro primeiro
+   render, então adiamos a inicialização deles pra depois que a thread
+   principal ficar livre (idle) ou a página terminar de carregar — assim
+   eles não competem com o carregamento/pintura inicial da página. */
+function _initNonCriticalScripts() {
 
-  var isDown = false, startX = 0, scrollStart = 0, moved = false;
-  var autoplayTimer = null, resumeTimer = null;
+  /* Vitrine: slider que gira sozinho, mas dá pra arrastar (mouse e touch) */
+  (function() {
+    var track = document.getElementById('showcaseTrack');
+    if (!track) return;
 
-  function slideStep() {
-    var slide = track.querySelector('.showcase-slide');
-    if (!slide) return 298;
-    var cs = getComputedStyle(track);
-    var gap = parseFloat(cs.columnGap || cs.gap || 0) || 0;
-    return slide.getBoundingClientRect().width + gap;
-  }
+    var isDown = false, startX = 0, scrollStart = 0, moved = false;
+    var autoplayTimer = null, resumeTimer = null;
 
-  function stopAutoplay() {
-    if (autoplayTimer) { clearInterval(autoplayTimer); autoplayTimer = null; }
-  }
-
-  function startAutoplay() {
-    stopAutoplay();
-    autoplayTimer = setInterval(function() {
-      var maxScroll = track.scrollWidth - track.clientWidth - 2;
-      if (track.scrollLeft >= maxScroll) {
-        track.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        track.scrollTo({ left: track.scrollLeft + slideStep(), behavior: 'smooth' });
-      }
-    }, 3200);
-  }
-
-  function pauseAndScheduleResume() {
-    stopAutoplay();
-    clearTimeout(resumeTimer);
-    resumeTimer = setTimeout(startAutoplay, 4500);
-  }
-
-  // Arraste com o mouse (desktop) — touch já funciona nativamente com overflow-x
-  track.addEventListener('mousedown', function(e) {
-    isDown = true;
-    moved = false;
-    track.classList.add('dragging');
-    startX = e.pageX;
-    scrollStart = track.scrollLeft;
-    pauseAndScheduleResume();
-  });
-  window.addEventListener('mouseup', function() {
-    isDown = false;
-    track.classList.remove('dragging');
-  });
-  window.addEventListener('mousemove', function(e) {
-    if (!isDown) return;
-    e.preventDefault();
-    var dx = e.pageX - startX;
-    if (Math.abs(dx) > 4) moved = true;
-    track.scrollLeft = scrollStart - dx;
-  });
-  track.addEventListener('click', function(e) {
-    if (moved) { e.preventDefault(); e.stopPropagation(); }
-  }, true);
-
-  track.addEventListener('touchstart', pauseAndScheduleResume, { passive: true });
-  track.addEventListener('wheel', pauseAndScheduleResume, { passive: true });
-
-  startAutoplay();
-})();
-
-document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-  a.addEventListener('click', function(e) {
-    var t = document.querySelector(this.getAttribute('href'));
-    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-  });
-});
-
-(function() {
-  var overlay = document.getElementById('exitOverlay');
-  var closeBtn = document.getElementById('exitClose');
-  if (!overlay || !closeBtn) return;
-  var pendingHref = null;
-
-  function openForced(href) {
-    pendingHref = href || null;
-    overlay.classList.add('show');
-  }
-  function closeExit() {
-    overlay.classList.remove('show');
-    if (pendingHref) {
-      var href = pendingHref;
-      pendingHref = null;
-      window.location.href = href;
+    function slideStep() {
+      var slide = track.querySelector('.showcase-slide');
+      if (!slide) return 298;
+      var cs = getComputedStyle(track);
+      var gap = parseFloat(cs.columnGap || cs.gap || 0) || 0;
+      return slide.getBoundingClientRect().width + gap;
     }
-  }
 
-  document.querySelectorAll('.basico-trigger').forEach(function(link) {
-    link.addEventListener('click', function(e) {
+    function stopAutoplay() {
+      if (autoplayTimer) { clearInterval(autoplayTimer); autoplayTimer = null; }
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      autoplayTimer = setInterval(function() {
+        var maxScroll = track.scrollWidth - track.clientWidth - 2;
+        if (track.scrollLeft >= maxScroll) {
+          track.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          track.scrollTo({ left: track.scrollLeft + slideStep(), behavior: 'smooth' });
+        }
+      }, 3200);
+    }
+
+    function pauseAndScheduleResume() {
+      stopAutoplay();
+      clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(startAutoplay, 4500);
+    }
+
+    // Arraste com o mouse (desktop) — touch já funciona nativamente com overflow-x
+    track.addEventListener('mousedown', function(e) {
+      isDown = true;
+      moved = false;
+      track.classList.add('dragging');
+      startX = e.pageX;
+      scrollStart = track.scrollLeft;
+      pauseAndScheduleResume();
+    });
+    window.addEventListener('mouseup', function() {
+      isDown = false;
+      track.classList.remove('dragging');
+    });
+    window.addEventListener('mousemove', function(e) {
+      if (!isDown) return;
       e.preventDefault();
-      openForced(link.href);
+      var dx = e.pageX - startX;
+      if (Math.abs(dx) > 4) moved = true;
+      track.scrollLeft = scrollStart - dx;
+    });
+    track.addEventListener('click', function(e) {
+      if (moved) { e.preventDefault(); e.stopPropagation(); }
+    }, true);
+
+    track.addEventListener('touchstart', pauseAndScheduleResume, { passive: true });
+    track.addEventListener('wheel', pauseAndScheduleResume, { passive: true });
+
+    startAutoplay();
+  })();
+
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var t = document.querySelector(this.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
   });
 
-  closeBtn.addEventListener('click', closeExit);
-  var declineBtn = document.getElementById('exitDecline');
-  if (declineBtn) declineBtn.addEventListener('click', closeExit);
-  overlay.addEventListener('click', function(e) {
-    if (e.target === overlay) closeExit();
-  });
-  document.querySelectorAll('.exit-cta').forEach(function(cta) {
-    cta.addEventListener('click', function() { pendingHref = null; });
-  });
-})();
+  (function() {
+    var overlay = document.getElementById('exitOverlay');
+    var closeBtn = document.getElementById('exitClose');
+    if (!overlay || !closeBtn) return;
+    var pendingHref = null;
+
+    function openForced(href) {
+      pendingHref = href || null;
+      overlay.classList.add('show');
+    }
+    function closeExit() {
+      overlay.classList.remove('show');
+      if (pendingHref) {
+        var href = pendingHref;
+        pendingHref = null;
+        window.location.href = href;
+      }
+    }
+
+    document.querySelectorAll('.basico-trigger').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        openForced(link.href);
+      });
+    });
+
+    closeBtn.addEventListener('click', closeExit);
+    var declineBtn = document.getElementById('exitDecline');
+    if (declineBtn) declineBtn.addEventListener('click', closeExit);
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) closeExit();
+    });
+    document.querySelectorAll('.exit-cta').forEach(function(cta) {
+      cta.addEventListener('click', function() { pendingHref = null; });
+    });
+  })();
+
+}
+if ('requestIdleCallback' in window) {
+  requestIdleCallback(_initNonCriticalScripts, { timeout: 2000 });
+} else {
+  setTimeout(_initNonCriticalScripts, 300);
+}
 
 </script>
 </body>
