@@ -8,8 +8,8 @@
 <title>Floresça — Cadernos de Cura Emocional</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Dancing+Script:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Dancing+Script:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"></noscript>
 
 <!-- Meta Pixel Code -->
 <script>
@@ -53,7 +53,7 @@ html { scroll-behavior: smooth; }
 body {
   background: #fff;
   color: #3D2B27;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -102,11 +102,11 @@ img { max-width: 100%; display: block; }
 .timer-digits {
   background: #fff;
   color: var(--terr);
-  font-size: 17px;
-  font-weight: 900;
+  font-size: 14px;
+  font-weight: 700;
   padding: 3px 10px;
   border-radius: 6px;
-  letter-spacing: 2px;
+  letter-spacing: .3px;
   font-variant-numeric: tabular-nums;
 }
 
@@ -236,7 +236,7 @@ img { max-width: 100%; display: block; }
   margin: 0 auto;
   background: linear-gradient(135deg, #34b96a, var(--green-dark));
   color: #fff;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: clamp(15px, 3vw, 18px);
   font-weight: 900;
   padding: 20px 28px;
@@ -400,7 +400,7 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 4px 20px rgba(61,43,39,.18);
   position: relative;
   background: #FAF6F1;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .cpage-bar {
   position: absolute;
@@ -810,7 +810,7 @@ img { max-width: 100%; display: block; }
   width: 100%;
   background: var(--terr);
   color: #fff;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 15px;
   font-weight: 900;
   padding: 16px 20px;
@@ -944,7 +944,7 @@ img { max-width: 100%; display: block; }
   border: none;
   cursor: pointer;
   color: var(--marrom);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 15px;
   font-weight: 700;
   text-align: left;
@@ -985,7 +985,7 @@ img { max-width: 100%; display: block; }
   gap: 10px;
   background: #25D366;
   color: #fff;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 800;
   font-size: 16px;
   padding: 16px 32px;
@@ -1110,7 +1110,7 @@ footer a { color: rgba(255,255,255,.3); }
   width: 100%;
   background: linear-gradient(135deg, var(--gold), var(--terr));
   color: var(--marrom);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 15px;
   font-weight: 900;
   padding: 18px 20px;
@@ -1127,7 +1127,7 @@ footer a { color: rgba(255,255,255,.3); }
   width: 100%;
   background: none;
   border: none;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 12.5px;
   color: rgba(255,255,255,.45);
   text-decoration: underline;
@@ -1215,7 +1215,7 @@ footer a { color: rgba(255,255,255,.3); }
   width: 100%;
   background: linear-gradient(135deg, var(--gold), var(--terr));
   color: var(--marrom);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 15px;
   font-weight: 900;
   padding: 16px 20px;
@@ -1262,8 +1262,8 @@ footer a { color: rgba(255,255,255,.3); }
 
 <!-- ===================== TIMER BAR ===================== -->
 <div class="timer-bar">
-  🔥 <span class="timer-label">CONDIÇÃO DE LANÇAMENTO · ENCERRA EM:</span>
-  <span class="timer-digits" id="countdown">14:59</span>
+  ⚡ <span class="timer-label">OFERTA ESPECIAL DISPONÍVEL APENAS HOJE</span>
+  <span class="timer-digits" id="todaydate"></span>
 </div>
 
 <main>
@@ -1998,13 +1998,21 @@ footer a { color: rgba(255,255,255,.3); }
     var left = Math.max(0, Math.ceil((end - Date.now()) / 1000));
     var s = fmt(left % 60), m = fmt(Math.floor(left / 60));
     var str = m + ':' + s;
-    ['countdown','countdown2'].forEach(function(id){
-      var el = document.getElementById(id);
-      if (el) el.textContent = str;
-    });
+    var el = document.getElementById('countdown2');
+    if (el) el.textContent = str;
     if (left > 0) setTimeout(tick, 500);
   }
   tick();
+})();
+
+(function() {
+  var el = document.getElementById('todaydate');
+  if (!el) return;
+  var d = new Date();
+  var dd = ('0' + d.getDate()).slice(-2);
+  var mm = ('0' + (d.getMonth() + 1)).slice(-2);
+  var yyyy = d.getFullYear();
+  el.textContent = '(' + dd + '/' + mm + '/' + yyyy + ')';
 })();
 
 function toggleFaq(btn) {
