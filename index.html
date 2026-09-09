@@ -646,6 +646,35 @@ img { max-width: 100%; display: block; }
   padding: 60px 20px;
   color: #fff;
 }
+.bonus-heading {
+  font-size: clamp(24px, 5vw, 34px);
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 12px;
+  text-wrap: balance;
+}
+.bonus-heading .bonus-underline {
+  border-bottom: 4px solid var(--gold);
+  padding-bottom: 2px;
+}
+.bonus-subtitle {
+  font-size: clamp(15px, 3vw, 18px);
+  font-weight: 700;
+  font-style: italic;
+  color: rgba(255,255,255,.75);
+  margin-bottom: 20px;
+}
+.bonus-pill {
+  display: inline-block;
+  background: var(--terr);
+  color: #fff;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: .3px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
 .bonus-total {
   display: block;
   max-width: fit-content;
@@ -1388,51 +1417,6 @@ footer a { color: rgba(255,255,255,.3); }
   <p class="respira-text">Com <strong>5 cadernos guiados</strong> você organiza o que sente, <strong>no seu ritmo</strong>, sem página em branco e sem precisar saber por onde começar.</p>
 </section>
 
-<!-- ===================== O QUE VOCÊ RECEBE ===================== -->
-<section class="section section-center" style="background:var(--cream);">
-  <h2 class="section-h">O que você recebe</h2>
-  <div class="product-list">
-    <div class="product-item">
-      <img class="product-cover" src="caderno-1-amor-proprio.webp" width="300" height="400" loading="lazy" alt="Capa do caderno 30 Dias de Amor Próprio">
-      <div>
-        <div class="product-title">30 Dias de Amor Próprio</div>
-        <div class="product-desc">Um mês de perguntas guiadas, dia após dia, pra você aprender a falar consigo mesma com mais gentileza — sem se cobrar, sem se comparar.</div>
-      </div>
-    </div>
-    <div class="product-item">
-      <img class="product-cover" src="caderno-2-crianca-interior.webp" width="300" height="400" loading="lazy" alt="Capa do caderno Criança Interior">
-      <div>
-        <div class="product-title">Criança Interior</div>
-        <div class="product-desc">Exercícios pra você entender de onde vêm certos padrões e se reconectar com a criança que você foi — com carinho, sem julgamento.</div>
-      </div>
-    </div>
-    <div class="product-item">
-      <img class="product-cover" src="caderno-3-ansiedade.webp" width="300" height="400" loading="lazy" alt="Capa do caderno Libertação da Ansiedade">
-      <div>
-        <div class="product-title">Libertação da Ansiedade</div>
-        <div class="product-desc">Técnicas simples de respiração e um passo a passo prático pra usar exatamente na hora que a ansiedade aparecer.</div>
-      </div>
-    </div>
-    <div class="product-item">
-      <img class="product-cover" src="caderno-4-gratidao.webp" width="300" height="400" loading="lazy" alt="Capa do caderno 30 Dias de Gratidão">
-      <div>
-        <div class="product-title">30 Dias de Gratidão</div>
-        <div class="product-desc">Um ritual de manhã e noite por 30 dias pra treinar o olhar pra enxergar o que também é bom, mesmo nos dias difíceis.</div>
-      </div>
-    </div>
-    <div class="product-item">
-      <img class="product-cover" src="caderno-5-nova-fase.webp" width="300" height="400" loading="lazy" alt="Capa do caderno Eu em Nova Fase">
-      <div>
-        <div class="product-title">Eu em Nova Fase</div>
-        <div class="product-desc">Um espaço pra olhar pra sua vida hoje, imaginar onde você quer chegar, e dar os primeiros passos — pra quem já está pronta pra virar a página.</div>
-      </div>
-    </div>
-  </div>
-  <a href="#pricing" class="btn-cta" style="max-width:480px;margin:36px auto 0;">
-    EU QUERO COMEÇAR
-  </a>
-</section>
-
 <!-- ===================== VITRINE (SLIDER ARRASTÁVEL) ===================== -->
 <section class="showcase-section">
   <h2 class="showcase-h">Veja os materiais que você<br>vai receber na prática</h2>
@@ -1742,10 +1726,57 @@ footer a { color: rgba(255,255,255,.3); }
   <p class="showcase-note">...e os principais exercícios de respiração, gratidão, autoconhecimento e autoafirmação, cada um com o mesmo cuidado pra te acompanhar no dia a dia.</p>
 </section>
 
+<!-- ===================== O QUE VOCÊ RECEBE ===================== -->
+<section class="section section-center" style="background:var(--cream);">
+  <h2 class="section-h">O que você recebe</h2>
+  <div class="product-list">
+    <div class="product-item">
+      <img class="product-cover" src="caderno-1-amor-proprio.webp" width="300" height="400" loading="lazy" alt="Capa do caderno 30 Dias de Amor Próprio">
+      <div>
+        <div class="product-title">30 Dias de Amor Próprio</div>
+        <div class="product-desc">Um mês de perguntas guiadas, dia após dia, pra você aprender a falar consigo mesma com mais gentileza — sem se cobrar, sem se comparar.</div>
+      </div>
+    </div>
+    <div class="product-item">
+      <img class="product-cover" src="caderno-2-crianca-interior.webp" width="300" height="400" loading="lazy" alt="Capa do caderno Criança Interior">
+      <div>
+        <div class="product-title">Criança Interior</div>
+        <div class="product-desc">Exercícios pra você entender de onde vêm certos padrões e se reconectar com a criança que você foi — com carinho, sem julgamento.</div>
+      </div>
+    </div>
+    <div class="product-item">
+      <img class="product-cover" src="caderno-3-ansiedade.webp" width="300" height="400" loading="lazy" alt="Capa do caderno Libertação da Ansiedade">
+      <div>
+        <div class="product-title">Libertação da Ansiedade</div>
+        <div class="product-desc">Técnicas simples de respiração e um passo a passo prático pra usar exatamente na hora que a ansiedade aparecer.</div>
+      </div>
+    </div>
+    <div class="product-item">
+      <img class="product-cover" src="caderno-4-gratidao.webp" width="300" height="400" loading="lazy" alt="Capa do caderno 30 Dias de Gratidão">
+      <div>
+        <div class="product-title">30 Dias de Gratidão</div>
+        <div class="product-desc">Um ritual de manhã e noite por 30 dias pra treinar o olhar pra enxergar o que também é bom, mesmo nos dias difíceis.</div>
+      </div>
+    </div>
+    <div class="product-item">
+      <img class="product-cover" src="caderno-5-nova-fase.webp" width="300" height="400" loading="lazy" alt="Capa do caderno Eu em Nova Fase">
+      <div>
+        <div class="product-title">Eu em Nova Fase</div>
+        <div class="product-desc">Um espaço pra olhar pra sua vida hoje, imaginar onde você quer chegar, e dar os primeiros passos — pra quem já está pronta pra virar a página.</div>
+      </div>
+    </div>
+  </div>
+  <a href="#pricing" class="btn-cta" style="max-width:480px;margin:36px auto 0;">
+    EU QUERO COMEÇAR
+  </a>
+</section>
+
 <!-- ===================== BONUSES ===================== -->
 <section class="bonus-section" id="bonus">
   <div class="section-center">
-    <h2 class="section-h" style="color:#fff;">11 Bônus que <span style="color:var(--gold);">aceleram</span> sua cura</h2>
+    <h2 class="bonus-heading"><span class="bonus-underline">E não para por aí</span>... tem mais!</h2>
+    <p class="bonus-subtitle">Você também vai receber...</p>
+    <div class="bonus-pill">🎁 11 BÔNUS EXCLUSIVOS</div>
   </div>
   <div class="bonus-list-simple">
     <div class="bonus-row"><span class="bonus-row-name">Ritual da Manhã Poderosa</span><span class="bonus-row-price">R$27,00</span></div>
