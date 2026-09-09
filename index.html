@@ -995,10 +995,45 @@ img { max-width: 100%; display: block; }
   border-radius: 16px;
   padding: 32px 28px;
 }
-.guarantee-badge { font-size: 44px; display: block; margin-bottom: 14px; }
-.guarantee-title { font-size: 22px; font-weight: 900; color: var(--marrom); margin-bottom: 10px; }
-.guarantee-text { font-size: clamp(17px, 3.2vw, 21px); color: var(--taupe); line-height: 1.6; }
-.guarantee-text strong { color: var(--marrom); }
+.guarantee-shield {
+  width: 68px;
+  height: 76px;
+  margin: 0 auto 16px;
+  background: #fff;
+  border: 2px solid var(--gold);
+  border-radius: 12px 12px 8px 8px / 16px 16px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.guarantee-shield-n { font-size: 22px; font-weight: 900; color: var(--marrom); line-height: 1; }
+.guarantee-shield-label { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--taupe); margin-top: 2px; }
+.guarantee-title { font-size: clamp(19px, 4vw, 23px); font-weight: 900; color: var(--marrom); margin-bottom: 14px; }
+.guarantee-sub { font-size: 15px; color: var(--taupe); margin-bottom: 14px; }
+.guarantee-checklist {
+  list-style: none;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  margin: 0 auto 18px;
+}
+.guarantee-checklist li {
+  font-size: 14.5px;
+  color: var(--marrom);
+  font-weight: 600;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.guarantee-checklist li::before {
+  content: "✓";
+  color: var(--green);
+  font-weight: 900;
+  flex-shrink: 0;
+}
+.guarantee-final { font-size: clamp(15px, 3vw, 17px); font-weight: 800; color: var(--marrom); }
 
 /* FAQ */
 .faq-section { padding: 60px 20px; background: var(--bege); }
@@ -2185,73 +2220,21 @@ footer a { color: rgba(255,255,255,.3); }
   </div>
 </section>
 
-<hr class="divider">
-
-<!-- ===================== MECANISMO ===================== -->
-<section class="section section-center" style="background:#fff;">
-  <span class="eyebrow">como cada caderno é feito</span>
-  <h2 class="section-h">Não são perguntas <span class="accent">genéricas</span> de internet</h2>
-  <p class="section-p">Cada caderno segue uma sequência proposital, dia após dia — não é uma lista aleatória de perguntas bonitas. Um exemplo real do Caderno de Amor Próprio:</p>
-  <div class="steps-row" style="margin-top:32px;">
-    <div class="step-card">
-      <div class="step-n">1</div>
-      <div class="step-title">Dia 1 — Você nomeia</div>
-      <div class="step-desc">"Em que momentos eu mais me critico?" Você começa reconhecendo o padrão, sem julgamento.</div>
-    </div>
-    <div class="step-card">
-      <div class="step-n">2</div>
-      <div class="step-title">Dia 2 — Você entende</div>
-      <div class="step-desc">"De onde eu aprendi que precisava ser assim tão dura comigo?" A pergunta seguinte aprofunda, nunca repete.</div>
-    </div>
-    <div class="step-card">
-      <div class="step-n">3</div>
-      <div class="step-title">Dia 3 — Você muda a prática</div>
-      <div class="step-desc">"O que eu diria pra uma amiga nessa mesma situação?" Cada dia constrói em cima do anterior — é progressão, não aleatoriedade.</div>
-    </div>
-  </div>
-  <p style="max-width:560px;margin:28px auto 0;text-align:center;font-size:clamp(17px, 3.2vw, 21px);color:var(--taupe);line-height:1.6;">O processo de criação passa por <strong style="color:var(--marrom);">pesquisa, seleção, organização em sequência, testes com leitoras reais e revisão</strong> antes de qualquer caderno ser publicado.</p>
-</section>
-
-<hr class="divider">
-
-<!-- ===================== SEGURANÇA EMOCIONAL ===================== -->
-<section class="section section-center" style="background:var(--cream);">
-  <h2 class="section-h">Você continua <span class="accent">no controle</span> o tempo todo</h2>
-  <div class="objection-grid" style="margin-top:28px;">
-    <div class="objection-item"><span class="objection-check">✓</span><div><div class="objection-title">Pode pular o que doer</div><div class="objection-desc">Nenhuma pergunta é obrigatória. Se um exercício mexer demais, pule e volte outro dia.</div></div></div>
-    <div class="objection-item"><span class="objection-check">✓</span><div><div class="objection-title">Pode pausar e voltar</div><div class="objection-desc">Não tem prazo, não tem cobrança. O caderno espera você no seu tempo.</div></div></div>
-    <div class="objection-item"><span class="objection-check">✓</span><div><div class="objection-title">Suas respostas são só suas</div><div class="objection-desc">Ninguém do Floresça lê o que você escreve. O caderno é seu, fica com você.</div></div></div>
-    <div class="objection-item"><span class="objection-check">✓</span><div><div class="objection-title">Não precisa fazer sozinha se doer demais</div><div class="objection-desc">Se algo trouxer um sofrimento muito forte, o ideal é seguir acompanhada de um profissional. O caderno é apoio, não tratamento.</div></div></div>
-  </div>
-  <a href="#pricing" class="btn-cta" style="max-width:480px;margin:36px auto 0;">
-    EU QUERO COMEÇAR
-  </a>
-</section>
-
-<!-- ===================== AUTORIDADE / EXPERT ===================== -->
-<section class="authority-section">
-  <span class="eyebrow">quem criou o floresça</span>
-  <h2 class="section-h">A pessoa por trás <span class="accent">do método</span></h2>
-  <div class="authority-card">
-    <img src="isa-medeiros.jpg" alt="Isa Medeiros, fundadora do Floresça" class="authority-photo">
-    <div class="authority-name">Isa Medeiros</div>
-    <div class="authority-role">Fundadora do Floresça</div>
-    <div class="authority-text">
-      Criei o Floresça depois de perceber, na prática, que muita gente queria se conhecer melhor mas não sabia por onde começar — e não tinha R$200 pra gastar toda semana com terapia.<br><br>
-      Cada caderno passa por pesquisa, escrita, teste com leitoras reais e revisão antes de ir pro ar. <strong>Não é teoria solta: é um método que eu construí, testei e revisei — e que continuo ajustando com o que as próprias leitoras me contam.</strong>
-    </div>
-  </div>
-</section>
-
 <!-- ===================== GUARANTEE ===================== -->
 <section class="guarantee-section">
   <div class="guarantee-box">
-    <span class="guarantee-badge">🛡️</span>
-    <div class="guarantee-title">Garantia de 7 dias, sem enrolação</div>
-    <div class="guarantee-text">
-      Compra, abre os cadernos, usa. Se por qualquer motivo não ficou satisfeita nos primeiros 7 dias, chama no WhatsApp <strong>(32) 99842-5801</strong> e a gente devolve 100% do seu dinheiro em até 5 dias úteis. Sem perguntas, sem burocracia, sem demora.<br><br>
-      <strong>Risco zero. A única coisa que você pode perder é a chance de começar.</strong>
+    <div class="guarantee-shield">
+      <span class="guarantee-shield-n">7</span>
+      <span class="guarantee-shield-label">dias</span>
     </div>
+    <div class="guarantee-title">Garantia de 7 dias — zero risco pra você</div>
+    <p class="guarantee-sub">A qualquer momento nesse prazo, se você achar que:</p>
+    <ul class="guarantee-checklist">
+      <li>o material não faz sentido pra sua rotina;</li>
+      <li>os cadernos não atendem ao que você precisa;</li>
+      <li>ou você simplesmente não quiser continuar.</li>
+    </ul>
+    <p class="guarantee-final">Você pede o reembolso, sem burocracia. O risco fica do nosso lado.</p>
   </div>
 </section>
 
