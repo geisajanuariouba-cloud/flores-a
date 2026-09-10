@@ -4,13 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <meta name="theme-color" content="#FAF6F1">
-<meta name="description" content="Floresça — 5 cadernos de cura emocional guiados para você parar de se colocar em último lugar e voltar a se reconhecer. Acesso imediato em Material Pronto.">
+<meta name="description" content="Floresça — 5 cadernos de cura emocional guiados para você parar de se colocar em último lugar e voltar a se reconhecer. Acesso imediato em PDF.">
 <title>Floresça — Cadernos de Cura Emocional</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="mockup.webp" fetchpriority="high">
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Dancing+Script:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Dancing+Script:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"></noscript>
 
 <!-- Meta Pixel Code -->
 <script>
@@ -18,9 +17,9 @@
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
 if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];f._fbLoad=function(){t=b.createElement(e);t.async=!0;
+n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}}(window, document,'script',
+s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1848754096095471');
 fbq('track', 'PageView');
@@ -30,52 +29,31 @@ src="https://www.facebook.com/tr?id=1848754096095471&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 
-<!-- Utmify UTMs Script (carregado após recursos críticos, sem perder eventos) -->
-<script>
-window._utmifyLoad = function () {
-  var s = document.createElement('script');
-  s.src = 'https://cdn.utmify.com.br/scripts/utms/latest.js';
-  s.setAttribute('data-utmify-prevent-xcod-sck', '');
-  s.setAttribute('data-utmify-prevent-subids', '');
-  s.async = true;
-  document.head.appendChild(s);
-};
-</script>
+<!-- Utmify UTMs Script -->
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
 
-<!-- Microsoft Clarity (idem) -->
+<!-- Microsoft Clarity -->
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        c._clarityLoad=function(){t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);}
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "xr17oxfo1z");
 </script>
 <!-- End Microsoft Clarity -->
-
-<script>
-// Adia o DOWNLOAD dos scripts de tracking (não o disparo de eventos, que já fica
-// enfileirado por fbq/clarity) até o thread principal ficar livre / LCP terminar,
-// liberando banda para a imagem do hero no carregamento inicial.
-(function () {
-  function loadAll() {
-    if (window._fbLoad) window._fbLoad();
-    if (window._clarityLoad) window._clarityLoad();
-    if (window._utmifyLoad) window._utmifyLoad();
-  }
-  if ('requestIdleCallback' in window) {
-    requestIdleCallback(loadAll, { timeout: 2500 });
-  } else {
-    setTimeout(loadAll, 1500);
-  }
-})();
-</script>
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   background: #fff;
   color: #3D2B27;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -85,16 +63,15 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 
 :root {
-  --cream:   #fff;
-  --bege:    #fff;
+  --cream:   #FAF6F1;
+  --bege:    #F2E8DE;
   --rosa:    #C4877B;
   --terr:    #A85C52;
   --marrom:  #3D2B27;
   --taupe:   #6E5F52;
   --linha:   #DFC8BC;
-  --pale:    #fff;
+  --pale:    #EDD9CF;
   --green:   #2e9c5a;
-  --green-dark: #1f7d43;
   --red:     #d94040;
   --lilas:   #C8B8CC;
   --sage:    #8FAF8F;
@@ -102,7 +79,7 @@ img { max-width: 100%; display: block; }
   --indigo:  #7B8FC4;
 }
 
-
+/* ===================== TIMER BAR ===================== */
 .timer-bar {
   background: var(--terr);
   color: #fff;
@@ -111,6 +88,9 @@ img { max-width: 100%; display: block; }
   font-size: 14px;
   font-weight: 800;
   letter-spacing: .3px;
+  position: sticky;
+  top: 0;
+  z-index: 200;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,39 +101,27 @@ img { max-width: 100%; display: block; }
 .timer-digits {
   background: #fff;
   color: var(--terr);
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 17px;
+  font-weight: 900;
   padding: 3px 10px;
   border-radius: 6px;
-  letter-spacing: .3px;
+  letter-spacing: 2px;
   font-variant-numeric: tabular-nums;
 }
 
-
+/* ===================== HERO ===================== */
 .hero {
   background: var(--cream);
   padding: 52px 20px 48px;
   text-align: center;
+  border-bottom: 1px solid var(--linha);
 }
 .brand-name {
   font-family: 'Dancing Script', cursive;
   font-size: 24px;
   color: var(--terr);
   display: block;
-  margin-bottom: 14px;
-}
-.hero-eyebrow {
-  display: inline-block;
-  background: #fff;
-  border: 1.5px solid var(--linha);
-  color: var(--taupe);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  padding: 7px 16px;
-  border-radius: 999px;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 .hero-h1 {
   font-size: clamp(28px, 7vw, 52px);
@@ -166,75 +134,16 @@ img { max-width: 100%; display: block; }
   text-wrap: balance;
 }
 .hero-h1 .accent { color: var(--terr); }
-.hero-h1 .hero-hl {
-  background: linear-gradient(transparent 58%, var(--pink-hl, #F4C9BE) 58%);
-  color: var(--terr);
-  padding: 0 2px;
-}
-.hero-kit-img {
-  display: block;
-  width: 100%;
-  max-width: 480px;
-  height: auto;
-  margin: 20px auto 12px;
-  border-radius: 14px;
-  border: 1px solid var(--linha);
-  box-shadow: 0 10px 30px rgba(61,43,39,.15);
-}
-.hero-caption {
-  font-size: 13px;
-  font-style: italic;
-  color: var(--taupe);
-  opacity: .8;
-  margin-bottom: 26px;
-}
-.hero-subhead {
-  font-size: clamp(19px, 4vw, 26px);
-  font-weight: 900;
-  color: var(--marrom);
-  max-width: 620px;
-  margin: 0 auto 14px;
-  line-height: 1.35;
-  text-wrap: balance;
-}
 .hero-sub {
-  font-size: clamp(15px, 3vw, 18px);
+  font-size: clamp(15px, 2.5vw, 18px);
   color: var(--taupe);
-  max-width: 540px;
+  max-width: 520px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 .hero-sub strong { color: var(--marrom); }
-.hero-checklist {
-  list-style: none;
-  max-width: 420px;
-  margin: 22px auto 8px;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.hero-checklist li {
-  font-size: 14.5px;
-  font-weight: 600;
-  color: var(--marrom);
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-.hero-checklist li::before {
-  content: "✓";
-  color: var(--green);
-  font-weight: 900;
-  flex-shrink: 0;
-}
-.hero-note {
-  font-size: 13px;
-  color: var(--taupe);
-  margin-top: 12px;
-}
 
-
+/* ===================== PROOF BAR ===================== */
 .proof-bar {
   background: var(--bege);
   border-top: 1px solid var(--linha);
@@ -246,17 +155,15 @@ img { max-width: 100%; display: block; }
 }
 .proof-bar strong { color: var(--terr); font-size: 16px; font-weight: 900; }
 
-
+/* ===================== BTN ===================== */
 .btn-cta {
   display: block;
-  position: relative;
-  z-index: 0;
   width: 100%;
   max-width: 480px;
   margin: 0 auto;
-  background: linear-gradient(135deg, #34b96a, var(--green-dark));
+  background: var(--terr);
   color: #fff;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(15px, 3vw, 18px);
   font-weight: 900;
   padding: 20px 28px;
@@ -267,32 +174,13 @@ img { max-width: 100%; display: block; }
   letter-spacing: .3px;
   line-height: 1.2;
   text-transform: uppercase;
-  transition: transform .15s;
+  box-shadow: 0 6px 28px rgba(168,92,82,.3);
+  transition: transform .15s, box-shadow .15s;
   -webkit-tap-highlight-color: transparent;
-  box-shadow: 0 6px 24px rgba(46,156,90,.4);
 }
 .btn-cta:hover, .btn-cta:active {
   transform: scale(1.02);
-}
-
-.btn-cta::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  border-radius: inherit;
-  box-shadow: 0 0 0 10px rgba(46,156,90,.35);
-  opacity: 0;
-  pointer-events: none;
-  will-change: opacity, transform;
-  animation: btnGlowPulse 1.8s ease-in-out infinite;
-}
-@keyframes btnGlowPulse {
-  0%, 100% { opacity: 0; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.045); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .btn-cta::after { animation: none; opacity: 0; }
+  box-shadow: 0 10px 36px rgba(168,92,82,.45);
 }
 .btn-cta .sub {
   display: block;
@@ -334,53 +222,48 @@ img { max-width: 100%; display: block; }
   font-weight: 600;
 }
 .trust-row span { display: flex; align-items: center; gap: 5px; }
-
-.quick-pills-wrap { background: var(--cream); padding: 24px 20px 30px; }
-.quick-pills {
-  max-width: 440px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.quick-pill {
-  background: var(--terr);
-  color: #fff;
-  font-size: clamp(14.5px, 2.8vw, 16.5px);
-  font-weight: 700;
-  padding: 14px 20px;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  text-align: center;
-  box-shadow: 0 6px 16px rgba(168,92,82,.2);
-}
-.quick-pill-check {
-  width: 18px; height: 18px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.25);
-  color: #fff;
-  font-size: 11px;
-  font-weight: 900;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.quick-pills-sub {
-  max-width: 520px;
-  margin: 22px auto 0;
-  text-align: center;
-  font-size: clamp(17px, 3.2vw, 21px);
-  color: var(--taupe);
-  line-height: 1.6;
-}
-.quick-pills-sub strong { color: var(--terr); }
 .trust-row .ck { color: var(--green); font-size: 14px; }
 
+/* ===================== CAROUSEL ===================== */
+.carousel-section {
+  padding: 44px 0;
+  background: var(--bege);
+  overflow: hidden;
+}
+.carousel-label {
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--taupe);
+  margin-bottom: 22px;
+  font-weight: 700;
+}
+.carousel-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.carousel-wrap::before, .carousel-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.carousel-wrap::before { left: 0; background: linear-gradient(90deg, var(--bege), transparent); }
+.carousel-wrap::after  { right: 0; background: linear-gradient(-90deg, var(--bege), transparent); }
 
+.carousel-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: cscroll 36s linear infinite;
+}
+.carousel-track:hover { animation-play-state: paused; }
+@keyframes cscroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* Real page previews */
 .cpage {
   width: 212px;
   height: 300px;
@@ -390,7 +273,7 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 4px 20px rgba(61,43,39,.18);
   position: relative;
   background: #FAF6F1;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 .cpage-bar {
   position: absolute;
@@ -427,89 +310,7 @@ img { max-width: 100%; display: block; }
 }
 .line { height: 1px; background: currentColor; opacity: .15; margin: 4px 0; }
 
-
-.showcase-section { padding: 48px 0 44px; background: #fff; }
-.showcase-h {
-  font-size: clamp(22px, 5vw, 32px);
-  font-weight: 800;
-  text-align: center;
-  color: var(--marrom);
-  max-width: 620px;
-  margin: 0 auto 16px;
-  line-height: 1.3;
-  text-wrap: balance;
-}
-.showcase-underline {
-  width: 64px;
-  height: 4px;
-  background: var(--terr);
-  border-radius: 4px;
-  margin: 0 auto 32px;
-}
-.showcase-wrap { position: relative; }
-.showcase-track {
-  display: flex;
-  gap: 18px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-padding-left: 20px;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding: 4px 20px 10px;
-  cursor: grab;
-  -webkit-user-select: none;
-  user-select: none;
-}
-.showcase-track::-webkit-scrollbar { display: none; }
-.showcase-track.dragging { cursor: grabbing; scroll-snap-type: none; }
-.showcase-slide {
-  flex: 0 0 auto;
-  width: 280px;
-  scroll-snap-align: start;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.showcase-frame {
-  width: 280px;
-  height: 396px;
-  border-radius: 16px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  border: 1px solid var(--linha);
-  box-shadow: 0 14px 34px rgba(61,43,39,.16);
-}
-.showcase-frame .cpage {
-  transform: scale(1.32);
-  box-shadow: none;
-  pointer-events: none;
-}
-.showcase-caption {
-  margin-top: 16px;
-  display: inline-block;
-  background: #fff;
-  border: 1.5px solid var(--linha);
-  color: var(--marrom);
-  font-weight: 700;
-  font-size: 13px;
-  padding: 8px 18px;
-  border-radius: 999px;
-  text-align: center;
-}
-.showcase-note {
-  text-align: center;
-  max-width: 460px;
-  margin: 30px auto 0;
-  color: var(--taupe);
-  font-size: 14.5px;
-  line-height: 1.6;
-  padding: 0 20px;
-}
-
-
+/* ===================== SECTIONS ===================== */
 .section { padding: 60px 20px; }
 .section-center { text-align: center; }
 .eyebrow {
@@ -533,66 +334,67 @@ img { max-width: 100%; display: block; }
 .section-h .accent { color: var(--terr); }
 .section-p {
   color: var(--taupe);
-  font-size: clamp(17px, 3.2vw, 21px);
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.7;
   max-width: 560px;
   margin: 0 auto;
 }
 .divider { border: none; border-top: 1px solid var(--linha); }
 
-
-.problem-sub {
-  text-align: center;
-  font-size: clamp(15px, 2.8vw, 17px);
-  color: var(--taupe);
-  margin-top: -8px;
-  margin-bottom: 24px;
-}
-.problem-list {
-  max-width: 480px;
-  margin: 0 auto;
+/* Pain checklist */
+.pain-list {
+  max-width: 600px;
+  margin: 36px auto 0;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.problem-item {
-  background: var(--pale);
-  border: 1px solid rgba(168,92,82,.2);
+.pain-item {
+  background: var(--cream);
+  border: 1px solid var(--linha);
   border-radius: 12px;
-  padding: 14px 18px;
+  padding: 16px 18px;
   display: flex;
-  align-items: center;
-  gap: 12px;
+  gap: 14px;
+  align-items: flex-start;
   text-align: left;
-  font-size: 14.5px;
-  font-weight: 800;
-  color: var(--marrom);
 }
-.problem-x {
-  color: var(--terr);
-  font-weight: 900;
+.pain-emoji { font-size: 22px; flex-shrink: 0; line-height: 1; }
+.pain-text strong { display: block; font-size: 15px; font-weight: 800; color: var(--marrom); margin-bottom: 2px; }
+.pain-text span { color: var(--taupe); font-size: 13.5px; }
+.pain-close {
+  max-width: 600px;
+  margin: 20px auto 0;
+  background: var(--pale);
+  border: 1px solid var(--rosa);
+  border-radius: 12px;
+  padding: 16px 20px;
   font-size: 15px;
-  flex-shrink: 0;
-}
-.respira-h {
+  font-weight: 800;
   text-align: center;
-  font-weight: 900;
-  font-size: clamp(26px, 4vw, 34px);
-  letter-spacing: -.4px;
   color: var(--terr);
-  margin: 40px 0 14px;
 }
-.respira-text {
-  max-width: 520px;
-  margin: 0 auto;
+
+/* Quote strip */
+.quote-strip {
+  background: var(--terr);
+  color: #fff;
+  padding: 48px 20px;
   text-align: center;
-  font-size: clamp(17px, 3.2vw, 21px);
-  line-height: 1.6;
-  color: var(--taupe);
 }
-.respira-text strong { color: var(--terr); }
+.quote-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(22px, 4.5vw, 36px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.4;
+  max-width: 640px;
+  margin: 0 auto 12px;
+}
+.quote-text em { font-style: normal; font-weight: 500; }
+.quote-author { font-size: 12px; opacity: .7; letter-spacing: 1px; text-transform: uppercase; }
 
-
+/* Product list */
 .product-list {
   max-width: 620px;
   margin: 32px auto 0;
@@ -601,48 +403,31 @@ img { max-width: 100%; display: block; }
   gap: 10px;
 }
 .product-item {
-  background: #fff;
+  background: var(--cream);
   border: 1.5px solid var(--linha);
   border-radius: 12px;
-  padding: 14px;
+  padding: 16px 18px;
   display: flex;
-  gap: 16px;
-  align-items: center;
+  gap: 14px;
+  align-items: flex-start;
   text-align: left;
 }
-.product-cover {
-  width: 84px;
-  height: 112px;
-  object-fit: cover;
+.product-num {
+  width: 36px; height: 36px;
   border-radius: 8px;
+  background: var(--pale);
+  color: var(--terr);
+  font-size: 15px;
+  font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 6px 16px rgba(61,43,39,.15);
 }
 .product-title { font-size: 15px; font-weight: 800; color: var(--marrom); margin-bottom: 3px; }
-.product-desc { font-size: clamp(15px, 2.8vw, 17px); color: var(--taupe); line-height: 1.5; }
+.product-desc { font-size: 13px; color: var(--taupe); line-height: 1.5; }
+.product-pills { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 7px; }
+.product-pill { background: var(--bege); border-radius: 6px; padding: 3px 9px; font-size: 11px; color: var(--taupe); }
 
-@media (max-width: 560px) {
-  .product-item {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0;
-    overflow: hidden;
-    gap: 0;
-  }
-  .product-cover {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 0;
-    box-shadow: none;
-    background: var(--bege);
-  }
-  .product-item > div {
-    padding: 14px 16px 18px;
-  }
-}
-
-
+/* Steps */
 .steps-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
@@ -668,42 +453,13 @@ img { max-width: 100%; display: block; }
   margin: 0 auto 14px;
 }
 .step-title { font-size: 15px; font-weight: 800; color: var(--marrom); margin-bottom: 6px; }
-.step-desc { font-size: clamp(15px, 2.8vw, 17px); color: var(--taupe); line-height: 1.5; }
+.step-desc { font-size: 13px; color: var(--taupe); line-height: 1.55; }
 
-
+/* Bonuses */
 .bonus-section {
   background: var(--marrom);
   padding: 60px 20px;
   color: #fff;
-}
-.bonus-heading {
-  font-size: clamp(24px, 5vw, 34px);
-  font-weight: 900;
-  color: #fff;
-  margin-bottom: 12px;
-  text-wrap: balance;
-}
-.bonus-heading .bonus-underline {
-  border-bottom: 4px solid var(--gold);
-  padding-bottom: 2px;
-}
-.bonus-subtitle {
-  font-size: clamp(15px, 3vw, 18px);
-  font-weight: 700;
-  font-style: italic;
-  color: rgba(255,255,255,.75);
-  margin-bottom: 20px;
-}
-.bonus-pill {
-  display: inline-block;
-  background: var(--terr);
-  color: #fff;
-  font-weight: 800;
-  font-size: 13px;
-  letter-spacing: .3px;
-  padding: 10px 22px;
-  border-radius: 999px;
-  margin-bottom: 8px;
 }
 .bonus-total {
   display: block;
@@ -717,93 +473,70 @@ img { max-width: 100%; display: block; }
   padding: 8px 20px;
   border-radius: 8px;
 }
-.bonus-list-simple {
-  max-width: 560px;
+.bonus-list {
+  max-width: 620px;
   margin: 0 auto;
-  text-align: left;
-}
-.bonus-row {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 10px;
+}
+.bonus-item {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 12px;
+  padding: 16px 18px;
+  display: flex;
   gap: 14px;
-  padding: 14px 4px;
-  border-bottom: 1px solid rgba(255,255,255,.12);
+  align-items: flex-start;
 }
-.bonus-row-name { font-size: 15.5px; font-weight: 700; color: #fff; }
-.bonus-row-price { font-size: 14px; color: rgba(255,255,255,.45); text-decoration: line-through; white-space: nowrap; }
-.bonus-final-note {
-  max-width: 520px;
-  margin: 30px auto 0;
-  text-align: center;
-  font-size: clamp(17px, 3.2vw, 21px);
-  color: rgba(255,255,255,.85);
-  line-height: 1.6;
-}
-.bonus-total-final {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  margin: 20px auto 0;
-}
-.bonus-total-old {
-  font-size: 20px;
-  color: rgba(255,255,255,.4);
-  text-decoration: line-through;
-}
-.bonus-total-free {
-  font-size: clamp(28px, 6vw, 40px);
-  font-weight: 900;
-  letter-spacing: .5px;
-  color: var(--gold);
-  text-transform: uppercase;
-}
-.bonus-val-free-OLD {
+.bonus-num {
+  width: 32px; height: 32px;
+  border-radius: 8px;
   background: var(--gold);
   color: var(--marrom);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 900;
-  letter-spacing: .3px;
-  text-transform: uppercase;
-  padding: 4px 12px;
-  border-radius: 20px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
 }
+.bonus-name { font-size: 15px; font-weight: 800; margin-bottom: 3px; color: #fff; }
+.bonus-desc { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.5; }
+.bonus-val { font-size: 12px; color: var(--gold); font-weight: 700; margin-top: 5px; }
 
+/* Testimonials */
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 14px;
+  max-width: 860px;
+  margin: 36px auto 0;
+}
+.testi-card {
+  background: var(--cream);
+  border: 1.5px solid var(--linha);
+  border-radius: 12px;
+  padding: 22px;
+  text-align: left;
+}
+.testi-stars { color: #7A5C30; font-size: 14px; margin-bottom: 10px; }
+.testi-text { font-size: 14px; color: var(--taupe); font-style: italic; line-height: 1.65; margin-bottom: 14px; }
+.testi-author { display: flex; gap: 10px; align-items: center; }
+.testi-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--pale); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+.testi-name { font-size: 13px; font-weight: 800; color: var(--marrom); }
+.testi-handle { font-size: 12px; color: var(--taupe); }
+.testi-placeholder {
+  background: var(--cream);
+  border: 2px dashed var(--linha);
+  border-radius: 12px;
+  padding: 28px 22px;
+  text-align: center;
+  color: var(--taupe);
+  font-size: 14px;
+  grid-column: 1/-1;
+}
+.testi-placeholder strong { display: block; color: var(--marrom); margin-bottom: 6px; font-size: 15px; }
 
-.proof2-section { padding: 48px 0 40px; background: #fff; text-align: center; }
-.proof2-wrap {
-  overflow: hidden;
-  position: relative;
-  margin-top: 30px;
-}
-.proof2-wrap::before, .proof2-wrap::after {
-  content: '';
-  position: absolute;
-  top: 0; bottom: 0;
-  width: 60px;
-  z-index: 2;
-  pointer-events: none;
-}
-.proof2-wrap::before { left: 0; background: linear-gradient(90deg, #fff, transparent); }
-.proof2-wrap::after  { right: 0; background: linear-gradient(-90deg, #fff, transparent); }
-.proof2-track {
-  display: flex;
-  gap: 16px;
-  width: max-content;
-  animation: proof2scroll 70s linear infinite;
-}
-.proof2-track:hover { animation-play-state: paused; }
-.proof2-card { flex-shrink: 0; width: 320px; }
-.proof2-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 14px;
-  box-shadow: 0 10px 26px rgba(61,43,39,.15);
-  display: block;
-}
-
-
+/* Pricing */
 .pricing-section {
   background: var(--bege);
   padding: 60px 20px;
@@ -835,33 +568,51 @@ img { max-width: 100%; display: block; }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
-  max-width: 900px;
+  max-width: 720px;
   margin: 0 auto;
-  align-items: start;
 }
-.value-strip {
-  max-width: 560px;
-  margin: 0 auto 30px;
-  background: var(--pale);
-  border: 1px solid var(--linha);
-  border-radius: 12px;
-  padding: 14px 20px;
-  font-size: clamp(16px, 3vw, 19px);
-  line-height: 1.5;
-  color: var(--marrom);
-  text-align: center;
+.plan-card {
+  background: #fff;
+  border: 1.5px solid var(--linha);
+  border-radius: 16px;
+  padding: 32px 26px;
+  text-align: left;
+  position: relative;
 }
+.plan-card.best { border-color: var(--terr); box-shadow: 0 0 0 1px var(--terr), 0 8px 32px rgba(168,92,82,.15); }
+.plan-popular {
+  position: absolute;
+  top: -14px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--terr);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 18px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.plan-name { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--taupe); margin-bottom: 4px; }
+.plan-title { font-size: 26px; font-weight: 900; color: var(--marrom); margin-bottom: 16px; }
+.plan-title .accent { color: var(--terr); }
+.plan-from { font-size: 13px; color: var(--taupe); text-decoration: line-through; margin-bottom: 2px; }
+.plan-price { font-size: 52px; font-weight: 900; line-height: 1; color: var(--terr); }
+.plan-price sup { font-size: 22px; vertical-align: top; margin-top: 12px; display: inline-block; }
+.plan-price span { font-size: 24px; }
+.plan-note { font-size: 12px; color: var(--taupe); margin-top: 4px; margin-bottom: 24px; }
 .plan-features { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 24px; }
-.pf { display: flex; gap: 10px; align-items: flex-start; font-size: clamp(15px, 2.8vw, 17px); line-height: 1.4; color: var(--marrom); }
+.pf { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.4; color: var(--marrom); }
 .pf .ck { color: var(--green); font-size: 16px; flex-shrink: 0; margin-top: 1px; font-weight: 900; }
 .pf .cx { color: var(--red); font-size: 16px; flex-shrink: 0; margin-top: 1px; opacity: .5; }
 .pf .crossed { opacity: .35; text-decoration: line-through; }
 .plan-cta {
   display: block;
   width: 100%;
-  background: linear-gradient(135deg, #34b96a, var(--green-dark));
+  background: var(--terr);
   color: #fff;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 15px;
   font-weight: 900;
   padding: 16px 20px;
@@ -873,122 +624,16 @@ img { max-width: 100%; display: block; }
   letter-spacing: .5px;
   -webkit-tap-highlight-color: transparent;
   transition: transform .15s, box-shadow .15s;
-  box-shadow: 0 4px 20px rgba(46,156,90,.3);
+  box-shadow: 0 4px 20px rgba(168,92,82,.25);
 }
-.plan-cta:hover, .plan-cta:active { transform: translateY(-1px); box-shadow: 0 6px 28px rgba(46,156,90,.45); }
+.plan-cta:hover, .plan-cta:active { transform: translateY(-1px); box-shadow: 0 6px 28px rgba(168,92,82,.4); }
 .plan-cta.outline {
-  background: linear-gradient(135deg, #34b96a, var(--green-dark));
-  color: #fff;
-  border: none;
-  box-shadow: 0 4px 20px rgba(46,156,90,.3);
-}
-.plan-cta.outline:hover { box-shadow: 0 6px 28px rgba(46,156,90,.45); }
-
-
-.plan-card2 {
-  background: #fff;
-  border: 1.5px solid var(--linha);
-  border-radius: 16px;
-  padding: 28px 22px 26px;
-  text-align: left;
-  position: relative;
-}
-.plan-card2.dark {
-  background: var(--marrom);
-  border-color: var(--marrom);
-}
-.plan2-badge {
-  position: absolute;
-  top: -14px; left: 50%;
-  transform: translateX(-50%);
-  background: var(--green);
-  color: #fff;
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 5px 18px;
-  border-radius: 20px;
-  white-space: nowrap;
-}
-.plan2-name {
-  text-align: center;
-  font-size: 16px;
-  font-weight: 800;
-  color: var(--marrom);
-  margin-bottom: 14px;
-}
-.plan2-name.light { color: #fff; }
-.plan2-mockup {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 14px;
-}
-.plan2-tag {
-  display: block;
-  text-align: center;
-  background: rgba(255,255,255,.1);
-  border: 1px solid rgba(255,255,255,.25);
-  color: #fff;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: .5px;
-  text-transform: uppercase;
-  padding: 7px 10px;
-  border-radius: 8px;
-  margin-bottom: 16px;
-}
-.plan2-includes {
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+  background: transparent;
   color: var(--taupe);
-  margin-bottom: 10px;
-}
-.plan2-includes.light { color: rgba(255,255,255,.55); }
-.plan-features.light .pf { color: #fff; }
-.plan-features.light .pf .cx { opacity: .6; }
-.plan-features.light .crossed { opacity: .4; }
-.plan2-price-block { margin: 20px 0 18px; padding-top: 16px; border-top: 1px solid var(--linha); }
-.plan-card2.dark .plan2-price-block { border-top-color: rgba(255,255,255,.15); }
-.plan2-from-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
-.plan2-from { font-size: 13px; color: var(--taupe); text-decoration: line-through; }
-.plan2-from.light { color: rgba(255,255,255,.6); }
-.plan2-off {
-  background: var(--red);
-  color: #fff;
-  font-size: 11px;
-  font-weight: 900;
-  padding: 2px 8px;
-  border-radius: 6px;
-}
-.plan2-price { font-size: 34px; font-weight: 900; color: var(--green); line-height: 1.2; }
-.plan2-installment { font-size: 13px; color: var(--taupe); margin-top: 2px; }
-.plan2-installment.light { color: rgba(255,255,255,.6); }
-.plan2-save { font-size: 13px; font-weight: 800; color: var(--green); margin-top: 6px; }
-.plan2-save.light { color: #8fd6a8; }
-.plan2-hint {
-  text-align: center;
-  font-size: 13px;
-  color: var(--taupe);
-  margin-top: 22px;
-}
-.plan2-note-box {
-  max-width: 620px;
-  margin: 18px auto 0;
-  background: #fff;
   border: 1.5px solid var(--linha);
-  border-radius: 12px;
-  padding: 16px 20px;
-  font-size: 14.5px;
-  font-weight: 700;
-  color: var(--marrom);
-  text-align: center;
+  box-shadow: none;
 }
-.plan2-note-box .ck { color: var(--green); margin-right: 6px; }
+.plan-cta.outline:hover { border-color: var(--rosa); color: var(--terr); box-shadow: none; }
 
 .guarantee-row {
   display: flex;
@@ -1004,64 +649,7 @@ img { max-width: 100%; display: block; }
 }
 .guarantee-icon { font-size: 26px; flex-shrink: 0; }
 
-
-
-.objection-section { padding: 48px 20px; background: #fff; }
-.objection-grid {
-  max-width: 720px;
-  margin: 36px auto 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-.objection-item {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  background: var(--cream);
-  border-radius: 14px;
-  padding: 18px 20px;
-}
-.objection-check {
-  color: var(--green);
-  font-size: 20px;
-  font-weight: 900;
-  flex-shrink: 0;
-  line-height: 1.3;
-}
-.objection-title { font-size: 14.5px; font-weight: 800; color: var(--marrom); margin-bottom: 4px; }
-.objection-desc { font-size: clamp(15px, 2.8vw, 17px); color: var(--taupe); line-height: 1.5; }
-@media (max-width: 700px) {
-  .objection-grid { grid-template-columns: 1fr; }
-}
-
-
-.authority-section { padding: 56px 20px; background: var(--cream); text-align: center; }
-.authority-card {
-  max-width: 640px;
-  margin: 36px auto 0;
-  background: #fff;
-  border: 1.5px solid var(--linha);
-  border-radius: 20px;
-  padding: 40px 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-}
-.authority-photo {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--pale);
-}
-.authority-name { font-size: 20px; font-weight: 900; color: var(--marrom); }
-.authority-role { font-size: 12.5px; letter-spacing: 1px; text-transform: uppercase; color: var(--terr); font-weight: 700; margin-top: -10px; }
-.authority-text { font-size: clamp(17px, 3.2vw, 21px); color: var(--taupe); line-height: 1.6; max-width: 520px; }
-.authority-text strong { color: var(--marrom); }
-
-
+/* Guarantee box */
 .guarantee-section { padding: 48px 20px; text-align: center; background: var(--cream); }
 .guarantee-box {
   max-width: 520px;
@@ -1071,47 +659,12 @@ img { max-width: 100%; display: block; }
   border-radius: 16px;
   padding: 32px 28px;
 }
-.guarantee-shield {
-  width: 68px;
-  height: 76px;
-  margin: 0 auto 16px;
-  background: #fff;
-  border: 2px solid var(--gold);
-  border-radius: 12px 12px 8px 8px / 16px 16px 40px 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.guarantee-shield-n { font-size: 22px; font-weight: 900; color: var(--marrom); line-height: 1; }
-.guarantee-shield-label { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--taupe); margin-top: 2px; }
-.guarantee-title { font-size: clamp(19px, 4vw, 23px); font-weight: 900; color: var(--marrom); margin-bottom: 14px; }
-.guarantee-sub { font-size: 15px; color: var(--taupe); margin-bottom: 14px; }
-.guarantee-checklist {
-  list-style: none;
-  display: inline-flex;
-  flex-direction: column;
-  gap: 8px;
-  text-align: left;
-  margin: 0 auto 18px;
-}
-.guarantee-checklist li {
-  font-size: 14.5px;
-  color: var(--marrom);
-  font-weight: 600;
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-}
-.guarantee-checklist li::before {
-  content: "✓";
-  color: var(--green);
-  font-weight: 900;
-  flex-shrink: 0;
-}
-.guarantee-final { font-size: clamp(15px, 3vw, 17px); font-weight: 800; color: var(--marrom); }
+.guarantee-badge { font-size: 44px; display: block; margin-bottom: 14px; }
+.guarantee-title { font-size: 22px; font-weight: 900; color: var(--marrom); margin-bottom: 10px; }
+.guarantee-text { font-size: 14px; color: var(--taupe); line-height: 1.7; }
+.guarantee-text strong { color: var(--marrom); }
 
-
+/* FAQ */
 .faq-section { padding: 60px 20px; background: var(--bege); }
 .faq-list {
   max-width: 600px;
@@ -1136,7 +689,7 @@ img { max-width: 100%; display: block; }
   border: none;
   cursor: pointer;
   color: var(--marrom);
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 15px;
   font-weight: 700;
   text-align: left;
@@ -1148,15 +701,15 @@ img { max-width: 100%; display: block; }
   max-height: 0;
   overflow: hidden;
   transition: max-height .3s ease, padding .3s ease;
-  font-size: clamp(16px, 3vw, 19px);
+  font-size: 14px;
   color: var(--taupe);
-  line-height: 1.6;
+  line-height: 1.7;
   padding: 0 20px;
 }
-.faq-item.open .faq-body { max-height: 400px; padding: 0 20px 18px; }
+.faq-item.open .faq-body { max-height: 300px; padding: 0 20px 18px; }
 .faq-item.open .faq-arrow { transform: rotate(45deg); }
 
-
+/* Final CTA */
 .final-section {
   padding: 60px 20px;
   text-align: center;
@@ -1164,30 +717,7 @@ img { max-width: 100%; display: block; }
   border-top: 1px solid var(--linha);
 }
 
-
-.whatsapp-section {
-  padding: 60px 20px;
-  text-align: center;
-  background: #fff;
-  border-top: 1px solid var(--linha);
-}
-.whatsapp-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: #25D366;
-  color: #fff;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 800;
-  font-size: 16px;
-  padding: 16px 32px;
-  border-radius: 50px;
-  box-shadow: 0 8px 24px rgba(37,211,102,.35);
-  transition: transform .15s;
-}
-.whatsapp-cta:hover { transform: scale(1.03); }
-
-
+/* Footer */
 footer {
   background: var(--marrom);
   color: rgba(255,255,255,.35);
@@ -1199,7 +729,7 @@ footer {
 footer .brand { font-family: 'Dancing Script', cursive; font-size: 20px; color: var(--pale); display: block; margin-bottom: 6px; }
 footer a { color: rgba(255,255,255,.3); }
 
-
+/* ===================== EXIT-INTENT POPUP ===================== */
 .exit-overlay {
   position: fixed;
   inset: 0;
@@ -1255,9 +785,9 @@ footer a { color: rgba(255,255,255,.3); }
   margin-bottom: 10px;
 }
 .exit-sub {
-  font-size: clamp(15px, 3vw, 17px);
+  font-size: 14px;
   color: rgba(255,255,255,.65);
-  line-height: 1.5;
+  line-height: 1.6;
   margin-bottom: 20px;
 }
 .exit-price { margin-bottom: 20px; }
@@ -1286,7 +816,7 @@ footer a { color: rgba(255,255,255,.3); }
   padding-bottom: 4px;
 }
 .exit-list li {
-  font-size: clamp(14px, 2.8vw, 16px);
+  font-size: 13.5px;
   color: rgba(255,255,255,.85);
   display: flex;
   gap: 9px;
@@ -1302,7 +832,7 @@ footer a { color: rgba(255,255,255,.3); }
   width: 100%;
   background: linear-gradient(135deg, var(--gold), var(--terr));
   color: var(--marrom);
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 15px;
   font-weight: 900;
   padding: 18px 20px;
@@ -1316,15 +846,9 @@ footer a { color: rgba(255,255,255,.3); }
 .exit-cta:hover { transform: scale(1.02); }
 .exit-decline {
   display: block;
-  width: 100%;
-  background: none;
-  border: none;
-  font-family: 'Poppins', sans-serif;
   font-size: 12.5px;
   color: rgba(255,255,255,.45);
   text-decoration: underline;
-  cursor: pointer;
-  margin-top: 12px;
 }
 .exit-decline:hover { color: rgba(255,255,255,.7); }
 
@@ -1339,111 +863,15 @@ footer a { color: rgba(255,255,255,.3); }
   .exit-cta { padding: 14px 20px; margin-bottom: 10px; }
 }
 
-
-.exit-wheel-sub {
-  font-size: 14px;
-  color: rgba(255,255,255,.65);
-  line-height: 1.6;
-  margin-bottom: 22px;
-}
-.exit-wheel-wrap {
-  position: relative;
-  width: 240px;
-  height: 240px;
-  margin: 0 auto 24px;
-}
-.exit-wheel-pointer {
-  position: absolute;
-  top: -6px; left: 50%;
-  transform: translateX(-50%);
-  width: 0; height: 0;
-  border-left: 12px solid transparent;
-  border-right: 12px solid transparent;
-  border-top: 20px solid var(--gold);
-  z-index: 2;
-  filter: drop-shadow(0 2px 3px rgba(0,0,0,.4));
-}
-.exit-wheel {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 4px solid var(--gold);
-  box-shadow: 0 8px 30px rgba(0,0,0,.4), inset 0 0 0 2px rgba(255,255,255,.08);
-  background: conic-gradient(
-    var(--terr) 0deg 60deg,
-    var(--marrom) 60deg 120deg,
-    var(--terr) 120deg 180deg,
-    var(--marrom) 180deg 240deg,
-    var(--terr) 240deg 300deg,
-    var(--marrom) 300deg 360deg
-  );
-  position: relative;
-  transition: transform 3.6s cubic-bezier(.17,.86,.23,1);
-}
-.exit-wheel-hub {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%,-50%);
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 2px 8px rgba(0,0,0,.4);
-  z-index: 2;
-}
-.exit-wheel-label {
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 72px;
-  text-align: center;
-  font-size: 11px;
-  font-weight: 900;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: .3px;
-  transform-origin: 0 0;
-}
-.exit-spin-btn {
-  display: block;
-  width: 100%;
-  background: linear-gradient(135deg, var(--gold), var(--terr));
-  color: var(--marrom);
-  font-family: 'Poppins', sans-serif;
-  font-size: 15px;
-  font-weight: 900;
-  padding: 16px 20px;
-  border: none;
-  border-radius: 12px;
-  text-transform: uppercase;
-  letter-spacing: .3px;
-  box-shadow: 0 8px 28px rgba(201,169,110,.35);
-  cursor: pointer;
-  transition: transform .15s, opacity .15s;
-}
-.exit-spin-btn:hover { transform: scale(1.02); }
-.exit-spin-btn:disabled { opacity: .6; cursor: default; transform: none; }
-.exit-wheel-note {
-  display: block;
-  font-size: 11.5px;
-  color: rgba(255,255,255,.4);
-  margin-top: 12px;
-}
-.exit-result { display: none; }
-.exit-result.show { display: block; animation: exit-reveal .4s ease; }
-@keyframes exit-reveal { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-@media (max-width: 480px) {
-  .exit-wheel-wrap { width: 210px; height: 210px; }
-}
-
-
+/* ===================== RESPONSIVE ===================== */
 @media (max-width: 540px) {
   .hero { padding: 40px 16px 36px; }
   .section { padding: 48px 16px; }
+  .plan-card { padding: 26px 18px; }
+  .plan-price { font-size: 44px; }
   .plans-grid { grid-template-columns: 1fr; }
   .steps-row { grid-template-columns: 1fr; }
   .bonus-section { padding: 48px 16px; }
-}
-@media (max-width: 380px) {
-  .bonus-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -1451,8 +879,8 @@ footer a { color: rgba(255,255,255,.3); }
 
 <!-- ===================== TIMER BAR ===================== -->
 <div class="timer-bar">
-  ⚡ <span class="timer-label">OFERTA ESPECIAL DISPONÍVEL APENAS HOJE</span>
-  <span class="timer-digits" id="todaydate"></span>
+  🔥 <span class="timer-label">CONDIÇÃO DE LANÇAMENTO PARA AS PRIMEIRAS 500 MULHERES · ENCERRA EM:</span>
+  <span class="timer-digits" id="countdown">14:59</span>
 </div>
 
 <main>
@@ -1460,492 +888,507 @@ footer a { color: rgba(255,255,255,.3); }
 <!-- ===================== HERO ===================== -->
 <section class="hero">
   <span class="brand-name">Floresça</span>
-  <span class="hero-eyebrow">ACESSO IMEDIATO</span>
   <h1 class="hero-h1">
-    Você tá carregando tudo sozinha<br>e <mark class="hero-hl">já cansou.</mark>
+    Você tá carregando tudo sozinha<br>e <span class="accent">já cansou.</span>
   </h1>
-  <img class="hero-kit-img" src="mockup.webp" width="900" height="900" alt="Kit Floresça: 5 Cadernos de Cura Emocional + 11 Bônus, acesso imediato" loading="eager" fetchpriority="high">
-  <p class="hero-caption">um caderno pra cada parte de você que ainda pede cuidado</p>
-  <h2 class="hero-subhead">Tenha mais leveza pra lidar com o que você sente, sem se perder no caminho.</h2>
   <p class="hero-sub">
-    Descubra por onde começar, o que priorizar em cada momento e como seguir <strong>sem se colocar em último lugar</strong> — em 5 cadernos guiados, prontos pra usar.
+    5 cadernos de cura emocional guiados para você <strong>parar de se colocar em último lugar</strong> e começar a florescer — no seu ritmo, do seu jeito.
   </p>
-  <ul class="hero-checklist">
-    <li>Exercícios guiados passo a passo</li>
-    <li>Reflexões pra cada tipo de dor</li>
-    <li>Práticas curtas pro dia a dia</li>
-    <li>+11 bônus inclusos sem custo extra</li>
-    <li>Acesso imediato em Material Pronto</li>
-  </ul>
-  <a href="#pricing" class="btn-cta" style="max-width:480px;margin:24px auto 0;">
-    EU QUERO COMEÇAR
-  </a>
-  <p class="hero-note">📩 Você recebe tudo na hora, no e-mail.</p>
+</section>
+
+<!-- ===================== CAROUSEL ===================== -->
+<section class="carousel-section" aria-hidden="true">
+  <div class="carousel-wrap">
+    <div class="carousel-track" id="ct">
+
+      <!-- C1 CAPA -->
+      <div class="cpage" style="background:#FAF6F1; color:#3D2B27;">
+        <div class="cpage-bar" style="background:#C4877B;"></div>
+        <div class="cpage-inner">
+          <div class="cpage-header">
+            <span class="cpage-htitle">Caderno 01</span>
+            <span class="cpage-hbrand" style="color:#C4877B;">Floresça</span>
+          </div>
+          <div class="cpage-content" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;height:100%;">
+            <div style="font-family:'Dancing Script',cursive;font-size:14px;color:#C4877B;margin-bottom:8px;">Floresça</div>
+            <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:300;line-height:1.2;color:#3D2B27;margin-bottom:10px;">30 Dias de<br><em style="font-style:italic;color:#A85C52;">Amor Próprio</em></div>
+            <div style="width:36px;height:1px;background:#DFC8BC;margin:8px auto;"></div>
+            <div style="font-size:7px;letter-spacing:2px;text-transform:uppercase;color:#8B7B6B;opacity:.7;">Caderno de Cura Emocional</div>
+          </div>
+          <div class="cpage-footer"><span>Floresça</span><span>Caderno 01</span></div>
+        </div>
+      </div>
+
+      <!-- C1 PROMPTS DIA 1-3 -->
+      <div class="cpage" style="background:#FAF6F1; color:#3D2B27;">
+        <div class="cpage-bar" style="background:#C4877B;"></div>
+        <div class="cpage-inner">
+          <div class="cpage-header">
+            <span class="cpage-htitle">Amor Próprio · Dias 1 a 3</span>
+            <span class="cpage-hbrand" style="color:#C4877B;">Floresça</span>
+          </div>
+          <div class="cpage-content" style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;gap:6px;align-items:flex-start;">
+              <div style="text-align:center;flex-shrink:0;min-width:28px;">
+                <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-weight:400;color:#C4877B;line-height:1;">01</div>
+                <div style="font-size:6px;letter-spacing:1px;text-transform:uppercase;color:#8B7B6B;">Dia Um</div>
+              </div>
+              <div style="flex:1;">
+                <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:8.5px;font-style:italic;line-height:1.4;color:#3D2B27;margin-bottom:4px;">Se eu pudesse escrever uma carta para a versão de mim de 5 anos atrás…</div>
+                <div class="line"></div><div class="line"></div><div class="line"></div>
+              </div>
+            </div>
+            <div style="display:flex;gap:6px;align-items:flex-start;">
+              <div style="text-align:center;flex-shrink:0;min-width:28px;">
+                <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-weight:400;color:#C4877B;line-height:1;">02</div>
+                <div style="font-size:6px;letter-spacing:1px;text-transform:uppercase;color:#8B7B6B;">Dia Dois</div>
+              </div>
+              <div style="flex:1;">
+                <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:8.5px;font-style:italic;line-height:1.4;color:#3D2B27;margin-bottom:4px;">O que significa, para mim, ser gentil comigo mesma?</div>
+                <div class="line"></div><div class="line"></div><div class="line"></div>
+              </div>
+            </div>
+            <div style="display:flex;gap:6px;align-items:flex-start;">
+              <div style="text-align:center;flex-shrink:0;min-width:28px;">
+                <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-weight:400;color:#C4877B;line-height:1;">03</div>
+                <div style="font-size:6px;letter-spacing:1px;text-transform:uppercase;color:#8B7B6B;">Dia Três</div>
+              </div>
+              <div style="flex:1;">
+                <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:8.5px;font-style:italic;line-height:1.4;color:#3D2B27;margin-bottom:4px;">Quais são os três momentos em que me sinto mais eu mesma?</div>
+                <div class="line"></div><div class="line"></div><div class="line"></div>
+              </div>
+            </div>
+          </div>
+          <div class="cpage-footer"><span>Floresça</span><span>Caderno 01 · Amor Próprio</span></div>
+        </div>
+      </div>
+
+      <!-- C1 AFIRMAÇÕES -->
+      <div class="cpage" style="background:#FAF6F1; color:#3D2B27;">
+        <div class="cpage-bar" style="background:#C4877B;"></div>
+        <div class="cpage-inner">
+          <div class="cpage-header">
+            <span class="cpage-htitle">Afirmações de Poder</span>
+            <span class="cpage-hbrand" style="color:#C4877B;">Floresça</span>
+          </div>
+          <div class="cpage-content" style="display:flex;flex-direction:column;gap:7px;justify-content:center;height:100%;">
+            <div style="background:#EDD9CF;border-radius:6px;padding:7px 10px;font-family:'Cormorant Garamond',Georgia,serif;font-size:9.5px;font-style:italic;color:#3D2B27;line-height:1.4;">"Eu sou digna de amor e de coisas boas."</div>
+            <div style="background:#EDD9CF;border-radius:6px;padding:7px 10px;font-family:'Cormorant Garamond',Georgia,serif;font-size:9.5px;font-style:italic;color:#3D2B27;line-height:1.4;">"Meu valor não precisa ser provado."</div>
+            <div style="background:#EDD9CF;border-radius:6px;padding:7px 10px;font-family:'Cormorant Garamond',Georgia,serif;font-size:9.5px;font-style:italic;color:#3D2B27;line-height:1.4;">"Eu escolho a paz todos os dias."</div>
+            <div style="background:#EDD9CF;border-radius:6px;padding:7px 10px;font-family:'Cormorant Garamond',Georgia,serif;font-size:9.5px;font-style:italic;color:#3D2B27;line-height:1.4;">"Sou suficiente exatamente como sou hoje."</div>
+            <div style="background:#EDD9CF;border-radius:6px;padding:7px 10px;font-family:'Cormorant Garamond',Georgia,serif;font-size:9.5px;font-style:italic;color:#3D2B27;line-height:1.4;">"Eu me perdoo e sigo em frente."</div>
+          </div>
+          <div class="cpage-footer"><span>Floresça</span><span>Caderno 01 · Amor Próprio</span></div>
+        </div>
+      </div>
+
+      <!-- C2 CAPA -->
+      <div class="cpage" style="background:#F5F0F7; color:#3D2B27;">
+        <div class="cpage-bar" style="background:#C8B8CC;"></div>
+        <div class="cpage-inner">
+          <div class="cpage-header">
+            <span class="cpage-htitle">Caderno 02</span>
+            <span class="cpage-hbrand" style="color:#9c7baa;">Floresça</span>
+          </div>
+          <div class="cpage-content" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;height:100%;">
+            <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:300;line-height:1.25;color:#3D2B27;margin-bottom:10px;">Reencontrando a<br><em style="font-style:italic;color:#8a6a92;">Criança Interior</em></div>
+            <div style="width:36px;height:1px;background:#C8B8CC;margin:8px auto;opacity:.6;"></div>
+            <div style="font-size:7.5px;color:#9c7baa;line-height:1.6;max-width:130px;">Exercícios de reconexão, perdão e reparentagem</div>
+          </div>
+          <div class="cpage-footer" style="color:#3D2B27;"><span style="color:#9c7baa;">Floresça</span><span>Caderno 02</span></div>
+        </div>
+      </div>
+
+      <!-- C2 EXERCÍCIO -->
+      <div class="cpage" style="background:#F5F0F7; color:#3D2B27;">
+        <div class="cpage-bar" style="background:#C8B8CC;"></div>
+        <div class="cpage-inner">
+          <div class="cpage-header">
+            <span class="cpage-htitle">Exercício · Carta à Criança</span>
+            <span class="cpage-hbrand" style="color:#9c7baa;">Floresça</span>
+          </div>
+          <div class="cpage-content">
+            <div style="font-size:7px;letter-spacing:1.5px;text-transform:uppercase;color:#9c7baa;margin-bottom:6px;">Carta à minha criança interior</div>
+            <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:9px;font-style:italic;color:#3D2B27;margin-bottom:6px;">Querida _____,</div>
+            <div class="line" style="background:#C8B8CC;"></div>
+            <div class="line" style="background:#C8B8CC;"></div>
+            <div class="line" style="background:#C8B8CC;"></div>
+            <div class="line" style="background:#C8B8CC;"></div>
+            <div class="line" style="background:#C8B8CC;"></div>
+            <div class="line" style="background:#C8B8CC;"></div>
+            <div class="line" style="background:#C8B8CC;"></div>
+            <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:9px;font-style:italic;color:#3D2B27;margin-top:6px;">Com todo meu amor,<br>Eu 🌸</div>
+          </div>
+          <div class="cpage-footer" style="color:#3D2B27;"><span style="color:#9c7baa;">Floresça</span><span>Caderno 02 · Criança Interior</span></div>
+        </div>
+      </div>
+
+      <!-- C3 TÉCNICA RESPIRAÇÃO -->
+      <div class="cpage" style="background:#F2F6F2; color:#3D2B27;">
+        <div class="cpage-bar" style="background:#8FAF8F;"></div>
+        <div class="cpage-inner">
+          <div class="cpage-header">
+            <span class="cpage-htitle">Técnica · Respiração 4-7-8</span>
+            <span class="cpage-hbrand" style="color:#5d8f5d;">Floresça</span>
+          </div>
+          <div class="cpage-content">
+            <div style="display:inline-block;background:#ddeedd;color:#3d6b3d;font-size:7px;letter-spacing:1px;text-transform:uppercase;padding:3px 7px;border-radius:6px;font-weight:700;margin-bottom:7px;">Respiração</div>
+            <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:15px;font-weight:300;color:#3D2B27;margin-bottom:3px;">Técnica 4-7-8</div>
+            <div style="font-size:8px;color:#5d8f5d;margin-bottom:10px;">Regulação Imediata da Ansiedade</div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;text-align:center;margin-bottom:10px;">
+              <div style="background:#ddeedd;border-radius:6px;padding:8px 4px;"><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:300;color:#3d6b3d;line-height:1;">4</div><div style="font-size:6.5px;color:#5d8f5d;text-transform:uppercase;letter-spacing:1px;">inspire</div></div>
+              <div style="background:#ddeedd;border-radius:6px;padding:8px 4px;"><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:300;color:#3d6b3d;line-height:1;">7</div><div style="font-size:6.5px;color:#5d8f5d;text-transform:uppercase;letter-spacing:1px;">segure</div></div>
+              <div style="background:#ddeedd;border-radius:6px;padding:8px 4px;"><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:300;color:#3d6b3d;line-height:1;">8</div><div style="font-size:6.5px;color:#5d8f5d;text-transform:uppercase;letter-spacing:1px;">expire</div></div>
+            </div>
+            <div style="font-size:8px;color:#8B7B6B;line-height:1.5;">Repita 4 vezes. Faça isso toda vez que sentir a ansiedade chegando.</div>
+          </div>
+          <div class="cpage-footer" style="color:#3D2B27;"><span style="color:#5d8f5d;">Floresça</span><span>Caderno 03 · Ansiedade</span></div>
+        </div>
+      </div>
+
+      <!-- C3 PROMPTS -->
+      <div class="cpage" style="background:#F2F6F2; color:#3D2B27;">
+        <div class="cpage-bar" style="background:#8FAF8F;"></div>
+        <div class="cpage-inner">
+          <div class="cpage-header">
+            <span class="cpage-htitle">Diário · Prompts 1 a 3</span>
+            <span class="cpage-hbrand" style="color:#5d8f5d;">Floresça</span>
+          </div>
+          <div class="cpage-content" style="display:flex;flex-direction:column;gap:9px;">
+            <div>
+              <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:8.5px;font-style:italic;color:#3D2B27;margin-bottom:3px;">1. Quando minha ansiedade aparece, o que ela está tentando me proteger?</div>
+              <div class="line" style="background:#8FAF8F;"></div><div class="line" style="background:#8FAF8F;"></div>
+            </div>
+            <div>
+              <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:8.5px;font-style:italic;color:#3D2B27;margin-bottom:3px;">2. Em que partes do meu corpo eu sinto a ansiedade primeiro?</div>
+              <div class="line" style="background:#8FAF8F;"></div><div class="line" style="background:#8FAF8F;"></div>
+            </div>
+            <div>
+              <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:8.5px;font-style:italic;color:#3D2B27;margin-bottom:3px;">3. O que já passou na minha vida que parecia impossível de superar?</div>
+              <div class="line" style="background:#8FAF8F;"></div><div class="line" style="background:#8FAF8F;"></div>
+            </div>
+          </div>
+          <div class="cpage-footer" style="color:#3D2B27;"><span style="color:#5d8f5d;">Floresça</span><span>Caderno 03 · Ansiedade</span></div>
+        </div>
+      </div>
+
+      <!-- C4 GRATIDÃO DIAS -->
+      <div class="cpage" style="background:#FDF8F0; color:#3D2B27;">
+        <div class="cpage-bar" style="background:#C9A96E;"></div>
+        <div class="cpage-inner">
+          <div class="cpage-header">
+            <span class="cpage-htitle">Gratidão · Dias 1 e 2</span>
+            <span class="cpage-hbrand" style="color:#9a7640;">Floresça</span>
+          </div>
+          <div class="cpage-content">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+              <div style="background:#F5EDD8;border-radius:6px;padding:8px;">
+                <div style="font-size:7px;font-weight:700;color:#9a7640;margin-bottom:5px;">☀️ Dia 1 — Manhã</div>
+                <div style="font-size:7px;color:#8B7B6B;margin-bottom:3px;">Sou grata por...</div>
+                <div class="line" style="background:#C9A96E;"></div><div class="line" style="background:#C9A96E;"></div>
+              </div>
+              <div style="background:#F5EDD8;border-radius:6px;padding:8px;">
+                <div style="font-size:7px;font-weight:700;color:#9a7640;margin-bottom:5px;">🌙 Dia 1 — Noite</div>
+                <div style="font-size:7px;color:#8B7B6B;margin-bottom:3px;">Hoje foi bom porque...</div>
+                <div class="line" style="background:#C9A96E;"></div><div class="line" style="background:#C9A96E;"></div>
+              </div>
+              <div style="background:#F5EDD8;border-radius:6px;padding:8px;">
+                <div style="font-size:7px;font-weight:700;color:#9a7640;margin-bottom:5px;">☀️ Dia 2 — Manhã</div>
+                <div style="font-size:7px;color:#8B7B6B;margin-bottom:3px;">Sou grata por...</div>
+                <div class="line" style="background:#C9A96E;"></div><div class="line" style="background:#C9A96E;"></div>
+              </div>
+              <div style="background:#F5EDD8;border-radius:6px;padding:8px;">
+                <div style="font-size:7px;font-weight:700;color:#9a7640;margin-bottom:5px;">🌙 Dia 2 — Noite</div>
+                <div style="font-size:7px;color:#8B7B6B;margin-bottom:3px;">Hoje foi bom porque...</div>
+                <div class="line" style="background:#C9A96E;"></div><div class="line" style="background:#C9A96E;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="cpage-footer" style="color:#3D2B27;"><span style="color:#9a7640;">Floresça</span><span>Caderno 04 · Gratidão</span></div>
+        </div>
+      </div>
+
+      <!-- C5 RODA DA VIDA -->
+      <div class="cpage" style="background:#EEF0F8; color:#3D2B27;">
+        <div class="cpage-bar" style="background:#7B8FC4;"></div>
+        <div class="cpage-inner">
+          <div class="cpage-header">
+            <span class="cpage-htitle">Exercício · Roda da Vida</span>
+            <span class="cpage-hbrand" style="color:#5a6fa8;">Floresça</span>
+          </div>
+          <div class="cpage-content">
+            <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:11px;font-weight:300;color:#3D2B27;margin-bottom:8px;">Como está minha vida hoje?<br><em style="color:#5a6fa8;">De 1 a 10 em cada área:</em></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;">
+              <div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Saúde</span><span style="color:#8B7B6B;">__/10</span></div>
+              <div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Amor</span><span style="color:#8B7B6B;">__/10</span></div>
+              <div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Carreira</span><span style="color:#8B7B6B;">__/10</span></div>
+              <div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Família</span><span style="color:#8B7B6B;">__/10</span></div>
+              <div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Finanças</span><span style="color:#8B7B6B;">__/10</span></div>
+              <div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Propósito</span><span style="color:#8B7B6B;">__/10</span></div>
+              <div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Amizades</span><span style="color:#8B7B6B;">__/10</span></div>
+              <div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Bem-estar</span><span style="color:#8B7B6B;">__/10</span></div>
+            </div>
+          </div>
+          <div class="cpage-footer" style="color:#3D2B27;"><span style="color:#5a6fa8;">Floresça</span><span>Caderno 05 · Nova Fase</span></div>
+        </div>
+      </div>
+
+      <!-- C5 CARTA AO FUTURO -->
+      <div class="cpage" style="background:#EEF0F8; color:#3D2B27;">
+        <div class="cpage-bar" style="background:#7B8FC4;"></div>
+        <div class="cpage-inner">
+          <div class="cpage-header">
+            <span class="cpage-htitle">Carta ao Futuro Eu</span>
+            <span class="cpage-hbrand" style="color:#5a6fa8;">Floresça</span>
+          </div>
+          <div class="cpage-content" style="background:#fff;border-radius:6px;padding:10px;display:flex;flex-direction:column;gap:0;">
+            <div style="font-size:7.5px;color:#8B7B6B;margin-bottom:4px;">Data: _______________</div>
+            <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:9px;font-style:italic;color:#3D2B27;margin-bottom:5px;">Querida eu do futuro,</div>
+            <div class="line" style="background:#7B8FC4;"></div>
+            <div class="line" style="background:#7B8FC4;"></div>
+            <div class="line" style="background:#7B8FC4;"></div>
+            <div class="line" style="background:#7B8FC4;"></div>
+            <div class="line" style="background:#7B8FC4;"></div>
+            <div class="line" style="background:#7B8FC4;"></div>
+            <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:9px;font-style:italic;color:#3D2B27;margin-top:5px;">Com amor,<br>Eu 🌸</div>
+          </div>
+          <div class="cpage-footer" style="color:#3D2B27;"><span style="color:#5a6fa8;">Floresça</span><span>Caderno 05 · Nova Fase</span></div>
+        </div>
+      </div>
+
+      <!-- DUPLICATAS PARA LOOP SEAMLESS -->
+      <div class="cpage" style="background:#FAF6F1; color:#3D2B27;"><div class="cpage-bar" style="background:#C4877B;"></div><div class="cpage-inner"><div class="cpage-header"><span class="cpage-htitle">Caderno 01</span><span class="cpage-hbrand" style="color:#C4877B;">Floresça</span></div><div class="cpage-content" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;height:100%;"><div style="font-family:'Dancing Script',cursive;font-size:14px;color:#C4877B;margin-bottom:8px;">Floresça</div><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:300;line-height:1.2;color:#3D2B27;margin-bottom:10px;">30 Dias de<br><em style="font-style:italic;color:#A85C52;">Amor Próprio</em></div><div style="width:36px;height:1px;background:#DFC8BC;margin:8px auto;"></div><div style="font-size:7px;letter-spacing:2px;text-transform:uppercase;color:#8B7B6B;opacity:.7;">Caderno de Cura Emocional</div></div><div class="cpage-footer"><span>Floresça</span><span>Caderno 01</span></div></div></div>
+
+      <div class="cpage" style="background:#FAF6F1; color:#3D2B27;"><div class="cpage-bar" style="background:#C4877B;"></div><div class="cpage-inner"><div class="cpage-header"><span class="cpage-htitle">Amor Próprio · Dias 1 a 3</span><span class="cpage-hbrand" style="color:#C4877B;">Floresça</span></div><div class="cpage-content" style="display:flex;flex-direction:column;gap:8px;"><div style="display:flex;gap:6px;align-items:flex-start;"><div style="text-align:center;flex-shrink:0;min-width:28px;"><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;color:#C4877B;line-height:1;">01</div><div style="font-size:6px;letter-spacing:1px;text-transform:uppercase;color:#8B7B6B;">Dia Um</div></div><div style="flex:1;"><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:8.5px;font-style:italic;line-height:1.4;margin-bottom:4px;">Se eu pudesse escrever uma carta para a versão de mim de 5 anos atrás…</div><div class="line"></div><div class="line"></div></div></div><div style="display:flex;gap:6px;align-items:flex-start;"><div style="text-align:center;flex-shrink:0;min-width:28px;"><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;color:#C4877B;line-height:1;">02</div><div style="font-size:6px;letter-spacing:1px;text-transform:uppercase;color:#8B7B6B;">Dia Dois</div></div><div style="flex:1;"><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:8.5px;font-style:italic;line-height:1.4;margin-bottom:4px;">O que significa, para mim, ser gentil comigo mesma?</div><div class="line"></div><div class="line"></div></div></div><div style="display:flex;gap:6px;align-items:flex-start;"><div style="text-align:center;flex-shrink:0;min-width:28px;"><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;color:#C4877B;line-height:1;">03</div><div style="font-size:6px;letter-spacing:1px;text-transform:uppercase;color:#8B7B6B;">Dia Três</div></div><div style="flex:1;"><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:8.5px;font-style:italic;line-height:1.4;margin-bottom:4px;">Quais são os três momentos em que me sinto mais eu mesma?</div><div class="line"></div><div class="line"></div></div></div></div><div class="cpage-footer"><span>Floresça</span><span>Caderno 01 · Amor Próprio</span></div></div></div>
+
+      <div class="cpage" style="background:#FAF6F1;color:#3D2B27;"><div class="cpage-bar" style="background:#C4877B;"></div><div class="cpage-inner"><div class="cpage-header"><span class="cpage-htitle">Afirmações de Poder</span><span class="cpage-hbrand" style="color:#C4877B;">Floresça</span></div><div class="cpage-content" style="display:flex;flex-direction:column;gap:7px;justify-content:center;height:100%;"><div style="background:#EDD9CF;border-radius:6px;padding:7px 10px;font-family:'Cormorant Garamond',Georgia,serif;font-size:9.5px;font-style:italic;line-height:1.4;">"Eu sou digna de amor e de coisas boas."</div><div style="background:#EDD9CF;border-radius:6px;padding:7px 10px;font-family:'Cormorant Garamond',Georgia,serif;font-size:9.5px;font-style:italic;line-height:1.4;">"Meu valor não precisa ser provado."</div><div style="background:#EDD9CF;border-radius:6px;padding:7px 10px;font-family:'Cormorant Garamond',Georgia,serif;font-size:9.5px;font-style:italic;line-height:1.4;">"Eu escolho a paz todos os dias."</div><div style="background:#EDD9CF;border-radius:6px;padding:7px 10px;font-family:'Cormorant Garamond',Georgia,serif;font-size:9.5px;font-style:italic;line-height:1.4;">"Sou suficiente exatamente como sou hoje."</div></div><div class="cpage-footer"><span>Floresça</span><span>Caderno 01 · Amor Próprio</span></div></div></div>
+
+      <div class="cpage" style="background:#F5F0F7; color:#3D2B27;"><div class="cpage-bar" style="background:#C8B8CC;"></div><div class="cpage-inner"><div class="cpage-header"><span class="cpage-htitle">Caderno 02</span><span class="cpage-hbrand" style="color:#9c7baa;">Floresça</span></div><div class="cpage-content" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;height:100%;"><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:300;line-height:1.25;margin-bottom:10px;">Reencontrando a<br><em style="font-style:italic;color:#8a6a92;">Criança Interior</em></div><div style="width:36px;height:1px;background:#C8B8CC;margin:8px auto;opacity:.6;"></div><div style="font-size:7.5px;color:#9c7baa;line-height:1.6;max-width:130px;">Exercícios de reconexão, perdão e reparentagem</div></div><div class="cpage-footer"><span style="color:#9c7baa;">Floresça</span><span>Caderno 02</span></div></div></div>
+
+      <div class="cpage" style="background:#F2F6F2; color:#3D2B27;"><div class="cpage-bar" style="background:#8FAF8F;"></div><div class="cpage-inner"><div class="cpage-header"><span class="cpage-htitle">Técnica · Respiração 4-7-8</span><span class="cpage-hbrand" style="color:#5d8f5d;">Floresça</span></div><div class="cpage-content"><div style="display:inline-block;background:#ddeedd;color:#3d6b3d;font-size:7px;letter-spacing:1px;text-transform:uppercase;padding:3px 7px;border-radius:6px;font-weight:700;margin-bottom:7px;">Respiração</div><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:15px;font-weight:300;margin-bottom:3px;">Técnica 4-7-8</div><div style="font-size:8px;color:#5d8f5d;margin-bottom:10px;">Regulação Imediata da Ansiedade</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;text-align:center;margin-bottom:8px;"><div style="background:#ddeedd;border-radius:6px;padding:8px 4px;"><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:300;color:#3d6b3d;line-height:1;">4</div><div style="font-size:6.5px;color:#5d8f5d;text-transform:uppercase;letter-spacing:1px;">inspire</div></div><div style="background:#ddeedd;border-radius:6px;padding:8px 4px;"><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:300;color:#3d6b3d;line-height:1;">7</div><div style="font-size:6.5px;color:#5d8f5d;text-transform:uppercase;letter-spacing:1px;">segure</div></div><div style="background:#ddeedd;border-radius:6px;padding:8px 4px;"><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:300;color:#3d6b3d;line-height:1;">8</div><div style="font-size:6.5px;color:#5d8f5d;text-transform:uppercase;letter-spacing:1px;">expire</div></div></div></div><div class="cpage-footer"><span style="color:#5d8f5d;">Floresça</span><span>Caderno 03 · Ansiedade</span></div></div></div>
+
+      <div class="cpage" style="background:#FDF8F0; color:#3D2B27;"><div class="cpage-bar" style="background:#C9A96E;"></div><div class="cpage-inner"><div class="cpage-header"><span class="cpage-htitle">Gratidão · Dias 1 e 2</span><span class="cpage-hbrand" style="color:#9a7640;">Floresça</span></div><div class="cpage-content"><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;"><div style="background:#F5EDD8;border-radius:6px;padding:8px;"><div style="font-size:7px;font-weight:700;color:#9a7640;margin-bottom:5px;">☀️ Dia 1 — Manhã</div><div class="line" style="background:#C9A96E;"></div><div class="line" style="background:#C9A96E;"></div></div><div style="background:#F5EDD8;border-radius:6px;padding:8px;"><div style="font-size:7px;font-weight:700;color:#9a7640;margin-bottom:5px;">🌙 Dia 1 — Noite</div><div class="line" style="background:#C9A96E;"></div><div class="line" style="background:#C9A96E;"></div></div><div style="background:#F5EDD8;border-radius:6px;padding:8px;"><div style="font-size:7px;font-weight:700;color:#9a7640;margin-bottom:5px;">☀️ Dia 2 — Manhã</div><div class="line" style="background:#C9A96E;"></div><div class="line" style="background:#C9A96E;"></div></div><div style="background:#F5EDD8;border-radius:6px;padding:8px;"><div style="font-size:7px;font-weight:700;color:#9a7640;margin-bottom:5px;">🌙 Dia 2 — Noite</div><div class="line" style="background:#C9A96E;"></div><div class="line" style="background:#C9A96E;"></div></div></div></div><div class="cpage-footer"><span style="color:#9a7640;">Floresça</span><span>Caderno 04 · Gratidão</span></div></div></div>
+
+      <div class="cpage" style="background:#EEF0F8; color:#3D2B27;"><div class="cpage-bar" style="background:#7B8FC4;"></div><div class="cpage-inner"><div class="cpage-header"><span class="cpage-htitle">Exercício · Roda da Vida</span><span class="cpage-hbrand" style="color:#5a6fa8;">Floresça</span></div><div class="cpage-content"><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:11px;font-weight:300;margin-bottom:8px;">Como está minha vida hoje?<br><em style="color:#5a6fa8;">De 1 a 10 em cada área:</em></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;"><div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Saúde</span><span style="color:#8B7B6B;">__/10</span></div><div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Amor</span><span style="color:#8B7B6B;">__/10</span></div><div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Carreira</span><span style="color:#8B7B6B;">__/10</span></div><div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Família</span><span style="color:#8B7B6B;">__/10</span></div><div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Finanças</span><span style="color:#8B7B6B;">__/10</span></div><div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Propósito</span><span style="color:#8B7B6B;">__/10</span></div></div></div><div class="cpage-footer"><span style="color:#5a6fa8;">Floresça</span><span>Caderno 05 · Nova Fase</span></div></div></div>
+
+    </div>
+  </div>
 </section>
 
 <!-- ===================== PAIN ===================== -->
 <section class="section section-center" style="background:#fff;">
-  <h2 class="section-h">O Problema <span class="accent">NÃO</span> é Você...</h2>
-  <p class="problem-sub">Se você:</p>
-  <div class="problem-list">
-    <div class="problem-item"><span class="problem-x">✗</span> A ansiedade não para</div>
-    <div class="problem-item"><span class="problem-x">✗</span> Se coloca em último lugar</div>
-    <div class="problem-item"><span class="problem-x">✗</span> Se critica o tempo todo</div>
-    <div class="problem-item"><span class="problem-x">✗</span> Vive nos mesmos padrões em loop</div>
-    <div class="problem-item"><span class="problem-x">✗</span> Perdeu o contato consigo mesma</div>
-    <div class="problem-item"><span class="problem-x">✗</span> Quer ajuda mas não tem como pagar terapeuta</div>
-  </div>
-
-  <h3 class="respira-h">Respira!</h3>
-  <p class="respira-text">Com <strong>5 cadernos guiados</strong> você organiza o que sente, <strong>no seu ritmo</strong>, sem página em branco e sem precisar saber por onde começar.</p>
-</section>
-
-<!-- ===================== VITRINE (SLIDER ARRASTÁVEL) ===================== -->
-<section class="showcase-section">
-  <h2 class="showcase-h">Veja os materiais que você<br>vai receber na prática</h2>
-  <div class="showcase-underline"></div>
-
-  <div class="showcase-wrap">
-    <div class="showcase-track" id="showcaseTrack">
-
-      <div class="showcase-slide">
-        <div class="showcase-frame">
-          <div class="cpage" style="background:#FAF6F1; color:#3D2B27;">
-            <div class="cpage-bar" style="background:#C4877B;"></div>
-            <div class="cpage-inner">
-              <div class="cpage-header">
-                <span class="cpage-htitle">Caderno 01</span>
-                <span class="cpage-hbrand" style="color:#C4877B;">Floresça</span>
-              </div>
-              <div class="cpage-content" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;height:100%;">
-                <div style="font-family:'Dancing Script',cursive;font-size:14px;color:#C4877B;margin-bottom:8px;">Floresça</div>
-                <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:300;line-height:1.2;color:#3D2B27;margin-bottom:10px;">30 Dias de<br><em style="font-style:italic;color:#A85C52;">Amor Próprio</em></div>
-                <div style="width:36px;height:1px;background:#DFC8BC;margin:8px auto;"></div>
-                <div style="font-size:7px;letter-spacing:2px;text-transform:uppercase;color:#8B7B6B;opacity:.7;">Caderno de Cura Emocional</div>
-              </div>
-              <div class="cpage-footer"><span>Floresça</span><span>Caderno 01</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="showcase-caption">Capa personalizada</div>
+  <span class="eyebrow">isso é pra você se…</span>
+  <h2 class="section-h">Tá numa dessas?</h2>
+  <div class="pain-list">
+    <div class="pain-item">
+      <div class="pain-emoji">😮‍💨</div>
+      <div class="pain-text">
+        <strong>A ansiedade não para</strong>
+        <span>Não é susto. É aquele fundo de poço constante. A sensação de que algo vai dar errado mesmo sem ter nada de errado.</span>
       </div>
-
-      <div class="showcase-slide">
-        <div class="showcase-frame">
-          <div class="cpage" style="background:#FAF6F1; color:#3D2B27;">
-            <div class="cpage-bar" style="background:#C4877B;"></div>
-            <div class="cpage-inner">
-              <div class="cpage-header">
-                <span class="cpage-htitle">Amor Próprio · Dias 1 a 3</span>
-                <span class="cpage-hbrand" style="color:#C4877B;">Floresça</span>
-              </div>
-              <div class="cpage-content" style="display:flex;flex-direction:column;gap:8px;">
-                <div style="display:flex;gap:6px;align-items:flex-start;">
-                  <div style="text-align:center;flex-shrink:0;min-width:28px;">
-                    <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-weight:400;color:#C4877B;line-height:1;">01</div>
-                    <div style="font-size:6px;letter-spacing:1px;text-transform:uppercase;color:#8B7B6B;">Dia Um</div>
-                  </div>
-                  <div style="flex:1;">
-                    <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:8.5px;font-style:italic;line-height:1.4;color:#3D2B27;margin-bottom:4px;">Se eu pudesse escrever uma carta para a versão de mim de 5 anos atrás…</div>
-                    <div class="line"></div><div class="line"></div><div class="line"></div>
-                  </div>
-                </div>
-                <div style="display:flex;gap:6px;align-items:flex-start;">
-                  <div style="text-align:center;flex-shrink:0;min-width:28px;">
-                    <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-weight:400;color:#C4877B;line-height:1;">02</div>
-                    <div style="font-size:6px;letter-spacing:1px;text-transform:uppercase;color:#8B7B6B;">Dia Dois</div>
-                  </div>
-                  <div style="flex:1;">
-                    <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:8.5px;font-style:italic;line-height:1.4;color:#3D2B27;margin-bottom:4px;">O que significa, para mim, ser gentil comigo mesma?</div>
-                    <div class="line"></div><div class="line"></div><div class="line"></div>
-                  </div>
-                </div>
-                <div style="display:flex;gap:6px;align-items:flex-start;">
-                  <div style="text-align:center;flex-shrink:0;min-width:28px;">
-                    <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-weight:400;color:#C4877B;line-height:1;">03</div>
-                    <div style="font-size:6px;letter-spacing:1px;text-transform:uppercase;color:#8B7B6B;">Dia Três</div>
-                  </div>
-                  <div style="flex:1;">
-                    <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:8.5px;font-style:italic;line-height:1.4;color:#3D2B27;margin-bottom:4px;">Quais são os três momentos em que me sinto mais eu mesma?</div>
-                    <div class="line"></div><div class="line"></div><div class="line"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="cpage-footer"><span>Floresça</span><span>Caderno 01 · Amor Próprio</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="showcase-caption">Prompts guiados dia a dia</div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-emoji">💔</div>
+      <div class="pain-text">
+        <strong>Você se coloca em último lugar</strong>
+        <span>Cuida de todo mundo mas quando sobra um minuto pra você, não sabe nem o que quer sentir.</span>
       </div>
-
-      <div class="showcase-slide">
-        <div class="showcase-frame">
-          <div class="cpage" style="background:#FAF6F1; color:#3D2B27;">
-            <div class="cpage-bar" style="background:#C4877B;"></div>
-            <div class="cpage-inner">
-              <div class="cpage-header">
-                <span class="cpage-htitle">Afirmações de Poder</span>
-                <span class="cpage-hbrand" style="color:#C4877B;">Floresça</span>
-              </div>
-              <div class="cpage-content" style="display:flex;flex-direction:column;gap:7px;justify-content:center;height:100%;">
-                <div style="background:#EDD9CF;border-radius:6px;padding:7px 10px;font-family:'Cormorant Garamond',Georgia,serif;font-size:9.5px;font-style:italic;color:#3D2B27;line-height:1.4;">"Eu sou digna de amor e de coisas boas."</div>
-                <div style="background:#EDD9CF;border-radius:6px;padding:7px 10px;font-family:'Cormorant Garamond',Georgia,serif;font-size:9.5px;font-style:italic;color:#3D2B27;line-height:1.4;">"Meu valor não precisa ser provado."</div>
-                <div style="background:#EDD9CF;border-radius:6px;padding:7px 10px;font-family:'Cormorant Garamond',Georgia,serif;font-size:9.5px;font-style:italic;color:#3D2B27;line-height:1.4;">"Eu escolho a paz todos os dias."</div>
-                <div style="background:#EDD9CF;border-radius:6px;padding:7px 10px;font-family:'Cormorant Garamond',Georgia,serif;font-size:9.5px;font-style:italic;color:#3D2B27;line-height:1.4;">"Sou suficiente exatamente como sou hoje."</div>
-                <div style="background:#EDD9CF;border-radius:6px;padding:7px 10px;font-family:'Cormorant Garamond',Georgia,serif;font-size:9.5px;font-style:italic;color:#3D2B27;line-height:1.4;">"Eu me perdoo e sigo em frente."</div>
-              </div>
-              <div class="cpage-footer"><span>Floresça</span><span>Caderno 01 · Amor Próprio</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="showcase-caption">Afirmações de poder</div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-emoji">🪞</div>
+      <div class="pain-text">
+        <strong>Você se critica o tempo todo</strong>
+        <span>Faria por qualquer amiga o que nunca faz por si mesma: escutar sem julgamento, acolher sem cobranças.</span>
       </div>
-
-      <div class="showcase-slide">
-        <div class="showcase-frame">
-          <div class="cpage" style="background:#F5F0F7; color:#3D2B27;">
-            <div class="cpage-bar" style="background:#C8B8CC;"></div>
-            <div class="cpage-inner">
-              <div class="cpage-header">
-                <span class="cpage-htitle">Caderno 02</span>
-                <span class="cpage-hbrand" style="color:#9c7baa;">Floresça</span>
-              </div>
-              <div class="cpage-content" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;height:100%;">
-                <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:300;line-height:1.25;color:#3D2B27;margin-bottom:10px;">Reencontrando a<br><em style="font-style:italic;color:#8a6a92;">Criança Interior</em></div>
-                <div style="width:36px;height:1px;background:#C8B8CC;margin:8px auto;opacity:.6;"></div>
-                <div style="font-size:7.5px;color:#9c7baa;line-height:1.6;max-width:130px;">Exercícios de reconexão, perdão e reparentagem</div>
-              </div>
-              <div class="cpage-footer" style="color:#3D2B27;"><span style="color:#9c7baa;">Floresça</span><span>Caderno 02</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="showcase-caption">Caderno Criança Interior</div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-emoji">🔄</div>
+      <div class="pain-text">
+        <strong>Vive nos mesmos padrões em loop</strong>
+        <span>Os mesmos relacionamentos, as mesmas situações, as mesmas dores. Você quer sair mas não sabe como.</span>
       </div>
-
-      <div class="showcase-slide">
-        <div class="showcase-frame">
-          <div class="cpage" style="background:#F5F0F7; color:#3D2B27;">
-            <div class="cpage-bar" style="background:#C8B8CC;"></div>
-            <div class="cpage-inner">
-              <div class="cpage-header">
-                <span class="cpage-htitle">Exercício · Carta à Criança</span>
-                <span class="cpage-hbrand" style="color:#9c7baa;">Floresça</span>
-              </div>
-              <div class="cpage-content">
-                <div style="font-size:7px;letter-spacing:1.5px;text-transform:uppercase;color:#9c7baa;margin-bottom:6px;">Carta à minha criança interior</div>
-                <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:9px;font-style:italic;color:#3D2B27;margin-bottom:6px;">Querida _____,</div>
-                <div class="line" style="background:#C8B8CC;"></div>
-                <div class="line" style="background:#C8B8CC;"></div>
-                <div class="line" style="background:#C8B8CC;"></div>
-                <div class="line" style="background:#C8B8CC;"></div>
-                <div class="line" style="background:#C8B8CC;"></div>
-                <div class="line" style="background:#C8B8CC;"></div>
-                <div class="line" style="background:#C8B8CC;"></div>
-                <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:9px;font-style:italic;color:#3D2B27;margin-top:6px;">Com todo meu amor,<br>Eu 🌸</div>
-              </div>
-              <div class="cpage-footer" style="color:#3D2B27;"><span style="color:#9c7baa;">Floresça</span><span>Caderno 02 · Criança Interior</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="showcase-caption">Carta à criança interior</div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-emoji">🌫️</div>
+      <div class="pain-text">
+        <strong>Perdeu o contato consigo mesma</strong>
+        <span>Esqueceu quem você era antes de tantas responsabilidades. Ou talvez nunca tenha se conhecido de verdade.</span>
       </div>
-
-      <div class="showcase-slide">
-        <div class="showcase-frame">
-          <div class="cpage" style="background:#F2F6F2; color:#3D2B27;">
-            <div class="cpage-bar" style="background:#8FAF8F;"></div>
-            <div class="cpage-inner">
-              <div class="cpage-header">
-                <span class="cpage-htitle">Técnica · Respiração 4-7-8</span>
-                <span class="cpage-hbrand" style="color:#5d8f5d;">Floresça</span>
-              </div>
-              <div class="cpage-content">
-                <div style="display:inline-block;background:#ddeedd;color:#3d6b3d;font-size:7px;letter-spacing:1px;text-transform:uppercase;padding:3px 7px;border-radius:6px;font-weight:700;margin-bottom:7px;">Respiração</div>
-                <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:15px;font-weight:300;color:#3D2B27;margin-bottom:3px;">Técnica 4-7-8</div>
-                <div style="font-size:8px;color:#5d8f5d;margin-bottom:10px;">Regulação Imediata da Ansiedade</div>
-                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;text-align:center;margin-bottom:10px;">
-                  <div style="background:#ddeedd;border-radius:6px;padding:8px 4px;"><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:300;color:#3d6b3d;line-height:1;">4</div><div style="font-size:6.5px;color:#5d8f5d;text-transform:uppercase;letter-spacing:1px;">inspire</div></div>
-                  <div style="background:#ddeedd;border-radius:6px;padding:8px 4px;"><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:300;color:#3d6b3d;line-height:1;">7</div><div style="font-size:6.5px;color:#5d8f5d;text-transform:uppercase;letter-spacing:1px;">segure</div></div>
-                  <div style="background:#ddeedd;border-radius:6px;padding:8px 4px;"><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;font-weight:300;color:#3d6b3d;line-height:1;">8</div><div style="font-size:6.5px;color:#5d8f5d;text-transform:uppercase;letter-spacing:1px;">expire</div></div>
-                </div>
-                <div style="font-size:8px;color:#8B7B6B;line-height:1.5;">Repita 4 vezes. Faça isso toda vez que sentir a ansiedade chegando.</div>
-              </div>
-              <div class="cpage-footer" style="color:#3D2B27;"><span style="color:#5d8f5d;">Floresça</span><span>Caderno 03 · Ansiedade</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="showcase-caption">Técnica de respiração 4-7-8</div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-emoji">💸</div>
+      <div class="pain-text">
+        <strong>Quer ajuda mas não tem como pagar terapeuta</strong>
+        <span>Consulta custa R$150, R$250, R$300. O Floresça você resolve por menos do que um lanche.</span>
       </div>
-
-      <div class="showcase-slide">
-        <div class="showcase-frame">
-          <div class="cpage" style="background:#F2F6F2; color:#3D2B27;">
-            <div class="cpage-bar" style="background:#8FAF8F;"></div>
-            <div class="cpage-inner">
-              <div class="cpage-header">
-                <span class="cpage-htitle">Diário · Prompts 1 a 3</span>
-                <span class="cpage-hbrand" style="color:#5d8f5d;">Floresça</span>
-              </div>
-              <div class="cpage-content" style="display:flex;flex-direction:column;gap:9px;">
-                <div>
-                  <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:8.5px;font-style:italic;color:#3D2B27;margin-bottom:3px;">1. Quando minha ansiedade aparece, o que ela está tentando me proteger?</div>
-                  <div class="line" style="background:#8FAF8F;"></div><div class="line" style="background:#8FAF8F;"></div>
-                </div>
-                <div>
-                  <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:8.5px;font-style:italic;color:#3D2B27;margin-bottom:3px;">2. Em que partes do meu corpo eu sinto a ansiedade primeiro?</div>
-                  <div class="line" style="background:#8FAF8F;"></div><div class="line" style="background:#8FAF8F;"></div>
-                </div>
-                <div>
-                  <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:8.5px;font-style:italic;color:#3D2B27;margin-bottom:3px;">3. O que já passou na minha vida que parecia impossível de superar?</div>
-                  <div class="line" style="background:#8FAF8F;"></div><div class="line" style="background:#8FAF8F;"></div>
-                </div>
-              </div>
-              <div class="cpage-footer" style="color:#3D2B27;"><span style="color:#5d8f5d;">Floresça</span><span>Caderno 03 · Ansiedade</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="showcase-caption">Diário guiado da ansiedade</div>
-      </div>
-
-      <div class="showcase-slide">
-        <div class="showcase-frame">
-          <div class="cpage" style="background:#FDF8F0; color:#3D2B27;">
-            <div class="cpage-bar" style="background:#C9A96E;"></div>
-            <div class="cpage-inner">
-              <div class="cpage-header">
-                <span class="cpage-htitle">Gratidão · Dias 1 e 2</span>
-                <span class="cpage-hbrand" style="color:#9a7640;">Floresça</span>
-              </div>
-              <div class="cpage-content">
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
-                  <div style="background:#F5EDD8;border-radius:6px;padding:8px;">
-                    <div style="font-size:7px;font-weight:700;color:#9a7640;margin-bottom:5px;">☀️ Dia 1 — Manhã</div>
-                    <div style="font-size:7px;color:#8B7B6B;margin-bottom:3px;">Sou grata por...</div>
-                    <div class="line" style="background:#C9A96E;"></div><div class="line" style="background:#C9A96E;"></div>
-                  </div>
-                  <div style="background:#F5EDD8;border-radius:6px;padding:8px;">
-                    <div style="font-size:7px;font-weight:700;color:#9a7640;margin-bottom:5px;">🌙 Dia 1 — Noite</div>
-                    <div style="font-size:7px;color:#8B7B6B;margin-bottom:3px;">Hoje foi bom porque...</div>
-                    <div class="line" style="background:#C9A96E;"></div><div class="line" style="background:#C9A96E;"></div>
-                  </div>
-                  <div style="background:#F5EDD8;border-radius:6px;padding:8px;">
-                    <div style="font-size:7px;font-weight:700;color:#9a7640;margin-bottom:5px;">☀️ Dia 2 — Manhã</div>
-                    <div style="font-size:7px;color:#8B7B6B;margin-bottom:3px;">Sou grata por...</div>
-                    <div class="line" style="background:#C9A96E;"></div><div class="line" style="background:#C9A96E;"></div>
-                  </div>
-                  <div style="background:#F5EDD8;border-radius:6px;padding:8px;">
-                    <div style="font-size:7px;font-weight:700;color:#9a7640;margin-bottom:5px;">🌙 Dia 2 — Noite</div>
-                    <div style="font-size:7px;color:#8B7B6B;margin-bottom:3px;">Hoje foi bom porque...</div>
-                    <div class="line" style="background:#C9A96E;"></div><div class="line" style="background:#C9A96E;"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="cpage-footer" style="color:#3D2B27;"><span style="color:#9a7640;">Floresça</span><span>Caderno 04 · Gratidão</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="showcase-caption">Ritual de gratidão diário</div>
-      </div>
-
-      <div class="showcase-slide">
-        <div class="showcase-frame">
-          <div class="cpage" style="background:#EEF0F8; color:#3D2B27;">
-            <div class="cpage-bar" style="background:#7B8FC4;"></div>
-            <div class="cpage-inner">
-              <div class="cpage-header">
-                <span class="cpage-htitle">Exercício · Roda da Vida</span>
-                <span class="cpage-hbrand" style="color:#5a6fa8;">Floresça</span>
-              </div>
-              <div class="cpage-content">
-                <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:11px;font-weight:300;color:#3D2B27;margin-bottom:8px;">Como está minha vida hoje?<br><em style="color:#5a6fa8;">De 1 a 10 em cada área:</em></div>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;">
-                  <div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Saúde</span><span style="color:#8B7B6B;">__/10</span></div>
-                  <div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Amor</span><span style="color:#8B7B6B;">__/10</span></div>
-                  <div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Carreira</span><span style="color:#8B7B6B;">__/10</span></div>
-                  <div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Família</span><span style="color:#8B7B6B;">__/10</span></div>
-                  <div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Finanças</span><span style="color:#8B7B6B;">__/10</span></div>
-                  <div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Propósito</span><span style="color:#8B7B6B;">__/10</span></div>
-                  <div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Amizades</span><span style="color:#8B7B6B;">__/10</span></div>
-                  <div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Bem-estar</span><span style="color:#8B7B6B;">__/10</span></div>
-                </div>
-              </div>
-              <div class="cpage-footer" style="color:#3D2B27;"><span style="color:#5a6fa8;">Floresça</span><span>Caderno 05 · Nova Fase</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="showcase-caption">Roda da vida</div>
-      </div>
-
-      <div class="showcase-slide">
-        <div class="showcase-frame">
-          <div class="cpage" style="background:#EEF0F8; color:#3D2B27;">
-            <div class="cpage-bar" style="background:#7B8FC4;"></div>
-            <div class="cpage-inner">
-              <div class="cpage-header">
-                <span class="cpage-htitle">Carta ao Futuro Eu</span>
-                <span class="cpage-hbrand" style="color:#5a6fa8;">Floresça</span>
-              </div>
-              <div class="cpage-content" style="background:#fff;border-radius:6px;padding:10px;display:flex;flex-direction:column;gap:0;">
-                <div style="font-size:7.5px;color:#8B7B6B;margin-bottom:4px;">Data: _______________</div>
-                <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:9px;font-style:italic;color:#3D2B27;margin-bottom:5px;">Querida eu do futuro,</div>
-                <div class="line" style="background:#7B8FC4;"></div>
-                <div class="line" style="background:#7B8FC4;"></div>
-                <div class="line" style="background:#7B8FC4;"></div>
-                <div class="line" style="background:#7B8FC4;"></div>
-                <div class="line" style="background:#7B8FC4;"></div>
-                <div class="line" style="background:#7B8FC4;"></div>
-                <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:9px;font-style:italic;color:#3D2B27;margin-top:5px;">Com amor,<br>Eu 🌸</div>
-              </div>
-              <div class="cpage-footer" style="color:#3D2B27;"><span style="color:#5a6fa8;">Floresça</span><span>Caderno 05 · Nova Fase</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="showcase-caption">Carta para o futuro eu</div>
-      </div>
-
     </div>
   </div>
+  <div class="pain-close">Se marcou qualquer um desses, esse caderno é pra você. A gente resolve. 🌸</div>
+  <div style="margin-top:32px;">
+    <a href="#pricing" class="btn-cta">
+      EU QUERO OS CADERNOS AGORA
+      <span class="sub">5 Cadernos de Cura Emocional + 11 Bônus · Acesso na hora</span>
+    </a>
+    <a href="#pricing" class="btn-outline">EU quero começar com o Plano Básico</a>
+    <div class="trust-row">
+      <span><span class="ck">✓</span> Liberação imediata</span>
+      <span><span class="ck">✓</span> Pagamento 100% seguro</span>
+      <span><span class="ck">✓</span> Garantia 7 dias</span>
+    </div>
+  </div>
+</section>
 
-  <p class="showcase-note">...e os principais exercícios de respiração, gratidão, autoconhecimento e autoafirmação, cada um com o mesmo cuidado pra te acompanhar no dia a dia.</p>
+<!-- ===================== QUOTE ===================== -->
+<section class="quote-strip">
+  <p class="quote-text">"Você não precisa se consertar. Você precisa se <em>reconhecer.</em>"</p>
+  <p class="quote-author">Princípio do Método Floresça</p>
 </section>
 
 <!-- ===================== O QUE VOCÊ RECEBE ===================== -->
 <section class="section section-center" style="background:var(--cream);">
-  <h2 class="section-h">O que você recebe</h2>
+  <span class="eyebrow">o que você recebe</span>
+  <h2 class="section-h">5 Cadernos. <span class="accent">Uma transformação completa.</span></h2>
+  <p class="section-p">Por que 5 cadernos e não 1? Porque a cura emocional não acontece numa única direção. Cada caderno trabalha uma camada diferente, começando pela que dói mais e seguindo o caminho, no seu ritmo.</p>
   <div class="product-list">
     <div class="product-item">
-      <img class="product-cover" src="caderno-1-amor-proprio.webp" width="300" height="400" loading="lazy" alt="Capa do caderno 30 Dias de Amor Próprio">
+      <div class="product-num">1</div>
       <div>
         <div class="product-title">30 Dias de Amor Próprio</div>
-        <div class="product-desc">Um mês de perguntas guiadas, dia após dia, pra você aprender a falar consigo mesma com mais gentileza — sem se cobrar, sem se comparar.</div>
+        <div class="product-desc">30 prompts diários + reflexões semanais + afirmações. Para construir uma relação mais gentil consigo mesma, dia a dia.</div>
+        <div class="product-pills"><span class="product-pill">30 prompts</span><span class="product-pill">Reflexão semanal</span><span class="product-pill">Afirmações</span><span class="product-pill">Carta ao corpo</span></div>
       </div>
     </div>
     <div class="product-item">
-      <img class="product-cover" src="caderno-2-crianca-interior.webp" width="300" height="400" loading="lazy" alt="Capa do caderno Criança Interior">
+      <div class="product-num">2</div>
       <div>
         <div class="product-title">Criança Interior</div>
-        <div class="product-desc">Exercícios pra você entender de onde vêm certos padrões e se reconectar com a criança que você foi — com carinho, sem julgamento.</div>
+        <div class="product-desc">Exercícios de reconexão, reparentagem e perdão para curar as feridas que você nem sabia que ainda carregava.</div>
+        <div class="product-pills"><span class="product-pill">Reparentagem</span><span class="product-pill">Carta de perdão</span><span class="product-pill">Diálogo interior</span></div>
       </div>
     </div>
     <div class="product-item">
-      <img class="product-cover" src="caderno-3-ansiedade.webp" width="300" height="400" loading="lazy" alt="Capa do caderno Libertação da Ansiedade">
+      <div class="product-num">3</div>
       <div>
         <div class="product-title">Libertação da Ansiedade</div>
-        <div class="product-desc">Técnicas simples de respiração e um passo a passo prático pra usar exatamente na hora que a ansiedade aparecer.</div>
+        <div class="product-desc">Técnicas reais (4-7-8, grounding 5-4-3-2-1, âncoras de paz) + plano de crise + 15 prompts para entender sua ansiedade.</div>
+        <div class="product-pills"><span class="product-pill">Técnicas validadas</span><span class="product-pill">Plano de crise</span><span class="product-pill">15 prompts</span></div>
       </div>
     </div>
     <div class="product-item">
-      <img class="product-cover" src="caderno-4-gratidao.webp" width="300" height="400" loading="lazy" alt="Capa do caderno 30 Dias de Gratidão">
+      <div class="product-num">4</div>
       <div>
         <div class="product-title">30 Dias de Gratidão</div>
-        <div class="product-desc">Um ritual de manhã e noite por 30 dias pra treinar o olhar pra enxergar o que também é bom, mesmo nos dias difíceis.</div>
+        <div class="product-desc">Manhã e noite por 30 dias. Gratidão não é ignorar a dor, é treinar o olhar para ver o que também é bom.</div>
+        <div class="product-pills"><span class="product-pill">Manhã e noite</span><span class="product-pill">30 dias</span><span class="product-pill">Reflexão semanal</span></div>
       </div>
     </div>
     <div class="product-item">
-      <img class="product-cover" src="caderno-5-nova-fase.webp" width="300" height="400" loading="lazy" alt="Capa do caderno Eu em Nova Fase">
+      <div class="product-num">5</div>
       <div>
         <div class="product-title">Eu em Nova Fase</div>
-        <div class="product-desc">Um espaço pra olhar pra sua vida hoje, imaginar onde você quer chegar, e dar os primeiros passos — pra quem já está pronta pra virar a página.</div>
+        <div class="product-desc">Roda da vida, visão de futuro, pilares, plano de ação e carta ao seu eu do futuro. Para quem está pronta para o próximo passo.</div>
+        <div class="product-pills"><span class="product-pill">Roda da vida</span><span class="product-pill">Plano de ação</span><span class="product-pill">Carta ao futuro</span></div>
       </div>
     </div>
   </div>
-  <a href="#pricing" class="btn-cta" style="max-width:480px;margin:36px auto 0;">
-    EU QUERO COMEÇAR
-  </a>
+</section>
+
+<hr class="divider">
+
+<!-- ===================== COMO FUNCIONA ===================== -->
+<section class="section section-center" style="background:#fff;">
+  <span class="eyebrow">como funciona</span>
+  <h2 class="section-h">3 passos. <span class="accent">Mais simples que isso não existe.</span></h2>
+  <div class="steps-row">
+    <div class="step-card">
+      <div class="step-n">1</div>
+      <div class="step-title">Escolha seu plano</div>
+      <div class="step-desc">Básico (R$10) ou Completo (R$24,90). Você decide o que faz sentido pra você agora.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-n">2</div>
+      <div class="step-title">Acesso na hora</div>
+      <div class="step-desc">Após o pagamento você recebe o link dos PDFs imediatamente. Sem esperar, sem burocracia.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-n">3</div>
+      <div class="step-title">Imprime ou preenche</div>
+      <div class="step-desc">No celular, tablet ou impresso. Qualquer app de PDF funciona. Se você usa WhatsApp, você consegue usar.</div>
+    </div>
+  </div>
 </section>
 
 <!-- ===================== BONUSES ===================== -->
 <section class="bonus-section" id="bonus">
   <div class="section-center">
-    <h2 class="bonus-heading"><span class="bonus-underline">E não para por aí</span>... tem mais!</h2>
-    <p class="bonus-subtitle">Você também vai receber...</p>
-    <div class="bonus-pill">🎁 11 BÔNUS EXCLUSIVOS</div>
+    <span class="eyebrow" style="color:var(--gold);">exclusivo plano completo</span>
+    <h2 class="section-h" style="color:#fff;">11 Bônus que <span style="color:var(--gold);">aceleram</span> sua cura</h2>
+    <div class="bonus-total">Valor total dos bônus: R$247,00 incluídos de graça hoje</div>
   </div>
-  <div class="bonus-list-simple">
-    <div class="bonus-row"><span class="bonus-row-name">Ritual da Manhã Poderosa</span><span class="bonus-row-price">R$27,00</span></div>
-    <div class="bonus-row"><span class="bonus-row-name">Mapa das Emoções</span><span class="bonus-row-price">R$19,00</span></div>
-    <div class="bonus-row"><span class="bonus-row-name">Reset Emocional em 7 Dias</span><span class="bonus-row-price">R$37,00</span></div>
-    <div class="bonus-row"><span class="bonus-row-name">Meditação Guiada: Reencontro com Você</span><span class="bonus-row-price">R$27,00</span></div>
-    <div class="bonus-row"><span class="bonus-row-name">100 Afirmações que Reprogramam a Mente</span><span class="bonus-row-price">R$17,00</span></div>
-    <div class="bonus-row"><span class="bonus-row-name">Kit de Primeiros Socorros Emocionais</span><span class="bonus-row-price">R$22,00</span></div>
-    <div class="bonus-row"><span class="bonus-row-name">Diário de Sonhos e Intenções</span><span class="bonus-row-price">R$17,00</span></div>
-    <div class="bonus-row"><span class="bonus-row-name">Desafio de 30 Dias: Ação Emocional</span><span class="bonus-row-price">R$22,00</span></div>
-    <div class="bonus-row"><span class="bonus-row-name">Guia Anti-Autossabotagem</span><span class="bonus-row-price">R$27,00</span></div>
-    <div class="bonus-row"><span class="bonus-row-name">Perguntas que Mudam Perspectivas</span><span class="bonus-row-price">R$17,00</span></div>
-    <div class="bonus-row" style="border-bottom:none;"><span class="bonus-row-name">Manifesto: Quem Eu Estou Me Tornando</span><span class="bonus-row-price">R$17,00</span></div>
-  </div>
-  <p class="bonus-final-note">Cada um desses bônus foi pensado pra ser essencial na sua jornada de cura — e hoje, todos eles saem de graça.</p>
-  <div class="bonus-total-final">
-    <span class="bonus-total-old">R$247,00</span>
-    <span class="bonus-total-free">Grátis</span>
+  <div class="bonus-list">
+    <div class="bonus-item"><div class="bonus-num">1</div><div><div class="bonus-name">Ritual da Manhã Poderosa</div><div class="bonus-desc">Guia passo a passo para começar cada dia com intenção e leveza em 10 minutos ou menos.</div><div class="bonus-val">R$27,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">2</div><div><div class="bonus-name">Mapa das Emoções</div><div class="bonus-desc">Aprenda a identificar e nomear exatamente o que você sente. Consciência emocional é a base de tudo.</div><div class="bonus-val">R$19,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">3</div><div><div class="bonus-name">Reset Emocional em 7 Dias</div><div class="bonus-desc">Plano diário de 7 dias para quando você precisa começar do zero. Para os momentos de crise ou virada.</div><div class="bonus-val">R$37,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">4</div><div><div class="bonus-name">Meditação Guiada: Reencontro com Você</div><div class="bonus-desc">Script de meditação guiada para reconexão profunda com seu eu interior. Para ler ou praticar sozinha.</div><div class="bonus-val">R$27,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">5</div><div><div class="bonus-name">100 Afirmações que Reprogramam a Mente</div><div class="bonus-desc">Afirmações por tema: autoestima, relacionamentos, prosperidade, paz interior e propósito.</div><div class="bonus-val">R$17,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">6</div><div><div class="bonus-name">Kit de Primeiros Socorros Emocionais</div><div class="bonus-desc">O que fazer quando você está no fundo: técnicas rápidas para os seus momentos mais difíceis.</div><div class="bonus-val">R$22,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">7</div><div><div class="bonus-name">Diário de Sonhos e Intenções</div><div class="bonus-desc">Caderno extra para registrar seus sonhos e desejos. Porque sonhar faz parte de curar.</div><div class="bonus-val">R$17,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">8</div><div><div class="bonus-name">Desafio de 30 Dias: Ação Emocional</div><div class="bonus-desc">Calendário visual com uma micro-ação por dia para construir hábitos emocionais com consistência.</div><div class="bonus-val">R$22,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">9</div><div><div class="bonus-name">Guia Anti-Autossabotagem</div><div class="bonus-desc">Identifique seus padrões de autossabotagem e aprenda como interrompê-los antes que destruam seus avanços.</div><div class="bonus-val">R$27,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">10</div><div><div class="bonus-name">Perguntas que Mudam Perspectivas</div><div class="bonus-desc">50 perguntas poderosas para quando você está presa em uma situação ou em uma versão de si que não te serve.</div><div class="bonus-val">R$17,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">11</div><div><div class="bonus-name">Manifesto: Quem Eu Estou Me Tornando</div><div class="bonus-desc">Modelo de manifesto pessoal para escrever e reler sempre que precisar se lembrar de quem você escolheu ser.</div><div class="bonus-val">R$17,00 GRÁTIS</div></div></div>
   </div>
   <div style="text-align:center;margin-top:36px;">
-    <a href="#pricing" class="btn-cta" style="max-width:480px;margin:0 auto;">
+    <a href="#pricing" class="btn-cta" style="max-width:480px;margin:0 auto;background:var(--gold);color:var(--marrom);">
       EU QUERO TUDO ISSO AGORA
+      <span class="sub" style="color:rgba(61,43,39,.65);">5 Cadernos + 11 Bônus (R$247 de valor) · Acesso na hora</span>
     </a>
   </div>
 </section>
 
-<!-- ===================== PROVA SOCIAL (PRINTS REAIS) ===================== -->
-<section class="proof2-section" id="depoimentos">
-  <h2 class="section-h">O que dizem do <span class="accent">Floresça</span></h2>
-  <div class="proof2-wrap">
-    <div class="proof2-track" id="proof2Track">
-      <div class="proof2-card"><img src="depoimento-1.jpg" width="900" height="706" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-2.jpg" width="900" height="636" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-3.jpg" width="900" height="587" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-4.jpg" width="900" height="627" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-5.jpg" width="900" height="406" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-6.jpg" width="900" height="582" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-7.jpg" width="900" height="474" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-8.jpg" width="900" height="663" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-9.jpg" width="900" height="745" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-1.jpg" width="900" height="706" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-2.jpg" width="900" height="636" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-3.jpg" width="900" height="587" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-4.jpg" width="900" height="627" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-5.jpg" width="900" height="406" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-6.jpg" width="900" height="582" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-7.jpg" width="900" height="474" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-8.jpg" width="900" height="663" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
-      <div class="proof2-card"><img src="depoimento-9.jpg" width="900" height="745" alt="Depoimento real de cliente Floresça" loading="lazy"></div>
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="section section-center" style="background:#fff;" id="depoimentos">
+  <span class="eyebrow">depoimentos reais</span>
+  <h2 class="section-h">Quem usou <span class="accent">não volta atrás</span></h2>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Eu nunca fui de escrever, mas o Floresça me surpreendeu. No terceiro dia já estava chorando de alívio, não de tristeza. Parece que alguém finalmente me entendia."</p>
+      <div class="testi-author"><div class="testi-avatar">🌸</div><div><div class="testi-name">Ana Clara M.</div><div class="testi-handle">Compradora verificada</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Paguei R$27,90 achando que era barato demais pra valer. Errei. O conteúdo é de uma terapeuta de verdade, só que faço quando quero, no meu sofá."</p>
+      <div class="testi-author"><div class="testi-avatar">🌼</div><div><div class="testi-name">Jéssica R.</div><div class="testi-handle">Compradora verificada</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"O caderno da Criança Interior me fez entender por que eu me relacionava do jeito que me relacionava. Isso não tem preço. Por R$27 é um absurdo."</p>
+      <div class="testi-author"><div class="testi-avatar">💜</div><div><div class="testi-name">Mariana F.</div><div class="testi-handle">Compradora verificada</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Comprei para mim e presenteei minha irmã. Ela me mandou mensagem chorando de gratidão. Essa foi minha prova de que funciona de verdade."</p>
+      <div class="testi-author"><div class="testi-avatar">🌷</div><div><div class="testi-name">Beatriz S.</div><div class="testi-handle">Compradora verificada</div></div></div>
     </div>
   </div>
 </section>
-<script>
-function _initProof2() {
-  var track = document.getElementById('proof2Track');
-  if (!track) return;
-  var cards = track.querySelectorAll('.proof2-card');
-  var half = cards.length / 2;
-  var w = 320 + 16;
-  var style = document.createElement('style');
-  style.innerHTML = '@keyframes proof2scroll{0%{transform:translateX(0)}100%{transform:translateX(-' + (half * w) + 'px)}}';
-  document.head.appendChild(style);
-}
-if ('requestIdleCallback' in window) {
-  requestIdleCallback(_initProof2, { timeout: 2000 });
-} else {
-  setTimeout(_initProof2, 300);
-}
-</script>
 
 <!-- ===================== PRICING ===================== -->
 <section class="pricing-section" id="pricing">
-  <h2 class="showcase-h">Escolha a melhor<br>opção para você</h2>
-  <div class="showcase-underline"></div>
+  <span class="eyebrow">escolha seu plano</span>
+  <h2 class="section-h">Condição de lançamento para as primeiras 500 mulheres</h2>
   <div class="timer-mini">
-    ⚡ CONDIÇÃO DE LANÇAMENTO ENCERRA EM <span class="td" id="countdown2">14:59</span>
+    ⚡ VAGAS DE LANÇAMENTO ENCERRAM EM <span class="td" id="countdown2">14:59</span>
   </div>
-  <p class="section-p" style="margin-bottom:14px;">Depois que a condição de lançamento acabar, o preço volta para o valor original.</p>
-  <div class="value-strip">💡 R$47,00 ÷ 5 cadernos = <strong>menos de R$10 por caderno</strong> — e ainda leva a Área de Membros e 11 bônus de graça</div>
-
+  <p class="section-p" style="margin-bottom:36px;">Depois que as vagas de lançamento acabarem, o preço volta para o valor original.</p>
   <div class="plans-grid">
-
-    <div class="plan-card2">
-      <div class="plan2-name">Plano Básico</div>
-      <img class="plan2-mockup" src="plano-basico-mockup.webp" width="900" height="900" loading="lazy" alt="Mockup do Plano Básico Floresça — 1 caderno guiado">
-      <div class="plan2-includes">VOCÊ RECEBE:</div>
+    <div class="plan-card">
+      <div class="plan-name">Plano</div>
+      <div class="plan-title">Básico</div>
+      <div class="plan-from">De R$47,00</div>
+      <div class="plan-price"><sup>R$</sup>10<span>,00</span></div>
+      <div class="plan-note">Pagamento único · Sem mensalidade</div>
       <ul class="plan-features">
         <li class="pf"><span class="ck">✓</span> Caderno 01 · 30 Dias de Amor Próprio</li>
         <li class="pf"><span class="cx">✗</span> <span class="crossed">Caderno 02 · Criança Interior</span></li>
@@ -1953,32 +1396,22 @@ if ('requestIdleCallback' in window) {
         <li class="pf"><span class="cx">✗</span> <span class="crossed">Caderno 04 · 30 Dias de Gratidão</span></li>
         <li class="pf"><span class="cx">✗</span> <span class="crossed">Caderno 05 · Eu em Nova Fase</span></li>
         <li class="pf"><span class="cx">✗</span> <span class="crossed">11 Bônus exclusivos (R$247 em valor)</span></li>
-        <li class="pf"><span class="ck">✓</span> Acesso imediato em Material Pronto</li>
+        <li class="pf"><span class="ck">✓</span> Acesso imediato em PDF</li>
         <li class="pf"><span class="ck">✓</span> Para imprimir ou usar no celular</li>
-        <li class="pf"><span class="cx">✗</span> <span class="crossed">Área de Membros</span></li>
         <li class="pf"><span class="cx">✗</span> <span class="crossed">Ritual da Manhã Poderosa</span></li>
         <li class="pf"><span class="cx">✗</span> <span class="crossed">Kit de Primeiros Socorros Emocionais</span></li>
         <li class="pf"><span class="cx">✗</span> <span class="crossed">Guia Anti-Autossabotagem</span></li>
       </ul>
-      <div class="plan2-price-block">
-        <div class="plan2-from-row">
-          <span class="plan2-from">de R$67,00 por</span>
-          <span class="plan2-off">70% OFF</span>
-        </div>
-        <div class="plan2-price">R$ 19,90</div>
-        <div class="plan2-save">✓ Você economiza R$47,10</div>
-      </div>
-      <a href="#pricing" data-checkout="https://checkout.wiven.com.br/checkout/cmsjg9r3701dl01omo1zzk8tb?offer=1QPQ3U5&payment=pix" class="plan-cta outline basico-trigger">EU QUERO O PLANO BÁSICO</a>
+      <a href="https://checkout.wiven.com.br/checkout/cmsjg9r3701dl01omo1zzk8tb?offer=1QPQ3U5&payment=pix" class="plan-cta outline basico-trigger">EU QUERO O BÁSICO</a>
     </div>
-
-    <div class="plan-card2 dark">
-      <div class="plan2-badge">🔥 MAIS VENDIDO</div>
-      <div class="plan2-name light">Plano Completo</div>
-      <img class="plan2-mockup" src="plano-completo-mockup.webp" width="900" height="900" loading="lazy" alt="Mockup do Plano Completo Floresça — 5 cadernos + 11 bônus">
-      <div class="plan2-tag">TUDO DO BÁSICO + OS 11 BÔNUS</div>
-      <div class="plan2-includes light">VOCÊ RECEBE:</div>
-      <ul class="plan-features light">
-        <li class="pf"><span class="ck">✓</span> <strong>Área de Membros Completa</strong></li>
+    <div class="plan-card best">
+      <div class="plan-popular">MAIS POPULAR</div>
+      <div class="plan-name">Plano</div>
+      <div class="plan-title"><span class="accent">Completo</span></div>
+      <div class="plan-from">De R$297,00</div>
+      <div class="plan-price"><sup>R$</sup>24<span>,90</span></div>
+      <div class="plan-note">Pagamento único · Sem mensalidade · 91% OFF</div>
+      <ul class="plan-features">
         <li class="pf"><span class="ck">✓</span> <strong>Todos os 5 Cadernos de Cura Emocional</strong></li>
         <li class="pf"><span class="ck">✓</span> Caderno 01 · 30 Dias de Amor Próprio</li>
         <li class="pf"><span class="ck">✓</span> Caderno 02 · Criança Interior</li>
@@ -1993,74 +1426,26 @@ if ('requestIdleCallback' in window) {
         <li class="pf"><span class="ck">✓</span> 100 Afirmações que Reprogramam a Mente</li>
         <li class="pf"><span class="ck">✓</span> Guia Anti-Autossabotagem</li>
         <li class="pf"><span class="ck">✓</span> + 5 bônus adicionais</li>
-        <li class="pf"><span class="ck">✓</span> Acesso imediato em Material Pronto</li>
+        <li class="pf"><span class="ck">✓</span> Acesso imediato em PDF</li>
       </ul>
-      <div class="plan2-price-block">
-        <div class="plan2-from-row">
-          <span class="plan2-from light">de R$297,00 por</span>
-          <span class="plan2-off">84% OFF</span>
-        </div>
-        <div class="plan2-price">R$ 47,00</div>
-        <div class="plan2-save light">✓ Você economiza R$250,00</div>
-      </div>
       <a href="https://checkout.wiven.com.br/checkout/cmskg733b028101ocbaa0b3un?offer=M1Q441V&payment=pix" class="plan-cta">EU QUERO O PLANO COMPLETO</a>
     </div>
-
   </div>
-
-  <p class="plan2-hint">👉 a maioria leva o Completo pelos 11 bônus</p>
-
-  <div class="plan2-note-box">
-    <span class="ck">✓</span> Um único momento de alívio emocional já faz o investimento valer a pena.
-  </div>
-
   <div class="guarantee-row">
     <div class="guarantee-icon">🔒</div>
     <p>Compra 100% segura · Acesso imediato após pagamento · Garantia de 7 dias</p>
   </div>
 </section>
 
-<!-- ===================== COMO FUNCIONA ===================== -->
-<section class="section section-center" style="background:#fff;">
-  <h2 class="section-h">Como funciona?</h2>
-  <div class="steps-row">
-    <div class="step-card">
-      <div class="step-n">1</div>
-      <div class="step-title">Escolha seu plano</div>
-      <div class="step-desc">Básico ou Completo. Você decide o que faz sentido pra você agora.</div>
-    </div>
-    <div class="step-card">
-      <div class="step-n">2</div>
-      <div class="step-title">Acesso na hora</div>
-      <div class="step-desc">Após o pagamento você recebe o link do material pronto imediatamente. Sem esperar, sem burocracia.</div>
-    </div>
-    <div class="step-card">
-      <div class="step-n">3</div>
-      <div class="step-title">Imprime ou preenche</div>
-      <div class="step-desc">No celular, tablet ou impresso. Qualquer leitor de material digital funciona. Se você usa WhatsApp, você consegue usar.</div>
-    </div>
-  </div>
-  <div style="max-width:520px;margin:32px auto 0;background:var(--cream);border:1.5px solid var(--linha);border-radius:14px;padding:20px 24px;text-align:center;">
-    <div style="font-size:14.5px;font-weight:800;color:var(--marrom);margin-bottom:6px;">5 a 10 minutos por dia. Só isso.</div>
-    <div style="font-size:clamp(15px, 2.8vw, 17px);color:var(--taupe);line-height:1.5;">Não precisa escrever bonito, não precisa ser todo santo dia. Se você pular um dia, o caderno continua exatamente de onde parou — sem culpa, sem precisar recomeçar do zero.</div>
-  </div>
-</section>
-
 <!-- ===================== GUARANTEE ===================== -->
 <section class="guarantee-section">
   <div class="guarantee-box">
-    <div class="guarantee-shield">
-      <span class="guarantee-shield-n">7</span>
-      <span class="guarantee-shield-label">dias</span>
+    <span class="guarantee-badge">🛡️</span>
+    <div class="guarantee-title">Garantia de 7 dias, sem enrolação</div>
+    <div class="guarantee-text">
+      Compra, abre os cadernos, usa. Se por qualquer motivo não ficou satisfeita nos primeiros 7 dias, manda mensagem e a gente devolve 100% do seu dinheiro. Sem perguntas, sem burocracia, sem demora.<br><br>
+      <strong>Risco zero. A única coisa que você pode perder é a chance de começar.</strong>
     </div>
-    <div class="guarantee-title">Garantia de 7 dias — zero risco pra você</div>
-    <p class="guarantee-sub">A qualquer momento nesse prazo, se você achar que:</p>
-    <ul class="guarantee-checklist">
-      <li>o material não faz sentido pra sua rotina;</li>
-      <li>os cadernos não atendem ao que você precisa;</li>
-      <li>ou você simplesmente não quiser continuar.</li>
-    </ul>
-    <p class="guarantee-final">Você pede o reembolso, sem burocracia. O risco fica do nosso lado.</p>
   </div>
 </section>
 
@@ -2075,11 +1460,11 @@ if ('requestIdleCallback' in window) {
     </div>
     <div class="faq-item">
       <button class="faq-btn" onclick="toggleFaq(this)">Quando recebo o acesso? <span class="faq-arrow">+</span></button>
-      <div class="faq-body">Na hora. Assim que o pagamento é confirmado você recebe o link do Material Pronto na tela e por e-mail. Não precisa esperar nada.</div>
+      <div class="faq-body">Na hora. Assim que o pagamento é confirmado você recebe o link dos PDFs na tela e por e-mail. Não precisa esperar nada.</div>
     </div>
     <div class="faq-item">
       <button class="faq-btn" onclick="toggleFaq(this)">Funciona no celular? <span class="faq-arrow">+</span></button>
-      <div class="faq-body">Sim, perfeitamente. Você pode preencher o Material Pronto direto no celular, com qualquer app de leitura (o Adobe Acrobat gratuito funciona). Se preferir, também pode imprimir em qualquer gráfica.</div>
+      <div class="faq-body">Sim, perfeitamente. Você pode preencher direto no celular com qualquer app de PDF (o Adobe Acrobat gratuito funciona). Se preferir, também pode imprimir em qualquer gráfica.</div>
     </div>
     <div class="faq-item">
       <button class="faq-btn" onclick="toggleFaq(this)">É assinatura? Vou pagar todo mês? <span class="faq-arrow">+</span></button>
@@ -2093,18 +1478,6 @@ if ('requestIdleCallback' in window) {
       <button class="faq-btn" onclick="toggleFaq(this)">E se eu não gostar? <span class="faq-arrow">+</span></button>
       <div class="faq-body">A gente devolve 100% em até 7 dias, sem perguntas. Simples assim.</div>
     </div>
-    <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq(this)">Quanto tempo eu preciso ter por dia? <span class="faq-arrow">+</span></button>
-      <div class="faq-body">De 5 a 10 minutos já é suficiente. Não precisa escrever bonito nem fazer todo dia — se você pular um dia, o caderno continua de onde parou.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq(this)">O Floresça substitui terapia? <span class="faq-arrow">+</span></button>
-      <div class="faq-body">Não. O Floresça é uma ferramenta de autoconhecimento e organização emocional, pra te ajudar no dia a dia. Ele não substitui acompanhamento psicológico ou médico — se você está passando por um momento mais difícil, buscar apoio profissional continua importante.</div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq(this)">Alguém vai ler o que eu escrevo? <span class="faq-arrow">+</span></button>
-      <div class="faq-body">Não. O caderno é seu — preenchido no seu celular, tablet ou impresso, fica só com você. Ninguém do Floresça tem acesso ao que você escreve.</div>
-    </div>
   </div>
 </section>
 
@@ -2115,7 +1488,9 @@ if ('requestIdleCallback' in window) {
   <p class="section-p" style="margin-bottom:36px;">Por menos do que um café, você começa hoje. Acesso na hora.</p>
   <a href="#pricing" class="btn-cta" style="max-width:480px;margin:0 auto;">
     EU QUERO COMEÇAR AGORA
+    <span class="sub">5 Cadernos + 11 Bônus · Acesso imediato · Garantia 7 dias</span>
   </a>
+  <a href="#pricing" class="btn-outline">EU quero o Plano Básico por R$10</a>
   <div class="trust-row" style="margin-top:16px;">
     <span><span class="ck">✓</span> Liberação imediata</span>
     <span><span class="ck">✓</span> 100% seguro</span>
@@ -2123,44 +1498,37 @@ if ('requestIdleCallback' in window) {
   </div>
 </section>
 
-<!-- ===================== WHATSAPP ===================== -->
-<section class="whatsapp-section section-center">
-  <h2 class="section-h" style="max-width:480px;margin:0 auto 12px;">Ficou com alguma <span class="accent">dúvida?</span></h2>
-  <p class="section-p" style="margin-bottom:28px;">Chama a gente no WhatsApp que a gente te responde rapidinho.</p>
-  <a href="https://wa.me/5532998425801?text=Oi!%20Fiquei%20com%20uma%20d%C3%BAvida%20sobre%20o%20Flores%C3%A7a" class="whatsapp-cta" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.11c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.81-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.56-1.17-2.98 0-1.42.74-2.11 1-2.4.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.15.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.61-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.64-.14.26.09 1.66.78 1.95.93.29.14.48.21.55.33.07.12.07.68-.17 1.36z"/></svg>
-    Chamar no WhatsApp
-  </a>
-</section>
-
-<!-- ===================== BASICO UPGRADE POPUP ===================== -->
+<!-- ===================== EXIT-INTENT POPUP ===================== -->
 <div class="exit-overlay" id="exitOverlay">
   <div class="exit-modal">
     <button class="exit-close" id="exitClose" aria-label="Fechar">&times;</button>
-    <span class="exit-eyebrow">⚡ ANTES DE VOCÊ IR</span>
-    <h3 class="exit-title">Se R$47 pesou agora, liberei uma condição especial</h3>
-
-    <div class="exit-result show" id="exitResult">
-      <p class="exit-sub">Leve os 5 cadernos completos e os 11 bônus por R$37,00 — só nessa página, agora.</p>
-      <div class="exit-price">
-        <span class="exit-from">de R$47,00</span>
-        <span class="exit-now"><sup>R$</sup>37<span>,00</span></span>
-      </div>
-      <ul class="exit-list">
-        <li><span class="ck">✓</span> <strong>Os 5 Cadernos de Cura Emocional completos</strong> (o Básico vem só com 1)</li>
-        <li><span class="ck">✓</span> <strong>+ 11 bônus exclusivos (R$247 em valor)</strong></li>
-        <li><span class="ck">✓</span> Acesso vitalício à Área de Membros</li>
-        <li><span class="ck">✓</span> Método completo, não só um pedaço dele</li>
-        <li><span class="ck">✓</span> Acesso imediato em Material Pronto · Garantia de 7 dias</li>
-        <li><span class="ck">✓</span> Menos de R$8 por caderno — o preço mais baixo que ele fica</li>
-      </ul>
-      <a href="https://checkout.wiven.com.br/checkout/cmskg733b028101ocbaa0b3un?offer=093AOU8&payment=pix" class="exit-cta">SIM, QUERO O COMPLETO POR R$37,00</a>
-      <a href="https://checkout.wiven.com.br/checkout/cmsjg9r3701dl01omo1zzk8tb?offer=1QPQ3U5&payment=pix" class="exit-decline" id="exitDecline">Não, prefiro levar só 1 caderno por R$19,90</a>
+    <span class="exit-eyebrow">⚡ OFERTA EXCLUSIVA · SÓ AGORA</span>
+    <h3 class="exit-title">Leve o Completo por muito menos</h3>
+    <p class="exit-sub">Você tá saindo deixando 4 cadernos e os 11 bônus pra trás. Leve tudo por R$17,90 só agora.</p>
+    <div class="exit-price">
+      <span class="exit-from">de R$24,90</span>
+      <span class="exit-now"><sup>R$</sup>17<span>,90</span></span>
     </div>
+    <ul class="exit-list">
+      <li><span class="ck">✓</span> <strong>Os 5 Cadernos de Cura Emocional completos</strong></li>
+      <li><span class="ck">✓</span> <strong>+ 11 bônus exclusivos (R$247 em valor)</strong></li>
+      <li><span class="ck">✓</span> Acesso imediato em PDF · Garantia de 7 dias</li>
+    </ul>
+    <a href="https://checkout.wiven.com.br/checkout/cmskg733b028101ocbaa0b3un?offer=093AOU8&payment=pix" class="exit-cta">SIM, QUERO O COMPLETO POR R$17,90</a>
+    <a href="https://checkout.wiven.com.br/checkout/cmsjg9r3701dl01omo1zzk8tb?offer=1QPQ3U5&payment=pix" class="exit-decline">Não, quero só o Básico por R$10</a>
   </div>
 </div>
 
 </main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <span class="brand">Floresça</span>
+  Cadernos de Cura Emocional · Produto Digital<br>
+  <a href="#">Termos de Uso</a> &nbsp;·&nbsp; <a href="#">Política de Privacidade</a> &nbsp;·&nbsp; <a href="#">Suporte</a><br><br>
+  © 2026 Floresça. Todos os direitos reservados.<br>
+  Este produto é digital. O acesso é entregue imediatamente após a confirmação do pagamento.
+</footer>
 
 <!-- ===================== JAVASCRIPT ===================== -->
 <script>
@@ -2172,21 +1540,13 @@ if ('requestIdleCallback' in window) {
     var left = Math.max(0, Math.ceil((end - Date.now()) / 1000));
     var s = fmt(left % 60), m = fmt(Math.floor(left / 60));
     var str = m + ':' + s;
-    var el = document.getElementById('countdown2');
-    if (el) el.textContent = str;
+    ['countdown','countdown2'].forEach(function(id){
+      var el = document.getElementById(id);
+      if (el) el.textContent = str;
+    });
     if (left > 0) setTimeout(tick, 500);
   }
   tick();
-})();
-
-(function() {
-  var el = document.getElementById('todaydate');
-  if (!el) return;
-  var d = new Date();
-  var dd = ('0' + d.getDate()).slice(-2);
-  var mm = ('0' + (d.getMonth() + 1)).slice(-2);
-  var yyyy = d.getFullYear();
-  el.textContent = '(' + dd + '/' + mm + '/' + yyyy + ')';
 })();
 
 function toggleFaq(btn) {
@@ -2196,149 +1556,75 @@ function toggleFaq(btn) {
   if (!open) item.classList.add('open');
 }
 
-/* Vitrine, scroll suave e popup de saída: não são críticos pro primeiro
-   render, então adiamos a inicialização deles pra depois que a thread
-   principal ficar livre (idle) ou a página terminar de carregar — assim
-   eles não competem com o carregamento/pintura inicial da página. */
-function _initNonCriticalScripts() {
+(function() {
+  var track = document.getElementById('ct');
+  if (!track) return;
+  var cards = track.querySelectorAll('.cpage');
+  var half = cards.length / 2;
+  var w = 212 + 16;
+  var style = document.createElement('style');
+  style.innerHTML = '@keyframes cscroll{0%{transform:translateX(0)}100%{transform:translateX(-' + (half * w) + 'px)}}';
+  document.head.appendChild(style);
+})();
 
-  /* Vitrine: slider que gira sozinho, mas dá pra arrastar (mouse e touch) */
-  (function() {
-    var track = document.getElementById('showcaseTrack');
-    if (!track) return;
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    var t = document.querySelector(this.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
 
-    var isDown = false, startX = 0, scrollStart = 0, moved = false;
-    var autoplayTimer = null, resumeTimer = null;
+(function() {
+  var overlay = document.getElementById('exitOverlay');
+  var closeBtn = document.getElementById('exitClose');
+  if (!overlay || !closeBtn) return;
+  var shown = false;
+  var scrolledEnough = false;
 
-    // Cacheia a largura do slide (evita ler layout — getBoundingClientRect/
-    // getComputedStyle — em todo tick do autoplay, o que força reflow síncrono
-    // logo antes de escrever scrollTo). Só recalcula em resize.
-    var cachedStep = null;
-    function measureStep() {
-      var slide = track.querySelector('.showcase-slide');
-      if (!slide) { cachedStep = 298; return; }
-      var cs = getComputedStyle(track);
-      var gap = parseFloat(cs.columnGap || cs.gap || 0) || 0;
-      cachedStep = slide.getBoundingClientRect().width + gap;
-    }
-    function slideStep() {
-      if (cachedStep === null) measureStep();
-      return cachedStep;
-    }
-    var resizeTimer;
-    window.addEventListener('resize', function() {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(measureStep, 200);
-    }, { passive: true });
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) scrolledEnough = true;
+  }, { passive: true });
 
-    function stopAutoplay() {
-      if (autoplayTimer) { clearInterval(autoplayTimer); autoplayTimer = null; }
-    }
+  function openExit() {
+    if (shown || !scrolledEnough) return;
+    overlay.classList.add('show');
+    shown = true;
+  }
+  function openForced() {
+    overlay.classList.add('show');
+  }
+  function closeExit() { overlay.classList.remove('show'); }
 
-    function startAutoplay() {
-      stopAutoplay();
-      autoplayTimer = setInterval(function() {
-        var maxScroll = track.scrollWidth - track.clientWidth - 2;
-        if (track.scrollLeft >= maxScroll) {
-          track.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          track.scrollTo({ left: track.scrollLeft + slideStep(), behavior: 'smooth' });
-        }
-      }, 3200);
-    }
+  document.addEventListener('mouseleave', function(e) {
+    if (e.clientY <= 0) openExit();
+  });
 
-    function pauseAndScheduleResume() {
-      stopAutoplay();
-      clearTimeout(resumeTimer);
-      resumeTimer = setTimeout(startAutoplay, 4500);
-    }
+  var mobileTimer = setTimeout(function() {
+    if (scrolledEnough) openExit();
+  }, 25000);
 
-    // Arraste com o mouse (desktop) — touch já funciona nativamente com overflow-x
-    track.addEventListener('mousedown', function(e) {
-      isDown = true;
-      moved = false;
-      track.classList.add('dragging');
-      startX = e.pageX;
-      scrollStart = track.scrollLeft;
-      pauseAndScheduleResume();
-    });
-    window.addEventListener('mouseup', function() {
-      isDown = false;
-      track.classList.remove('dragging');
-    });
-    window.addEventListener('mousemove', function(e) {
-      if (!isDown) return;
+  document.querySelectorAll('.basico-trigger').forEach(function(link) {
+    link.addEventListener('click', function(e) {
       e.preventDefault();
-      var dx = e.pageX - startX;
-      if (Math.abs(dx) > 4) moved = true;
-      track.scrollLeft = scrollStart - dx;
-    });
-    track.addEventListener('click', function(e) {
-      if (moved) { e.preventDefault(); e.stopPropagation(); }
-    }, true);
-
-    track.addEventListener('touchstart', pauseAndScheduleResume, { passive: true });
-    track.addEventListener('wheel', pauseAndScheduleResume, { passive: true });
-
-    startAutoplay();
-  })();
-
-  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-    a.addEventListener('click', function(e) {
-      var t = document.querySelector(this.getAttribute('href'));
-      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      openForced();
     });
   });
 
-  (function() {
-    var overlay = document.getElementById('exitOverlay');
-    var closeBtn = document.getElementById('exitClose');
-    if (!overlay || !closeBtn) return;
-    var pendingHref = null;
+  closeBtn.addEventListener('click', closeExit);
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeExit();
+  });
+})();
 
-    function openForced(href) {
-      pendingHref = href || null;
-      overlay.classList.add('show');
-    }
-    function closeExit() {
-      overlay.classList.remove('show');
-      if (pendingHref) {
-        var href = pendingHref;
-        pendingHref = null;
-        window.location.href = href;
+(function() {
+  document.querySelectorAll('a[href*="checkout.wiven.com.br"]:not(.basico-trigger)').forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (typeof fbq === 'function') {
+        fbq('track', 'InitiateCheckout');
       }
-    }
-
-    document.querySelectorAll('.basico-trigger').forEach(function(link) {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        openForced(link.dataset.checkout);
-      });
     });
-
-    closeBtn.addEventListener('click', closeExit);
-    var declineBtn = document.getElementById('exitDecline');
-    // "Não, prefiro..." agora é um <a href> de verdade (pro Utmify conseguir
-    // capturar o InitiateCheckout ao passar o mouse/clicar); só fecha o
-    // overlay visualmente, a navegação acontece pelo próprio link nativo.
-    if (declineBtn) declineBtn.addEventListener('click', function() {
-      pendingHref = null;
-      overlay.classList.remove('show');
-    });
-    overlay.addEventListener('click', function(e) {
-      if (e.target === overlay) closeExit();
-    });
-    document.querySelectorAll('.exit-cta').forEach(function(cta) {
-      cta.addEventListener('click', function() { pendingHref = null; });
-    });
-  })();
-
-}
-if ('requestIdleCallback' in window) {
-  requestIdleCallback(_initNonCriticalScripts, { timeout: 2000 });
-} else {
-  setTimeout(_initNonCriticalScripts, 300);
-}
+  });
+})();
 
 </script>
 </body>
