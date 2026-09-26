@@ -875,7 +875,7 @@ footer a { color: rgba(255,255,255,.3); }
 }
 
 /* ===================== VSL SLOT / CTA IMEDIATO / OBJEÇÕES ===================== */
-.vsl-slot { max-width: 340px; margin: 4px auto 22px; }
+.vsl-slot { max-width: 400px; margin: 4px auto 22px; }
 .vsl-frame {
   aspect-ratio: 9 / 16;
   width: 100%;
@@ -942,7 +942,10 @@ html.vsl-gated main > *:not(.hero), html.vsl-gated footer { display: none !impor
     Você tá carregando tudo sozinha<br>e <span class="accent">já cansou.</span>
   </h1>
   <!-- ===== VSL: coloque o player do vídeo dentro de #vsl-slot (formato vertical 9:16) ===== -->
-  <div class="vsl-slot" id="vsl-slot"><div class="vsl-frame"><span>▶ Seu vídeo entra aqui</span></div></div>
+  <div class="vsl-slot" id="vsl-slot">
+    <vturb-smartplayer id="vid-6ab75c65e37052a285eaffea" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.3148148148148% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>
+    <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/127f7061-1af4-4c63-8adc-f2fb2316bb49/players/6ab75c65e37052a285eaffea/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+  </div>
   <p class="hero-sub">
     5 cadernos de cura emocional guiados para você <strong>parar de se colocar em último lugar</strong> e começar a florescer — no seu ritmo, do seu jeito.
   </p>
@@ -1722,7 +1725,7 @@ var VSL_REVEAL_SECONDS = 110;
     var watched = 0;
     if (p) {
       try {
-        watched = p.smartAutoPlay ? Math.floor(p.video.currentTime) : Math.floor(p.analytics.player.totalWatchedTime);
+        watched = p.smartAutoPlay ? Math.floor(p.video.currentTime) : Math.floor(Number(p.analytics.player.totalWatchedTime) || 0);
       } catch (e) {}
     } else if (Date.now() - t0 > 20000) {
       watched = Infinity; /* player nao carregou: nao deixa a pagina presa */
