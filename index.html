@@ -1720,7 +1720,8 @@ var VSL_REVEAL_SECONDS = 110;
 
   root.classList.add('vsl-gated');
   var t0 = Date.now();
-  var watched = 0, last = null;
+  var watched = 0, last = null, cont = 0, pos = 0;
+  try { watched = Number(localStorage.getItem('vslWatched')) || 0; } catch (e) {}
   var timer = setInterval(function() {
     var p = window.smartplayer && smartplayer.instances && smartplayer.instances[0];
     if (p) {
@@ -1729,14 +1730,17 @@ var VSL_REVEAL_SECONDS = 110;
         var t = Number(el.currentTime);
         if (isFinite(t)) {
           /* soma so o avanco continuo de reproducao (ignora pulos na barra) */
-          if (last !== null && !el.paused && t > last && t - last <= 3) watched += t - last;
-          last = t;
+          if (last !== null && !el.paused && t > last && t - last <= 3) { watched += t - last; cont += t - last; }
+          else if (t !== last) cont = 0; /* pulo ou retomada: recomeca a sequencia continua */
+          last = t; pos = t;
+          try { localStorage.setItem('vslWatched', String(Math.floor(watched))); } catch (e) {}
         }
       } catch (e) {}
     } else if (Date.now() - t0 > 20000) {
       watched = Infinity; /* player nao carregou: nao deixa a pagina presa */
     }
-    if (watched >= VSL_REVEAL_SECONDS) {
+    /* quem retoma o video de onde parou (Vturb 'Continue watching') ja passou do ponto: libera apos 3s tocando */
+    if (watched >= VSL_REVEAL_SECONDS || (pos >= VSL_REVEAL_SECONDS && cont >= 3)) {
       clearInterval(timer);
       root.classList.remove('vsl-gated');
       save();
