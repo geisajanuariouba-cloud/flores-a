@@ -1720,12 +1720,18 @@ var VSL_REVEAL_SECONDS = 110;
 
   root.classList.add('vsl-gated');
   var t0 = Date.now();
+  var watched = 0, last = null;
   var timer = setInterval(function() {
     var p = window.smartplayer && smartplayer.instances && smartplayer.instances[0];
-    var watched = 0;
     if (p) {
       try {
-        watched = p.smartAutoPlay ? Math.floor(p.video.currentTime) : Math.floor(Number(p.analytics.player.totalWatchedTime) || 0);
+        var el = p.instance || p.video;
+        var t = Number(el.currentTime);
+        if (isFinite(t)) {
+          /* soma so o avanco continuo de reproducao (ignora pulos na barra) */
+          if (last !== null && !el.paused && t > last && t - last <= 3) watched += t - last;
+          last = t;
+        }
       } catch (e) {}
     } else if (Date.now() - t0 > 20000) {
       watched = Infinity; /* player nao carregou: nao deixa a pagina presa */
@@ -1735,7 +1741,7 @@ var VSL_REVEAL_SECONDS = 110;
       root.classList.remove('vsl-gated');
       save();
     }
-  }, 1000);
+  }, 500);
 })();
 </script>
 </body>
