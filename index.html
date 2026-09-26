@@ -873,6 +873,44 @@ footer a { color: rgba(255,255,255,.3); }
   .steps-row { grid-template-columns: 1fr; }
   .bonus-section { padding: 48px 16px; }
 }
+
+/* ===================== VSL SLOT / CTA IMEDIATO / OBJEÇÕES ===================== */
+.vsl-slot { max-width: 340px; margin: 4px auto 22px; }
+.vsl-frame {
+  aspect-ratio: 9 / 16;
+  width: 100%;
+  border-radius: 16px;
+  border: 2px dashed var(--linha);
+  background: var(--bege);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--taupe); font-weight: 700; font-size: 14px;
+  overflow: hidden;
+}
+.vsl-frame iframe, .vsl-frame video { width: 100%; height: 100%; border: 0; display: block; }
+.quick-offer { background: #fff; padding: 36px 20px 44px; }
+.qo-card {
+  max-width: 440px; margin: 0 auto; text-align: center;
+  background: var(--cream); border: 1.5px solid var(--linha); border-radius: 18px;
+  padding: 26px 20px 22px; box-shadow: 0 8px 30px rgba(168,92,82,.10);
+}
+.qo-pill { display: inline-block; background: var(--pale); color: var(--terr); font-size: 12px; font-weight: 800; padding: 5px 12px; border-radius: 999px; }
+.qo-from { margin-top: 14px; color: var(--taupe); font-size: 14px; }
+.qo-price { font-size: 56px; font-weight: 900; color: var(--terr); line-height: 1.05; letter-spacing: -1px; }
+.qo-price sup { font-size: 22px; vertical-align: top; position: relative; top: 8px; margin-right: 2px; }
+.qo-price span { font-size: 26px; }
+.qo-note { color: var(--taupe); font-size: 13px; font-weight: 600; margin: 4px 0 18px; }
+.obj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 560px; margin: 28px auto 0; }
+.obj-card { background: #fff; border: 1.5px solid var(--linha); border-radius: 14px; padding: 18px 12px; display: flex; flex-direction: column; gap: 4px; align-items: center; }
+.obj-ic { font-size: 26px; line-height: 1; margin-bottom: 4px; }
+.obj-card strong { font-size: 14px; font-weight: 800; color: var(--marrom); }
+.obj-card span { font-size: 12.5px; color: var(--taupe); line-height: 1.5; }
+.sol-box { max-width: 560px; margin: 0 auto; background: #fff; border: 1.5px solid var(--linha); border-radius: 16px; padding: 22px 16px; }
+.sol-title { font-weight: 900; font-size: 17px; color: var(--marrom); margin-bottom: 14px; }
+.sol-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.sol-row div { background: var(--cream); border-radius: 10px; padding: 12px 4px; display: flex; flex-direction: column; gap: 2px; }
+.sol-row b { color: var(--terr); font-size: 20px; font-weight: 900; }
+.sol-row span { font-size: 11.5px; color: var(--taupe); line-height: 1.3; }
+@media (max-width: 420px) { .sol-row { grid-template-columns: repeat(2, 1fr); } }
 </style>
 </head>
 <body>
@@ -891,9 +929,49 @@ footer a { color: rgba(255,255,255,.3); }
   <h1 class="hero-h1">
     Você tá carregando tudo sozinha<br>e <span class="accent">já cansou.</span>
   </h1>
+  <!-- ===== VSL: coloque o player do vídeo dentro de #vsl-slot (formato vertical 9:16) ===== -->
+  <div class="vsl-slot" id="vsl-slot"><div class="vsl-frame"><span>▶ Seu vídeo entra aqui</span></div></div>
   <p class="hero-sub">
     5 cadernos de cura emocional guiados para você <strong>parar de se colocar em último lugar</strong> e começar a florescer — no seu ritmo, do seu jeito.
   </p>
+</section>
+
+<!-- ===================== CTA IMEDIATO ===================== -->
+<section class="quick-offer">
+  <div class="qo-card">
+    <span class="qo-pill">🔥 Oferta de lançamento</span>
+    <div class="qo-from">De R$297,00 por</div>
+    <div class="qo-price"><sup>R$</sup>24<span>,90</span></div>
+    <div class="qo-note">91% OFF · Pagamento único · Sem mensalidade</div>
+    <a href="https://checkout.wiven.com.br/checkout/cmskg733b028101ocbaa0b3un?offer=M1Q441V&payment=pix" class="btn-cta">
+      QUERO COMEÇAR AGORA
+      <span class="sub">5 Cadernos + 11 Bônus · PDF · Acesso na hora</span>
+    </a>
+    <a href="#pricing" class="btn-outline basico-trigger">Prefiro só o Plano Básico</a>
+    <div class="trust-row">
+      <span><span class="ck">✓</span> Pagamento seguro</span>
+      <span><span class="ck">✓</span> Acesso imediato</span>
+      <span><span class="ck">✓</span> Garantia 7 dias</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROVA SOCIAL ===================== -->
+<section class="section section-center" style="background:#fff;padding-bottom:48px;">
+  <span class="eyebrow">avaliações</span>
+  <h2 class="section-h">Quem já começou <span class="accent">conta como foi</span></h2>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Eu nunca fui de escrever, mas o Floresça me surpreendeu. No terceiro dia já estava chorando de alívio, não de tristeza. Parece que alguém finalmente me entendia."</p>
+      <div class="testi-author"><div class="testi-avatar">🌸</div><div><div class="testi-name">Ana Clara M.</div><div class="testi-handle">Compradora verificada</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Paguei R$27,90 achando que era barato demais pra valer. Errei. O conteúdo é de uma terapeuta de verdade, só que faço quando quero, no meu sofá."</p>
+      <div class="testi-author"><div class="testi-avatar">🌼</div><div><div class="testi-name">Jéssica R.</div><div class="testi-handle">Compradora verificada</div></div></div>
+    </div>
+  </div>
 </section>
 
 <!-- ===================== CAROUSEL ===================== -->
@@ -1175,9 +1253,100 @@ footer a { color: rgba(255,255,255,.3); }
   </div>
 </section>
 
+<!-- ===================== QUEBRA DE OBJEÇÕES ===================== -->
+<section class="section section-center" style="background:var(--cream);padding-top:44px;">
+  <span class="eyebrow">veja por dentro</span>
+  <h2 class="section-h">Um caminho guiado, <span class="accent">não uma folha em branco</span></h2>
+  <div class="obj-grid">
+    <div class="obj-card"><div class="obj-ic">💳</div><strong>Pagamento único</strong><span>Não é assinatura. Você paga uma vez e os cadernos são seus.</span></div>
+    <div class="obj-card"><div class="obj-ic">📱</div><strong>Só precisa do celular</strong><span>PDF digital que abre no celular. Se preferir, é só imprimir.</span></div>
+    <div class="obj-card"><div class="obj-ic">✍️</div><strong>Sem saber escrever</strong><span>As perguntas já vêm prontas. É só responder, no seu tempo.</span></div>
+    <div class="obj-card"><div class="obj-ic">⚡</div><strong>Acesso na hora</strong><span>O link dos PDFs chega assim que o pagamento é confirmado.</span></div>
+  </div>
+</section>
+
+<!-- ===================== O QUE VOCÊ RECEBE ===================== -->
+<section class="section section-center" style="background:var(--cream);">
+  <span class="eyebrow">o que você recebe</span>
+  <h2 class="section-h">5 Cadernos. <span class="accent">Uma transformação completa.</span></h2>
+  <p class="section-p">Por que 5 cadernos e não 1? Porque a cura emocional não acontece numa única direção. Cada caderno trabalha uma camada diferente, começando pela que dói mais e seguindo o caminho, no seu ritmo.</p>
+  <div class="product-list">
+    <div class="product-item">
+      <div class="product-num">1</div>
+      <div>
+        <div class="product-title">30 Dias de Amor Próprio</div>
+        <div class="product-desc">30 prompts diários + reflexões semanais + afirmações. Para construir uma relação mais gentil consigo mesma, dia a dia.</div>
+        <div class="product-pills"><span class="product-pill">30 prompts</span><span class="product-pill">Reflexão semanal</span><span class="product-pill">Afirmações</span><span class="product-pill">Carta ao corpo</span></div>
+      </div>
+    </div>
+    <div class="product-item">
+      <div class="product-num">2</div>
+      <div>
+        <div class="product-title">Criança Interior</div>
+        <div class="product-desc">Exercícios de reconexão, reparentagem e perdão para curar as feridas que você nem sabia que ainda carregava.</div>
+        <div class="product-pills"><span class="product-pill">Reparentagem</span><span class="product-pill">Carta de perdão</span><span class="product-pill">Diálogo interior</span></div>
+      </div>
+    </div>
+    <div class="product-item">
+      <div class="product-num">3</div>
+      <div>
+        <div class="product-title">Libertação da Ansiedade</div>
+        <div class="product-desc">Técnicas reais (4-7-8, grounding 5-4-3-2-1, âncoras de paz) + plano de crise + 15 prompts para entender sua ansiedade.</div>
+        <div class="product-pills"><span class="product-pill">Técnicas validadas</span><span class="product-pill">Plano de crise</span><span class="product-pill">15 prompts</span></div>
+      </div>
+    </div>
+    <div class="product-item">
+      <div class="product-num">4</div>
+      <div>
+        <div class="product-title">30 Dias de Gratidão</div>
+        <div class="product-desc">Manhã e noite por 30 dias. Gratidão não é ignorar a dor, é treinar o olhar para ver o que também é bom.</div>
+        <div class="product-pills"><span class="product-pill">Manhã e noite</span><span class="product-pill">30 dias</span><span class="product-pill">Reflexão semanal</span></div>
+      </div>
+    </div>
+    <div class="product-item">
+      <div class="product-num">5</div>
+      <div>
+        <div class="product-title">Eu em Nova Fase</div>
+        <div class="product-desc">Roda da vida, visão de futuro, pilares, plano de ação e carta ao seu eu do futuro. Para quem está pronta para o próximo passo.</div>
+        <div class="product-pills"><span class="product-pill">Roda da vida</span><span class="product-pill">Plano de ação</span><span class="product-pill">Carta ao futuro</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ===================== BONUSES ===================== -->
+<section class="bonus-section" id="bonus">
+  <div class="section-center">
+    <span class="eyebrow" style="color:var(--gold);">exclusivo plano completo</span>
+    <h2 class="section-h" style="color:#fff;">11 Bônus que <span style="color:var(--gold);">aceleram</span> sua cura</h2>
+    <div class="bonus-total">Valor total dos bônus: R$247,00 incluídos de graça hoje</div>
+  </div>
+  <div class="bonus-list">
+    <div class="bonus-item"><div class="bonus-num">1</div><div><div class="bonus-name">Ritual da Manhã Poderosa</div><div class="bonus-desc">Guia passo a passo para começar cada dia com intenção e leveza em 10 minutos ou menos.</div><div class="bonus-val">R$27,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">2</div><div><div class="bonus-name">Mapa das Emoções</div><div class="bonus-desc">Aprenda a identificar e nomear exatamente o que você sente. Consciência emocional é a base de tudo.</div><div class="bonus-val">R$19,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">3</div><div><div class="bonus-name">Reset Emocional em 7 Dias</div><div class="bonus-desc">Plano diário de 7 dias para quando você precisa começar do zero. Para os momentos de crise ou virada.</div><div class="bonus-val">R$37,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">4</div><div><div class="bonus-name">Meditação Guiada: Reencontro com Você</div><div class="bonus-desc">Script de meditação guiada para reconexão profunda com seu eu interior. Para ler ou praticar sozinha.</div><div class="bonus-val">R$27,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">5</div><div><div class="bonus-name">100 Afirmações que Reprogramam a Mente</div><div class="bonus-desc">Afirmações por tema: autoestima, relacionamentos, prosperidade, paz interior e propósito.</div><div class="bonus-val">R$17,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">6</div><div><div class="bonus-name">Kit de Primeiros Socorros Emocionais</div><div class="bonus-desc">O que fazer quando você está no fundo: técnicas rápidas para os seus momentos mais difíceis.</div><div class="bonus-val">R$22,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">7</div><div><div class="bonus-name">Diário de Sonhos e Intenções</div><div class="bonus-desc">Caderno extra para registrar seus sonhos e desejos. Porque sonhar faz parte de curar.</div><div class="bonus-val">R$17,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">8</div><div><div class="bonus-name">Desafio de 30 Dias: Ação Emocional</div><div class="bonus-desc">Calendário visual com uma micro-ação por dia para construir hábitos emocionais com consistência.</div><div class="bonus-val">R$22,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">9</div><div><div class="bonus-name">Guia Anti-Autossabotagem</div><div class="bonus-desc">Identifique seus padrões de autossabotagem e aprenda como interrompê-los antes que destruam seus avanços.</div><div class="bonus-val">R$27,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">10</div><div><div class="bonus-name">Perguntas que Mudam Perspectivas</div><div class="bonus-desc">50 perguntas poderosas para quando você está presa em uma situação ou em uma versão de si que não te serve.</div><div class="bonus-val">R$17,00 GRÁTIS</div></div></div>
+    <div class="bonus-item"><div class="bonus-num">11</div><div><div class="bonus-name">Manifesto: Quem Eu Estou Me Tornando</div><div class="bonus-desc">Modelo de manifesto pessoal para escrever e reler sempre que precisar se lembrar de quem você escolheu ser.</div><div class="bonus-val">R$17,00 GRÁTIS</div></div></div>
+  </div>
+  <div style="text-align:center;margin-top:36px;">
+    <a href="#pricing" class="btn-cta" style="max-width:480px;margin:0 auto;background:var(--gold);color:var(--marrom);">
+      EU QUERO TUDO ISSO AGORA
+      <span class="sub" style="color:rgba(61,43,39,.65);">5 Cadernos + 11 Bônus (R$247 de valor) · Acesso na hora</span>
+    </a>
+  </div>
+</section>
+
 <!-- ===================== PAIN ===================== -->
 <section class="section section-center" style="background:#fff;">
-  <span class="eyebrow">isso é pra você se…</span>
+  <span class="eyebrow">eu sei… você já não aguenta mais:</span>
   <h2 class="section-h">Tá numa dessas?</h2>
   <div class="pain-list">
     <div class="pain-item">
@@ -1244,56 +1413,18 @@ footer a { color: rgba(255,255,255,.3); }
   <p class="quote-author">Princípio do Método Floresça</p>
 </section>
 
-<!-- ===================== O QUE VOCÊ RECEBE ===================== -->
-<section class="section section-center" style="background:var(--cream);">
-  <span class="eyebrow">o que você recebe</span>
-  <h2 class="section-h">5 Cadernos. <span class="accent">Uma transformação completa.</span></h2>
-  <p class="section-p">Por que 5 cadernos e não 1? Porque a cura emocional não acontece numa única direção. Cada caderno trabalha uma camada diferente, começando pela que dói mais e seguindo o caminho, no seu ritmo.</p>
-  <div class="product-list">
-    <div class="product-item">
-      <div class="product-num">1</div>
-      <div>
-        <div class="product-title">30 Dias de Amor Próprio</div>
-        <div class="product-desc">30 prompts diários + reflexões semanais + afirmações. Para construir uma relação mais gentil consigo mesma, dia a dia.</div>
-        <div class="product-pills"><span class="product-pill">30 prompts</span><span class="product-pill">Reflexão semanal</span><span class="product-pill">Afirmações</span><span class="product-pill">Carta ao corpo</span></div>
-      </div>
-    </div>
-    <div class="product-item">
-      <div class="product-num">2</div>
-      <div>
-        <div class="product-title">Criança Interior</div>
-        <div class="product-desc">Exercícios de reconexão, reparentagem e perdão para curar as feridas que você nem sabia que ainda carregava.</div>
-        <div class="product-pills"><span class="product-pill">Reparentagem</span><span class="product-pill">Carta de perdão</span><span class="product-pill">Diálogo interior</span></div>
-      </div>
-    </div>
-    <div class="product-item">
-      <div class="product-num">3</div>
-      <div>
-        <div class="product-title">Libertação da Ansiedade</div>
-        <div class="product-desc">Técnicas reais (4-7-8, grounding 5-4-3-2-1, âncoras de paz) + plano de crise + 15 prompts para entender sua ansiedade.</div>
-        <div class="product-pills"><span class="product-pill">Técnicas validadas</span><span class="product-pill">Plano de crise</span><span class="product-pill">15 prompts</span></div>
-      </div>
-    </div>
-    <div class="product-item">
-      <div class="product-num">4</div>
-      <div>
-        <div class="product-title">30 Dias de Gratidão</div>
-        <div class="product-desc">Manhã e noite por 30 dias. Gratidão não é ignorar a dor, é treinar o olhar para ver o que também é bom.</div>
-        <div class="product-pills"><span class="product-pill">Manhã e noite</span><span class="product-pill">30 dias</span><span class="product-pill">Reflexão semanal</span></div>
-      </div>
-    </div>
-    <div class="product-item">
-      <div class="product-num">5</div>
-      <div>
-        <div class="product-title">Eu em Nova Fase</div>
-        <div class="product-desc">Roda da vida, visão de futuro, pilares, plano de ação e carta ao seu eu do futuro. Para quem está pronta para o próximo passo.</div>
-        <div class="product-pills"><span class="product-pill">Roda da vida</span><span class="product-pill">Plano de ação</span><span class="product-pill">Carta ao futuro</span></div>
-      </div>
+<!-- ===================== SOLUÇÃO SIMPLES ===================== -->
+<section class="section section-center" style="background:var(--cream);padding-top:0;padding-bottom:48px;">
+  <div class="sol-box">
+    <div class="sol-title">A solução simples</div>
+    <div class="sol-row">
+      <div><b>5</b><span>cadernos guiados</span></div>
+      <div><b>11</b><span>bônus incluídos</span></div>
+      <div><b>PDF</b><span>no celular ou impresso</span></div>
+      <div><b>1x</b><span>pagamento único</span></div>
     </div>
   </div>
 </section>
-
-<hr class="divider">
 
 <!-- ===================== COMO FUNCIONA ===================== -->
 <section class="section section-center" style="background:#fff;">
@@ -1314,62 +1445,6 @@ footer a { color: rgba(255,255,255,.3); }
       <div class="step-n">3</div>
       <div class="step-title">Imprime ou preenche</div>
       <div class="step-desc">No celular, tablet ou impresso. Qualquer app de PDF funciona. Se você usa WhatsApp, você consegue usar.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== BONUSES ===================== -->
-<section class="bonus-section" id="bonus">
-  <div class="section-center">
-    <span class="eyebrow" style="color:var(--gold);">exclusivo plano completo</span>
-    <h2 class="section-h" style="color:#fff;">11 Bônus que <span style="color:var(--gold);">aceleram</span> sua cura</h2>
-    <div class="bonus-total">Valor total dos bônus: R$247,00 incluídos de graça hoje</div>
-  </div>
-  <div class="bonus-list">
-    <div class="bonus-item"><div class="bonus-num">1</div><div><div class="bonus-name">Ritual da Manhã Poderosa</div><div class="bonus-desc">Guia passo a passo para começar cada dia com intenção e leveza em 10 minutos ou menos.</div><div class="bonus-val">R$27,00 GRÁTIS</div></div></div>
-    <div class="bonus-item"><div class="bonus-num">2</div><div><div class="bonus-name">Mapa das Emoções</div><div class="bonus-desc">Aprenda a identificar e nomear exatamente o que você sente. Consciência emocional é a base de tudo.</div><div class="bonus-val">R$19,00 GRÁTIS</div></div></div>
-    <div class="bonus-item"><div class="bonus-num">3</div><div><div class="bonus-name">Reset Emocional em 7 Dias</div><div class="bonus-desc">Plano diário de 7 dias para quando você precisa começar do zero. Para os momentos de crise ou virada.</div><div class="bonus-val">R$37,00 GRÁTIS</div></div></div>
-    <div class="bonus-item"><div class="bonus-num">4</div><div><div class="bonus-name">Meditação Guiada: Reencontro com Você</div><div class="bonus-desc">Script de meditação guiada para reconexão profunda com seu eu interior. Para ler ou praticar sozinha.</div><div class="bonus-val">R$27,00 GRÁTIS</div></div></div>
-    <div class="bonus-item"><div class="bonus-num">5</div><div><div class="bonus-name">100 Afirmações que Reprogramam a Mente</div><div class="bonus-desc">Afirmações por tema: autoestima, relacionamentos, prosperidade, paz interior e propósito.</div><div class="bonus-val">R$17,00 GRÁTIS</div></div></div>
-    <div class="bonus-item"><div class="bonus-num">6</div><div><div class="bonus-name">Kit de Primeiros Socorros Emocionais</div><div class="bonus-desc">O que fazer quando você está no fundo: técnicas rápidas para os seus momentos mais difíceis.</div><div class="bonus-val">R$22,00 GRÁTIS</div></div></div>
-    <div class="bonus-item"><div class="bonus-num">7</div><div><div class="bonus-name">Diário de Sonhos e Intenções</div><div class="bonus-desc">Caderno extra para registrar seus sonhos e desejos. Porque sonhar faz parte de curar.</div><div class="bonus-val">R$17,00 GRÁTIS</div></div></div>
-    <div class="bonus-item"><div class="bonus-num">8</div><div><div class="bonus-name">Desafio de 30 Dias: Ação Emocional</div><div class="bonus-desc">Calendário visual com uma micro-ação por dia para construir hábitos emocionais com consistência.</div><div class="bonus-val">R$22,00 GRÁTIS</div></div></div>
-    <div class="bonus-item"><div class="bonus-num">9</div><div><div class="bonus-name">Guia Anti-Autossabotagem</div><div class="bonus-desc">Identifique seus padrões de autossabotagem e aprenda como interrompê-los antes que destruam seus avanços.</div><div class="bonus-val">R$27,00 GRÁTIS</div></div></div>
-    <div class="bonus-item"><div class="bonus-num">10</div><div><div class="bonus-name">Perguntas que Mudam Perspectivas</div><div class="bonus-desc">50 perguntas poderosas para quando você está presa em uma situação ou em uma versão de si que não te serve.</div><div class="bonus-val">R$17,00 GRÁTIS</div></div></div>
-    <div class="bonus-item"><div class="bonus-num">11</div><div><div class="bonus-name">Manifesto: Quem Eu Estou Me Tornando</div><div class="bonus-desc">Modelo de manifesto pessoal para escrever e reler sempre que precisar se lembrar de quem você escolheu ser.</div><div class="bonus-val">R$17,00 GRÁTIS</div></div></div>
-  </div>
-  <div style="text-align:center;margin-top:36px;">
-    <a href="#pricing" class="btn-cta" style="max-width:480px;margin:0 auto;background:var(--gold);color:var(--marrom);">
-      EU QUERO TUDO ISSO AGORA
-      <span class="sub" style="color:rgba(61,43,39,.65);">5 Cadernos + 11 Bônus (R$247 de valor) · Acesso na hora</span>
-    </a>
-  </div>
-</section>
-
-<!-- ===================== TESTIMONIALS ===================== -->
-<section class="section section-center" style="background:#fff;" id="depoimentos">
-  <span class="eyebrow">depoimentos reais</span>
-  <h2 class="section-h">Quem usou <span class="accent">não volta atrás</span></h2>
-  <div class="testi-grid">
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"Eu nunca fui de escrever, mas o Floresça me surpreendeu. No terceiro dia já estava chorando de alívio, não de tristeza. Parece que alguém finalmente me entendia."</p>
-      <div class="testi-author"><div class="testi-avatar">🌸</div><div><div class="testi-name">Ana Clara M.</div><div class="testi-handle">Compradora verificada</div></div></div>
-    </div>
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"Paguei R$27,90 achando que era barato demais pra valer. Errei. O conteúdo é de uma terapeuta de verdade, só que faço quando quero, no meu sofá."</p>
-      <div class="testi-author"><div class="testi-avatar">🌼</div><div><div class="testi-name">Jéssica R.</div><div class="testi-handle">Compradora verificada</div></div></div>
-    </div>
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"O caderno da Criança Interior me fez entender por que eu me relacionava do jeito que me relacionava. Isso não tem preço. Por R$27 é um absurdo."</p>
-      <div class="testi-author"><div class="testi-avatar">💜</div><div><div class="testi-name">Mariana F.</div><div class="testi-handle">Compradora verificada</div></div></div>
-    </div>
-    <div class="testi-card">
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-text">"Comprei para mim e presenteei minha irmã. Ela me mandou mensagem chorando de gratidão. Essa foi minha prova de que funciona de verdade."</p>
-      <div class="testi-author"><div class="testi-avatar">🌷</div><div><div class="testi-name">Beatriz S.</div><div class="testi-handle">Compradora verificada</div></div></div>
     </div>
   </div>
 </section>
@@ -1445,6 +1520,24 @@ footer a { color: rgba(255,255,255,.3); }
     <div class="guarantee-text">
       Compra, abre os cadernos, usa. Se por qualquer motivo não ficou satisfeita nos primeiros 7 dias, manda mensagem e a gente devolve 100% do seu dinheiro. Sem perguntas, sem burocracia, sem demora.<br><br>
       <strong>Risco zero. A única coisa que você pode perder é a chance de começar.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="section section-center" style="background:#fff;" id="depoimentos">
+  <span class="eyebrow">histórias de quem começou</span>
+  <h2 class="section-h">Pessoas comuns que <span class="accent">voltaram a se reconhecer</span></h2>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"O caderno da Criança Interior me fez entender por que eu me relacionava do jeito que me relacionava. Isso não tem preço. Por R$27 é um absurdo."</p>
+      <div class="testi-author"><div class="testi-avatar">💜</div><div><div class="testi-name">Mariana F.</div><div class="testi-handle">Compradora verificada</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Comprei para mim e presenteei minha irmã. Ela me mandou mensagem chorando de gratidão. Essa foi minha prova de que funciona de verdade."</p>
+      <div class="testi-author"><div class="testi-avatar">🌷</div><div><div class="testi-name">Beatriz S.</div><div class="testi-handle">Compradora verificada</div></div></div>
     </div>
   </div>
 </section>
