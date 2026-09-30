@@ -687,8 +687,9 @@ function buildScreenHTML(s) {
           </div>
         `).join('')}
       </div>
-      ${s.know ? `<div class="know-card"><div class="know-h">${s.know.h}</div><div class="know-p">${s.know.p}</div></div>` : ''}
+      ${s.know ? `<div class="know-card" id="knowCard" style="display:none;"><div class="know-h">${s.know.h}</div><div class="know-p">${s.know.p}</div></div>` : ''}
       ${s.multi ? '<div class="spacer"></div><button class="btn-main" data-action="next" id="multiNext">Continuar</button>' : ''}
+      ${(!s.multi && s.know) ? '<div class="spacer"></div><button class="btn-main" data-action="next" id="knowNext" style="display:none;">Continuar</button>' : ''}
     `;
   }
   if (s.type === 'text') {
@@ -1158,12 +1159,21 @@ function attachHandlers(s) {
           opts.forEach(o => o.classList.remove('selected'));
           opt.classList.add('selected');
           answers[s.id] = opt.dataset.val;
-          setTimeout(() => goNext(), 220);
+          if (s.know) {
+            const card = root.querySelector('#knowCard');
+            const btn = root.querySelector('#knowNext');
+            if (card) { card.style.display = ''; card.style.animation = 'fadein .35s ease'; }
+            if (btn) btn.style.display = '';
+          } else {
+            setTimeout(() => goNext(), 220);
+          }
         }
       };
     });
     const multiNext = root.querySelector('#multiNext');
     if (multiNext) multiNext.onclick = () => goNext();
+    const knowNext = root.querySelector('#knowNext');
+    if (knowNext) knowNext.onclick = () => goNext();
   }
 
   if (s.type === 'text') {
