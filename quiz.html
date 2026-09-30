@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="description" content="Floresça — Descubra seu padrão emocional e o caminho pra sair da sobrecarga, num plano feito pra você.">
+<title>Floresça — Descubra seu padrão emocional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1848754096095471');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1848754096095471&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- Utmify UTMs Script -->
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xr17oxfo1z");
+</script>
+<!-- End Microsoft Clarity -->
+
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+:root {
+  --terr:    #A85C52;
+  --rosa:    #C4877B;
+  --marrom:  #3D2B27;
+  --taupe:   #6E5F52;
+  --linha:   #E7E1DA;
+  --green:   #2FA84F;
+  --green-d: #218A3C;
+  --green-l: #EAF8EE;
+  --gold:    #C9A96E;
+  --indigo:  #7B8FC4;
+  --red:     #E0584F;
+  --bg:      #FFFFFF;
+}
+body {
+  background: var(--bg);
+  color: var(--marrom);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+b, strong { font-weight: 700; }
+
+/* ===================== APP SHELL ===================== */
+#app {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+
+/* ===================== PROGRESS BAR ===================== */
+.progress-wrap {
+  padding: 14px 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.progress-track {
+  flex: 1;
+  height: 7px;
+  background: var(--linha);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--green);
+  border-radius: 99px;
+  transition: width .35s ease;
+  width: 0%;
+}
+.progress-back {
+  border: none;
+  background: none;
+  font-size: 20px;
+  color: var(--taupe);
+  cursor: pointer;
+  padding: 4px 6px;
+  line-height: 1;
+}
+.progress-back:disabled { visibility: hidden; }
+
+/* ===================== SCREEN ===================== */
+.screen {
+  flex: 1;
+  padding: 18px 22px 40px;
+  display: none;
+  flex-direction: column;
+  animation: fadein .35s ease;
+}
+.screen.active { display: flex; }
+@keyframes fadein { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+.eyebrow {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: var(--terr);
+  margin-bottom: 8px;
+  text-align: center;
+}
+.q-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--marrom);
+  margin-bottom: 6px;
+  text-wrap: balance;
+}
+.q-title .accent { color: var(--green-d); }
+.q-title .accent-terr { color: var(--terr); }
+.q-sub {
+  font-size: 14px;
+  color: var(--taupe);
+  text-align: center;
+  margin-bottom: 18px;
+  font-weight: 400;
+}
+
+/* ===================== IMAGE SLOT ===================== */
+.q-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 0 auto 18px;
+  background: var(--linha);
+  position: relative;
+}
+.q-image img { width: 100%; height: 100%; object-fit: cover; }
+.q-image .ph {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 6px;
+  color: var(--taupe); font-size: 12px; font-weight: 600; text-align: center;
+  padding: 12px;
+}
+.q-image.portrait { aspect-ratio: 3 / 4; max-width: 260px; }
+.q-image.wide { aspect-ratio: 16 / 10; }
+.q-image.round { aspect-ratio: 1/1; border-radius: 50%; max-width: 180px; }
+
+/* ===================== OPTIONS ===================== */
+.options { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+.opt {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1.5px solid var(--linha);
+  border-radius: 14px;
+  padding: 14px 16px;
+  cursor: pointer;
+  background: #fff;
+  transition: border-color .15s, background .15s, transform .1s;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--marrom);
+}
+.opt:hover { border-color: var(--green); background: var(--green-l); }
+.opt.selected { border-color: var(--green); background: var(--green-l); }
+.opt .ic { font-size: 20px; flex-shrink: 0; line-height: 1; }
+.opt .check {
+  margin-left: auto; width: 20px; height: 20px; border-radius: 50%;
+  border: 2px solid var(--linha); flex-shrink: 0; position: relative;
+}
+.opt.selected .check { border-color: var(--green); background: var(--green); }
+.opt.selected .check::after {
+  content: ''; position: absolute; left: 6px; top: 2px; width: 5px; height: 10px;
+  border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg);
+}
+
+/* ===================== TEXT INPUT ===================== */
+.text-input {
+  width: 100%;
+  border: 1.5px solid var(--linha);
+  border-radius: 14px;
+  padding: 15px 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: var(--marrom);
+  margin-bottom: 10px;
+}
+.text-input:focus { outline: none; border-color: var(--green); }
+.privacy-note { font-size: 11.5px; color: var(--taupe); text-align: center; margin: 4px 0 18px; display: flex; align-items: center; justify-content: center; gap: 5px; }
+
+/* ===================== BUTTONS ===================== */
+.btn-main {
+  display: block;
+  width: 100%;
+  background: var(--green);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  margin-top: auto;
+  box-shadow: 0 6px 20px rgba(47,168,79,.28);
+  transition: transform .15s, box-shadow .15s, background .15s;
+}
+.btn-main:hover, .btn-main:active { background: var(--green-d); transform: scale(1.01); }
+.btn-main:disabled { background: var(--linha); color: var(--taupe); box-shadow: none; cursor: not-allowed; }
+.btn-ghost {
+  display: block; width: 100%; text-align: center; margin-top: 12px;
+  background: none; border: none; color: var(--taupe); font-family: 'Poppins',sans-serif;
+  font-size: 13px; font-weight: 500; cursor: pointer; text-decoration: underline;
+}
+.spacer { flex: 1; }
+
+/* ===================== INFO / AUTHORITY SCREENS ===================== */
+.info-screen { text-align: center; }
+.info-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--green-l); color: var(--green-d);
+  font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 99px;
+  margin: 0 auto 14px;
+}
+.info-title { font-size: 21px; font-weight: 700; line-height: 1.35; margin-bottom: 10px; text-wrap: balance; }
+.info-title .accent { color: var(--green-d); }
+.info-text { font-size: 14.5px; color: var(--taupe); margin-bottom: 20px; line-height: 1.6; }
+
+.stat-box {
+  background: var(--green-l);
+  border: 1.5px solid var(--green);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.stat-num { font-size: 42px; font-weight: 800; color: var(--green-d); line-height: 1; }
+.stat-label { font-size: 13px; color: var(--marrom); font-weight: 500; margin-top: 6px; }
+
+.testi-card {
+  border: 1.5px solid var(--linha); border-radius: 14px; padding: 16px; text-align: left;
+  margin-bottom: 10px; background: #fff;
+}
+.testi-stars { color: var(--gold); font-size: 13px; margin-bottom: 6px; }
+.testi-text { font-size: 13.5px; color: var(--marrom); font-style: italic; margin-bottom: 8px; }
+.testi-name { font-size: 12.5px; font-weight: 700; color: var(--marrom); }
+
+/* ===================== KNOW-THIS CARD (curiosidade) ===================== */
+.know-card {
+  background: #FDF7EE; border: 1.5px solid #EEDDB8; border-radius: 14px;
+  padding: 14px 16px; margin-top: 16px; text-align: left;
+}
+.know-card .know-h { font-size: 13.5px; font-weight: 700; color: var(--marrom); margin-bottom: 4px; display: flex; gap: 6px; align-items: center; }
+.know-card .know-p { font-size: 12.5px; color: var(--taupe); line-height: 1.5; }
+
+/* ===================== LOADING SCREEN ===================== */
+.load-row { margin-bottom: 16px; text-align: left; }
+.load-label { display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+.load-pct { color: var(--green-d); font-weight: 700; }
+.load-track { height: 8px; background: var(--linha); border-radius: 99px; overflow: hidden; }
+.load-fill { height: 100%; background: var(--green); border-radius: 99px; width: 0%; transition: width 1.1s ease; }
+
+/* ===================== RESULT PAGE ===================== */
+.result-hero { text-align: center; margin-bottom: 8px; }
+.result-title { font-size: 23px; font-weight: 700; margin-bottom: 6px; }
+.result-sub { font-size: 14.5px; color: var(--taupe); margin-bottom: 18px; }
+.result-sub b { color: var(--green-d); }
+
+.slider-row { margin-bottom: 14px; }
+.slider-head { display: flex; justify-content: space-between; font-size: 12.5px; font-weight: 600; margin-bottom: 5px; }
+.slider-head .before { color: var(--red); }
+.slider-head .after { color: var(--green-d); }
+.slider-track { height: 9px; border-radius: 99px; background: var(--linha); position: relative; overflow: hidden; margin-bottom: 4px; }
+.slider-fill-before { position: absolute; left: 0; top: 0; bottom: 0; background: var(--red); border-radius: 99px; }
+.slider-fill-after { height: 9px; border-radius: 99px; background: var(--green); margin-top: 6px; }
+.slider-name { font-size: 13px; font-weight: 600; color: var(--marrom); margin-bottom: 6px; }
+
+.mech-box { background: #FAF6F1; border-radius: 16px; padding: 18px; margin: 20px 0; }
+.mech-title { font-size: 15.5px; font-weight: 700; margin-bottom: 6px; }
+.mech-title .accent-terr { color: var(--terr); }
+.mech-text { font-size: 13.5px; color: var(--taupe); line-height: 1.6; }
+
+.check-list { display: flex; flex-direction: column; gap: 9px; margin-bottom: 8px; }
+.check-list.after .ci { color: var(--marrom); }
+.ci { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; }
+.ci .x { color: var(--red); font-weight: 800; flex-shrink: 0; }
+.ci .v { color: var(--green-d); font-weight: 800; flex-shrink: 0; }
+.section-h2 { font-size: 17px; font-weight: 700; margin: 26px 0 12px; text-align: center; }
+.section-h2 .accent { color: var(--green-d); }
+
+.guarantee-box {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--green-l); border: 1.5px solid var(--green);
+  border-radius: 14px; padding: 16px; margin: 20px 0 16px;
+}
+.guarantee-ic { font-size: 30px; flex-shrink: 0; }
+.guarantee-t { font-size: 13.5px; font-weight: 700; color: var(--green-d); margin-bottom: 2px; }
+.guarantee-p { font-size: 12px; color: var(--marrom); }
+
+.plans-grid { display: flex; flex-direction: column; gap: 12px; margin-top: 6px; }
+.plan-card { border: 1.5px solid var(--linha); border-radius: 16px; padding: 18px; position: relative; }
+.plan-card.best { border-color: var(--green); background: var(--green-l); }
+.plan-badge {
+  position: absolute; top: -10px; left: 18px; background: var(--green); color: #fff;
+  font-size: 10.5px; font-weight: 700; padding: 4px 10px; border-radius: 99px; letter-spacing: .3px;
+}
+.plan-name { font-size: 13px; color: var(--taupe); font-weight: 600; }
+.plan-title { font-size: 18px; font-weight: 700; margin: 2px 0 4px; }
+.plan-from { font-size: 12.5px; color: var(--taupe); text-decoration: line-through; }
+.plan-price { font-size: 30px; font-weight: 800; color: var(--green-d); margin: 2px 0 10px; }
+.plan-price sup { font-size: 14px; top: -10px; position: relative; margin-right: 1px; }
+.plan-feat { font-size: 12.5px; color: var(--marrom); margin-bottom: 4px; display: flex; gap: 6px; }
+.plan-cta {
+  display: block; text-align: center; margin-top: 12px; padding: 13px; border-radius: 12px;
+  font-weight: 700; font-size: 14px; background: var(--green); color: #fff;
+}
+.plan-card:not(.best) .plan-cta { background: #fff; border: 1.5px solid var(--green); color: var(--green-d); }
+
+.testi-comment { display: flex; gap: 10px; margin-bottom: 12px; text-align: left; }
+.testi-comment .av { width: 34px; height: 34px; border-radius: 50%; background: var(--linha); flex-shrink: 0; overflow: hidden; }
+.testi-comment .av img { width: 100%; height: 100%; object-fit: cover; }
+.testi-comment .body { font-size: 12.5px; }
+.testi-comment .who { font-weight: 700; margin-bottom: 2px; }
+.testi-comment .likes { color: var(--taupe); font-size: 11px; margin-top: 3px; }
+
+.timer-row {
+  background: #FDF1EF; border: 1.5px solid #F3C9C2; color: var(--terr);
+  border-radius: 12px; padding: 10px 14px; text-align: center; font-size: 12.5px; font-weight: 700;
+  margin-bottom: 14px;
+}
+.final-note { font-size: 11px; color: var(--taupe); text-align: center; margin-top: 10px; display:flex; align-items:center; justify-content:center; gap:5px; }
+
+::selection { background: var(--green-l); }
+</style>
+</head>
+<body>
+
+<div id="app">
+  <div class="progress-wrap">
+    <button class="progress-back" id="backBtn" aria-label="Voltar">←</button>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+  <div id="screens"></div>
+</div>
+
+<script>
+/* =========================================================================
+   FLORESÇA — QUIZ ENGINE
+   Cada screen tem um "id" e um "type": entry | choice | text | info | stat
+   | loading | result
+   Imagens: cada slot de imagem referencia /quiz-assets/<arquivo>.jpg
+   Enquanto o arquivo não existir, aparece um placeholder cinza com o texto
+   do prompt (pra você saber exatamente o que gerar no Flow).
+   ========================================================================= */
+
+const ASSET_BASE = 'quiz-assets/';
+
+function img(file, ratioClass, promptLabel) {
+  return {file, ratioClass: ratioClass || '', promptLabel};
+}
+
+function imageSlotHTML(slot) {
+  if (!slot) return '';
+  return `<div class="q-image ${slot.ratioClass}">
+    <img src="${ASSET_BASE}${slot.file}" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    <div class="ph" style="display:none;">🖼️ ${slot.file}<br><span style="font-weight:400;opacity:.8;">${slot.promptLabel || ''}</span></div>
+  </div>`;
+}
+
+/* ===================== SCREENS DATA ===================== */
+const SCREENS = [
+
+{ id:'entry', type:'entry',
+  image: img('img01-entry.jpg','wide','Mulher em pausa introspectiva, luz de manhã, expressão cansada mas serena'),
+  eyebrow: 'teste gratuito · 2 minutos',
+  title: 'Descubra por que você não<br>consegue <span class="accent">parar de se colocar<br>em último lugar</span>',
+  sub: 'Veja seu padrão emocional e o caminho pra sair dele, num plano feito pra você.',
+  cta: 'Começar meu teste',
+  skip: 'Já fiz o teste'
+},
+
+{ id:'q1_idade', type:'choice', progress: 6,
+  title: 'Qual a sua idade?',
+  sub: 'Isso nos ajuda a entender melhor seu momento de vida.',
+  options: [
+    {v:'18-24', t:'18 a 24 anos'},
+    {v:'25-34', t:'25 a 34 anos'},
+    {v:'35-44', t:'35 a 44 anos'},
+    {v:'45+', t:'45 anos ou mais'},
+  ]
+},
+
+{ id:'q2_area', type:'choice', progress: 12,
+  image: img('img02-area.jpg','wide','Mulher sobrecarregada cercada de tarefas: notificações, louça, trabalho, criança puxando a roupa'),
+  title: 'Qual dessas áreas mais consome<br>sua energia hoje?',
+  options: [
+    {v:'trabalho', ic:'💼', t:'Trabalho'},
+    {v:'familia', ic:'👨‍👩‍👧', t:'Filhos / família'},
+    {v:'relacionamento', ic:'💔', t:'Relacionamento'},
+    {v:'tudo', ic:'🌪️', t:'Tudo ao mesmo tempo'},
+  ],
+  know: { h:'💡 Você sabia?', p:'Mulheres que priorizam essa área tendem a negligenciar a própria saúde emocional sem perceber — o corpo avisa antes da mente admitir.' }
+},
+
+{ id:'q3_nome', type:'text', progress: 18,
+  title: 'Vamos começar,<br>nos fale mais sobre você',
+  sub: 'Qual é o seu nome?',
+  placeholder: 'Digite seu nome',
+  privacy: '🔒 Respeitamos sua privacidade e protegemos seus dados.'
+},
+
+{ id:'q4_verdade', type:'choice', progress: 26,
+  title: 'Quando perguntam "como você<br>está?", você responde a verdade?',
+  options: [
+    {v:'nao_minimiza', t:'Não, eu minimizo pra não parecer fraca'},
+    {v:'sim', t:'Sim, sempre digo a verdade'},
+    {v:'nao_sei', t:'Não sei responder'},
+  ]
+},
+
+{ id:'q5_cuida', type:'choice', progress: 33,
+  image: img('img05-cuida.jpg','wide','Mulher servindo comida pra outras pessoas na mesa, sentada sozinha no canto sem prato'),
+  title: 'Você concorda: <span class="accent-terr">"Eu cuido de<br>todo mundo, menos de mim"</span>?',
+  options: [
+    {v:'sim', t:'Sim, é exatamente assim'},
+    {v:'um_pouco', t:'Um pouco'},
+    {v:'nao_sei', t:'Não sei responder'},
+  ]
+},
+
+{ id:'q6_loop', type:'choice', progress: 40,
+  title: 'Você já sentiu que vive nos<br>mesmos padrões — mesma<br>sobrecarga, em loop?',
+  options: [
+    {v:'sim', ic:'🔄', t:'Sim, direto'},
+    {v:'as_vezes', ic:'🔁', t:'Às vezes'},
+    {v:'nao_sei', ic:'❓', t:'Não sei responder'},
+  ]
+},
+
+{ id:'q7_corpo', type:'choice', progress: 46,
+  image: img('img07-corpo.jpg','wide','Close nas mãos de uma mulher no peito, respirando, luz suave, sensação de aperto/ansiedade'),
+  title: 'Seu corpo já te avisou que algo<br>não tá bem? <span class="accent-terr">(aperto no peito,<br>sono ruim, cabeça que não desliga)</span>',
+  options: [
+    {v:'sim_frequente', t:'Sim, e é frequente'},
+    {v:'algumas_vezes', t:'Já aconteceu algumas vezes'},
+    {v:'nao_sei', t:'Não sei identificar'},
+  ],
+  know: { h:'💡 Você sabia?', p:'Sintomas físicos de sobrecarga emocional costumam aparecer meses antes da mente admitir que precisa de ajuda.' }
+},
+
+{ id:'authority', type:'info', progress: 52,
+  image: img('img08-authority.jpg','wide','Duas mulheres próximas, uma acolhendo a outra, expressão de cumplicidade e acolhimento'),
+  badge: '🌸 Você não está sozinha',
+  title: '{{nome}}, ajudamos mais de<br><span class="accent">3.200 mulheres</span> com sobrecargas<br>emocionais iguais às suas.',
+  text: 'Cada uma delas começou exatamente de onde você está agora.',
+  cta: 'Continuar'
+},
+
+{ id:'stat', type:'stat', progress: 58,
+  statNum: '87%',
+  statLabel: 'de chance de {{nome}} conseguir se reconectar com quem era antes da sobrecarga',
+  title: 'Baseado no que você respondeu até aqui...',
+  text: 'Podemos te ajudar ainda mais — vamos entender melhor seu padrão emocional.',
+  cta: 'Continuar'
+},
+
+{ id:'q8_tentou', type:'choice', progress: 64, multi: true,
+  title: 'O que você já tentou pra se<br>sentir melhor?',
+  sub: 'Pode marcar mais de uma.',
+  options: [
+    {v:'terapia', ic:'🛋️', t:'Terapia (mas parei)'},
+    {v:'app', ic:'📱', t:'App de meditação (esqueci de usar)'},
+    {v:'prometi', ic:'📝', t:'Prometi "vou começar" e não comecei'},
+    {v:'nada', ic:'🌱', t:'Nada ainda'},
+  ],
+  know: { h:'💡 Você sabia?', p:'A maioria das tentativas de autocuidado falha não por falta de força de vontade — mas por falta de um caminho guiado, passo a passo.' }
+},
+
+{ id:'q9_trava', type:'choice', progress: 70,
+  image: img('img09-trava.jpg','wide','Mulher sentada à mesa olhando para um caderno em branco, caneta na mão, expressão de hesitação'),
+  title: 'Quando pensa em escrever sobre<br>seus sentimentos, o que mais te trava?',
+  options: [
+    {v:'nao_sei_comecar', t:'Não sei por onde começar'},
+    {v:'comeco_paro', t:'Começo e não sei continuar'},
+    {v:'medo_errado', t:'Acho que não vou fazer "certo"'},
+    {v:'sem_metodo', t:'Nunca tive um método, só uma folha em branco'},
+  ]
+},
+
+{ id:'q10_investiu', type:'choice', progress: 76,
+  title: 'Quanto você já investiu tentando<br>resolver isso (terapia, cursos, apps)?',
+  options: [
+    {v:'nada', t:'Nada ainda'},
+    {v:'ate100', t:'Até R$100'},
+    {v:'100a500', t:'R$100 a R$500'},
+    {v:'mais500', t:'Mais de R$500'},
+  ]
+},
+
+{ id:'q11_projecao', type:'choice', progress: 82,
+  image: img('img11-projecao.jpg','wide','Mulher sorrindo levemente, olhando pela janela, luz quente, expressão de alívio e leveza'),
+  title: 'Se esse peso sumisse, o que<br>mudaria primeiro?',
+  options: [
+    {v:'dormir', ic:'😴', t:'Eu dormiria melhor'},
+    {v:'cobranca', ic:'🕊️', t:'Eu pararia de me cobrar tanto'},
+    {v:'paciencia', ic:'🌿', t:'Eu teria mais paciência'},
+    {v:'reconhecer', ic:'🪞', t:'Eu voltaria a me reconhecer'},
+  ]
+},
+
+{ id:'q12_deseja', type:'choice', progress: 88,
+  title: 'O que você mais deseja sentir<br>com mais frequência?',
+  options: [
+    {v:'paz', t:'Paz'},
+    {v:'leveza', t:'Leveza'},
+    {v:'clareza', t:'Clareza sobre mim mesma'},
+    {v:'orgulho', t:'Orgulho de me priorizar'},
+  ]
+},
+
+{ id:'q13_concorda', type:'choice', progress: 92,
+  title: 'Você concorda que merece um<br>método simples, sem precisar<br>de 1h livre por dia?',
+  options: [
+    {v:'sim', t:'Sim'},
+    {v:'nao_sei', t:'Não sei responder'},
+  ]
+},
+
+{ id:'q14_topa', type:'choice', progress: 96,
+  image: img('img14-topa.jpg','wide','Mulher escrevendo num caderno com expressão tranquila, xícara de chá ao lado, luz quente de fim de tarde'),
+  title: 'Você topa dar 10 minutos por dia<br>só pra você?',
+  options: [
+    {v:'sim', t:'Sim, topo'},
+    {v:'nao_sei', t:'Não sei responder'},
+  ]
+},
+
+{ id:'loading', type:'loading', progress: 98,
+  rows: [
+    {label:'Analisando suas respostas...', pct:100},
+    {label:'Identificando seu padrão emocional...', pct:100},
+    {label:'Detectando seus pontos de atenção...', pct:78},
+    {label:'Montando seu plano personalizado...', pct:40},
+  ],
+  testi: [
+    {stars:'★★★★★', text:'"Chorei de alívio no terceiro dia, não de tristeza."', name:'Ana Clara M.'},
+    {stars:'★★★★★', text:'"Entendi por que eu me relacionava do jeito que me relacionava."', name:'Mariana F.'},
+  ]
+},
+
+{ id:'result', type:'result', progress: 100 }
+
+];
+
+/* ===================== STATE ===================== */
+let idx = 0;
+const answers = {};
+let userName = '';
+
+const screensEl = document.getElementById('screens');
+const progressFill = document.getElementById('progressFill');
+const backBtn = document.getElementById('backBtn');
+
+function interpolate(str) {
+  if (!str) return str;
+  return str.replace(/\{\{nome\}\}/g, userName || 'Você');
+}
+
+function render() {
+  screensEl.innerHTML = '';
+  SCREENS.forEach((s, i) => {
+    const div = document.createElement('div');
+    div.className = 'screen' + (i === idx ? ' active' : '');
+    div.id = 'screen-' + s.id;
+    div.innerHTML = buildScreenHTML(s);
+    screensEl.appendChild(div);
+  });
+  progressFill.style.width = (SCREENS[idx].progress || 0) + '%';
+  backBtn.disabled = idx === 0;
+  attachHandlers(SCREENS[idx]);
+  if (SCREENS[idx].type === 'loading') runLoadingAnimation();
+  window.scrollTo(0,0);
+}
+
+function buildScreenHTML(s) {
+  if (s.type === 'entry') {
+    return `
+      ${imageSlotHTML(s.image)}
+      <div class="eyebrow">${s.eyebrow}</div>
+      <div class="q-title" style="font-size:25px;">${s.title}</div>
+      <div class="q-sub">${s.sub}</div>
+      <div class="spacer"></div>
+      <button class="btn-main" data-action="next">${s.cta}</button>
+      <button class="btn-ghost" data-action="skip">${s.skip}</button>
+    `;
+  }
+  if (s.type === 'choice') {
+    return `
+      <div class="q-title">${interpolate(s.title)}</div>
+      ${s.sub ? `<div class="q-sub">${s.sub}</div>` : ''}
+      ${imageSlotHTML(s.image)}
+      <div class="options">
+        ${s.options.map(o => `
+          <div class="opt" data-val="${o.v}" data-multi="${!!s.multi}">
+            ${o.ic ? `<span class="ic">${o.ic}</span>` : ''}
+            <span>${o.t}</span>
+            <span class="check"></span>
+          </div>
+        `).join('')}
+      </div>
+      ${s.know ? `<div class="know-card"><div class="know-h">${s.know.h}</div><div class="know-p">${s.know.p}</div></div>` : ''}
+      ${s.multi ? '<div class="spacer"></div><button class="btn-main" data-action="next" id="multiNext">Continuar</button>' : ''}
+    `;
+  }
+  if (s.type === 'text') {
+    return `
+      <div class="q-title">${s.title}</div>
+      <div class="q-sub">${s.sub}</div>
+      <input class="text-input" id="nameInput" type="text" placeholder="${s.placeholder}" autocomplete="given-name">
+      <div class="privacy-note">${s.privacy}</div>
+      <div class="spacer"></div>
+      <button class="btn-main" data-action="next" id="nameNext" disabled>Continuar</button>
+    `;
+  }
+  if (s.type === 'info') {
+    return `
+      <div class="info-screen">
+        ${imageSlotHTML(s.image)}
+        <div class="info-badge">${s.badge}</div>
+        <div class="info-title">${interpolate(s.title)}</div>
+        <div class="info-text">${interpolate(s.text)}</div>
+      </div>
+      <div class="spacer"></div>
+      <button class="btn-main" data-action="next">${s.cta}</button>
+    `;
+  }
+  if (s.type === 'stat') {
+    return `
+      <div class="info-screen">
+        <div class="stat-box">
+          <div class="stat-num">${s.statNum}</div>
+          <div class="stat-label">${interpolate(s.statLabel)}</div>
+        </div>
+        <div class="info-title" style="font-size:18px;">${interpolate(s.title)}</div>
+        <div class="info-text">${interpolate(s.text)}</div>
+      </div>
+      <div class="spacer"></div>
+      <button class="btn-main" data-action="next">${s.cta}</button>
+    `;
+  }
+  if (s.type === 'loading') {
+    return `
+      <div class="q-title" style="margin-bottom:22px;">Preparando seu resultado...</div>
+      <div id="loadRows">
+        ${s.rows.map((r,i) => `
+          <div class="load-row">
+            <div class="load-label"><span>${r.label}</span><span class="load-pct" id="pct-${i}">0%</span></div>
+            <div class="load-track"><div class="load-fill" id="fill-${i}" data-target="${r.pct}"></div></div>
+          </div>
+        `).join('')}
+      </div>
+      <div class="section-h2">3.200+ mulheres escolheram <span class="accent">o Método Floresça</span></div>
+      ${s.testi.map(t => `
+        <div class="testi-card">
+          <div class="testi-stars">${t.stars}</div>
+          <div class="testi-text">${t.text}</div>
+          <div class="testi-name">${t.name}</div>
+        </div>
+      `).join('')}
+    `;
+  }
+  if (s.type === 'result') {
+    return buildResultHTML();
+  }
+  return '';
+}
+
+function buildResultHTML() {
+  return `
+  <div class="result-hero">
+    ${imageSlotHTML(img('img-result-hero.jpg','wide','Mulher sorrindo, leve, segurando um caderno Floresça, luz quente, sensação de alívio e conquista'))}
+    <div class="result-title">${interpolate('{{nome}}, seu resultado está pronto!')}</div>
+    <div class="result-sub">Nossa análise indica <b>87% de identificação</b> com o padrão<br><b>"Sobrecarga por excesso de cuidado com os outros"</b></div>
+  </div>
+
+  <div class="slider-row">
+    <div class="slider-name">Nível de sobrecarga</div>
+    <div class="slider-head"><span class="before">Hoje — 82%</span></div>
+    <div class="slider-track"><div class="slider-fill-before" style="width:82%;"></div></div>
+    <div class="slider-head" style="margin-top:8px;"><span class="after">Com o Floresça — 15%</span></div>
+    <div class="slider-fill-after" style="width:15%;"></div>
+  </div>
+  <div class="slider-row">
+    <div class="slider-name">Clareza emocional</div>
+    <div class="slider-head"><span class="before">Hoje — 30%</span></div>
+    <div class="slider-track"><div class="slider-fill-before" style="width:30%;"></div></div>
+    <div class="slider-head" style="margin-top:8px;"><span class="after">Com o Floresça — 88%</span></div>
+    <div class="slider-fill-after" style="width:88%;"></div>
+  </div>
+  <div class="slider-row">
+    <div class="slider-name">Constância de autocuidado</div>
+    <div class="slider-head"><span class="before">Hoje — 22%</span></div>
+    <div class="slider-track"><div class="slider-fill-before" style="width:22%;"></div></div>
+    <div class="slider-head" style="margin-top:8px;"><span class="after">Com o Floresça — 91%</span></div>
+    <div class="slider-fill-after" style="width:91%;"></div>
+  </div>
+
+  <div class="mech-box">
+    ${imageSlotHTML(img('img-mechanism.jpg','wide','Os 5 cadernos Floresça dispostos lado a lado, cada um com sua cor, mockup limpo sobre mesa clara'))}
+    <div class="mech-title">Por que o <span class="accent-terr">Floresça</span> funciona</div>
+    <div class="mech-text">Não é genérico. São <b>5 cadernos guiados</b>, cada um trabalhando uma camada diferente da sua sobrecarga — você começa exatamente onde dói mais, no seu ritmo.</div>
+  </div>
+
+  <div class="section-h2">A vida <span class="accent-terr" style="color:var(--red);">antes</span> do Floresça</div>
+  <div class="check-list">
+    <div class="ci"><span class="x">✗</span> Se cobrar o tempo todo sem saber o porquê</div>
+    <div class="ci"><span class="x">✗</span> Prometer "vou me cuidar" e nunca continuar</div>
+    <div class="ci"><span class="x">✗</span> Não saber por onde começar quando tem um tempo livre</div>
+    <div class="ci"><span class="x">✗</span> Sentir que está sempre em último lugar na própria vida</div>
+    <div class="ci"><span class="x">✗</span> Achar que só terapia cara resolve</div>
+  </div>
+
+  <div class="section-h2">A vida <span class="accent">depois</span> do Floresça</div>
+  <div class="check-list after">
+    <div class="ci"><span class="v">✓</span> 10 minutos guiados por dia, sem precisar de disciplina extra</div>
+    <div class="ci"><span class="v">✓</span> Um caminho claro pra cada camada da sua sobrecarga</div>
+    <div class="ci"><span class="v">✓</span> Nunca mais encarar uma folha em branco — só responder</div>
+    <div class="ci"><span class="v">✓</span> Se priorizar sem culpa, no seu ritmo</div>
+    <div class="ci"><span class="v">✓</span> Um primeiro passo real, por menos que um lanche</div>
+  </div>
+
+  <div class="testi-comment">
+    <div class="av"><img src="${ASSET_BASE}img-avatar1.jpg" onerror="this.style.display='none'"></div>
+    <div class="body"><div class="who">marina.alves</div>Nunca fui de escrever, mas o Floresça me fez continuar. Em 3 dias já sentia diferença. ❤️<div class="likes">❤ 12 · Responder</div></div>
+  </div>
+  <div class="testi-comment">
+    <div class="av"><img src="${ASSET_BASE}img-avatar2.jpg" onerror="this.style.display='none'"></div>
+    <div class="body"><div class="who">jess.r</div>Achei que ia ser mais um PDF esquecido. Não foi.<div class="likes">❤ 8 · Responder</div></div>
+  </div>
+
+  <div class="guarantee-box">
+    <div class="guarantee-ic">🛡️</div>
+    <div>
+      <div class="guarantee-t">Garantia de 7 dias</div>
+      <div class="guarantee-p">Se não sentir diferença, devolvemos 100%. Sem perguntas.</div>
+    </div>
+  </div>
+
+  <div class="timer-row">🔥 Condição de lançamento para as primeiras 500 mulheres</div>
+
+  <div class="section-h2">Seu plano está pronto, <span class="accent">${interpolate('{{nome}}')}</span></div>
+  <div class="plans-grid">
+    <div class="plan-card">
+      <div class="plan-name">Plano</div>
+      <div class="plan-title">Básico</div>
+      <div class="plan-from">De R$47,00</div>
+      <div class="plan-price"><sup>R$</sup>10<span>,00</span></div>
+      <div class="plan-feat">✓ Caderno 01 · 30 Dias de Amor Próprio</div>
+      <div class="plan-feat">✓ Acesso imediato em PDF</div>
+      <a href="https://checkout.wiven.com.br/checkout/cmsjg9r3701dl01omo1zzk8tb?offer=1QPQ3U5&payment=pix" class="plan-cta">Quero o Básico</a>
+    </div>
+    <div class="plan-card best">
+      <div class="plan-badge">MAIS ESCOLHIDO</div>
+      <div class="plan-name">Plano</div>
+      <div class="plan-title">Completo</div>
+      <div class="plan-from">De R$297,00</div>
+      <div class="plan-price"><sup>R$</sup>24<span>,90</span></div>
+      <div class="plan-feat">✓ Todos os 5 Cadernos de Cura Emocional</div>
+      <div class="plan-feat">✓ 11 Bônus exclusivos (R$249 em valor)</div>
+      <div class="plan-feat">✓ Acesso imediato em PDF</div>
+      <a href="https://checkout.wiven.com.br/checkout/cmskg733b028101ocbaa0b3un?offer=M1Q441V&payment=pix" class="plan-cta">Quero o Completo</a>
+    </div>
+  </div>
+  <div class="final-note">🔒 Compra 100% segura · Acesso imediato após o pagamento</div>
+  `;
+}
+
+/* ===================== HANDLERS ===================== */
+function attachHandlers(s) {
+  const root = document.getElementById('screen-' + s.id);
+  if (!root) return;
+
+  if (s.type === 'entry') {
+    root.querySelector('[data-action="next"]').onclick = () => goNext();
+    root.querySelector('[data-action="skip"]').onclick = () => {
+      window.location.href = 'https://checkout.wiven.com.br/checkout/cmskg733b028101ocbaa0b3un?offer=M1Q441V&payment=pix';
+    };
+  }
+
+  if (s.type === 'choice') {
+    const opts = root.querySelectorAll('.opt');
+    opts.forEach(opt => {
+      opt.onclick = () => {
+        if (s.multi) {
+          opt.classList.toggle('selected');
+          answers[s.id] = Array.from(root.querySelectorAll('.opt.selected')).map(o => o.dataset.val);
+        } else {
+          opts.forEach(o => o.classList.remove('selected'));
+          opt.classList.add('selected');
+          answers[s.id] = opt.dataset.val;
+          setTimeout(() => goNext(), 220);
+        }
+      };
+    });
+    const multiNext = root.querySelector('#multiNext');
+    if (multiNext) multiNext.onclick = () => goNext();
+  }
+
+  if (s.type === 'text') {
+    const input = root.querySelector('#nameInput');
+    const btn = root.querySelector('#nameNext');
+    input.value = userName;
+    btn.disabled = !userName;
+    input.oninput = () => { btn.disabled = input.value.trim().length < 2; };
+    input.onkeydown = (e) => { if (e.key === 'Enter' && !btn.disabled) goNext(); };
+    btn.onclick = () => { userName = input.value.trim(); answers[s.id] = userName; goNext(); };
+    setTimeout(() => input.focus(), 300);
+  }
+
+  if (s.type === 'info' || s.type === 'stat') {
+    root.querySelector('[data-action="next"]').onclick = () => goNext();
+  }
+}
+
+function runLoadingAnimation() {
+  const s = SCREENS.find(x => x.type === 'loading');
+  s.rows.forEach((r, i) => {
+    const fill = document.getElementById('fill-' + i);
+    const pct = document.getElementById('pct-' + i);
+    if (!fill) return;
+    setTimeout(() => {
+      fill.style.width = r.pct + '%';
+      let cur = 0;
+      const step = setInterval(() => {
+        cur += 4;
+        if (cur >= r.pct) { cur = r.pct; clearInterval(step); }
+        pct.textContent = cur + '%';
+      }, 30);
+    }, i * 250);
+  });
+  const lastPct = s.rows[s.rows.length - 1].pct;
+  setTimeout(() => goNext(), 900 + s.rows.length * 250 + 900);
+}
+
+function goNext() {
+  if (idx < SCREENS.length - 1) { idx++; render(); }
+}
+function goBack() {
+  if (idx > 0) { idx--; render(); }
+}
+backBtn.onclick = goBack;
+
+render();
+</script>
+
+</body>
+</html>
