@@ -1274,7 +1274,11 @@ function attachHandlers(s) {
           answers[s.id] = Array.from(root.querySelectorAll('.opt.selected')).map(o => o.dataset.val);
           if (s.know) {
             const card = root.querySelector('#knowCard');
-            if (card && card.style.display === 'none') { card.style.display = ''; card.style.animation = 'fadein .35s ease'; }
+            if (card) {
+              opt.insertAdjacentElement('afterend', card);
+              card.style.display = '';
+              card.style.animation = 'fadein .35s ease';
+            }
           }
         } else {
           opts.forEach(o => o.classList.remove('selected'));
@@ -1283,7 +1287,11 @@ function attachHandlers(s) {
           if (s.know) {
             const card = root.querySelector('#knowCard');
             const btn = root.querySelector('#knowNext');
-            if (card) { card.style.display = ''; card.style.animation = 'fadein .35s ease'; }
+            if (card) {
+              opt.insertAdjacentElement('afterend', card);
+              card.style.display = '';
+              card.style.animation = 'fadein .35s ease';
+            }
             if (btn) btn.style.display = '';
           } else {
             setTimeout(() => goNext(), 220);
