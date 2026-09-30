@@ -297,9 +297,17 @@ b, strong { font-weight: 700; }
   border: 1.5px solid var(--linha); border-radius: 14px; padding: 16px; text-align: left;
   margin-bottom: 10px; background: #fff;
 }
+.testi-card.photo { display: flex; gap: 12px; align-items: flex-start; }
+.testi-photo {
+  width: 46px; height: 46px; border-radius: 50%; flex-shrink: 0;
+  background-color: var(--linha); background-size: cover; background-position: center top;
+  border: 2px solid var(--green-l);
+}
+.testi-body { flex: 1; min-width: 0; }
 .testi-stars { color: var(--gold); font-size: 13px; margin-bottom: 6px; }
 .testi-text { font-size: 13.5px; color: var(--marrom); font-style: italic; margin-bottom: 8px; }
 .testi-name { font-size: 12.5px; font-weight: 700; color: var(--marrom); }
+.testi-verified { color: var(--green-d); font-weight: 600; font-size: 11px; margin-left: 4px; }
 
 /* ===================== KNOW-THIS CARD (curiosidade) ===================== */
 .know-card {
@@ -678,8 +686,8 @@ const SCREENS = [
     {label:'Montando seu plano personalizado...', pct:40},
   ],
   testi: [
-    {stars:'★★★★★', text:'"Chorei de alívio no terceiro dia, não de tristeza."', name:'Ana Clara M.'},
-    {stars:'★★★★★', text:'"Entendi por que eu me relacionava do jeito que me relacionava."', name:'Mariana F.'},
+    {stars:'★★★★★', text:'"Chorei de alívio no terceiro dia, não de tristeza."', name:'Ana Clara M.', avatar:'img-avatar-ana.jpg'},
+    {stars:'★★★★★', text:'"Entendi por que eu me relacionava do jeito que me relacionava."', name:'Mariana F.', avatar:'img-avatar-mariana.jpg'},
   ]
 },
 
@@ -836,10 +844,13 @@ function buildScreenHTML(s) {
       </div>
       <div class="section-h2" id="loadTesti" style="opacity:0;">3.200+ mulheres escolheram <span class="accent">o Método Floresça</span></div>
       ${s.testi.map((t,i) => `
-        <div class="testi-card" id="loadTestiCard-${i}" style="opacity:0;">
-          <div class="testi-stars">${t.stars}</div>
-          <div class="testi-text">${t.text}</div>
-          <div class="testi-name">${t.name}</div>
+        <div class="testi-card photo" id="loadTestiCard-${i}" style="opacity:0;">
+          <div class="testi-photo" data-bg="${ASSET_BASE}${t.avatar}" style="background-image:url('${ASSET_BASE}${t.avatar}');"></div>
+          <div class="testi-body">
+            <div class="testi-stars">${t.stars}</div>
+            <div class="testi-text">${t.text}</div>
+            <div class="testi-name">${t.name} <span class="testi-verified">✓ Compradora verificada</span></div>
+          </div>
         </div>
       `).join('')}
       <div class="spacer"></div>
@@ -1187,6 +1198,24 @@ function buildResultHTML() {
     <div class="ci"><span class="v">✓</span> Nunca mais encarar uma folha em branco — só responder</div>
     <div class="ci"><span class="v">✓</span> Se priorizar sem culpa, no seu ritmo</div>
     <div class="ci"><span class="v">✓</span> Um primeiro passo real, por menos que um lanche</div>
+  </div>
+
+  <div class="section-h2" style="margin-top:8px;">Quem já começou <span class="accent">conta como foi</span></div>
+  <div class="testi-card photo">
+    <div class="testi-photo" data-bg="${ASSET_BASE}img-avatar-jessica.jpg" style="background-image:url('${ASSET_BASE}img-avatar-jessica.jpg');"></div>
+    <div class="testi-body">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"Paguei achando que era barato demais pra valer. Errei. O conteúdo é de uma terapeuta de verdade, só que faço quando quero, no meu sofá."</div>
+      <div class="testi-name">Jéssica R. <span class="testi-verified">✓ Compradora verificada</span></div>
+    </div>
+  </div>
+  <div class="testi-card photo">
+    <div class="testi-photo" data-bg="${ASSET_BASE}img-avatar-beatriz.jpg" style="background-image:url('${ASSET_BASE}img-avatar-beatriz.jpg');"></div>
+    <div class="testi-body">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">"Comprei para mim e presenteei minha irmã. Ela me mandou mensagem chorando de gratidão. Essa foi minha prova de que funciona de verdade."</div>
+      <div class="testi-name">Beatriz S. <span class="testi-verified">✓ Compradora verificada</span></div>
+    </div>
   </div>
 
   <div class="section-h2" style="margin-top:8px;">Conversas <span class="accent">reais</span></div>
