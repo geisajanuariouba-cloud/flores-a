@@ -357,6 +357,15 @@ b, strong { font-weight: 700; }
 .plan-card:not(.best) .plan-cta { background: #fff; border: 1.5px solid var(--green); color: var(--green-d); }
 
 .testi-comment { display: flex; gap: 10px; margin-bottom: 12px; text-align: left; }
+
+/* ===================== RATING / REVIEWS (tela de autoridade) ===================== */
+.rating-row { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 4px 0 18px; flex-wrap: wrap; }
+.rating-stars { color: var(--gold); font-size: 16px; letter-spacing: 1px; }
+.rating-num { font-weight: 700; font-size: 14px; color: var(--marrom); }
+.rating-count { font-size: 12px; color: var(--taupe); }
+.review-list { width: 100%; text-align: left; }
+.review-list .testi-comment { background: #fff; border: 1.5px solid var(--linha); border-radius: 14px; padding: 14px; }
+.review-list .body { font-size: 13px; line-height: 1.55; }
 .testi-comment .av { width: 34px; height: 34px; border-radius: 50%; background: var(--linha); flex-shrink: 0; overflow: hidden; }
 .testi-comment .av img { width: 100%; height: 100%; object-fit: cover; }
 .testi-comment .body { font-size: 12.5px; }
@@ -527,10 +536,13 @@ const SCREENS = [
 },
 
 { id:'authority', type:'info', progress: 52,
-  image: img('img08-authority.jpg','wide','Duas mulheres próximas, uma acolhendo a outra, expressão de cumplicidade e acolhimento'),
   badge: '🌸 Você não está sozinha',
   title: '{{nome}}, ajudamos mais de<br><span class="accent">3.200 mulheres</span> com sobrecargas<br>emocionais iguais às suas.',
   text: 'Cada uma delas começou exatamente de onde você está agora.',
+  reviews: [
+    { stars:'★★★★★', text:'"Eu nunca fui de escrever, mas o Floresça me surpreendeu. No terceiro dia já estava chorando de alívio, não de tristeza."', name:'Ana Clara M.', avatar:'img-avatar1.jpg' },
+    { stars:'★★★★★', text:'"O caderno da Criança Interior me fez entender por que eu me relacionava do jeito que me relacionava. Por R$27 é um absurdo."', name:'Mariana F.', avatar:'img-avatar2.jpg' },
+  ],
   cta: 'Continuar'
 },
 
@@ -705,10 +717,29 @@ function buildScreenHTML(s) {
   if (s.type === 'info') {
     return `
       <div class="info-screen">
-        ${imageSlotHTML(s.image)}
+        ${s.image ? imageSlotHTML(s.image) : ''}
         <div class="info-badge">${s.badge}</div>
         <div class="info-title">${interpolate(s.title)}</div>
         <div class="info-text">${interpolate(s.text)}</div>
+        ${s.reviews ? `
+          <div class="rating-row">
+            <span class="rating-stars">★★★★★</span>
+            <span class="rating-num">4.9/5</span>
+            <span class="rating-count">847 avaliações</span>
+          </div>
+          <div class="review-list">
+            ${s.reviews.map(r => `
+              <div class="testi-comment" style="text-align:left;">
+                <div class="av"><img src="${ASSET_BASE}${r.avatar}" onerror="this.style.display='none'"></div>
+                <div class="body">
+                  <div class="testi-stars" style="margin-bottom:3px;">${r.stars}</div>
+                  <div style="font-style:italic;">${r.text}</div>
+                  <div class="who" style="margin-top:4px;">${r.name} <span style="color:var(--green-d);font-weight:600;">✓ Compradora verificada</span></div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        ` : ''}
       </div>
       <div class="spacer"></div>
       <button class="btn-main" data-action="next">${s.cta}</button>
