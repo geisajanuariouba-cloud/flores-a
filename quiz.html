@@ -664,9 +664,9 @@ function render() {
 function buildScreenHTML(s) {
   if (s.type === 'entry') {
     return `
-      ${imageSlotHTML(s.image)}
       <div class="eyebrow">${s.eyebrow}</div>
       <div class="q-title" style="font-size:25px;">${s.title}</div>
+      ${imageSlotHTML(s.image)}
       <div class="q-sub">${s.sub}</div>
       <div class="spacer"></div>
       <button class="btn-main" data-action="next">${s.cta}</button>
