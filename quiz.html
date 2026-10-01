@@ -344,6 +344,11 @@ b, strong { font-weight: 700; }
 .mech-title .accent-terr { color: var(--terr); }
 .mech-text { font-size: 13.5px; color: var(--taupe); line-height: 1.6; }
 
+.sol-box { background: var(--green-d); color: #fff; border-radius: 16px; padding: 18px 20px; }
+.sol-box .sol-title { font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; opacity: .9; }
+.sol-box .ci { color: #fff; font-size: 14px; }
+.sol-box .ci b { opacity: .85; font-weight: 800; }
+
 .check-list { display: flex; flex-direction: column; gap: 9px; margin-bottom: 8px; }
 .check-list.after .ci { color: var(--marrom); }
 .ci { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; }
@@ -625,17 +630,7 @@ const SCREENS = [
   ]
 },
 
-{ id:'q10_investiu', type:'choice', progress: 76,
-  title: 'Quanto você já investiu tentando<br>resolver isso (terapia, cursos, apps)?',
-  options: [
-    {v:'nada', t:'Nada ainda'},
-    {v:'ate100', t:'Até R$100'},
-    {v:'100a500', t:'R$100 a R$500'},
-    {v:'mais500', t:'Mais de R$500'},
-  ]
-},
-
-{ id:'q11_projecao', type:'choice', progress: 82, multi: true,
+{ id:'q11_projecao', type:'choice', progress: 80, multi: true,
   image: img('img11-projecao.webp','wide','Mulher sorrindo levemente, olhando pela janela, luz quente, expressão de alívio e leveza'),
   title: 'Se esse peso sumisse, o que<br>mudaria primeiro?',
   sub: 'Pode marcar mais de uma.',
@@ -737,7 +732,10 @@ function render() {
   attachHandlers(SCREENS[idx]);
   checkImageSlots(document.getElementById('screen-' + SCREENS[idx].id));
   if (SCREENS[idx].type === 'loading') runLoadingAnimation();
-  if (SCREENS[idx].type === 'result') setupCarousel();
+  if (SCREENS[idx].type === 'result') {
+    setupCarousel();
+    if (typeof fbq === 'function' && lastPatternKey) fbq('trackCustom', 'QuizResultPattern', { pattern: lastPatternKey });
+  }
   if (SCREENS[idx].type === 'stat') runStatAnimation(SCREENS[idx]);
   window.scrollTo(0,0);
   saveState();
@@ -860,43 +858,148 @@ function buildScreenHTML(s) {
   return '';
 }
 
+/* ===================== PADRÕES EMOCIONAIS (resultado personalizado) ===================== */
+const PATTERNS = {
+  ANSIEDADE: {
+    nome: 'Ansiedade que não desliga',
+    espelho: [
+      'Você deita cansada, mas a cabeça continua conversando sozinha.',
+      'Qualquer coisa pequena já é o suficiente pra ativar aquele aperto no peito.',
+      'Você respira fundo, tenta relaxar, mas o alívio nunca dura muito.',
+    ],
+    consequencia: 'O problema é que você continua funcionando normal por fora — ninguém percebe o tanto que isso pesa. Às vezes nem você.',
+    pergunta: 'Quando minha ansiedade aparece, o que ela está tentando me proteger?',
+    cadernoNome: 'Libertação da Ansiedade',
+    cpageHTML: `<div class="cpage" style="background:#F2F6F2; color:#3D2B27;"><div class="cpage-bar" style="background:#8FAF8F;"></div><div class="cpage-inner"><div class="cpage-header"><span class="cpage-htitle">Diário · Prompts 1 a 3</span><span class="cpage-hbrand" style="color:#5d8f5d;">Floresça</span></div><div class="cpage-content" style="display:flex;flex-direction:column;gap:9px;"><div><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:8.5px;font-style:italic;margin-bottom:3px;">1. Quando minha ansiedade aparece, o que ela está tentando me proteger?</div><div class="line" style="background:#8FAF8F;"></div></div><div><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:8.5px;font-style:italic;margin-bottom:3px;">2. Em que partes do meu corpo eu sinto a ansiedade primeiro?</div><div class="line" style="background:#8FAF8F;"></div></div></div><div class="cpage-footer"><span style="color:#5d8f5d;">Floresça</span><span>Caderno 03 · Ansiedade</span></div></div></div>`,
+    testemunho: { avatar:'img-avatar-ana.webp', text:'"Eu nunca fui de escrever, mas o Floresça me surpreendeu. No terceiro dia já estava chorando de alívio, não de tristeza."', name:'Ana Clara M.' },
+  },
+  AMOR_PROPRIO: {
+    nome: 'Sobrecarga por cuidar de todo mundo, menos de você',
+    espelho: [
+      'Você resolve o problema de todo mundo antes de parar pra perguntar como você mesma está.',
+      'Quando sobra um tempinho livre, você nem sabe direito o que fazer com ele.',
+      'Você seria muito mais gentil com uma amiga do que é consigo mesma.',
+    ],
+    consequencia: 'O problema é que isso vira hábito — você se acostuma a ficar por último, e ninguém mais nem percebe que você também precisa de cuidado.',
+    pergunta: 'O que significa, para mim, ser gentil comigo mesma?',
+    cadernoNome: '30 Dias de Amor Próprio',
+    cpageHTML: `<div class="cpage" style="background:#FAF6F1; color:#3D2B27;"><div class="cpage-bar" style="background:#C4877B;"></div><div class="cpage-inner"><div class="cpage-header"><span class="cpage-htitle">Amor Próprio · Dias 1 a 3</span><span class="cpage-hbrand" style="color:#C4877B;">Floresça</span></div><div class="cpage-content" style="display:flex;flex-direction:column;gap:8px;"><div style="display:flex;gap:6px;align-items:flex-start;"><div style="text-align:center;flex-shrink:0;min-width:28px;"><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;color:#C4877B;line-height:1;">02</div><div style="font-size:6px;letter-spacing:1px;text-transform:uppercase;color:#8B7B6B;">Dia Dois</div></div><div style="flex:1;"><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:8.5px;font-style:italic;line-height:1.4;margin-bottom:4px;">O que significa, para mim, ser gentil comigo mesma?</div><div class="line"></div><div class="line"></div><div class="line"></div></div></div></div><div class="cpage-footer"><span>Floresça</span><span>Caderno 01 · Amor Próprio</span></div></div></div>`,
+    testemunho: { avatar:'img-avatar-jessica.webp', text:'"Paguei achando que era barato demais pra valer. Errei. O conteúdo é de uma terapeuta de verdade, só que faço quando quero, no meu sofá."', name:'Jéssica R.' },
+  },
+  CRIANCA_INTERIOR: {
+    nome: 'Padrões que vêm de mais longe do que parece',
+    espelho: [
+      'Você reage forte demais a coisas pequenas, e nem sempre entende por quê.',
+      'Alguns relacionamentos seus parecem sempre repetir o mesmo roteiro.',
+      'Tem sentimentos antigos que ainda mexem com você do nada, sem aviso.',
+    ],
+    consequencia: 'O problema é que esses padrões se repetem até você entender de onde vêm — e sozinha é difícil enxergar isso de dentro.',
+    pergunta: 'Carta à minha criança interior: o que eu diria pra ela, hoje?',
+    cadernoNome: 'Criança Interior',
+    cpageHTML: `<div class="cpage" style="background:#F5F0F7; color:#3D2B27;"><div class="cpage-bar" style="background:#C8B8CC;"></div><div class="cpage-inner"><div class="cpage-header"><span class="cpage-htitle">Exercício · Carta à Criança</span><span class="cpage-hbrand" style="color:#9c7baa;">Floresça</span></div><div class="cpage-content"><div style="font-size:7px;letter-spacing:1.5px;text-transform:uppercase;color:#9c7baa;margin-bottom:6px;">Carta à minha criança interior</div><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:9px;font-style:italic;margin-bottom:6px;">Querida _____,</div><div class="line" style="background:#C8B8CC;"></div><div class="line" style="background:#C8B8CC;"></div><div class="line" style="background:#C8B8CC;"></div></div><div class="cpage-footer"><span style="color:#9c7baa;">Floresça</span><span>Caderno 02 · Criança Interior</span></div></div></div>`,
+    testemunho: { avatar:'img-avatar-mariana.webp', text:'"O caderno da Criança Interior me fez entender por que eu me relacionava do jeito que me relacionava. Isso não tem preço."', name:'Mariana F.' },
+  },
+  NOVA_FASE: {
+    nome: 'Pronta pra uma fase que ainda não começou',
+    espelho: [
+      'Você sente que já devia ter saído desse ciclo, mas de algum jeito continua nele.',
+      'Alguma parte sua já sabe que é hora de mudar — só falta o empurrão certo.',
+      'Você pensa "segunda eu começo", mas a segunda nunca vira o início de verdade.',
+    ],
+    consequencia: 'O problema é que esperar o "momento certo" pode virar outro jeito de adiar — e o tempo passa igual.',
+    pergunta: 'Como está minha vida hoje? De 1 a 10 em cada área.',
+    cadernoNome: 'Eu em Nova Fase',
+    cpageHTML: `<div class="cpage" style="background:#EEF0F8; color:#3D2B27;"><div class="cpage-bar" style="background:#7B8FC4;"></div><div class="cpage-inner"><div class="cpage-header"><span class="cpage-htitle">Exercício · Roda da Vida</span><span class="cpage-hbrand" style="color:#5a6fa8;">Floresça</span></div><div class="cpage-content"><div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:11px;font-weight:300;margin-bottom:8px;">Como está minha vida hoje?<br><em style="color:#5a6fa8;">De 1 a 10 em cada área:</em></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;"><div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Saúde</span><span style="color:#8B7B6B;">__/10</span></div><div style="display:flex;justify-content:space-between;background:rgba(123,143,196,.12);border-radius:5px;padding:4px 7px;font-size:7.5px;"><span style="color:#5a6fa8;font-weight:700;">Propósito</span><span style="color:#8B7B6B;">__/10</span></div></div></div><div class="cpage-footer"><span style="color:#5a6fa8;">Floresça</span><span>Caderno 05 · Nova Fase</span></div></div></div>`,
+    testemunho: { avatar:'img-avatar-beatriz.webp', text:'"Comprei para mim e presenteei minha irmã. Ela me mandou mensagem chorando de gratidão. Essa foi minha prova de que funciona de verdade."', name:'Beatriz S.' },
+  },
+};
+
+function computeDominantPattern() {
+  const score = { ANSIEDADE:0, AMOR_PROPRIO:0, CRIANCA_INTERIOR:0, NOVA_FASE:0 };
+  const add = (pattern, n) => { score[pattern] += n; };
+  const has = (id, val) => {
+    const a = answers[id];
+    if (!a) return false;
+    return Array.isArray(a) ? a.includes(val) : a === val;
+  };
+
+  if (has('q2_area','trabalho')) add('AMOR_PROPRIO',1);
+  if (has('q2_area','tudo')) add('AMOR_PROPRIO',1);
+  if (has('q2_area','familia')) add('CRIANCA_INTERIOR',1);
+  if (has('q2_area','relacionamento')) add('CRIANCA_INTERIOR',1);
+
+  if (has('q4_verdade','nao_minimiza')) add('AMOR_PROPRIO',1);
+
+  if (has('q5_cuida','sim')) add('AMOR_PROPRIO',2);
+  if (has('q5_cuida','um_pouco')) add('AMOR_PROPRIO',1);
+
+  if (has('q6_loop','sim')) add('NOVA_FASE',2);
+  if (has('q6_loop','as_vezes')) add('NOVA_FASE',1);
+
+  if (has('q7_corpo','sim_frequente')) add('ANSIEDADE',2);
+  if (has('q7_corpo','algumas_vezes')) add('ANSIEDADE',1);
+
+  if (has('q11_projecao','dormir')) add('ANSIEDADE',1);
+  if (has('q11_projecao','cobranca')) add('AMOR_PROPRIO',1);
+  if (has('q11_projecao','paciencia')) add('AMOR_PROPRIO',1);
+  if (has('q11_projecao','reconhecer')) add('CRIANCA_INTERIOR',1);
+
+  if (has('q12_deseja','paz')) add('ANSIEDADE',1);
+  if (has('q12_deseja','leveza')) add('ANSIEDADE',1);
+  if (has('q12_deseja','clareza')) add('CRIANCA_INTERIOR',1);
+  if (has('q12_deseja','orgulho')) add('AMOR_PROPRIO',1);
+
+  const order = ['AMOR_PROPRIO','ANSIEDADE','CRIANCA_INTERIOR','NOVA_FASE'];
+  let best = order[0];
+  order.forEach(k => { if (score[k] > score[best]) best = k; });
+  return best;
+}
+
+let lastPatternKey = null;
 function buildResultHTML() {
+  const patternKey = computeDominantPattern();
+  lastPatternKey = patternKey;
+  const p = PATTERNS[patternKey];
+
   return `
   <div class="result-hero">
     ${imageSlotHTML(img('img-result-hero.webp','wide','Mulher sorrindo, leve, segurando um caderno Floresça, luz quente, sensação de alívio e conquista'))}
     <div class="result-title">${interpolate('{{nome}}, seu resultado está pronto!')}</div>
-    <div class="result-sub">Nossa análise indica <b>87% de identificação</b> com o padrão<br><b>"Sobrecarga por excesso de cuidado com os outros"</b></div>
+    <div class="result-sub">Seu padrão predominante:<br><b>"${p.nome}"</b></div>
   </div>
 
-  <div class="slider-row">
-    <div class="slider-name">Nível de sobrecarga</div>
-    <div class="slider-head"><span class="before">Hoje — 82%</span></div>
-    <div class="slider-track"><div class="slider-fill-before" style="width:82%;"></div></div>
-    <div class="slider-head" style="margin-top:8px;"><span class="after">Com o Floresça — 15%</span></div>
-    <div class="slider-fill-after" style="width:15%;"></div>
+  <div class="section-h2" style="margin-top:4px;">Isso costuma <span class="accent">aparecer assim</span></div>
+  <div class="check-list after" style="margin-bottom:4px;">
+    ${p.espelho.map(e => `<div class="ci"><span class="v">•</span> ${e}</div>`).join('')}
   </div>
-  <div class="slider-row">
-    <div class="slider-name">Clareza emocional</div>
-    <div class="slider-head"><span class="before">Hoje — 30%</span></div>
-    <div class="slider-track"><div class="slider-fill-before" style="width:30%;"></div></div>
-    <div class="slider-head" style="margin-top:8px;"><span class="after">Com o Floresça — 88%</span></div>
-    <div class="slider-fill-after" style="width:88%;"></div>
-  </div>
-  <div class="slider-row">
-    <div class="slider-name">Constância de autocuidado</div>
-    <div class="slider-head"><span class="before">Hoje — 22%</span></div>
-    <div class="slider-track"><div class="slider-fill-before" style="width:22%;"></div></div>
-    <div class="slider-head" style="margin-top:8px;"><span class="after">Com o Floresça — 91%</span></div>
-    <div class="slider-fill-after" style="width:91%;"></div>
-  </div>
+  <div class="mech-text" style="text-align:center;margin:10px 0 20px;">${p.consequencia}</div>
 
   <div class="mech-box">
-    <div class="mech-image" data-bg="${ASSET_BASE}img-mechanism.webp" style="background-image:url('${ASSET_BASE}img-mechanism.webp');">
-      <div class="ph" style="display:none;">🖼️ img-mechanism.webp</div>
-    </div>
-    <div class="mech-title">Por que o <span class="accent-terr">Floresça</span> funciona</div>
-    <div class="mech-text">Não é genérico. São <b>5 cadernos guiados</b>, cada um trabalhando uma camada diferente da sua sobrecarga — você começa exatamente onde dói mais, no seu ritmo.</div>
+    <div class="mech-title">Então eu separei <span class="accent-terr">um primeiro exercício</span> pra você</div>
+    <div class="mech-text" style="margin-bottom:14px;">Em vez de te explicar os 5 cadernos de uma vez, olha a pergunta que o Floresça faria pra você agora:</div>
+    <div class="carousel-wrap" style="margin-bottom:12px;"><div style="display:flex;justify-content:center;">${p.cpageHTML}</div></div>
+    <div class="mech-text">É assim que o Floresça funciona: você não precisa saber o que escrever. Ele vai fazendo as perguntas certas, uma de cada vez.</div>
   </div>
+
+  <div class="sol-box" style="margin:20px 0;">
+    <div class="sol-title">Seu caminho Floresça</div>
+    <div class="ci" style="margin-bottom:6px;"><b>01</b>&nbsp; Comece por: ${p.cadernoNome}</div>
+    <div class="ci" style="margin-bottom:6px;"><b>02</b>&nbsp; Separe: 10 minutos</div>
+    <div class="ci" style="margin-bottom:6px;"><b>03</b>&nbsp; Faça: 1 página por vez</div>
+    <div class="ci"><b>04</b>&nbsp; Não precisa: escrever bonito nem terminar tudo</div>
+  </div>
+
+  <div class="testi-card photo">
+    <div class="testi-photo" data-bg="${ASSET_BASE}${p.testemunho.avatar}" style="background-image:url('${ASSET_BASE}${p.testemunho.avatar}');"></div>
+    <div class="testi-body">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-text">${p.testemunho.text}</div>
+      <div class="testi-name">${p.testemunho.name} <span class="testi-verified">✓ Compradora verificada</span></div>
+    </div>
+  </div>
+
+  <div class="section-h2" style="margin-top:24px;">E esse é só <span class="accent">um dos 5 caminhos</span></div>
+  <div class="mech-text" style="text-align:center;margin-bottom:14px;">${p.cadernoNome} faz parte do Floresça Completo, junto com os outros quatro caminhos que você pode usar conforme precisar.</div>
 
   <div class="carousel-section" aria-hidden="true">
     <div class="carousel-label">Veja por dentro</div>
