@@ -487,15 +487,16 @@ b, strong { font-weight: 700; }
 
 const ASSET_BASE = 'quiz-assets/';
 
-function img(file, ratioClass, promptLabel) {
-  return {file, ratioClass: ratioClass || '', promptLabel};
+function img(file, ratioClass, promptLabel, position) {
+  return {file, ratioClass: ratioClass || '', promptLabel, position};
 }
 
 function imageSlotHTML(slot) {
   if (!slot) return '';
   /* usamos background-image (em vez de <img>) pra evitar o icone de
      "buscar imagem" que o Chrome sobrepoe em tags <img> grandes */
-  return `<div class="q-image ${slot.ratioClass}" data-bg="${ASSET_BASE}${slot.file}" style="background-image:url('${ASSET_BASE}${slot.file}');">
+  const posStyle = slot.position ? `background-position:${slot.position};` : '';
+  return `<div class="q-image ${slot.ratioClass}" data-bg="${ASSET_BASE}${slot.file}" style="background-image:url('${ASSET_BASE}${slot.file}');${posStyle}">
     <div class="ph" style="display:none;">🖼️ ${slot.file}<br><span style="font-weight:400;opacity:.8;">${slot.promptLabel || ''}</span></div>
   </div>`;
 }
@@ -517,7 +518,7 @@ function checkImageSlots(root) {
 const SCREENS = [
 
 { id:'entry', type:'entry',
-  image: img('img01-entry.webp','wide','Mulher em pausa introspectiva, luz de manhã, expressão cansada mas serena'),
+  image: img('img01-entry.webp','wide','Mulher em pausa introspectiva, luz de manhã, expressão cansada mas serena','center 30%'),
   eyebrow: 'teste gratuito · 2 minutos',
   title: 'Descubra por que você não<br>consegue <span class="accent">parar de se colocar<br>em último lugar</span>',
   sub: 'Veja seu padrão emocional e o caminho pra sair dele, num plano feito pra você.',
@@ -537,7 +538,7 @@ const SCREENS = [
 },
 
 { id:'q2_area', type:'choice', progress: 12, multi: true,
-  image: img('img02-area.webp','wide','Mulher sobrecarregada cercada de tarefas: notificações, louça, trabalho, criança puxando a roupa'),
+  image: img('img02-area.webp','wide','Mulher sobrecarregada cercada de tarefas: notificações, louça, trabalho, criança puxando a roupa','center bottom'),
   title: 'Qual dessas áreas mais consome<br>sua energia hoje?',
   sub: 'Pode marcar mais de uma.',
   options: [
@@ -566,7 +567,7 @@ const SCREENS = [
 },
 
 { id:'q5_cuida', type:'choice', progress: 33,
-  image: img('img05-cuida.webp','wide','Mulher servindo comida pra outras pessoas na mesa, sentada sozinha no canto sem prato'),
+  image: img('img05-cuida.webp','wide','Mulher servindo comida pra outras pessoas na mesa, sentada sozinha no canto sem prato','center 40%'),
   title: 'Você concorda: <span class="accent-terr">"Eu cuido de<br>todo mundo, menos de mim"</span>?',
   options: [
     {v:'sim', t:'Sim, é exatamente assim'},
@@ -585,7 +586,7 @@ const SCREENS = [
 },
 
 { id:'q7_corpo', type:'choice', progress: 46,
-  image: img('img07-corpo.webp','wide','Close nas mãos de uma mulher no peito, respirando, luz suave, sensação de aperto/ansiedade'),
+  image: img('img07-corpo.webp','wide','Close nas mãos de uma mulher no peito, respirando, luz suave, sensação de aperto/ansiedade','center top'),
   title: 'Seu corpo já te avisou que algo<br>não tá bem? <span class="accent-terr">(aperto no peito,<br>sono ruim, cabeça que não desliga)</span>',
   options: [
     {v:'sim_frequente', t:'Sim, e é frequente'},
@@ -624,7 +625,7 @@ const SCREENS = [
 },
 
 { id:'q9_trava', type:'choice', progress: 70, multi: true,
-  image: img('img09-trava.webp','wide','Mulher sentada à mesa olhando para um caderno em branco, caneta na mão, expressão de hesitação'),
+  image: img('img09-trava.webp','wide','Mulher sentada à mesa olhando para um caderno em branco, caneta na mão, expressão de hesitação','center 40%'),
   title: 'Quando pensa em escrever sobre<br>seus sentimentos, o que mais te trava?',
   sub: 'Pode marcar mais de uma.',
   options: [
@@ -636,7 +637,7 @@ const SCREENS = [
 },
 
 { id:'q11_projecao', type:'choice', progress: 80, multi: true,
-  image: img('img11-projecao.webp','wide','Mulher sorrindo levemente, olhando pela janela, luz quente, expressão de alívio e leveza'),
+  image: img('img11-projecao.webp','wide','Mulher sorrindo levemente, olhando pela janela, luz quente, expressão de alívio e leveza','center top'),
   title: 'Se esse peso sumisse, o que<br>mudaria primeiro?',
   sub: 'Pode marcar mais de uma.',
   options: [
@@ -667,7 +668,7 @@ const SCREENS = [
 },
 
 { id:'q14_topa', type:'choice', progress: 96,
-  image: img('img14-topa.webp','wide','Mulher escrevendo num caderno com expressão tranquila, xícara de chá ao lado, luz quente de fim de tarde'),
+  image: img('img14-topa.webp','wide','Mulher escrevendo num caderno com expressão tranquila, xícara de chá ao lado, luz quente de fim de tarde','center 30%'),
   title: 'Você topa dar 10 minutos por dia<br>só pra você?',
   options: [
     {v:'sim', t:'Sim, topo'},
