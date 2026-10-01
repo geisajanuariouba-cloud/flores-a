@@ -117,7 +117,7 @@ b, strong { font-weight: 700; }
 /* ===================== SCREEN ===================== */
 .screen {
   flex: 1;
-  padding: 18px 22px 40px;
+  padding: 12px 22px 16px;
   display: none;
   flex-direction: column;
   animation: fadein .35s ease;
@@ -179,16 +179,17 @@ b, strong { font-weight: 700; }
 .q-image.portrait { aspect-ratio: 3 / 4; max-width: 280px; }
 .q-image.wide { aspect-ratio: 4 / 5; max-height: 38vh; }
 .q-image.round { aspect-ratio: 1/1; border-radius: 50%; max-width: 180px; background-position: center; }
+.q-image.compact { max-width: 148px; max-height: none; }
 
 /* ===================== OPTIONS ===================== */
-.options { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+.options { display: flex; flex-direction: column; gap: 7px; margin-top: 4px; }
 .opt {
   display: flex;
   align-items: center;
   gap: 12px;
   border: 1.5px solid var(--linha);
   border-radius: 14px;
-  padding: 14px 16px;
+  padding: 10px 14px;
   cursor: pointer;
   background: #fff;
   transition: border-color .15s, background .15s, transform .1s;
@@ -400,7 +401,7 @@ b, strong { font-weight: 700; }
 .review-list { width: 100%; text-align: left; }
 .review-list .testi-comment { background: #fff; border: 1.5px solid var(--linha); border-radius: 14px; padding: 14px; }
 .review-list .body { font-size: 13px; line-height: 1.55; }
-.proof-list { width: 100%; display: flex; flex-direction: column; gap: 12px; }
+.proof-list { width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
 .proof-shot {
   width: 100%; aspect-ratio: 4 / 3.15; border-radius: 14px; overflow: hidden;
   background-color: #EFE7DC; background-size: cover; background-position: center;
@@ -538,7 +539,7 @@ const SCREENS = [
 },
 
 { id:'q2_area', type:'choice', progress: 12, multi: true,
-  image: img('img02-area.webp','wide','Mulher sobrecarregada cercada de tarefas: notificações, louça, trabalho, criança puxando a roupa','center bottom'),
+  image: img('img02-area.webp','wide compact','Mulher sobrecarregada cercada de tarefas: notificações, louça, trabalho, criança puxando a roupa','center bottom'),
   title: 'Qual dessas áreas mais consome<br>sua energia hoje?',
   sub: 'Pode marcar mais de uma.',
   options: [
@@ -625,7 +626,7 @@ const SCREENS = [
 },
 
 { id:'q9_trava', type:'choice', progress: 70, multi: true,
-  image: img('img09-trava.webp','wide','Mulher sentada à mesa olhando para um caderno em branco, caneta na mão, expressão de hesitação','center 40%'),
+  image: img('img09-trava.webp','wide compact','Mulher sentada à mesa olhando para um caderno em branco, caneta na mão, expressão de hesitação','center 40%'),
   title: 'Quando pensa em escrever sobre<br>seus sentimentos, o que mais te trava?',
   sub: 'Pode marcar mais de uma.',
   options: [
@@ -637,7 +638,7 @@ const SCREENS = [
 },
 
 { id:'q11_projecao', type:'choice', progress: 80, multi: true,
-  image: img('img11-projecao.webp','wide','Mulher sorrindo levemente, olhando pela janela, luz quente, expressão de alívio e leveza','center top'),
+  image: img('img11-projecao.webp','wide compact','Mulher sorrindo levemente, olhando pela janela, luz quente, expressão de alívio e leveza','center top'),
   title: 'Se esse peso sumisse, o que<br>mudaria primeiro?',
   sub: 'Pode marcar mais de uma.',
   options: [
